@@ -116,7 +116,10 @@ def fetch_jobs(max_listings=200, inter_page_delay=0.3):
 
         posting_date = _parse_posting_date(raw.get("postingdate"))
 
-        url = f"{AVATURE_BASE}/en_US/careersmarketplace/JobDetails?jobId={reqid}"
+        # Use the API's own redirectionurl (canonical, opens correctly in browser).
+        # Fall back to constructing the ApplicationMethods URL if the field is absent.
+        redirect = raw.get("redirectionurl") or ""
+        url = redirect if redirect else f"{AVATURE_BASE}/careersmarketplace/ApplicationMethods?jobId={reqid}&source=CareerWebsite"
 
         # Strip HTML from inline description and cache it
         html_desc = raw.get("jobdescription") or ""

@@ -60,6 +60,8 @@ class TestFetchJobs(unittest.TestCase):
         self.assertEqual(j["location"], "Dubai, UAE")
         self.assertEqual(j["posting_date"], "2025-06-01")
         self.assertIn("jobId=EKE-123456", j["url"])
+        self.assertIn("ApplicationMethods", j["url"])
+        self.assertNotIn("JobDetails", j["url"])
         self.assertEqual(j["source"], "emirates")
 
     @patch("src.emirates_fetcher.requests.Session")
@@ -81,6 +83,16 @@ class TestFetchJobs(unittest.TestCase):
 
         jobs = emirates_fetcher.fetch_jobs()
         self.assertEqual(jobs, [])
+
+    @patch("src.emirates_fetcher.requests.Session")
+    def test_uses_redirectionurl_when_present(self, mock_session_cls):
+        mock_session = MagicMock()
+        mock_session_cls.return_value = mock_session
+        job_with_redirect = {**SAMPLE_JOB, "redirectionurl": "https://external.emiratesgroupcareers.com/careersmarketplace/ApplicationMethods?jobId=EKE-123456&source=CareerWebsite"}
+        mock_session.get.return_value = _make_mock_response({"status": "success", "data": [job_with_redirect]})
+
+        jobs = emirates_fetcher.fetch_jobs()
+        self.assertEqual(jobs[0]["url"], "https://external.emiratesgroupcareers.com/careersmarketplace/ApplicationMethods?jobId=EKE-123456&source=CareerWebsite")
 
     @patch("src.emirates_fetcher.requests.Session")
     def test_populates_desc_cache(self, mock_session_cls):
