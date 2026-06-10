@@ -114,15 +114,21 @@ near_misses_<company>.json        ← near-miss accumulator for weekly digest (t
 ```python
 class RateLimitError(Exception): ...
 
-def fetch_jobs(keyword, location, *, num, start, sort_by, timeout) -> list[dict]:
-    # Returns list of dicts, each with:
-    # {"id": str, "title": str, "location": str, "posting_date": str, "application_url": str}
-    # posting_date in YYYY-MM-DD format
+def fetch_jobs() -> list[dict]:
+    # Returns list of dicts, each with at minimum:
+    # {"title": str, "url": str, "location": str, "company": str, "source": str}
+    # Optional: "id", "posting_date", "date" — used for alert sorting
 
-def fetch_job_description(application_url, timeout) -> tuple[str, str]:
-    # Returns (description_text, posting_date_string)
-    # On ANY failure: return ("", "") — never raise, never crash
+def fetch_job_description(application_url) -> str | tuple[str, str]:
+    # Canonical (new fetchers):  return (description_text, posting_date_string)
+    # Legacy (Safran only):       return description_text as plain str
+    # matcher.py handles both via isinstance(raw, tuple) — always returns "" or ("","") on failure
+    # On ANY failure: return "" or ("", "") — never raise, never crash
 ```
+
+**Dual return type:** matcher.py uses `isinstance(raw, tuple)` so both forms work. New fetchers
+should always return the tuple. Safran is the only legacy `str` returner and will be updated
+when next touched. Until then, do not rely on the str form in new code.
 
 ---
 
@@ -153,7 +159,7 @@ Open the careers page, search for a role, open DevTools → Network tab → XHR/
 | ATS | URL signal | Best approach |
 |---|---|---|
 | **Workday** | `wd1.myworkdayjobs.com` or apply button goes there | `POST /wday/cxs/{code}/{tenant}/jobs` with JSON body. Find India/global WID from facets response. |
-| **Phenom People** | `/en/sites/{Company}/jobs` | `POST /widgets` with `refNum` from page HTML |
+| **Phenom People** | `cdn.phenompeople.com` in page source; `phApp.refNum` in inline JS | Session bootstrap required — see Phenom People Notes below |
 | **Oracle HCM CE** | `fa.ocs.oraclecloud.com` | Playwright/Firefox — JS SPA, API blocked server-side |
 | **iCIMS** | `icims.com` in URL | REST API or HTML scraping |
 | **Greenhouse** | `greenhouse.io` | Public REST API, well-documented |
@@ -310,6 +316,104 @@ Key Workday quirks:
 
 ---
 
+## Phenom People Notes (GE Aerospace confirmed; Emirates, Etihad, others likely)
+
+### Detection
+Look for `cdn.phenompeople.com` in page source. Then find `refNum` in the inline `phApp` config:
+```html
+<script>var phApp = phApp || {"refNum":"GAOGAYGLOBAL", "widgetApiEndpoint":".../widgets", ...}</script>
+```
+The `refNum` is the tenant identifier. It is NOT in the URL — the careers site runs on a custom
+domain (e.g. `careers.geaerospace.com`). The `pageId` (e.g. `"page20"`) and `pageName`
+(e.g. `"search-results"`) are also in `phApp` — you need these for widget API calls.
+
+**Critical trap:** The "Apply" button on Phenom pages often links to Workday
+(`geaerospace.wd5.myworkdayjobs.com`). Workday is used for candidate tracking; Phenom is the
+search UI. Do not probe Workday. The Phenom `careers.*` domain is the correct target.
+
+### Step 1 — Session bootstrap (mandatory)
+Phenom's `/widgets` API returns `{"tokenAvailable": false}` and 0 jobs without a valid session.
+```python
+session = requests.Session()
+r = session.get("https://careers.company.com/global/en/search-results", timeout=20)
+csrf = re.search(r"id='csrfToken'[^>]*>([^<]+)<", r.text).group(1).strip()
+session.headers.update({
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "csrf-token": csrf,
+    "Referer": "https://careers.company.com/global/en/search-results",
+})
+# Session now has PLAY_SESSION cookie + csrf-token header — reuse for all POST calls
+```
+
+### Step 2 — Job search (`ddoKey: "refineSearch"`)
+```python
+POST /widgets
+{
+    "ddoKey": "refineSearch",
+    "refNum": "GAOGAYGLOBAL",      # from phApp.refNum
+    "pageId": "page20",            # from phApp.pageId on the search-results page
+    "pageName": "search-results",  # from phApp.pageName
+    "siteType": "external",
+    "deviceType": "desktop",
+    "lang": "en_global",
+    "from": 0,                     # pagination offset
+    "size": 20,                    # page size (20 is safe)
+    "jobs": true,
+    "counts": false,
+    "all_fields": [],
+    "clearAll": false,
+    "jdsource": "facets",
+    "isSliderEnable": false,
+    "sortBy": "",
+    "subsearch": "",
+    "searchText": ""               # ignored server-side — returns all jobs regardless
+}
+# Response: {"refineSearch": {"totalHits": 570, "hits": 20, "data": {"jobs": [...]}}}
+# Paginate: increment "from" by len(jobs) until from >= totalHits or max_listings
+```
+**`searchText` is ignored.** All ~570 jobs are returned regardless of keyword. Fetch everything
+and filter locally through the 3-gate matcher. This is different from Workday, which does
+filter server-side.
+
+Key list-view job fields: `reqId`, `jobId`, `title`, `location`, `postedDate`, `company`,
+`companyName`, `applyUrl` (Workday link — do not use as browseable URL).
+
+### Step 3 — Job detail (`ddoKey: "jobDetail"`)
+```python
+POST /widgets
+{
+    "ddoKey": "jobDetail",
+    "refNum": "GAOGAYGLOBAL",
+    "jobId": "R5009951",           # reqId from list-view job
+    "lang": "en_global",
+    "deviceType": "desktop",
+    "pageName": "search-results",
+    "siteType": "external",
+}
+# Response: {"jobDetail": {"data": {"job": {"description": "<h1>...", "postedDate": "..."}}}}
+# "description" is HTML — strip with BeautifulSoup before Gate 2 matching
+```
+
+### Browseable job URL
+```
+https://careers.company.com/global/en/job/{reqId}
+```
+Use this in alerts. The `applyUrl` from the API is the Workday apply link — not useful for
+"here's a role to look at."
+
+### fetch_job_description return
+Must return `(description_text, posting_date_string)` — the tuple form. See interface contract
+above. `posting_date` from jobDetail is ISO 8601: `"2026-05-01T00:00:00.000+0000"`.
+
+### Key Phenom quirks
+- `pageId` and `pageName` vary per tenant and per page — always read from `phApp` in the HTML
+- Session expires after ~30 min of inactivity; pipeline runs end-to-end in < 3 min so this is safe
+- CSRF token is tied to the session cookie — do not mix tokens from different sessions
+- Rate limits are generous; `inter_page_delay: 0.2` is sufficient
+
+---
+
 ## Bugs We Hit (Do Not Repeat)
 
 | Bug | Root cause | Fix |
@@ -323,6 +427,8 @@ Key Workday quirks:
 | `[skip ci]` commit re-triggers workflow | Missing tag on state commit message | Always use `[skip ci]` in the git commit message for seen_jobs updates |
 | Alert fires for wrong Safran division | Gate 2 passed on generic MRO words for non-engine divisions | Acceptable for now — add optional company-name filter later if noise grows |
 | Parallel pipeline: one crash kills all | Exception escaped `__main__` try/except | Every `run_<company>.py` must wrap `__main__` in try/except with `sys.exit(1)` |
+| Phenom site probed as Workday (wasted 30 min) | GE's "Apply" button links to `wd5.myworkdayjobs.com` — looks like Workday | Workday is the downstream ATS for applications; Phenom is the job search UI. Check page source for `cdn.phenompeople.com` before assuming Workday. |
+| Phenom API returns 0 jobs / `tokenAvailable:false` | POST to `/widgets` without a valid session — no CSRF token | Bootstrap a `requests.Session` first: GET the search-results page to get the `PLAY_SESSION` cookie and `csrfToken` div, then add `csrf-token` header to all subsequent POSTs. |
 
 ---
 
@@ -390,7 +496,7 @@ a summary email before clearing the old entries.
 | Phase | Company | ATS guess | Priority reason |
 |---|---|---|---|
 | ✅ 1 | Safran | Custom ASP.NET | Hyderabad SAESI ramping now |
-| 2 | GE Aerospace | Workday | Native engine match (GE90/GEnx CRS) |
+| ✅ 2 | GE Aerospace | Phenom People (not Workday — apply button misleads) | Native engine match (GE90/GEnx CRS) |
 | 2 | Sanad (Abu Dhabi) | Custom/Taleo | Best single Middle East target |
 | 2 | Emirates Engineering | Taleo/Custom | Highest Middle East prestige |
 | 2 | RTX / Pratt & Whitney | Workday | PW4000 match, Eagle Services Singapore |
