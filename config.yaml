@@ -180,6 +180,26 @@ gmr_search:
   locations:
     - "all"
 
+rtx_search:
+  max_listings: 200
+  inter_page_delay: 0.2
+  keywords:
+    - "engine overhaul"
+    - "MRO"
+    - "shop manager"
+    - "powerplant"
+    - "quality manager"
+    - "production manager"
+    - "technical services"
+    - "engine maintenance"
+    - "Part 145"
+    - "PW4000"
+    - "GTF"
+    - "PW1100"
+    - "shop operations"
+  locations:
+    - "all"
+
 notifications:
   email:
     recipient: ""

@@ -1,5 +1,6 @@
 pytest
 requests
+curl_cffi
 pyyaml
 python-dotenv
 playwright
