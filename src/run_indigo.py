@@ -17,6 +17,27 @@ CONFIG_PATH = ROOT / "config.yaml"
 SEEN_PATH = ROOT / "seen_jobs_indigo.json"
 NEAR_MISS_PATH = ROOT / "near_misses_indigo.json"
 
+# IndiGo is a full-service airline — descriptions are inaccessible (Gate 2 is
+# bypassed), and their portal is domain-diverse (finance, HR, IT, etc.).
+# Gate 1 alone (broad title_family terms like "manager", "consultant") produces
+# too many non-aviation matches.  This pre-filter requires at least one
+# aviation-domain term in the title before handing off to filter_jobs().
+_AVIATION_TITLE_TERMS = [
+    "engineer", "engineering",
+    "aircraft", "engine", "powerplant",
+    "maintenance", "airworthiness",
+    "mro", "overhaul", "shop",
+    "technical services", "technical manager",
+    "quality", "safety", "compliance",
+    "instructor", "ame", "dgca",
+    "aviation", "propulsion",
+]
+
+
+def _is_aviation_title(title: str) -> bool:
+    t = title.lower()
+    return any(term in t for term in _AVIATION_TITLE_TERMS)
+
 
 def _load_config():
     with open(CONFIG_PATH, "r", encoding="utf-8") as f:
@@ -51,16 +72,29 @@ def run_pipeline(seen_path=None, near_miss_path=None):
     total_fetched = len(raw_jobs)
     print(f"[indigo] Fetched {total_fetched} listings")
 
-    matched, near_misses = filter_jobs(raw_jobs, indigo_fetcher, config=config)
+    # Pre-filter: drop non-aviation titles before handing off to Gates 1-3.
+    # Necessary because descriptions are unavailable (Gate 2 bypassed) and
+    # IndiGo hires across all functions — generic Gate 1 terms catch admin/finance.
+    aviation_jobs = [j for j in raw_jobs if _is_aviation_title(j["title"])]
+    skipped = total_fetched - len(aviation_jobs)
+    if skipped:
+        print(f"[indigo] Pre-filter: dropped {skipped} non-aviation title(s)")
+        for j in raw_jobs:
+            if not _is_aviation_title(j["title"]):
+                print(f"[indigo]   skipped: {j['title']}")
+
+    matched, near_misses = filter_jobs(aviation_jobs, indigo_fetcher, config=config)
 
     g1_fail = sum(1 for nm in near_misses if nm["gate_failed"] == "gate1")
     g3_fail = sum(1 for nm in near_misses if nm["gate_failed"] == "gate3")
-    g1_pass = total_fetched - g1_fail
+    g1_pass = len(aviation_jobs) - g1_fail
     g3_pass = g1_pass - g3_fail
     total_matched = len(matched)
 
-    seen_urls = set(_load_json(seen_path))
-    new_matches = [j for j in matched if j["url"] not in seen_urls]
+    # Deduplicate by job id (not url) — jobReqSecKey in the URL is session-scoped
+    # and changes every DWR session, making URL-based dedup unreliable.
+    seen_ids = set(_load_json(seen_path))
+    new_matches = [j for j in matched if j["id"] not in seen_ids]
 
     alert_sent = False
     if new_matches:
@@ -69,8 +103,8 @@ def run_pipeline(seen_path=None, near_miss_path=None):
         alert_sent = True
 
         for job in new_matches:
-            seen_urls.add(job["url"])
-        _save_json(seen_path, sorted(seen_urls))
+            seen_ids.add(job["id"])
+        _save_json(seen_path, sorted(seen_ids))
     else:
         print("[indigo] No new matches — nothing to alert")
 
@@ -86,6 +120,7 @@ def run_pipeline(seen_path=None, near_miss_path=None):
     print()
     print("[indigo] ── Run summary ──────────────────────────────")
     print(f"[indigo]  Total fetched     : {total_fetched}  (page 1 of ~3; pagination unavailable)")
+    print(f"[indigo]  Aviation pre-filter: {len(aviation_jobs)} passed, {skipped} dropped")
     print(f"[indigo]  Passed Gate 1     : {g1_pass}  (title family match)")
     print(f"[indigo]  Passed Gate 3     : {g3_pass}  (exclude filter clear)")
     print(f"[indigo]  Matched           : {total_matched}  (kept; no description gate — see fetcher)")

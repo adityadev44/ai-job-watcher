@@ -219,5 +219,45 @@ class TestFetchJobDescription(unittest.TestCase):
             mock_pw.assert_not_called()
 
 
+# ── run_indigo aviation pre-filter ───────────────────────────────────────────
+
+import src.run_indigo as run_indigo
+
+
+class TestAviationPreFilter(unittest.TestCase):
+
+    def test_aviation_terms_pass(self):
+        for title in [
+            "Manager - Engine Shop",
+            "Quality Assurance Engineer",
+            "Senior Engineer - Aircraft Maintenance",
+            "Technical Services Manager",
+            "MRO Production Manager",
+            "Director - Powerplant Overhaul",
+        ]:
+            self.assertTrue(run_indigo._is_aviation_title(title), f"should pass: {title}")
+
+    def test_non_aviation_titles_dropped(self):
+        for title in [
+            "Consultant - Menu Design",
+            "Assistant Manager - Administration",
+            "Manager - Transformation and Analytics",
+            "Senior Manager - Financial services (Loyalty)",
+            "Assistant Manager - Data Analytics",
+            "Now Hiring - Pride (LGBT)",
+        ]:
+            self.assertFalse(run_indigo._is_aviation_title(title), f"should drop: {title}")
+
+    def test_case_insensitive(self):
+        self.assertTrue(run_indigo._is_aviation_title("AIRCRAFT MAINTENANCE ENGINEER"))
+        self.assertTrue(run_indigo._is_aviation_title("mro operations"))
+
+    def test_quality_passes(self):
+        self.assertTrue(run_indigo._is_aviation_title("Quality Manager"))
+
+    def test_safety_passes(self):
+        self.assertTrue(run_indigo._is_aviation_title("Safety Manager"))
+
+
 if __name__ == "__main__":
     unittest.main()
