@@ -200,6 +200,13 @@ rtx_search:
   locations:
     - "all"
 
+# IndiGo uses SAP SuccessFactors VERP/JUIC/DWR. No keyword search config is
+# needed — the fetcher grabs all available listings (page 1, newest 10) in
+# each run via Playwright and passes them straight to Gate 1 title matching.
+indigo_search:
+  # Placeholder — no server-side keyword filtering available.
+  note: "Fetcher uses Playwright DWR; all 10 newest jobs returned per run."
+
 notifications:
   email:
     recipient: ""

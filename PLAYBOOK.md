@@ -578,6 +578,96 @@ def _parse_posting_date(ts_ms):
 
 ---
 
+## SAP SuccessFactors VERP/JUIC/DWR Notes (IndiGo confirmed)
+
+### Detection
+
+IndiGo's career portal lives at `career-in10.hr.cloud.sap/careers?company=interglobe`.
+The `career-in10` subdomain is the SAP SuccessFactors VERP (Virtual External Recruiting
+Platform) tier. The search widget uses **JUIC** (SAP's JavaScript UI Component framework)
+on the front end and **DWR** (Direct Web Remoting, a Java AJAX framework) on the back end.
+
+Fingerprints to recognise it:
+- URL contains `career-in10.hr.cloud.sap` (or similar `career-XX.hr.cloud.sap`)
+- Page JS has `window.careerJobSearchController` object
+- Network tab shows POST requests to `…/xi/ajax/remoting/call/plaincall/careerJobSearchControllerProxy.METHOD.dwr`
+- DWR responses start with `throw 'allowScriptTagRemoting is false.';` (anti-CSRF header)
+- Response body uses JS variable assignment format: `sN.field=value; sN[idx]=sM;`
+
+### DWR search method
+
+`window.careerJobSearchController.searchJobs(null)` — callable via `page.evaluate()` in
+Playwright. Returns 10 jobs per call (page 1 only, newest first).
+
+Total jobs available at IndiGo: ~30 (confirmed via `s2.postingCount="30"` in
+`getInitialJobSearchData` DWR response). Only page 1 is reachable from the widget page.
+
+### Pagination limitation
+
+**Pagination is not accessible from the search widget page.** The paginator lives on a
+separate URL (`/career?career_ns=job_listing_summary&company=interglobe&...`) that requires
+a server-side login session. The `searchJobs(N)` method throws `SFDWRException` when called
+with any argument other than `null`. `updateUserSelectedValues` followed by `searchJobs`
+does not advance the page. Direct HTTP DWR calls with captured cookies return 0 results
+(DWR `scriptSessionId` is session-scoped and cannot be replayed outside the browser engine).
+
+**Mitigation**: Run every 3 h. New postings always land on page 1. Any engineering role
+posted at IndiGo will surface within 24 h of posting.
+
+### Fetcher approach
+
+Use **Playwright + Firefox** (headless):
+1. `page.goto("https://career-in10.hr.cloud.sap/careers?company=interglobe")`
+2. Wait 6 s for JUIC initialisation
+3. `page.evaluate("() => { window.careerJobSearchController.searchJobs(null); }")`
+4. Intercept `careerJobSearchControllerProxy.searchJobs.dwr` response via `page.on("response", …)`
+5. Parse DWR variable format with regex
+
+**Do not** use `curl_cffi` for the main fetch — DWR `scriptSessionId` is browser-bound.
+
+### DWR response parsing
+
+Key structures in the `searchJobs` response:
+
+```
+s1.applyWithLinkedInEnabled=false;          ← marks the root results object
+s1.detailURLPrefix="/career?career%5fns=job%5flisting&…&career_job_req_id=";
+s1.postings=s2;
+s2[0]=s3; s2[1]=s4; …                       ← postings array
+s3.id=9759; s3.title="…"; s3.postingDate="10/06/2026";
+s3.jobReqSecKey="<100+ digit number>";
+s3.otherValues=s5;
+s5[0]=s6;                                   ← otherValues array
+s6[0]=s7;                                   ← field objects array
+s7.fieldId="location_obj";
+s7.shortVal='["Location",1,"Gurgaon"]';     ← city is last element
+```
+
+Date format in DWR: `DD/MM/YYYY` → convert to `YYYY-MM-DD`.
+
+### Job detail / description
+
+Job detail URLs use `career_ns=job_listing` with a `career_job_req_id=<jobReqSecKey>`.
+The `jobReqSecKey` is a session-scoped encrypted token — it changes between DWR sessions.
+The detail page uses SAP UI5 (not JUIC) and renders asynchronously; it does **not** load
+in headless Firefox (`page_content` shows "This job cannot be viewed at the moment").
+`curl_cffi` with or without Playwright session cookies also returns the same error.
+
+`fetch_job_description()` returns `("", "")`. The matcher's `[kept-no-desc]` path
+(matcher.py line 83: `len(description) < 100 → kept unconditionally`) handles this.
+
+### Key VERP/JUIC/DWR quirks
+
+| Issue | Root cause | Fix |
+|---|---|---|
+| `searchJobs(2)` → SFDWRException | Method signature expects null, not page number | Pass `null` always; pagination not exposed |
+| Direct HTTP DWR POST returns 0 jobs | `scriptSessionId` is registered by browser's DWR engine init; cannot be replayed | Must use Playwright for the fetch |
+| `curl_cffi` description fetch → "cannot be viewed" | `jobReqSecKey` is session-scoped; SAP UI5 detail page doesn't render headlessly | Return ("", "") from `fetch_job_description` |
+| Keyword filtering via JUIC events has no effect | JUIC `_onChange` + `updateUserSelectedValues(null, null)` doesn't persist to server-side session | No keyword filtering available; all 10 jobs returned per call |
+| Pressing Enter on keyword input → only `getPostingCount.dwr` fires | JUIC `_onEnter` handler calls getPostingCount, not searchJobs | Cannot use keyboard input to trigger filtered search |
+
+---
+
 ## SAP SuccessFactors Job2Web (J2W) Notes (GMR Group confirmed)
 
 ### Detection
@@ -715,7 +805,7 @@ a summary email before clearing the old entries.
 | ✅ 2 | Sanad (Abu Dhabi) | Sniperhire (not Taleo — careers.sanad.ae, NOT sanad.aero) | Best single Middle East target |
 | ✅ 2 | Emirates Engineering | Avature (custom REST API) | Highest Middle East prestige |
 | ✅ 2 | RTX / Pratt & Whitney | Phenom People (not Workday — apply button links to Workday but search is Phenom; curl_cffi required for Akamai) | PW4000 match, Eagle Services Singapore |
-| 3 | IndiGo | iCIMS/Custom | Largest India fleet, heavy engine workload |
+| ✅ 3 | IndiGo | SAP SuccessFactors VERP/JUIC/DWR (Playwright; page 1 of 3 only — pagination unavailable) | Largest India fleet, heavy engine workload |
 | 3 | Air India / AIESL | Custom | Incumbent employer network |
 | ✅ 3 | GMR Aero Technic | SAP SuccessFactors J2W (HTML scraping) | Hyderabad, ramping |
 | 3 | Akasa Air | Small/LinkedIn | Low volume — assess before building |
