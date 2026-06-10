@@ -160,6 +160,26 @@ emirates_search:
   locations:
     - "all"
 
+gmr_search:
+  max_listings: 200
+  inter_page_delay: 0.5
+  keywords:
+    - "engine overhaul"
+    - "MRO"
+    - "shop manager"
+    - "powerplant"
+    - "quality manager"
+    - "production manager"
+    - "engine maintenance"
+    - "Part 145"
+    - "technical services"
+    - "maintenance manager"
+    - "base maintenance"
+    - "engine shop"
+    - "aircraft maintenance"
+  locations:
+    - "all"
+
 notifications:
   email:
     recipient: ""
