@@ -42,9 +42,9 @@ def _date_sortable(job: dict) -> str:
         m = re.search(r"(\d{4}-\d{2}-\d{2})", val)
         if m:
             return m.group(1)
-        m = re.search(r"(\d{2})/(\d{2})/(\d{4})", val)   # DD/MM/YYYY (Safran)
+        m = re.search(r"(\d{1,2})/(\d{1,2})/(\d{4})", val)   # D[D]/M[M]/YYYY (Safran)
         if m:
-            return f"{m.group(3)}-{m.group(2)}-{m.group(1)}"
+            return f"{m.group(3)}-{m.group(2).zfill(2)}-{m.group(1).zfill(2)}"
     return "0000-00-00"
 
 
@@ -138,16 +138,30 @@ def send_email(subject, body, recipient=None, gmail_user=None, gmail_password=No
 # High-level helpers
 # ---------------------------------------------------------------------------
 
+def _display_date(job: dict) -> str:
+    """Return a YYYY-MM-DD string for display, falling back to the raw value or 'N/A'."""
+    d = _date_sortable(job)
+    if d != "0000-00-00":
+        return d
+    for key in ("posting_date", "date", "postedDate", "dateCreated"):
+        val = str(job.get(key, "") or "").strip()
+        if val:
+            return val
+    return "N/A"
+
+
 def format_job_message(job):
     """Format a single matched job into a notification string."""
     title = job.get("title", "N/A")
     company = job.get("company", "N/A")
     location = job.get("location", "N/A")
     url = job.get("url", "N/A")
+    posted = _display_date(job)
     return (
         f"<b>{title}</b>\n"
         f"Company : {company}\n"
         f"Location: {location}\n"
+        f"Posted  : {posted}\n"
         f"URL     : {url}"
     )
 
