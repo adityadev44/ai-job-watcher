@@ -93,6 +93,27 @@ safran_search:
   locations:
     - "all"
 
+ge_search:
+  max_listings: 200
+  inter_page_delay: 0.2
+  keywords:
+    - "engine overhaul"
+    - "MRO"
+    - "shop manager"
+    - "powerplant"
+    - "production manager"
+    - "quality manager"
+    - "technical services"
+    - "engine maintenance"
+    - "Part 145"
+    - "GE90"
+    - "GEnx"
+    - "LEAP"
+    - "CF6"
+    - "shop operations"
+  locations:
+    - "all"
+
 notifications:
   email:
     recipient: ""

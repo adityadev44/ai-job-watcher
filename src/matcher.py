@@ -68,7 +68,10 @@ def filter_jobs(jobs, fetcher, config=None):
         fetch_failed = False
         try:
             raw = fetcher.fetch_job_description(url)
-            description = raw if raw else ""
+            if isinstance(raw, tuple):
+                description = raw[0] if raw[0] else ""
+            else:
+                description = raw if raw else ""
         except fetcher.RateLimitError:
             raise
         except Exception:
