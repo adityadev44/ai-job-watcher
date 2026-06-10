@@ -114,6 +114,52 @@ ge_search:
   locations:
     - "all"
 
+sanad_search:
+  max_listings: 200
+  inter_page_delay: 0.3
+  keywords:
+    - "engine overhaul"
+    - "MRO"
+    - "shop manager"
+    - "powerplant"
+    - "quality manager"
+    - "production manager"
+    - "engine maintenance"
+    - "Part 145"
+    - "GEnx"
+    - "CFM56"
+    - "Trent"
+    - "shop operations"
+    - "technical services"
+    - "maintenance manager"
+  locations:
+    - "all"
+
+emirates_search:
+  max_listings: 200
+  inter_page_delay: 0.3
+  keywords:
+    - "engine overhaul"
+    - "MRO"
+    - "shop manager"
+    - "powerplant"
+    - "quality manager"
+    - "production manager"
+    - "engine maintenance"
+    - "Part 145"
+    - "GE90"
+    - "GEnx"
+    - "Trent"
+    - "CFM56"
+    - "LEAP"
+    - "shop operations"
+    - "technical services"
+    - "maintenance manager"
+    - "base maintenance"
+    - "engine shop"
+  locations:
+    - "all"
+
 notifications:
   email:
     recipient: ""

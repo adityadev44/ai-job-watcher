@@ -138,6 +138,8 @@ when next touched. Until then, do not rely on the str form in new code.
 |---|---|---|---|---|
 | Safran | Custom ASP.NET | HTML scraping (requests + BeautifulSoup) | `run_safran.py` | GET `/job/list-of-all-jobs.aspx?LCID=1033&Keywords={kw}&mode=list&page={n}` — fully stateless, no session. Description at `<div id="contenu-ficheoffre">`. Company name in `<meta name="Description">`. Newest-first by default. |
 | GE Aerospace | Phenom People | JSON API (requests + BeautifulSoup) | `run_ge.py` | `refNum=GAOGAYGLOBAL`. Session bootstrap: GET `/global/en/search-results` for CSRF token + session cookie, then POST `/widgets` with `ddoKey:"refineSearch"`. Keywords ignored server-side — all ~570 jobs returned regardless; filter locally. Description via POST `/widgets` with `ddoKey:"jobDetail"` + `jobId`. Browseable URL: `/global/en/job/{reqId}`. `fetch_job_description` returns `(str, str)` tuple. |
+| Sanad (Aerotech + Capital) | Sniperhire (custom ASP.NET Core Razor Pages) | HTML scraping (requests + BeautifulSoup) | `run_sanad.py` | `careers.sanad.ae` — NOT sanad.aero (that's an unrelated Libyan site). Pagination: `/?pg=0`, `/?pg=1`, ... (0-indexed); stop when page returns no vacancies. 10 jobs/page, ~15–30 total. No keyword filtering — fetch all, filter locally. Job cards: `div.row.jobdetail.mb-4.ms-0`; fields in `div.searchcaption` label/value pairs. Description: all `div.sectn` elements on `/vacancy/{id}`. Closing date only (no posting date) — format `DD-Mon-YYYY`, converted to `YYYY-MM-DD`. Covers both Sanad Aerotech (engine MRO) and Sanad Capital (leasing) — Gate 2 handles domain filtering. |
+| Emirates Engineering | Avature (custom REST API wrapper) | JSON REST API (requests + BeautifulSoup) | `run_emirates.py` | `GET https://www.emiratesgroupcareers.com/api/v1/jobs?showAll=true` returns all ~79 active jobs across all Emirates Group brands (Emirates, Emirates Engineering, dnata, etc.) with **inline full HTML descriptions** in a single call — no pagination, no keyword iteration. `reqid` field is the job ID (numeric strings like `"18738"`). URL pattern: `https://external.emiratesgroupcareers.com/en_US/careersmarketplace/JobDetails?jobId={reqid}`. `postingdate` is a millisecond Unix timestamp — convert with `datetime.fromtimestamp(ts/1000, tz=utc)`. Descriptions cached in `_desc_cache` during `fetch_jobs()` so `fetch_job_description()` needs zero extra HTTP calls. Covers all brands — Gate 2 filters to engine/MRO roles. Not Phenom People despite careers.geaerospace.com being Phenom — Emirates uses a completely different ATS. |
 
 ---
 
@@ -497,8 +499,8 @@ a summary email before clearing the old entries.
 |---|---|---|---|
 | ✅ 1 | Safran | Custom ASP.NET | Hyderabad SAESI ramping now |
 | ✅ 2 | GE Aerospace | Phenom People (not Workday — apply button misleads) | Native engine match (GE90/GEnx CRS) |
-| 2 | Sanad (Abu Dhabi) | Custom/Taleo | Best single Middle East target |
-| 2 | Emirates Engineering | Taleo/Custom | Highest Middle East prestige |
+| ✅ 2 | Sanad (Abu Dhabi) | Sniperhire (not Taleo — careers.sanad.ae, NOT sanad.aero) | Best single Middle East target |
+| ✅ 2 | Emirates Engineering | Avature (custom REST API) | Highest Middle East prestige |
 | 2 | RTX / Pratt & Whitney | Workday | PW4000 match, Eagle Services Singapore |
 | 3 | IndiGo | iCIMS/Custom | Largest India fleet, heavy engine workload |
 | 3 | Air India / AIESL | Custom | Incumbent employer network |

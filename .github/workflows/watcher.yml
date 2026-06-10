@@ -56,17 +56,28 @@ jobs:
           pid1=$!
           python -u -m src.run_ge &
           pid2=$!
+          python -u -m src.run_sanad &
+          pid3=$!
+          python -u -m src.run_emirates &
+          pid4=$!
           wait $pid1
           s1=$?
           wait $pid2
           s2=$?
-          exit $((s1 | s2))
+          wait $pid3
+          s3=$?
+          wait $pid4
+          s4=$?
+          exit $((s1 | s2 | s3 | s4))
 
       - name: Save state to repo
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add seen_jobs_safran.json near_misses_safran.json seen_jobs_ge.json near_misses_ge.json
+          git add seen_jobs_safran.json near_misses_safran.json \
+                  seen_jobs_ge.json near_misses_ge.json \
+                  seen_jobs_sanad.json near_misses_sanad.json \
+                  seen_jobs_emirates.json near_misses_emirates.json
           if git diff --staged --quiet; then
             echo "No changes to commit — state unchanged"
           else
