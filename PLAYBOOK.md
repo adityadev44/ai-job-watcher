@@ -189,6 +189,7 @@ If the ATS provides a millisecond Unix timestamp, convert: `datetime.fromtimesta
 | Emirates Engineering | Avature (custom REST API wrapper) | JSON REST API (requests + BeautifulSoup) | `run_emirates.py` | `GET https://www.emiratesgroupcareers.com/api/v1/jobs?showAll=true` returns all ~79 active jobs across all Emirates Group brands (Emirates, Emirates Engineering, dnata, etc.) with **inline full HTML descriptions** in a single call — no pagination, no keyword iteration. `reqid` field is the job ID (numeric strings like `"18738"`). Browseable URL taken from the `redirectionurl` field in the API response: `https://external.emiratesgroupcareers.com/careersmarketplace/ApplicationMethods?jobId={reqid}&source=CareerWebsite` — **not** `JobDetails` (404) or any constructed guess. `postingdate` is a millisecond Unix timestamp — convert with `datetime.fromtimestamp(ts/1000, tz=utc)`. Descriptions cached in `_desc_cache` during `fetch_jobs()` so `fetch_job_description()` needs zero extra HTTP calls. Covers all brands — Gate 2 filters to engine/MRO roles. Not Phenom People — Emirates uses Avature; GE uses Phenom People; the two look similar from the outside. |
 | GMR Aero Technic | SAP SuccessFactors Job2Web (J2W) | HTML scraping (requests + BeautifulSoup) | `run_gmr.py` | `GET https://careers.gmrgroup.in/search/?q=&sortColumn=referencedate&sortDirection=desc&start=N`. Each row: `tr.data-row`; title+href from `a.jobTitle-link` (relative `/job/{slug}/{id}/`); location from `span.jobLocation` — contains internal codes like `"Goa, GMR AA - Goa (PG11AA06), IN"` — clean with `re.sub(r'\s*\([^)]+\).*$', '', parts[0])` + append `, India`; date from `span.jobDate` format `"D Mon YYYY"`. Total count from `aria-label="Results 1 to N of T"` regex. Company always `"GMR Group"` (portal covers all GMR entities; Gate 2 handles domain filtering). Description at `span.jobdescription`; posting date in detail page text as `"Date:DD Mon YYYY"` regex. Currently ~5 non-MRO jobs — 0 engine matches expected until MRO hiring ramps. |
 | RTX / Pratt & Whitney | Phenom People (same ATS as GE Aerospace) | JSON widget API (curl_cffi + BeautifulSoup) | `run_rtx.py` | `POST https://careers.rtx.com/widgets` with `ddoKey:"refineSearch"`, `refNum:"RAYTGLOBAL"`. **Akamai blocks search-results page** — bootstrap from `/global/en/pratt-whitney` (landing page, returns 200). curl_cffi with `impersonate="chrome120"` required for TLS fingerprint; plain `requests` gets 403. API returns oldest-first (no working sort option) — paginate from `totalHits - max_listings` to get newest N jobs. ~4200 total RTX jobs (all divisions: P&W + Collins + Raytheon). Company name from `businessUnit` field in listing (not `company`/`companyName` — always null). `pageId="page2"`, `pageName="category-landing-template"` from landing page phApp config. Browseable URL: `/global/en/job/{reqId}`. All RTX divisions returned; Gate 2 filters to engine/MRO roles. |
+| IndiGo | SAP SuccessFactors VERP/JUIC/DWR | Playwright + Firefox (DWR interception) | `run_indigo.py` | `career-in10.hr.cloud.sap/careers?company=interglobe`. Call `window.careerJobSearchController.searchJobs(null)` via `page.evaluate()`, intercept `searchJobs.dwr` response. **Only 10/30 jobs accessible per run** — paginator lives on a separate login-required URL. `jobReqSecKey` is session-scoped — use numeric `id` field for URL and deduplication. Descriptions unavailable (SAP UI5 detail page doesn't render headlessly) — `fetch_job_description` returns `("","")`. **Pre-filter required:** IndiGo hires across all functions; Gate 1 alone passes admin/finance/analytics titles. `run_indigo.py` drops any job whose title contains no aviation-domain term before handing to the 3-gate matcher. Deduplicates by `id` (not `url`), stored in `seen_jobs_indigo.json`. |
 
 ---
 
@@ -197,6 +198,21 @@ If the ATS provides a millisecond Unix timestamp, convert: `datetime.fromtimesta
 > **Every company is different.** These steps capture what worked across past integrations.
 > Read what the new system actually does before reaching for copy-paste. The goal is accurate
 > alerts — the playbook saves time, it doesn't constrain good judgment.
+
+### Step 0 — Assess feasibility before writing a line of code (5 min)
+
+Three questions that determine your fetch strategy and your alert quality. Answer them from the browser before starting any probing.
+
+**1. Can you get all jobs without login?**
+On the public careers page, count the total jobs shown and check if there's a paginator. If the paginator or full listing requires a login to access (common on SAP SuccessFactors VERP portals), you are capped at whatever the first page shows. Accept that ceiling upfront — do not spend hours trying to circumvent it. The daily-run cadence compensates: new jobs always land on page 1.
+
+**2. Is the job URL stable across sessions?**
+Open the same job in two separate browser sessions (incognito + normal) and compare the URLs. If the URL contains a long random-looking token (80+ digits, a JWT, a hash) it is likely session-scoped and will change every time. In that case: identify the stable numeric requisition ID in the page JS or API response, and use that for both the URL and the deduplication key — not the session token.
+
+**3. Can you get descriptions without login?**
+Click a job to open its detail page. If the page loads the description without prompting for login, `fetch_job_description` can work. If the detail page redirects to login or renders as "job not found" in a headless browser, descriptions are inaccessible — `fetch_job_description` must return `("","")`. In this case: check how domain-diverse the company's hiring is. A pure MRO shop (Safran, Sanad) is fine with Gate 1 alone. A full-service airline or conglomerate (IndiGo, GMR) hires in finance, HR, IT — Gate 1's broad terms ("manager", "consultant") will catch non-aviation roles. **Add a source-specific aviation pre-filter in `run_<company>.py`** that requires at least one aviation-domain term in the title before handing off to the 3-gate matcher.
+
+---
 
 ### Step 1 — Identify the ATS (10–20 min)
 
@@ -217,6 +233,7 @@ Open the careers page, search for a role, open DevTools → Network tab → XHR/
 | **Lever** | `lever.co` | Public REST API |
 | **Taleo** | `taleo.net` | HTML scraping usually required |
 | **SAP SuccessFactors Job2Web (J2W)** | `successfactors.com` or company-hosted domain | HTML scraping — J2W has no JSON API; search results are an HTML table (`tr.data-row`). See J2W Notes below. Do not assume the full SuccessFactors REST API is available — many companies only deploy the J2W front-end. |
+| **SAP SuccessFactors VERP/JUIC/DWR** | `career-XX.hr.cloud.sap` in URL; `.dwr` XHR calls; `window.careerJobSearchController` in page JS | Playwright + Firefox required. Call `page.evaluate("() => { window.careerJobSearchController.searchJobs(null); }")` and intercept the `searchJobs.dwr` response. Parse the DWR variable-assignment format (`sN.field=value; sN[idx]=sM;`). See VERP/JUIC/DWR Notes below. **jobReqSecKey in the URL is session-scoped** — use the numeric `id` field for dedup and URL construction, not the seckey. |
 | **Avature** | `external.<company>.com` subdomain; `api/v1/jobs` in XHR | REST API — single call returns all jobs with inline descriptions; look for `redirectionurl` field for the browseable URL |
 | **Sniperhire** | `/vacancy/{id}` URL pattern; `.sectn` divs in job detail HTML | HTML scraping; pagination via `/?pg=N` (0-indexed) |
 | **Custom** | `.aspx` URLs, ViewState tokens in HTML | HTML scraping with BeautifulSoup/lxml |
@@ -286,6 +303,34 @@ source="Safran"                    →  source="<Company Display Name>"
 ```
 
 Always wrap `__main__` in try/except — a crash here must not affect parallel pipelines.
+
+**If descriptions are unavailable AND the company is domain-diverse** (full-service airline, conglomerate, airport group), add an aviation pre-filter before `filter_jobs()`:
+```python
+_AVIATION_TITLE_TERMS = [
+    "engineer", "engineering", "aircraft", "engine", "powerplant",
+    "maintenance", "airworthiness", "mro", "overhaul", "shop",
+    "technical services", "technical manager", "quality", "safety",
+    "compliance", "instructor", "ame", "dgca", "aviation", "propulsion",
+]
+
+def _is_aviation_title(title: str) -> bool:
+    t = title.lower()
+    return any(term in t for term in _AVIATION_TITLE_TERMS)
+
+# In run_pipeline(), before filter_jobs():
+aviation_jobs = [j for j in raw_jobs if _is_aviation_title(j["title"])]
+```
+This is the right fix when Gate 2 is bypassed — tighten Gate 1 at source level rather than adding more generic `exclude_terms` globally (which would break other pipelines).
+
+**If the URL is session-scoped** (see Step 0 question 2), deduplicate by `j["id"]` instead of `j["url"]`:
+```python
+seen_ids = set(_load_json(seen_path))
+new_matches = [j for j in matched if j["id"] not in seen_ids]
+# ...
+for job in new_matches:
+    seen_ids.add(job["id"])
+_save_json(seen_path, sorted(seen_ids))
+```
 
 ### Step 5 — Add to `config.yaml`
 
