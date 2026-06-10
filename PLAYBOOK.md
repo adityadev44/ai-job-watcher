@@ -4,6 +4,22 @@ Reference for maintaining this project and adding new company pipelines.
 
 ---
 
+## How to Read This Playbook
+
+**This playbook is instructional guidance, not a rigid recipe.**
+
+Every company is different. Every ATS vendor deploys their product differently. The patterns documented here reflect what worked for the companies already integrated — they are a starting point, not a guarantee. When you encounter something that contradicts the playbook, trust what you observe over what is written here.
+
+When adding a new company: read the playbook for context, then investigate the actual system with fresh eyes. Probe the API yourself. Test URLs in a real browser. Read the HTML. The goal is a working pipeline that catches real senior MRO roles — the playbook saves time getting there, it doesn't replace judgment.
+
+**What "following the playbook" means in practice:**
+- Use the patterns as hypotheses to test, not instructions to execute blindly
+- When something doesn't work the way a section predicts, that's new information — update the playbook
+- The companies in the roadmap all have ATS guesses next to them; treat those as starting guesses, not facts
+- If a step produces unexpected results (wrong URL, empty data, 404, wrong job count), stop and investigate before proceeding
+
+---
+
 ## What This System Does
 
 Monitors job postings from global aerospace and MRO companies every 3 hours via GitHub Actions.
@@ -115,9 +131,17 @@ near_misses_<company>.json        ← near-miss accumulator for weekly digest (t
 class RateLimitError(Exception): ...
 
 def fetch_jobs() -> list[dict]:
-    # Returns list of dicts, each with at minimum:
-    # {"title": str, "url": str, "location": str, "company": str, "source": str}
-    # Optional: "id", "posting_date", "date" — used for alert sorting
+    # Returns list of dicts. Required fields:
+    # {
+    #   "title":        str,          # job title as shown on the careers page
+    #   "url":          str,          # BROWSEABLE URL — must open a real job page in Chrome (see below)
+    #   "location":     str,          # human-readable city/country
+    #   "company":      str,          # brand/division name (not the parent group)
+    #   "source":       str,          # short fetcher name, e.g. "emirates", "safran"
+    #   "posting_date": str,          # YYYY-MM-DD or ISO 8601 — shown in every alert
+    # }
+    # Optional: "id" (dedup key if url isn't stable)
+    # "date" is the legacy key used by Safran — new fetchers must use "posting_date"
 
 def fetch_job_description(application_url) -> str | tuple[str, str]:
     # Canonical (new fetchers):  return (description_text, posting_date_string)
@@ -130,6 +154,29 @@ def fetch_job_description(application_url) -> str | tuple[str, str]:
 should always return the tuple. Safran is the only legacy `str` returner and will be updated
 when next touched. Until then, do not rely on the str form in new code.
 
+**Browseable URL rule (enforced, not optional):**
+The `url` field goes directly into Telegram and email alerts. It must open a human-readable
+job page when clicked in Chrome. API endpoints that return JSON, 404, or redirect to a login
+wall are not acceptable. Before shipping a new fetcher, verify the URL format with a real
+HTTP GET — check the response is HTML with real content, not a backend endpoint.
+
+Many ATS APIs return two different URLs for the same job:
+- An **application URL** (used by the ATS tracking system — often a Workday or internal link)
+- A **browseable URL** (the job listing page a candidate would share or bookmark)
+
+These are different. The API response often has a dedicated field for the browseable URL
+(`redirectionurl`, `jobUrl`, `applyUrl`, `externalUrl` — name varies by ATS). Always check
+the full API response for such a field before constructing a URL yourself. If the API provides
+a canonical URL, use it — don't guess the path.
+
+**Posting date rule:**
+Every alert shows `Posted  : YYYY-MM-DD`. The `posting_date` field is required in every job
+dict. `notifier._display_date()` normalises these formats automatically:
+- YYYY-MM-DD (Sanad, Emirates) — used as-is
+- ISO 8601 `2026-05-01T00:00:00.000+0000` (GE Aerospace) — date portion extracted
+- D/M/YYYY or DD/MM/YYYY (Safran) — converted to YYYY-MM-DD
+If the ATS provides a millisecond Unix timestamp, convert: `datetime.fromtimestamp(ts/1000, tz=utc).strftime("%Y-%m-%d")`.
+
 ---
 
 ## Current Companies
@@ -139,7 +186,7 @@ when next touched. Until then, do not rely on the str form in new code.
 | Safran | Custom ASP.NET | HTML scraping (requests + BeautifulSoup) | `run_safran.py` | GET `/job/list-of-all-jobs.aspx?LCID=1033&Keywords={kw}&mode=list&page={n}` — fully stateless, no session. Description at `<div id="contenu-ficheoffre">`. Company name in `<meta name="Description">`. Newest-first by default. |
 | GE Aerospace | Phenom People | JSON API (requests + BeautifulSoup) | `run_ge.py` | `refNum=GAOGAYGLOBAL`. Session bootstrap: GET `/global/en/search-results` for CSRF token + session cookie, then POST `/widgets` with `ddoKey:"refineSearch"`. Keywords ignored server-side — all ~570 jobs returned regardless; filter locally. Description via POST `/widgets` with `ddoKey:"jobDetail"` + `jobId`. Browseable URL: `/global/en/job/{reqId}`. `fetch_job_description` returns `(str, str)` tuple. |
 | Sanad (Aerotech + Capital) | Sniperhire (custom ASP.NET Core Razor Pages) | HTML scraping (requests + BeautifulSoup) | `run_sanad.py` | `careers.sanad.ae` — NOT sanad.aero (that's an unrelated Libyan site). Pagination: `/?pg=0`, `/?pg=1`, ... (0-indexed); stop when page returns no vacancies. 10 jobs/page, ~15–30 total. No keyword filtering — fetch all, filter locally. Job cards: `div.row.jobdetail.mb-4.ms-0`; fields in `div.searchcaption` label/value pairs. Description: all `div.sectn` elements on `/vacancy/{id}`. Closing date only (no posting date) — format `DD-Mon-YYYY`, converted to `YYYY-MM-DD`. Covers both Sanad Aerotech (engine MRO) and Sanad Capital (leasing) — Gate 2 handles domain filtering. |
-| Emirates Engineering | Avature (custom REST API wrapper) | JSON REST API (requests + BeautifulSoup) | `run_emirates.py` | `GET https://www.emiratesgroupcareers.com/api/v1/jobs?showAll=true` returns all ~79 active jobs across all Emirates Group brands (Emirates, Emirates Engineering, dnata, etc.) with **inline full HTML descriptions** in a single call — no pagination, no keyword iteration. `reqid` field is the job ID (numeric strings like `"18738"`). URL pattern: `https://external.emiratesgroupcareers.com/en_US/careersmarketplace/JobDetails?jobId={reqid}`. `postingdate` is a millisecond Unix timestamp — convert with `datetime.fromtimestamp(ts/1000, tz=utc)`. Descriptions cached in `_desc_cache` during `fetch_jobs()` so `fetch_job_description()` needs zero extra HTTP calls. Covers all brands — Gate 2 filters to engine/MRO roles. Not Phenom People despite careers.geaerospace.com being Phenom — Emirates uses a completely different ATS. |
+| Emirates Engineering | Avature (custom REST API wrapper) | JSON REST API (requests + BeautifulSoup) | `run_emirates.py` | `GET https://www.emiratesgroupcareers.com/api/v1/jobs?showAll=true` returns all ~79 active jobs across all Emirates Group brands (Emirates, Emirates Engineering, dnata, etc.) with **inline full HTML descriptions** in a single call — no pagination, no keyword iteration. `reqid` field is the job ID (numeric strings like `"18738"`). Browseable URL taken from the `redirectionurl` field in the API response: `https://external.emiratesgroupcareers.com/careersmarketplace/ApplicationMethods?jobId={reqid}&source=CareerWebsite` — **not** `JobDetails` (404) or any constructed guess. `postingdate` is a millisecond Unix timestamp — convert with `datetime.fromtimestamp(ts/1000, tz=utc)`. Descriptions cached in `_desc_cache` during `fetch_jobs()` so `fetch_job_description()` needs zero extra HTTP calls. Covers all brands — Gate 2 filters to engine/MRO roles. Not Phenom People — Emirates uses Avature; GE uses Phenom People; the two look similar from the outside. |
 
 ---
 
@@ -168,16 +215,46 @@ Open the careers page, search for a role, open DevTools → Network tab → XHR/
 | **Lever** | `lever.co` | Public REST API |
 | **Taleo** | `taleo.net` | HTML scraping usually required |
 | **SAP SuccessFactors** | `successfactors.com` | REST API, may need session token |
+| **Avature** | `external.<company>.com` subdomain; `api/v1/jobs` in XHR | REST API — single call returns all jobs with inline descriptions; look for `redirectionurl` field for the browseable URL |
+| **Sniperhire** | `/vacancy/{id}` URL pattern; `.sectn` divs in job detail HTML | HTML scraping; pagination via `/?pg=N` (0-indexed) |
 | **Custom** | `.aspx` URLs, ViewState tokens in HTML | HTML scraping with BeautifulSoup/lxml |
 
 ### Step 2 — Map the response structure
 
-Find: job ID, title, location, posting date, application URL.
-Watch for:
-- Relative dates ("Posted 3 Days Ago") — convert to YYYY-MM-DD
-- Abbreviated titles ("Mgr" not "Manager", "Engr" not "Engineer") — add to `title_family` in config
-- JS-rendered descriptions — plain requests returns empty; use Playwright or a JSON detail API
-- Company name — often only on detail page, not list page (cache during description fetch, zero extra requests)
+Find and verify each of the following before writing any code:
+
+**Job ID and deduplication key**
+- Identify the stable unique ID for each job (reqid, jobId, reqNo, etc.)
+- Confirm it doesn't change between fetches — some ATS systems rotate IDs
+
+**Title, location, company**
+- Check for abbreviated titles ("Mgr", "Engr", "Sr.") — add expanded forms to `title_family` in config if needed
+- Company/brand field: often the parent group on the list page, but the actual division on the detail page. Fetch the right one.
+
+**Posting date**
+- Find the date field and note its format: YYYY-MM-DD, ISO 8601, millisecond Unix timestamp, relative string ("Posted 3 days ago"), or site-specific (DD/MM/YYYY, D/M/YYYY)
+- If it's a millisecond Unix timestamp: `datetime.fromtimestamp(ts/1000, tz=utc).strftime("%Y-%m-%d")`
+- If it's a relative string: compute approximate absolute date from today's date
+- Store as `posting_date` in the job dict — `notifier._display_date()` handles all the formats above
+
+**Browseable URL — this step is mandatory, not optional**
+The URL you put in the job dict goes directly into alerts. Candidates click it. It must open
+a real job listing page in Chrome. Before writing the fetcher:
+1. Scan the full API response for URL-like fields: `redirectionurl`, `jobUrl`, `applyUrl`, `externalUrl`, `jobDetailUrl`, `slug`, `externalPath`. Try the one that looks most like a browseable link.
+2. If the API provides a canonical URL in the response, use it directly — don't construct your own.
+3. If you must construct a URL, look at the real careers page in DevTools to find the actual path pattern (the URL when you click a job listing in a browser).
+4. Test by making a GET request and checking: status 200, response is HTML (not JSON, not a redirect to login), and content length > 5 KB.
+5. If you got it wrong and shipped it, fix it and update `seen_jobs_<company>.json` to migrate the old URLs — otherwise those jobs will re-alert.
+
+Common traps:
+- **API endpoint ≠ browseable page.** `external.company.com/api/...` and `external.company.com/en_US/...` look similar but one is the API and one is the page. Test both.
+- **Apply URL ≠ job listing URL.** Phenom's `applyUrl` links to Workday. Avature's `redirectionurl` links to `ApplicationMethods` (the page). GE's browseable URL is constructed as `/global/en/job/{reqId}`. Each ATS is different.
+- **Locale prefix may or may not be required.** `/en_US/path` and `/path` are sometimes the same and sometimes not — test both and use the one the API provides.
+
+**Descriptions**
+- JS-rendered descriptions: plain `requests` returns empty — use Playwright/Firefox or a JSON detail endpoint
+- Descriptions embedded inline in the list API (Emirates style): cache them during `fetch_jobs()` so `fetch_job_description()` needs zero extra HTTP calls
+- Company name: if only on the detail page, cache it during the description fetch (same request, zero extra calls)
 
 ### Step 3 — Create `src/<company>_fetcher.py`
 
@@ -191,6 +268,8 @@ Must always include:
 - Retry loop (3 attempts, exponential backoff: 2s → 4s → 8s)
 - `RateLimitError` on 429 — matcher.py catches this, logs warning, continues
 - Browser-like `User-Agent` header (Chrome/124 on Windows)
+- `posting_date` in every job dict (YYYY-MM-DD or ISO 8601) — shown in every alert
+- Browseable `url` — use the API's canonical URL field if one exists; never guess a path you haven't tested
 - `fetch_job_description` returns `("", "")` on ANY failure — never raises
 
 ### Step 4 — Create `src/run_<company>.py`
@@ -260,8 +339,10 @@ Both must be committed to git (NOT in .gitignore) — they are the cloud memory.
 
 Write `tests/test_<company>_fetcher.py`:
 - Use saved sample HTML/JSON fixtures — never call live API in tests
-- Test: `fetch_jobs` returns correct fields from sample
-- Test: `fetch_job_description` returns non-empty string from sample
+- Test: `fetch_jobs` returns correct fields from sample (title, url, location, company, source, posting_date)
+- Test: `posting_date` is in YYYY-MM-DD or ISO 8601 format — not empty, not a raw timestamp integer
+- Test: `url` contains the expected path pattern (assert it contains the browseable endpoint, assert it does NOT contain any backend-only endpoint you discovered was wrong)
+- Test: `fetch_job_description` returns non-empty description from sample
 - Test: `RateLimitError` raised on mocked 429 response
 - Test: `fetch_job_description` returns `("", "")` on network failure (not raise)
 
@@ -274,10 +355,11 @@ python -u -m src.run_<company>
 ```
 
 Verify:
-- Non-zero jobs fetched
-- Gate-by-gate summary looks sane (not all passing, not all failing)
-- No obviously wrong roles in matched list (wrong division, wrong seniority)
-- Alert fires (or "no new matches" if already seen)
+- Non-zero jobs fetched (if zero, the fetch is broken — don't proceed)
+- Gate-by-gate summary looks sane: not all passing (filter is too loose), not all failing (filter is too strict or fetch is broken)
+- `Posted  :` line appears in the alert with a real date, not "N/A" — if N/A for all jobs, the date field name is wrong
+- Click one of the URLs from the matched jobs in Chrome — confirm it opens a readable job listing page, not a 404 or JSON response
+- No obviously wrong roles in matched list (wrong division, wrong seniority, wrong domain)
 
 ### Step 10 — Update this playbook
 
@@ -318,7 +400,7 @@ Key Workday quirks:
 
 ---
 
-## Phenom People Notes (GE Aerospace confirmed; Emirates, Etihad, others likely)
+## Phenom People Notes (GE Aerospace confirmed; Etihad and others possible — verify per company)
 
 ### Detection
 Look for `cdn.phenompeople.com` in page source. Then find `refNum` in the inline `phApp` config:
@@ -431,6 +513,60 @@ above. `posting_date` from jobDetail is ISO 8601: `"2026-05-01T00:00:00.000+0000
 | Parallel pipeline: one crash kills all | Exception escaped `__main__` try/except | Every `run_<company>.py` must wrap `__main__` in try/except with `sys.exit(1)` |
 | Phenom site probed as Workday (wasted 30 min) | GE's "Apply" button links to `wd5.myworkdayjobs.com` — looks like Workday | Workday is the downstream ATS for applications; Phenom is the job search UI. Check page source for `cdn.phenompeople.com` before assuming Workday. |
 | Phenom API returns 0 jobs / `tokenAvailable:false` | POST to `/widgets` without a valid session — no CSRF token | Bootstrap a `requests.Session` first: GET the search-results page to get the `PLAY_SESSION` cookie and `csrfToken` div, then add `csrf-token` header to all subsequent POSTs. |
+| Emirates job URLs opened to "page not found" in Chrome | URL was constructed by guessing `/en_US/careersmarketplace/JobDetails?jobId=X` — that path doesn't exist. The API's own `redirectionurl` field had the correct URL: `/careersmarketplace/ApplicationMethods?jobId=X&source=CareerWebsite` | Always look for a canonical URL field in the API response before constructing one. Test the URL with a real GET before shipping. |
+| Posting date missing from all alerts | The `posting_date` field was in every job dict but `format_job_message` in `notifier.py` never rendered it | `notifier._display_date()` now normalises all date formats. Every new fetcher must include `posting_date` in the job dict and the local test must confirm "Posted  :" shows a real date. |
+| Safran dates sorted as "0000-00-00" | `_date_sortable` regex used `\d{2}` requiring 2-digit day/month; Safran HTML outputs single-digit months like `6/10/2026` | Fixed to `\d{1,2}` with `.zfill(2)` padding. When adding a new company, run the gate-by-gate summary and spot-check that posting dates look right in the sort order. |
+
+---
+
+## Avature Notes (Emirates Group confirmed)
+
+### Detection
+Look for `external.<company>.com` subdomain in XHR calls, or `/api/v1/jobs` in the Network tab.
+Avature powers many airline and MRO group career portals under custom domains — the ATS branding
+is invisible to the user. If a portal has a clean REST API returning all jobs in one call, suspect Avature.
+
+### The single-call pattern
+```python
+GET https://www.<company>careers.com/api/v1/jobs?showAll=true
+Headers: {"Accept": "application/json", "User-Agent": "<browser UA>"}
+# Returns: {"status": "success", "data": [...all jobs with inline jobdescription HTML...]}
+```
+Key characteristics:
+- All jobs returned in a single response — no pagination, no keyword filtering
+- Inline HTML descriptions in `jobdescription` field — strip with BeautifulSoup, cache in `_desc_cache`
+- `postingdate` is a **millisecond Unix timestamp** (not seconds, not ISO string)
+- `reqid` is the job ID (numeric string)
+
+### Browseable URL — use `redirectionurl` from the response
+Each job object contains a `redirectionurl` field with the correct browseable URL.
+Use it directly. Do not construct a URL from `reqid` alone — the path structure varies by tenant
+and guessing it (e.g. `/JobDetails?jobId=X`) produces 404s.
+
+```python
+redirect = raw.get("redirectionurl") or ""
+url = redirect if redirect else f"{BASE}/careersmarketplace/ApplicationMethods?jobId={reqid}&source=CareerWebsite"
+```
+
+### Posting date conversion
+```python
+import datetime
+def _parse_posting_date(ts_ms):
+    if not ts_ms:
+        return ""
+    try:
+        return datetime.datetime.fromtimestamp(
+            ts_ms / 1000, tz=datetime.timezone.utc
+        ).strftime("%Y-%m-%d")
+    except (TypeError, ValueError, OSError):
+        return ""
+```
+
+### Key Avature quirks
+- Descriptions are inline — no separate detail API call needed (very fast pipeline)
+- `brand` field contains the sub-division (e.g. "Emirates Engineering", "Emirates SkyCargo", "dnata") — use this as `company`, not the parent group name
+- All brands across the group are returned together — Gate 2 does the domain filtering
+- The `redirectionurl` is always present and canonical — prefer it over any constructed URL
 
 ---
 
