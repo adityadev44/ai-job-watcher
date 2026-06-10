@@ -9,6 +9,51 @@ import textwrap
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
+# ── Location-priority sort (India → Middle East → Singapore/Asia → Others) ──
+
+_INDIA = ["india", "mumbai", "delhi", "bangalore", "bengaluru", "hyderabad",
+          "chennai", "pune", "kolkata", "gurgaon", "gurugram", "noida"]
+_MIDEAST = ["uae", "dubai", "abu dhabi", "sharjah", "doha", "qatar", "riyadh",
+            "saudi", "jeddah", "bahrain", "kuwait", "oman", "muscat",
+            "cairo", "egypt", "jordan", "amman", "beirut"]
+_ASIA = ["singapore", "malaysia", "kuala lumpur", "thailand", "bangkok",
+         "indonesia", "jakarta", "hong kong", "japan", "tokyo", "korea",
+         "taiwan", "china", "philippines", "vietnam", "australia", "sydney",
+         "melbourne", "new zealand"]
+
+
+def _location_priority(location: str) -> int:
+    loc = location.lower()
+    if any(kw in loc for kw in _INDIA):
+        return 0
+    if any(kw in loc for kw in _MIDEAST):
+        return 1
+    if any(kw in loc for kw in _ASIA):
+        return 2
+    return 3
+
+
+def _date_sortable(job: dict) -> str:
+    """Return a YYYY-MM-DD string for sorting. Falls back to '0000-00-00'."""
+    for key in ("posting_date", "date", "postedDate", "dateCreated"):
+        val = str(job.get(key, "") or "")
+        if not val:
+            continue
+        m = re.search(r"(\d{4}-\d{2}-\d{2})", val)
+        if m:
+            return m.group(1)
+        m = re.search(r"(\d{2})/(\d{2})/(\d{4})", val)   # DD/MM/YYYY (Safran)
+        if m:
+            return f"{m.group(3)}-{m.group(2)}-{m.group(1)}"
+    return "0000-00-00"
+
+
+def _sort_for_alert(jobs: list) -> list:
+    """Sort matches: India first, then Middle East, then Singapore/Asia, then others.
+    Within each region, newest posting date first."""
+    by_date = sorted(jobs, key=_date_sortable, reverse=True)
+    return sorted(by_date, key=lambda j: _location_priority(j.get("location", "")))
+
 try:
     from dotenv import load_dotenv
     load_dotenv(override=False)  # graceful no-op if .env absent (cloud runs)
@@ -111,6 +156,8 @@ def notify_matches(jobs):
     """Send Telegram + email alerts for a list of matched jobs. Each channel fails independently."""
     if not jobs:
         return
+
+    jobs = _sort_for_alert(jobs)
 
     lines = [f"Aviation MRO — {len(jobs)} new job match(es):\n"]
     for job in jobs:
