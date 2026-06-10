@@ -215,7 +215,7 @@ Open the careers page, search for a role, open DevTools → Network tab → XHR/
 | **Greenhouse** | `greenhouse.io` | Public REST API, well-documented |
 | **Lever** | `lever.co` | Public REST API |
 | **Taleo** | `taleo.net` | HTML scraping usually required |
-| **SAP SuccessFactors** | `successfactors.com` | REST API, may need session token |
+| **SAP SuccessFactors Job2Web (J2W)** | `successfactors.com` or company-hosted domain | HTML scraping — J2W has no JSON API; search results are an HTML table (`tr.data-row`). See J2W Notes below. Do not assume the full SuccessFactors REST API is available — many companies only deploy the J2W front-end. |
 | **Avature** | `external.<company>.com` subdomain; `api/v1/jobs` in XHR | REST API — single call returns all jobs with inline descriptions; look for `redirectionurl` field for the browseable URL |
 | **Sniperhire** | `/vacancy/{id}` URL pattern; `.sectn` divs in job detail HTML | HTML scraping; pagination via `/?pg=N` (0-indexed) |
 | **Custom** | `.aspx` URLs, ViewState tokens in HTML | HTML scraping with BeautifulSoup/lxml |
@@ -361,6 +361,7 @@ Verify:
 - `Posted  :` line appears in the alert with a real date, not "N/A" — if N/A for all jobs, the date field name is wrong
 - Click one of the URLs from the matched jobs in Chrome — confirm it opens a readable job listing page, not a 404 or JSON response
 - No obviously wrong roles in matched list (wrong division, wrong seniority, wrong domain)
+- **If Gate 2 kills everything (0 matches, like GMR on a slow hiring month):** that is not the same as broken. Check that Gate 1 and Gate 3 pass a reasonable number of jobs. Spot-check the near-misses in `near_misses_<company>.json` — pick a URL from one of them and confirm it opens correctly in Chrome. The system is working; there are just no engine MRO roles posted yet.
 
 ### Step 10 — Update this playbook
 
@@ -568,6 +569,75 @@ def _parse_posting_date(ts_ms):
 - `brand` field contains the sub-division (e.g. "Emirates Engineering", "Emirates SkyCargo", "dnata") — use this as `company`, not the parent group name
 - All brands across the group are returned together — Gate 2 does the domain filtering
 - The `redirectionurl` is always present and canonical — prefer it over any constructed URL
+
+---
+
+## SAP SuccessFactors Job2Web (J2W) Notes (GMR Group confirmed)
+
+### Detection
+Look for the search URL returning an HTML table, not JSON. J2W is identifiable by `tr.data-row`
+rows in the results, `span.jobTitle-link` anchor tags, and URLs in the pattern `/job/{slug}/{id}/`.
+**There is no JSON API endpoint.** Do not look for one — J2W does not expose it.
+
+If you see `successfactors.com` in the full SuccessFactors REST API docs, that is a different
+product tier. Many companies (GMR included) only deploy the J2W HTML front-end.
+
+### Search URL and pagination
+```
+GET https://<domain>/search/?q=&sortColumn=referencedate&sortDirection=desc&start=N
+```
+- `start=0` is the default. Increment by the number of results returned per page.
+- Total count is in the `aria-label` attribute of the results table: `"Results 1 to N of T"` —
+  regex `r"Results \d+ to \d+ of (\d+)"` on `resp.text`.
+- Stop when `start >= total` or when a page returns no new rows.
+- No server-side keyword filtering — all jobs are returned; filter locally.
+
+### Listing page structure
+```python
+for row in soup.find_all("tr", class_="data-row"):
+    a = row.find("a", class_="jobTitle-link")   # href = /job/{slug}/{id}/
+    loc = row.find("span", class_="jobLocation") # contains internal codes — clean before use
+    date = row.find("span", class_="jobDate")    # format: "D Mon YYYY" e.g. "10 Jun 2026"
+```
+
+### Location cleaning
+J2W location strings embed internal airport/facility codes and redundant text, e.g.:
+`"Goa, GMR AA - Goa (PG11AA06), IN"`. Strip codes and normalise:
+```python
+parts = raw_location.split(",")
+city = re.sub(r'\s*\([^)]+\).*$', '', parts[0]).strip()
+location = f"{city}, India"   # or the relevant country if known
+```
+
+### Date parsing
+```python
+def _parse_date(date_str):
+    try:
+        return datetime.datetime.strptime(date_str.strip(), "%d %b %Y").strftime("%Y-%m-%d")
+    except ValueError:
+        return ""
+```
+Single-digit days work fine (`"%d"` in strptime handles `"5 May 2026"` correctly).
+
+### Detail page
+```
+GET https://<domain>/job/{slug}/{id}/
+```
+- Description: `soup.find("span", class_="jobdescription")` — plain text, typically 2–4 KB
+- Posting date on detail page: not in a dedicated span — appears in body text as `"Date:DD Mon YYYY"`.
+  Extract with `re.search(r"Date:\s*(\d{1,2}\s+\w+\s+\d{4})", resp.text)` and parse same way.
+
+### Company field
+J2W portals often cover an entire group, not just one entity (e.g., `careers.gmrgroup.in`
+serves all GMR businesses — airports, aero technic, energy). Set `company` to the group name
+(e.g., `"GMR Group"`) and let Gate 2 handle domain filtering. Do not set it to a sub-entity
+unless the portal is scoped to that sub-entity only.
+
+### Key J2W quirks
+- Browser-like User-Agent required — some J2W deployments 403 on obvious bot UA strings
+- `format=json` query parameter does nothing — ignore it, always scrape HTML
+- The browseable URL is already the canonical link (the `/job/{slug}/{id}/` path the user clicks)
+- Low-volume portals (< 10 total jobs) are common — 0 Gate 2 matches is expected until MRO hiring ramps
 
 ---
 
