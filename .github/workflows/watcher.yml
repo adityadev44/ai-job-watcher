@@ -1,0 +1,71 @@
+name: Aviation MRO Job Watcher
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */3 * * *'   # every 3 hours
+
+permissions:
+  contents: write
+
+jobs:
+  run-watcher:
+    runs-on: ubuntu-latest
+
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      GMAIL_USER: ${{ secrets.GMAIL_USER }}
+      GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+      ALERT_RECIPIENT: ${{ secrets.ALERT_RECIPIENT }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: pip-
+
+      - name: Install pip requirements
+        run: pip install -r requirements.txt
+
+      - name: Cache Playwright Firefox
+        id: cache-firefox
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-firefox-${{ hashFiles('requirements.txt') }}
+
+      - name: Install Firefox (Playwright)
+        if: steps.cache-firefox.outputs.cache-hit != 'true'
+        run: playwright install firefox
+
+      - name: Run Safran pipeline
+        run: |
+          python -u src/run_safran.py
+          exit_code=$?
+          if [ $exit_code -ne 0 ]; then
+            echo "Pipeline failed with exit code $exit_code"
+            exit 1
+          fi
+
+      - name: Save state to repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add seen_jobs_safran.json near_misses_safran.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit — state unchanged"
+          else
+            git commit -m "chore: update job state [skip ci]"
+            git push
+          fi

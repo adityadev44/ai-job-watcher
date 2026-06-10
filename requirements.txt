@@ -1,0 +1,7 @@
+pytest
+requests
+pyyaml
+python-dotenv
+playwright
+beautifulsoup4
+lxml
