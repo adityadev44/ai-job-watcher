@@ -229,6 +229,14 @@ etihad_search:
   # Placeholder — no server-side keyword filtering available.
   note: "Fetcher uses Oracle HCM REST API; all active listings returned per run."
 
+# ST Engineering Aerospace uses SAP SuccessFactors J2W — same ATS as GMR and SIA.
+# Portal: careers.stengg.com — no keyword filtering available.
+# All listings fetched, then pre-filtered to Commercial Aerospace division in run_ste.py.
+ste_search:
+  max_listings: 500
+  inter_page_delay: 0.3
+  note: "Fetcher uses J2W HTML scraping; startrow= pagination (not start=). Pre-filtered to Commercial Aerospace."
+
 notifications:
   email:
     recipient: ""
