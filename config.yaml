@@ -229,6 +229,14 @@ etihad_search:
   # Placeholder — no server-side keyword filtering available.
   note: "Fetcher uses Oracle HCM REST API; all active listings returned per run."
 
+# Saudia Technic (Saudi Airlines maintenance arm) uses Talentera by Bayt.com.
+# Portal: careers.saudiatechnic.com — AJAX-driven, requires session token from page HTML.
+# Typically very low volume (1-10 active jobs). No keyword filtering server-side.
+saudia_technic_search:
+  max_listings: 200
+  inter_page_delay: 0.5
+  note: "Talentera/Bayt AJAX API; GET listing page for USER_token, POST action=1 for jobs. 10 jobs/page."
+
 # StandardAero uses Oracle HCM Cloud Recruiting — same ATS as Etihad Engineering.
 # Portal: cva.fa.us1.oraclecloud.com (US1 data centre), site CX_3.
 # ~250 total jobs; no server-side keyword filtering — fetch all, filter locally.

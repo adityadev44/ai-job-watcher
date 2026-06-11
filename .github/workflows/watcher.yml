@@ -74,6 +74,8 @@ jobs:
           pid10=$!
           python -u -m src.run_standardaero &
           pid11=$!
+          python -u -m src.run_saudia_technic &
+          pid12=$!
           wait $pid1
           s1=$?
           wait $pid2
@@ -96,7 +98,9 @@ jobs:
           s10=$?
           wait $pid11
           s11=$?
-          exit $((s1 | s2 | s3 | s4 | s5 | s6 | s7 | s8 | s9 | s10 | s11))
+          wait $pid12
+          s12=$?
+          exit $((s1 | s2 | s3 | s4 | s5 | s6 | s7 | s8 | s9 | s10 | s11 | s12))
 
       - name: Save state to repo
         run: |
@@ -112,7 +116,8 @@ jobs:
                   seen_jobs_etihad.json near_misses_etihad.json \
                   seen_jobs_sia.json near_misses_sia.json \
                   seen_jobs_ste.json near_misses_ste.json \
-                  seen_jobs_standardaero.json near_misses_standardaero.json
+                  seen_jobs_standardaero.json near_misses_standardaero.json \
+                  seen_jobs_saudia_technic.json near_misses_saudia_technic.json
           if git diff --staged --quiet; then
             echo "No changes to commit — state unchanged"
           else
