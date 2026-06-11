@@ -229,6 +229,15 @@ etihad_search:
   # Placeholder — no server-side keyword filtering available.
   note: "Fetcher uses Oracle HCM REST API; all active listings returned per run."
 
+# StandardAero uses Oracle HCM Cloud Recruiting — same ATS as Etihad Engineering.
+# Portal: cva.fa.us1.oraclecloud.com (US1 data centre), site CX_3.
+# ~250 total jobs; no server-side keyword filtering — fetch all, filter locally.
+# Description only available via detail API — list response has short text only.
+standardaero_search:
+  max_listings: 300
+  inter_page_delay: 0.2
+  note: "Oracle HCM REST API; offset= pagination in finder string; ExternalDescriptionStr on detail endpoint."
+
 # ST Engineering Aerospace uses SAP SuccessFactors J2W — same ATS as GMR and SIA.
 # Portal: careers.stengg.com — no keyword filtering available.
 # All listings fetched, then pre-filtered to Commercial Aerospace division in run_ste.py.
