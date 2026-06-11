@@ -10,25 +10,28 @@ CONFIG = {
     "matching": {
         "title_family": [
             "manager", "head", "director", "lead", "chief", "consultant",
-            "advisor", "quality", "compliance", "safety", "powerplant",
-            "engine", "mro", "shop", "production", "technical services",
+            "advisor", "compliance", "powerplant",
+            "engine", "mro", "shop", "technical services",
             "instructor", "overhaul",
         ],
         "exclude_terms": [
             "technician", "apprentice", "trainee", "intern", "fresher",
-            "graduate", "new grad", "software", "it ", "avionics",
+            "graduate", "new grad", "software", "it", "avionics",
             "cabin", "pilot", "finance", "sales", "structures", "airframe",
+            "hr", "human resources", "coordinator", "mechanic", "inspector",
+            "talent acquisition", "warehousing", "asset management", "dnata",
         ],
         "engine_specific_terms": [
             "ge90", "genx", "pw4000", "cf6", "cfm56", "leap", "gtf",
             "pw1100", "trent", "v2500", "engine overhaul", "test cell",
             "borescope", "part 145", "car 145", "crs", "shop visit",
-            "workscope", "mro", "sms", "human factors",
+            "workscope",
         ],
         "domain_terms": [
             "maintenance", "repair", "overhaul", "powerplant", "propulsion",
             "airworthiness", "easa", "faa", "dgca", "gcaa", "gaca",
             "aviation", "aerospace", "aircraft", "airline", "ame", "amo",
+            "mro", "sms", "human factors",
         ],
     }
 }
@@ -151,3 +154,146 @@ def test_build_weekly_digest():
     assert digest, "Digest must be non-empty"
     assert "MRO Technician" in digest
     assert "Engine Shop Intern" in digest
+
+
+# ---------------------------------------------------------------------------
+# Word-boundary matching tests (fixes for precision false-positives)
+# ---------------------------------------------------------------------------
+
+def test_gate1_engineer_not_engine():
+    """'engine' word-boundary must NOT match 'engineer'."""
+    jobs = [{"title": "Senior Systems Engineer", "url": "http://x", "location": "NYC"}]
+    matched, near_misses = run(jobs)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate1"
+
+
+def test_gate1_engineering_not_engine():
+    """'engine' word-boundary must NOT match 'engineering'."""
+    jobs = [{"title": "Software Engineering Specialist", "url": "http://x", "location": "NYC"}]
+    matched, near_misses = run(jobs)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate1"
+
+
+def test_gate1_leader_not_lead():
+    """'lead' word-boundary must NOT match 'leader'."""
+    jobs = [{"title": "Manufacturing Programs Leader", "url": "http://x", "location": "NYC"}]
+    matched, near_misses = run(jobs)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate1"
+
+
+def test_gate1_engine_standalone_passes():
+    """'engine' as a standalone word in the title must still pass Gate 1."""
+    jobs = [{"title": "Jet Engine Overhaul Specialist", "url": "http://x", "location": "Dubai"}]
+    desc = "GE90 engine overhaul, Part 145 compliance, shop visit management." * 5
+    matched, near_misses = run(jobs, desc)
+    assert len(matched) == 1
+
+
+def test_gate1_quality_removed_engineer_filtered():
+    """'quality' removed from title_family + 'engine' word-boundary: 'Quality Engineer' must fail Gate 1."""
+    jobs = [{"title": "Quality Engineer", "url": "http://x", "location": "Delhi"}]
+    matched, near_misses = run(jobs)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate1"
+
+
+def test_gate1_quality_manager_still_passes():
+    """'Quality Manager' must still pass via 'manager' even after 'quality' is removed from title_family."""
+    jobs = [{"title": "Quality Manager", "url": "http://x", "location": "Dubai"}]
+    desc = "GE90 engine overhaul, Part 145. Maintenance and repair." * 5
+    matched, near_misses = run(jobs, desc)
+    assert len(matched) == 1
+
+
+def test_gate3_hr_excluded():
+    """'hr' word-boundary must filter 'Lead HR Business Partner' at Gate 3."""
+    jobs = [{"title": "Lead HR Business Partner", "url": "http://x", "location": "Dubai"}]
+    matched, near_misses = run(jobs)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate3"
+
+
+def test_gate3_hr_not_falsely_triggered():
+    """'hr' word-boundary must NOT filter 'Shop Manager' (no standalone 'hr' in title)."""
+    jobs = [{"title": "Shop Manager", "url": "http://x", "location": "Dubai"}]
+    desc = "GE90 engine overhaul, Part 145 compliance, shop visit." * 5
+    matched, near_misses = run(jobs, desc)
+    assert len(matched) == 1
+
+
+def test_gate3_mechanic_excluded():
+    """'mechanic' in exclude must filter 'Lead Aircraft Mechanic' at Gate 3."""
+    jobs = [{"title": "Lead Aircraft Mechanic", "url": "http://x", "location": "Dubai"}]
+    matched, near_misses = run(jobs)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate3"
+
+
+def test_gate3_coordinator_excluded():
+    """'coordinator' in exclude must filter 'MRO Coordinator' at Gate 3."""
+    jobs = [{"title": "MRO Coordinator", "url": "http://x", "location": "Dubai"}]
+    matched, near_misses = run(jobs)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate3"
+
+
+def test_gate3_talent_acquisition_excluded():
+    """'talent acquisition' in exclude must filter HR recruiting titles at Gate 3."""
+    jobs = [{"title": "Senior Manager HR Talent Acquisition", "url": "http://x", "location": "Singapore"}]
+    matched, near_misses = run(jobs)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate3"
+
+
+def test_gate3_warehousing_excluded():
+    """'warehousing' in exclude must filter warehouse management titles at Gate 3."""
+    jobs = [{"title": "Manager Warehousing", "url": "http://x", "location": "Dubai"}]
+    matched, near_misses = run(jobs)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate3"
+
+
+def test_gate3_asset_management_excluded():
+    """'asset management' in exclude must filter engine leasing/finance titles at Gate 3."""
+    jobs = [{"title": "Manager - Asset Management", "url": "http://x", "location": "Abu Dhabi"}]
+    matched, near_misses = run(jobs)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate3"
+
+
+def test_gate3_dnata_excluded():
+    """'dnata' in exclude must filter Emirates Group ground handling roles at Gate 3."""
+    jobs = [{"title": "General Manager, dnata Erbil", "url": "http://x", "location": "Iraq"}]
+    matched, near_misses = run(jobs)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate3"
+
+
+def test_gate3_it_manager_word_boundary():
+    """'it' word-boundary must filter 'IT Manager' at Gate 3 but not 'quality' (contains 'it' inside word)."""
+    jobs = [{"title": "IT Manager", "url": "http://x", "location": "NYC"}]
+    matched, near_misses = run(jobs)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate3"
+
+
+def test_gate2_mro_moved_to_domain():
+    """MRO moved to domain_terms: a description with only 'MRO aviation maintenance' fails Gate 2
+    because engine_specific_terms requires at least one hit (engine model, Part 145, etc.)."""
+    jobs = [{"title": "Shop Manager", "url": "http://x", "location": "Dubai"}]
+    # Only domain hits — no engine_specific hit (no Part 145, no engine model, no overhaul terms)
+    desc = "MRO operations in our aviation maintenance facility. Aerospace compliance required." * 5
+    matched, near_misses = run(jobs, desc)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate2"
+
+
+def test_gate2_mro_plus_part145_passes():
+    """MRO in domain + Part 145 in engine_specific: should still pass Gate 2."""
+    jobs = [{"title": "Shop Manager", "url": "http://x", "location": "Dubai"}]
+    desc = "MRO operations. Part 145 approved facility. Aircraft maintenance." * 5
+    matched, near_misses = run(jobs, desc)
+    assert len(matched) == 1

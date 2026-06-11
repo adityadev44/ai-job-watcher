@@ -48,8 +48,10 @@ def run_pipeline(seen_path=None, near_miss_path=None):
     print(f"[rtx] Config: seen_path={seen_path.name}, near_miss_path={near_miss_path.name}")
 
     raw_jobs = rtx_fetcher.fetch_jobs()
+    # RTX portal serves P&W, Collins Aerospace, and Raytheon — keep only P&W
+    raw_jobs = [j for j in raw_jobs if "pratt" in j.get("company", "").lower()]
     total_fetched = len(raw_jobs)
-    print(f"[rtx] Fetched {total_fetched} unique listings")
+    print(f"[rtx] Fetched {total_fetched} unique listings (P&W only)")
 
     matched, near_misses = filter_jobs(raw_jobs, rtx_fetcher, config=config)
 

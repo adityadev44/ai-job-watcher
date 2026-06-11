@@ -3,6 +3,7 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 import os
+import re
 import yaml
 from pathlib import Path
 
@@ -47,16 +48,16 @@ def filter_jobs(jobs, fetcher, config=None):
         title_lc = _ci(title)
         url = job.get("url", "")
 
-        # Gate 1 — title family
-        gate1_hit = next((t for t in title_family if t in title_lc), None)
+        # Gate 1 — title family (word-boundary match prevents "engine" matching "engineer")
+        gate1_hit = next((t for t in title_family if re.search(r'\b' + re.escape(t) + r'\b', title_lc)), None)
         if gate1_hit is None:
             reason = f"no title-family term found in title"
             print(f"[gate1] {title} ({reason})")
             near_misses.append({**job, "gate_failed": "gate1", "reason": reason})
             continue
 
-        # Gate 3 — exclude terms
-        gate3_hit = next((t for t in exclude_terms if t in title_lc), None)
+        # Gate 3 — exclude terms (word-boundary match prevents false triggers)
+        gate3_hit = next((t for t in exclude_terms if re.search(r'\b' + re.escape(t) + r'\b', title_lc)), None)
         if gate3_hit is not None:
             reason = f"excluded term '{gate3_hit}' in title"
             print(f"[gate3] {title} ({reason})")

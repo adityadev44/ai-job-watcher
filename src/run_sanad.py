@@ -58,8 +58,10 @@ def run_pipeline(seen_path=None, near_miss_path=None):
 
     # ── 1. Fetch ──────────────────────────────────────────────────────────────
     raw_jobs = sanad_fetcher.fetch_jobs(max_listings=max_listings, inter_page_delay=inter_page_delay)
+    # Sanad portal includes Sanad Capital (engine leasing/finance) — keep only Sanad Aerotech (engine MRO)
+    raw_jobs = [j for j in raw_jobs if "capital" not in j.get("company", "").lower()]
     total_fetched = len(raw_jobs)
-    print(f"[sanad] Fetched {total_fetched} unique listings")
+    print(f"[sanad] Fetched {total_fetched} unique listings (Sanad Aerotech only)")
 
     # ── 2. Filter through 3-gate matcher ─────────────────────────────────────
     matched, near_misses = filter_jobs(raw_jobs, sanad_fetcher, config=config)
