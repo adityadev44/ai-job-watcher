@@ -70,5 +70,17 @@
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=1, needed 1 engine + 2 total",
     "run_timestamp": "2026-06-11T12:01:18+00:00"
+  },
+  {
+    "id": "1100080639",
+    "title": "Lead Investigator",
+    "company": "Saudia Technic",
+    "location": "Jeddah , Saudi Arabia",
+    "posting_date": "2026-05-11",
+    "url": "https://careers.saudiatechnic.com/en/saudi-arabia/jobs/lead-investigator-1100080639/",
+    "source": "saudia_technic",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=1, needed 1 engine + 2 total",
+    "run_timestamp": "2026-06-11T14:01:11+00:00"
   }
 ]
