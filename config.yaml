@@ -207,6 +207,14 @@ indigo_search:
   # Placeholder — no server-side keyword filtering available.
   note: "Fetcher uses Playwright DWR; all 10 newest jobs returned per run."
 
+# SIA Engineering uses SAP SuccessFactors J2W (same as GMR Group).
+# Portal: careers.singaporeair.com/siaec — no keyword filtering available.
+# All active listings (~10-30) are returned per run and passed to Gate 1.
+sia_search:
+  max_listings: 200
+  inter_page_delay: 0.3
+  note: "Fetcher uses J2W HTML scraping; no server-side keyword filtering."
+
 # Etihad Engineering uses Oracle HCM Cloud Recruiting. No keyword filtering
 # is applied server-side — the API returns all active listings (typically 5-30)
 # and all are passed to Gate 1 title matching.
