@@ -66,6 +66,8 @@ jobs:
           pid6=$!
           python -u -m src.run_indigo &
           pid7=$!
+          python -u -m src.run_etihad &
+          pid8=$!
           wait $pid1
           s1=$?
           wait $pid2
@@ -80,7 +82,9 @@ jobs:
           s6=$?
           wait $pid7
           s7=$?
-          exit $((s1 | s2 | s3 | s4 | s5 | s6 | s7))
+          wait $pid8
+          s8=$?
+          exit $((s1 | s2 | s3 | s4 | s5 | s6 | s7 | s8))
 
       - name: Save state to repo
         run: |
@@ -92,7 +96,8 @@ jobs:
                   seen_jobs_emirates.json near_misses_emirates.json \
                   seen_jobs_gmr.json near_misses_gmr.json \
                   seen_jobs_rtx.json near_misses_rtx.json \
-                  seen_jobs_indigo.json near_misses_indigo.json
+                  seen_jobs_indigo.json near_misses_indigo.json \
+                  seen_jobs_etihad.json near_misses_etihad.json
           if git diff --staged --quiet; then
             echo "No changes to commit — state unchanged"
           else

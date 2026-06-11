@@ -207,6 +207,13 @@ indigo_search:
   # Placeholder — no server-side keyword filtering available.
   note: "Fetcher uses Playwright DWR; all 10 newest jobs returned per run."
 
+# Etihad Engineering uses Oracle HCM Cloud Recruiting. No keyword filtering
+# is applied server-side — the API returns all active listings (typically 5-30)
+# and all are passed to Gate 1 title matching.
+etihad_search:
+  # Placeholder — no server-side keyword filtering available.
+  note: "Fetcher uses Oracle HCM REST API; all active listings returned per run."
+
 notifications:
   email:
     recipient: ""
