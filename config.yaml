@@ -10,6 +10,7 @@ matching:
     - "compliance"
     - "powerplant"
     - "engine"
+    - "engines"
     - "mro"
     - "shop"
     - "technical services"

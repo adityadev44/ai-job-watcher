@@ -11,7 +11,7 @@ CONFIG = {
         "title_family": [
             "manager", "head", "director", "lead", "chief", "consultant",
             "advisor", "compliance", "powerplant",
-            "engine", "mro", "shop", "technical services",
+            "engine", "engines", "mro", "shop", "technical services",
             "instructor", "overhaul",
         ],
         "exclude_terms": [
@@ -297,3 +297,31 @@ def test_gate2_mro_plus_part145_passes():
     desc = "MRO operations. Part 145 approved facility. Aircraft maintenance." * 5
     matched, near_misses = run(jobs, desc)
     assert len(matched) == 1
+
+
+def test_gate1_engines_plural_passes():
+    """'engines' (plural) as a standalone word must pass Gate 1."""
+    jobs = [{"title": "Specialist, Strategic Procurement, Engines Materials and USM", "url": "http://x", "location": "Abu Dhabi"}]
+    desc = "GE90 engine overhaul, Part 145. Maintenance and repair." * 5
+    matched, near_misses = run(jobs, desc)
+    assert len(matched) == 1
+
+
+def test_gate1_engine_does_not_match_engines():
+    """'engine' (singular) word-boundary must NOT match 'engines' (plural)."""
+    # Without "engines" in title_family, "engines" in a title would fail Gate 1.
+    # This test validates the word-boundary: \bengine\b does not match "engines".
+    config_no_engines = {
+        "matching": {
+            "title_family": ["engine"],   # only singular
+            "exclude_terms": [],
+            "engine_specific_terms": ["part 145"],
+            "domain_terms": ["maintenance"],
+        }
+    }
+    from src.matcher import filter_jobs
+    fetcher = make_fetcher("Part 145 engine overhaul. Maintenance and repair." * 5)
+    jobs = [{"title": "Engines Materials Specialist", "url": "http://x", "location": "Abu Dhabi"}]
+    matched, near_misses = filter_jobs(jobs, fetcher, config=config_no_engines)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate1"
