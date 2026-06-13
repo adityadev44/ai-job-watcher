@@ -3862,5 +3862,89 @@
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
     "run_timestamp": "2026-06-13T16:01:12+00:00"
+  },
+  {
+    "id": "375",
+    "title": "Manager Aircraft Fleet Appearance",
+    "location": "Abu Dhabi, United Arab Emirates",
+    "posting_date": "2026-06-11",
+    "url": "https://careers.etihadengineering.com/en/sites/careers/job/375",
+    "company": "Etihad Engineering",
+    "source": "etihad",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=4, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-13T16:13:12+00:00"
+  },
+  {
+    "id": "812",
+    "title": "Security Administrator",
+    "location": "Abu Dhabi, United Arab Emirates",
+    "posting_date": "2026-06-08",
+    "url": "https://careers.etihadengineering.com/en/sites/careers/job/812",
+    "company": "Etihad Engineering",
+    "source": "etihad",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-13T16:13:12+00:00"
+  },
+  {
+    "id": "771",
+    "title": "Health, Safety & Environment Officer (HSE Officer)",
+    "location": "Abu Dhabi, United Arab Emirates",
+    "posting_date": "2026-06-05",
+    "url": "https://careers.etihadengineering.com/en/sites/careers/job/771",
+    "company": "Etihad Engineering",
+    "source": "etihad",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-13T16:13:12+00:00"
+  },
+  {
+    "id": "811",
+    "title": "Material Inspector",
+    "location": "Abu Dhabi, United Arab Emirates",
+    "posting_date": "2026-06-02",
+    "url": "https://careers.etihadengineering.com/en/sites/careers/job/811",
+    "company": "Etihad Engineering",
+    "source": "etihad",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-13T16:13:12+00:00"
+  },
+  {
+    "id": "601",
+    "title": "Manager - Strategic Procurement & Performance Management",
+    "location": "Abu Dhabi, United Arab Emirates",
+    "posting_date": "2026-05-24",
+    "url": "https://careers.etihadengineering.com/en/sites/careers/job/601",
+    "company": "Etihad Engineering",
+    "source": "etihad",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=3, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-13T16:13:12+00:00"
+  },
+  {
+    "id": "808",
+    "title": "Manager Warehousing",
+    "location": "Abu Dhabi, United Arab Emirates",
+    "posting_date": "2026-05-24",
+    "url": "https://careers.etihadengineering.com/en/sites/careers/job/808",
+    "company": "Etihad Engineering",
+    "source": "etihad",
+    "gate_failed": "gate3",
+    "reason": "excluded term 'warehousing' in title",
+    "run_timestamp": "2026-06-13T16:13:12+00:00"
+  },
+  {
+    "id": "794",
+    "title": "Data Analytics & Business Support Specialist",
+    "location": "Abu Dhabi, United Arab Emirates",
+    "posting_date": "2026-05-18",
+    "url": "https://careers.etihadengineering.com/en/sites/careers/job/794",
+    "company": "Etihad Engineering",
+    "source": "etihad",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-13T16:13:12+00:00"
   }
 ]
