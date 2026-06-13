@@ -272,6 +272,16 @@ ste_search:
   inter_page_delay: 0.3
   note: "Fetcher uses J2W HTML scraping; startrow= pagination (not start=). Pre-filtered to Commercial Aerospace."
 
+# Lufthansa Technik uses a custom Lufthansa Group ATS at apply.lufthansagroup.careers.
+# REST API returns all ~305 Lufthansa Group jobs in one GET call.
+# Filter locally: ParentOrganizationName contains "Lufthansa Technik".
+# ~100 LHT jobs across 14 subsidiary entities (Hamburg, Malta, Sofia, Shannon, etc.).
+# No keyword filtering server-side — fetch all, pass all to Gate 1 title matching.
+lht_search:
+  max_listings: 500
+  inter_page_delay: 0.3
+  note: "Lufthansa Group REST API; one GET call; filter locally by ParentOrganizationName."
+
 notifications:
   email:
     recipient: ""

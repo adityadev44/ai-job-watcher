@@ -106017,7 +106017,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9631",
@@ -106029,7 +106029,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9638",
@@ -106041,7 +106041,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9668",
@@ -106053,7 +106053,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9674",
@@ -106065,7 +106065,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9673",
@@ -106077,7 +106077,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'hr' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9567",
@@ -106089,7 +106089,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9582",
@@ -106101,7 +106101,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'mechanic' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9606",
@@ -106113,7 +106113,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9610",
@@ -106125,7 +106125,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9652",
@@ -106137,7 +106137,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9654",
@@ -106149,7 +106149,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9655",
@@ -106161,7 +106161,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=5, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9063",
@@ -106173,7 +106173,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9485",
@@ -106185,7 +106185,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9533",
@@ -106197,7 +106197,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8805",
@@ -106209,7 +106209,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9293",
@@ -106221,7 +106221,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9475",
@@ -106233,7 +106233,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9586",
@@ -106245,7 +106245,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9518",
@@ -106257,7 +106257,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9564",
@@ -106269,7 +106269,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9580",
@@ -106281,7 +106281,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'mechanic' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9588",
@@ -106293,7 +106293,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9591",
@@ -106305,7 +106305,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9594",
@@ -106317,7 +106317,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9599",
@@ -106329,7 +106329,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9600",
@@ -106341,7 +106341,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'mechanic' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9628",
@@ -106353,7 +106353,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9085",
@@ -106365,7 +106365,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9500",
@@ -106377,7 +106377,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'airframe' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9540",
@@ -106389,7 +106389,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9549",
@@ -106401,7 +106401,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9563",
@@ -106413,7 +106413,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9585",
@@ -106425,7 +106425,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9457",
@@ -106437,7 +106437,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9541",
@@ -106449,7 +106449,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9545",
@@ -106461,7 +106461,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9481",
@@ -106473,7 +106473,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9565",
@@ -106485,7 +106485,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9578",
@@ -106497,7 +106497,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9581",
@@ -106509,7 +106509,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9583",
@@ -106521,7 +106521,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9362",
@@ -106533,7 +106533,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9487",
@@ -106545,7 +106545,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9521",
@@ -106557,7 +106557,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=8, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9562",
@@ -106569,7 +106569,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9517",
@@ -106581,7 +106581,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9528",
@@ -106593,7 +106593,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=7, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9555",
@@ -106605,7 +106605,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'hr' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9558",
@@ -106617,7 +106617,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9344",
@@ -106629,7 +106629,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9345",
@@ -106641,7 +106641,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9430",
@@ -106653,7 +106653,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=5, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9516",
@@ -106665,7 +106665,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=5, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9532",
@@ -106677,7 +106677,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=3, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9426",
@@ -106689,7 +106689,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9442",
@@ -106701,7 +106701,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=4, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9479",
@@ -106713,7 +106713,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9492",
@@ -106725,7 +106725,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9501",
@@ -106737,7 +106737,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'inspector' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9502",
@@ -106749,7 +106749,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'mechanic' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9503",
@@ -106761,7 +106761,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'mechanic' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9507",
@@ -106773,7 +106773,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9522",
@@ -106785,7 +106785,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9547",
@@ -106797,7 +106797,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9548",
@@ -106809,7 +106809,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'mechanic' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8915",
@@ -106821,7 +106821,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'sales' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9464",
@@ -106833,7 +106833,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'inspector' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9471",
@@ -106845,7 +106845,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9488",
@@ -106857,7 +106857,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'sales' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9504",
@@ -106869,7 +106869,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'sales' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9519",
@@ -106881,7 +106881,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'it' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9524",
@@ -106893,7 +106893,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9525",
@@ -106905,7 +106905,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9536",
@@ -106917,7 +106917,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'hr' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9550",
@@ -106929,7 +106929,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9557",
@@ -106941,7 +106941,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8832",
@@ -106953,7 +106953,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9304",
@@ -106965,7 +106965,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9459",
@@ -106977,7 +106977,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9506",
@@ -106989,7 +106989,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9508",
@@ -107001,7 +107001,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9511",
@@ -107013,7 +107013,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=8, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9510",
@@ -107025,7 +107025,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=6, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9460",
@@ -107037,7 +107037,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'sales' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8793",
@@ -107049,7 +107049,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9483",
@@ -107061,7 +107061,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9497",
@@ -107073,7 +107073,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8593",
@@ -107085,7 +107085,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8965",
@@ -107097,7 +107097,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9454",
@@ -107109,7 +107109,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=8, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9434",
@@ -107121,7 +107121,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9435",
@@ -107133,7 +107133,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9192",
@@ -107145,7 +107145,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9419",
@@ -107157,7 +107157,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9486",
@@ -107169,7 +107169,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9439",
@@ -107181,7 +107181,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9489",
@@ -107193,7 +107193,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'mechanic' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9193",
@@ -107205,7 +107205,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9495",
@@ -107217,7 +107217,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9386",
@@ -107229,7 +107229,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9407",
@@ -107241,7 +107241,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=11, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8750",
@@ -107253,7 +107253,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9462",
@@ -107265,7 +107265,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'inspector' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9408",
@@ -107277,7 +107277,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=7, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9424",
@@ -107289,7 +107289,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8227",
@@ -107301,7 +107301,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8925",
@@ -107313,7 +107313,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9339",
@@ -107325,7 +107325,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9433",
@@ -107337,7 +107337,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=5, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9103",
@@ -107349,7 +107349,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9296",
@@ -107361,7 +107361,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=4, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9372",
@@ -107373,7 +107373,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9376",
@@ -107385,7 +107385,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9391",
@@ -107397,7 +107397,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9382",
@@ -107409,7 +107409,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=8, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9387",
@@ -107421,7 +107421,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9380",
@@ -107433,7 +107433,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9421",
@@ -107445,7 +107445,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'mechanic' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8795",
@@ -107457,7 +107457,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8039",
@@ -107469,7 +107469,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8651",
@@ -107481,7 +107481,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9036",
@@ -107493,7 +107493,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=4, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9365",
@@ -107505,7 +107505,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9371",
@@ -107517,7 +107517,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=4, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9373",
@@ -107529,7 +107529,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9383",
@@ -107541,7 +107541,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9395",
@@ -107553,7 +107553,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9394",
@@ -107565,7 +107565,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "7934",
@@ -107577,7 +107577,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9212",
@@ -107589,7 +107589,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9225",
@@ -107601,7 +107601,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'mechanic' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9338",
@@ -107613,7 +107613,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9368",
@@ -107625,7 +107625,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'mechanic' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9409",
@@ -107637,7 +107637,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9359",
@@ -107649,7 +107649,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9377",
@@ -107661,7 +107661,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9054",
@@ -107673,7 +107673,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9360",
@@ -107685,7 +107685,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9314",
@@ -107697,7 +107697,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9320",
@@ -107709,7 +107709,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9102",
@@ -107721,7 +107721,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9312",
@@ -107733,7 +107733,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=10, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9334",
@@ -107745,7 +107745,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9352",
@@ -107757,7 +107757,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9099",
@@ -107769,7 +107769,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=2, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9090",
@@ -107781,7 +107781,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9336",
@@ -107793,7 +107793,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8882",
@@ -107805,7 +107805,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9015",
@@ -107817,7 +107817,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9239",
@@ -107829,7 +107829,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9310",
@@ -107841,7 +107841,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9317",
@@ -107853,7 +107853,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9325",
@@ -107865,7 +107865,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9324",
@@ -107877,7 +107877,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9309",
@@ -107889,7 +107889,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=3, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8378",
@@ -107901,7 +107901,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8916",
@@ -107913,7 +107913,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=5, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9306",
@@ -107925,7 +107925,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'airframe' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9275",
@@ -107937,7 +107937,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8681",
@@ -107949,7 +107949,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8684",
@@ -107961,7 +107961,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8889",
@@ -107973,7 +107973,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9249",
@@ -107985,7 +107985,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9229",
@@ -107997,7 +107997,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8898",
@@ -108009,7 +108009,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'finance' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9163",
@@ -108021,7 +108021,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9164",
@@ -108033,7 +108033,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9004",
@@ -108045,7 +108045,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9247",
@@ -108057,7 +108057,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9234",
@@ -108069,7 +108069,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9209",
@@ -108081,7 +108081,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'inspector' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9230",
@@ -108093,7 +108093,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9101",
@@ -108105,7 +108105,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=7, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9242",
@@ -108117,7 +108117,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'sales' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9076",
@@ -108129,7 +108129,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=4, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9110",
@@ -108141,7 +108141,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9166",
@@ -108153,7 +108153,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9210",
@@ -108165,7 +108165,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9218",
@@ -108177,7 +108177,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'mechanic' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9223",
@@ -108189,7 +108189,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9224",
@@ -108201,7 +108201,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9227",
@@ -108213,7 +108213,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9118",
@@ -108225,7 +108225,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9185",
@@ -108237,7 +108237,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9187",
@@ -108249,7 +108249,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9203",
@@ -108261,7 +108261,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9030",
@@ -108273,7 +108273,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=7, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9182",
@@ -108285,7 +108285,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9211",
@@ -108297,7 +108297,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8568",
@@ -108309,7 +108309,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9040",
@@ -108321,7 +108321,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=6, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9142",
@@ -108333,7 +108333,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8747",
@@ -108345,7 +108345,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9117",
@@ -108357,7 +108357,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9121",
@@ -108369,7 +108369,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9124",
@@ -108381,7 +108381,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'avionics' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8725",
@@ -108393,7 +108393,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9091",
@@ -108405,7 +108405,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9122",
@@ -108417,7 +108417,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8881",
@@ -108429,7 +108429,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8884",
@@ -108441,7 +108441,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9062",
@@ -108453,7 +108453,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9060",
@@ -108465,7 +108465,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9081",
@@ -108477,7 +108477,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=4, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9100",
@@ -108489,7 +108489,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=5, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9059",
@@ -108501,7 +108501,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9129",
@@ -108513,7 +108513,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9009",
@@ -108525,7 +108525,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9008",
@@ -108537,7 +108537,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9105",
@@ -108549,7 +108549,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9045",
@@ -108561,7 +108561,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9044",
@@ -108573,7 +108573,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8635",
@@ -108585,7 +108585,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8991",
@@ -108597,7 +108597,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9026",
@@ -108609,7 +108609,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "9001",
@@ -108621,7 +108621,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8935",
@@ -108633,7 +108633,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8363",
@@ -108645,7 +108645,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8927",
@@ -108657,7 +108657,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8874",
@@ -108669,7 +108669,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'finance' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8921",
@@ -108681,7 +108681,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8890",
@@ -108693,7 +108693,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=5, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8944",
@@ -108705,7 +108705,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8945",
@@ -108717,7 +108717,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'trainee' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8952",
@@ -108729,7 +108729,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8484",
@@ -108741,7 +108741,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8847",
@@ -108753,7 +108753,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8848",
@@ -108765,7 +108765,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8880",
@@ -108777,7 +108777,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=6, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8731",
@@ -108789,7 +108789,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8630",
@@ -108801,7 +108801,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=3, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8769",
@@ -108813,7 +108813,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8629",
@@ -108825,7 +108825,7 @@
     "source": "standardaero",
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=6, needed 1 engine + 3 total",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8761",
@@ -108837,7 +108837,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8784",
@@ -108849,7 +108849,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8570",
@@ -108861,7 +108861,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'sales' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8703",
@@ -108873,7 +108873,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8661",
@@ -108885,7 +108885,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8707",
@@ -108897,7 +108897,7 @@
     "source": "standardaero",
     "gate_failed": "gate3",
     "reason": "excluded term 'mechanic' in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8597",
@@ -108909,7 +108909,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8611",
@@ -108921,7 +108921,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8600",
@@ -108933,7 +108933,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8614",
@@ -108945,7 +108945,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8538",
@@ -108957,7 +108957,7 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   },
   {
     "id": "8192",
@@ -108969,6 +108969,6 @@
     "source": "standardaero",
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
-    "run_timestamp": "2026-06-13T08:56:44+00:00"
+    "run_timestamp": "2026-06-13T09:12:24+00:00"
   }
 ]
