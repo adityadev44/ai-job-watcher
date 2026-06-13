@@ -71,15 +71,16 @@ Never reduce below 2 hours.
 
 ## The 3-Gate AND Filter
 
-**All three gates must pass. Gates run in this order to minimise API calls.**
+**All four gates must pass. Gates run in this order to minimise API calls.**
 
 ```
 fetch_jobs()
-    └─ Gate 1: Title family check          → [gate1] tag if fails
-    └─ Gate 3: Exclude terms check         → [gate3] tag if fails
-        └─ fetch_job_description()         ← only fetched if G1 + G3 pass
-            └─ Gate 2: Engine domain check → [gate2] tag if fails
-                └─ MATCH
+    └─ Gate 1: Title family check              → [gate1] tag if fails
+    └─ Gate 3: Title exclude terms check       → [gate3] tag if fails
+        └─ fetch_job_description()             ← only fetched if G1 + G3 pass
+            └─ Gate 4: Description exclusion   → [gate4] tag if fails
+                └─ Gate 2: Engine domain check → [gate2] tag if fails
+                    └─ MATCH
 ```
 
 **Gate 1 — Title family (leadership/specialist shape)**
@@ -104,9 +105,20 @@ Added: "skillbridge" blocks US DoD SkillBridge internship postings (seen at GE A
 slipping through via "lead"/"director" in the role-title suffix. "operator" blocks floor-level
 production/machine operator roles ("Engine Assembly Shop Operator", "CNC Machine Operator").
 (Note: "it" was previously "it " with trailing space — word-boundary matching replaced it.)
-**IMPORTANT: description-based exclusion is a trap.** Engine shop JDs casually mention
-"avionics interface" or "software systems" — description exclusions silently kill real roles.
-Use title-only for Gate 3. Let Gate 2's positive requirement handle wrong-domain filtering.
+
+**Gate 4 — Description exclusion (US-citizens-only and inaccessible roles)**
+After the description is fetched and confirmed ≥100 chars, the description is checked for
+any term in `matching.description_exclude_terms` using case-insensitive substring matching.
+If found, the job is rejected regardless of engine domain content.
+Current terms: "u.s. citizenship required", "must be a u.s. citizen", "us citizenship required",
+"u.s. citizens only", "us citizens only", "u.s. persons only", "us persons only".
+Purpose: US defense contractors (RTX/Pratt & Whitney in particular) post engine-adjacent roles
+that are legally restricted to US citizens. These jobs are unreachable for non-US candidates
+regardless of qualifications. Gate 4 filters them without touching Gate 3 title logic.
+Note: short/unavailable descriptions bypass Gate 4 (same as Gate 2) — the job is kept
+unconditionally when description fetch fails or returns < 100 chars.
+Note: avoid overly broad terms like "security clearance required" — these appear in descriptions
+for legitimate international roles involving classified supplier data, not citizenship restrictions.
 
 **Gate 2 — Engine domain (description-based, ≥3 hits including ≥1 engine-specific)**
 Description must contain:
@@ -133,7 +145,8 @@ If description fetch fails or returns < 100 chars → KEEP THE JOB UNCONDITIONAL
 ```
 [gate1] Senior Avionics Technician (no title family match)
 [gate3] MRO Software Engineer (exclude hit: "software")
-[gate2] Production Manager (engine_hits=0, domain_hits=3, needed ≥1 engine + ≥2 total)
+[gate4] Engine Fleet Manager (description contains 'u.s. citizenship required')
+[gate2] Production Manager (engine_hits=0, domain_hits=3, needed ≥1 engine + ≥3 total)
 ```
 
 ---
@@ -858,8 +871,9 @@ env:
 matching:                          # shared across ALL companies
   title_family: [...]              # Gate 1: title must contain ≥1
   exclude_terms: [...]             # Gate 3: title must contain 0
+  description_exclude_terms: [...] # Gate 4: description must contain 0 (US-only etc.)
   engine_specific_terms: [...]     # Gate 2: description must contain ≥1 of these
-  domain_terms: [...]              # Gate 2: combined with engine_specific, total ≥2
+  domain_terms: [...]              # Gate 2: combined with engine_specific, total ≥3
 
 <company>_search:                  # per-company, fully isolated
   max_listings: 200

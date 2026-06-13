@@ -21,7 +21,9 @@ def _ci(text):
 
 def filter_jobs(jobs, fetcher, config=None):
     """
-    Filter a list of job dicts through 3 gates.
+    Filter a list of job dicts through 4 gates.
+
+    Gate ordering: 1 (title family) → 3 (title exclude) → fetch → 4 (desc exclude) → 2 (engine domain)
 
     Each job dict must have at minimum: title, url, location.
     The fetcher object must export:
@@ -39,6 +41,7 @@ def filter_jobs(jobs, fetcher, config=None):
     exclude_terms = [_ci(t) for t in m["exclude_terms"]]
     engine_terms = [_ci(t) for t in m["engine_specific_terms"]]
     domain_terms = [_ci(t) for t in m["domain_terms"]]
+    desc_exclude_terms = [_ci(t) for t in m.get("description_exclude_terms", [])]
 
     matched = []
     near_misses = []
@@ -86,6 +89,14 @@ def filter_jobs(jobs, fetcher, config=None):
             matched.append(job)
             continue
 
+        # Gate 4 — description exclusion (US-citizens-only and similar inaccessible roles)
+        desc_exc_hit = next((t for t in desc_exclude_terms if t in desc_lc), None)
+        if desc_exc_hit is not None:
+            reason = f"description contains '{desc_exc_hit}'"
+            print(f"[gate4] {title} ({reason})")
+            near_misses.append({**job, "gate_failed": "gate4", "reason": reason})
+            continue
+
         # Gate 2 — engine domain
         engine_hits = sum(1 for t in engine_terms if t in desc_lc)
         domain_hits = sum(1 for t in domain_terms if t in desc_lc)
@@ -127,9 +138,10 @@ def build_weekly_digest(near_misses):
         "gate1": "Gate 1 failures (title family mismatch)",
         "gate2": "Gate 2 failures (engine domain mismatch)",
         "gate3": "Gate 3 failures (excluded term in title)",
+        "gate4": "Gate 4 failures (description exclusion — US-only or inaccessible)",
     }
 
-    for gate in ("gate1", "gate3", "gate2"):
+    for gate in ("gate1", "gate3", "gate4", "gate2"):
         items = by_gate.get(gate, [])
         if not items:
             continue

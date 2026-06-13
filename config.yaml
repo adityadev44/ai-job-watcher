@@ -92,6 +92,14 @@ matching:
     - "Part 145"
     - "CAR 145"
     - "CRS"
+  description_exclude_terms:
+    - "u.s. citizenship required"
+    - "must be a u.s. citizen"
+    - "us citizenship required"
+    - "u.s. citizens only"
+    - "us citizens only"
+    - "u.s. persons only"
+    - "us persons only"
 
 safran_search:
   max_listings: 200
