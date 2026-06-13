@@ -87,7 +87,10 @@ Title must contain at least one term from `matching.title_family`, matched with 
 regex** (`re.search(r'\b<term>\b', title_lc)`). This prevents "engine" matching "engineer" or
 "engineering", and "lead" matching "leader".
 Current terms: manager, head, director, lead, chief, consultant, advisor, compliance, powerplant,
-engine, engines, mro, shop, technical services, instructor, overhaul.
+engine, engines, mro, shop, technical services, instructor, overhaul, camo, continuing airworthiness.
+Added: "camo" catches "CAMO Manager", "Head of CAMO", "CAMO Planner" (CAMO = Continuing
+Airworthiness Management Organisation). "continuing airworthiness" catches "Continuing Airworthiness
+Manager" as a phrase.
 Removed: "quality", "safety", "production" — all covered by "manager"/"director"/"head" at the
 right seniority level. Removing them eliminates "Quality Engineer", "Safety Engineer", etc.
 Note: "engine" and "engines" are separate entries — `\bengine\b` does NOT match "engines" (plural).
@@ -96,16 +99,34 @@ Note: "engine" and "engines" are separate entries — `\bengine\b` does NOT matc
 Title must NOT contain any term from `matching.exclude_terms`, also matched with word-boundary regex.
 Excludes: technician, apprentice, trainee, intern, fresher, graduate, new grad, software, it,
 avionics, cabin, pilot, finance, sales, structures, airframe, hr, human resources, coordinator,
-mechanic, inspector, talent acquisition, warehousing, asset management, dnata.
+mechanic, inspector, talent acquisition, warehousing, asset management, dnata, skillbridge, operator.
+Added: "skillbridge" blocks US DoD SkillBridge internship postings (seen at GE Aerospace) from
+slipping through via "lead"/"director" in the role-title suffix. "operator" blocks floor-level
+production/machine operator roles ("Engine Assembly Shop Operator", "CNC Machine Operator").
 (Note: "it" was previously "it " with trailing space — word-boundary matching replaced it.)
 **IMPORTANT: description-based exclusion is a trap.** Engine shop JDs casually mention
 "avionics interface" or "software systems" — description exclusions silently kill real roles.
 Use title-only for Gate 3. Let Gate 2's positive requirement handle wrong-domain filtering.
 
-**Gate 2 — Engine domain (description-based, ≥2 hits including ≥1 engine-specific)**
+**Gate 2 — Engine domain (description-based, ≥3 hits including ≥1 engine-specific)**
 Description must contain:
-- At least 1 hit from `engine_specific_terms` (GE90, GEnx, LEAP, Part 145, test cell, etc.)
-- At least 2 total hits from `engine_specific_terms` + `domain_terms` combined
+- At least 1 hit from `engine_specific_terms`
+- At least 3 total hits from `engine_specific_terms` + `domain_terms` combined
+(Threshold raised from 2→3 for additional precision — any genuine engine/CAMO description
+hits 5+ terms easily; the 3-hit requirement only blocks weak one-engine-hit cases.)
+
+**engine_specific_terms** — only truly engine-or-CAMO-exclusive terms:
+Engine model families: GE90, GEnx, PW4000, CF6, CFM56, LEAP, GTF, PW1100, Trent, V2500
+Engine shop activities: engine overhaul, test cell, borescope, shop visit, workscope,
+  on-wing, engine ground run
+Life-limited parts: LLP
+CAMO / airworthiness management: CAMO, Part-M, continuing airworthiness
+
+**What was REMOVED from engine_specific_terms:** "Part 145", "CAR 145", "CRS" — these are
+MRO certification standards that apply to ALL shops (engines, airframe, avionics, cabin),
+not engine-specific. An airframe shop description with "Part 145 approved facility" was
+silently passing Gate 2 with engine_hits=1. These three terms are now in domain_terms.
+
 If description fetch fails or returns < 100 chars → KEEP THE JOB UNCONDITIONALLY.
 
 **Near-miss logging format (must match exactly):**
@@ -584,6 +605,10 @@ above. `posting_date` from jobDetail is ISO 8601: `"2026-05-01T00:00:00.000+0000
 | "engine" (singular) does not match "engines" (plural) after word-boundary fix | `\bengine\b` requires word boundaries on both sides; "engines" has a word character ('s') immediately after "engine", so no boundary. A legitimate role like "Specialist, Strategic Procurement, Engines Materials and USM" at Sanad was silently dropped at Gate 1. | Add both "engine" AND "engines" as separate entries in `title_family`. Treat singular/plural as distinct items whenever both appear in real job titles. |
 | Multi-division portals pass Gate 2 on wrong-division descriptions | RTX (Collins + Raytheon + P&W), Sanad (Aerotech + Capital): the wrong division's descriptions are rich in aerospace domain terms and engine model names, so Gate 2 alone cannot distinguish. "Repair Station Quality Manager" at Safran Landing Systems had 10 domain hits but 0 engine-specific hits. | Add a company-name pre-filter in `run_<company>.py` before `filter_jobs()`: `raw_jobs = [j for j in raw_jobs if "pratt" in j.get("company","").lower()]`. Do this whenever a portal mixes divisions and Gate 2 is insufficient. Note: moving MRO/SMS/human factors from engine_specific_terms to domain_terms also helped — a description with only "MRO" + generic aviation terms now fails Gate 2. |
 | Broad title_family terms ("quality", "safety", "production") catch unintended roles | "Quality Engineer", "Safety Engineer", "Production Engineer" all passed Gate 1 and Gate 2 (engine company descriptions are generic). These are junior individual-contributor roles, not the senior MRO leadership the system targets. | Remove standalone "quality", "safety", "production" from title_family. "Quality Manager", "Safety Director", "Head of Production" still pass via "manager"/"director"/"head" — the seniority shape is preserved. |
+| "Part 145" / "CAR 145" / "CRS" in engine_specific_terms allows airframe/avionics shop roles to pass Gate 2 | These three are MRO certification standards held by ALL Part 145 shops regardless of what they maintain (engines, airframes, avionics, cabin). A description for an airframe base maintenance supervisor saying "our Part 145 approved facility" gave engine_hits=1, allowing it to pass Gate 2 with just one more domain term. | Moved "Part 145", "CAR 145", "CRS" from engine_specific_terms to domain_terms. Gate 2 now requires a hit on something truly exclusive to engine or CAMO work (engine model, test cell, shop visit, CAMO, Part-M, LLP, etc.). Gate 2 total threshold also raised from ≥2 to ≥3 for additional margin. |
+| DoD SkillBridge internship postings pass Gate 1 via role-title suffix | GE Aerospace posts US military fellowship roles as "Military DoD SkillBridge Program - [Role] Advanced Lead / Staff Engineer". The "lead"/"director" in the suffix passes Gate 1; descriptions mention LLP or engine terms and pass Gate 2. These are not real jobs — they are ~6-month internships for transitioning US military personnel. | Added "skillbridge" to exclude_terms. Word-boundary match catches "SkillBridge" in title regardless of what follows. Does not affect any other pipeline. |
+| "Engine Assembly Shop Operator" passes Gate 1 and Gate 3 | The title passes Gate 1 via "engine" (word-boundary correct) and has no Gate 3 exclusion. "Operator" is a floor-level production role, not a leadership/specialist position. Similar issue: "CNC Machine Operator", "Bench Operator". | Added "operator" to exclude_terms. "Operations Manager" / "Operations Director" are unaffected (word-boundary: `\boperator\b` does not match "operations"). |
+| CAMO roles failing Gate 2 (no engine-specific description terms) | CAMO (Continuing Airworthiness Management Organisation) job descriptions focus on regulatory compliance — Part-M, airworthiness directives, maintenance programme management. No engine model names. Previously, engine_hits=0 for all CAMO descriptions → Gate 2 failure even if the role is genuinely in scope. | Added "CAMO", "Part-M", "continuing airworthiness" to engine_specific_terms. A CAMO Manager description hitting "CAMO" + "Part-M" + domain terms now passes Gate 2. Also added "camo" and "continuing airworthiness" to title_family to catch CAMO-specific job titles at Gate 1. |
 
 ---
 

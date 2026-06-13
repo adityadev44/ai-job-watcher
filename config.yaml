@@ -16,6 +16,8 @@ matching:
     - "technical services"
     - "instructor"
     - "overhaul"
+    - "camo"
+    - "continuing airworthiness"
   exclude_terms:
     - "technician"
     - "apprentice"
@@ -42,6 +44,8 @@ matching:
     - "warehousing"
     - "asset management"
     - "dnata"
+    - "skillbridge"
+    - "operator"
   engine_specific_terms:
     - "GE90"
     - "GEnx"
@@ -56,11 +60,14 @@ matching:
     - "engine overhaul"
     - "test cell"
     - "borescope"
-    - "Part 145"
-    - "CAR 145"
-    - "CRS"
     - "shop visit"
     - "workscope"
+    - "CAMO"
+    - "Part-M"
+    - "continuing airworthiness"
+    - "LLP"
+    - "on-wing"
+    - "engine ground run"
   domain_terms:
     - "maintenance"
     - "repair"
@@ -82,6 +89,9 @@ matching:
     - "MRO"
     - "SMS"
     - "human factors"
+    - "Part 145"
+    - "CAR 145"
+    - "CRS"
 
 safran_search:
   max_listings: 200

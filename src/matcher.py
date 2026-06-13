@@ -91,8 +91,8 @@ def filter_jobs(jobs, fetcher, config=None):
         domain_hits = sum(1 for t in domain_terms if t in desc_lc)
         total_hits = engine_hits + domain_hits
 
-        if engine_hits < 1 or total_hits < 2:
-            reason = f"engine_hits={engine_hits}, domain_hits={domain_hits}, needed 1 engine + 2 total"
+        if engine_hits < 1 or total_hits < 3:
+            reason = f"engine_hits={engine_hits}, domain_hits={domain_hits}, needed 1 engine + 3 total"
             print(f"[gate2] {title} ({reason})")
             near_misses.append({**job, "gate_failed": "gate2", "reason": reason})
             continue
