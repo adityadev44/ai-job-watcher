@@ -156,7 +156,7 @@ If description fetch fails or returns < 100 chars → KEEP THE JOB UNCONDITIONAL
 ```
 config.yaml                       ← all config: shared matching rules + per-company search params
 src/
-  matcher.py                      ← shared 3-gate filter engine + weekly digest builder
+  matcher.py                      ← shared 4-gate filter engine + weekly digest builder
   notifier.py                     ← Telegram (chunked) + Gmail (multi-recipient) alerts
   <company>_fetcher.py            ← data source: fetch_jobs() + fetch_job_description()
   run_<company>.py                ← pipeline entry point (fetch → match → dedupe → alert → persist)
