@@ -1162,5 +1162,41 @@
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=1, needed 1 engine + 2 total",
     "run_timestamp": "2026-06-12T22:24:01+00:00"
+  },
+  {
+    "id": "1403944333",
+    "title": "Watch Commander",
+    "company": "GMR Group",
+    "location": "Bhogapuram, India",
+    "posting_date": "2026-06-12",
+    "url": "https://careers.gmrgroup.in/job/R-P-C-Layout-Watch-Commander-Bhog/1403944333/",
+    "source": "gmr",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-13T00:01:15+00:00"
+  },
+  {
+    "id": "1196717201",
+    "title": "Executive - Safety",
+    "company": "GMR Group",
+    "location": "Goa, India",
+    "posting_date": "2026-05-20",
+    "url": "https://careers.gmrgroup.in/job/Goa-Executive-Safety-GMR/1196717201/",
+    "source": "gmr",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-13T00:01:15+00:00"
+  },
+  {
+    "id": "1148195701",
+    "title": "Manager - F&A",
+    "company": "GMR Group",
+    "location": "PG03FA06, India",
+    "posting_date": "2026-05-17",
+    "url": "https://careers.gmrgroup.in/job/Tutt-fa-Pura-Manager-F&A-PG03/1148195701/",
+    "source": "gmr",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=1, needed 1 engine + 2 total",
+    "run_timestamp": "2026-06-13T00:01:15+00:00"
   }
 ]
