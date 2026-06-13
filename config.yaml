@@ -272,6 +272,15 @@ ste_search:
   inter_page_delay: 0.3
   note: "Fetcher uses J2W HTML scraping; startrow= pagination (not start=). Pre-filtered to Commercial Aerospace."
 
+# Qatar Airways uses Avature (portal ID 23). Jobs are server-side rendered HTML.
+# All ~150 Qatar Airways Group jobs fetched via pagination (jobOffset=N, 6 per page).
+# No server-side keyword or department filter — all jobs returned, Gate 1 filters to MRO/engineering.
+# Description: GET /global/JobDetail/{slug}/{id} — first <section> tag (~4000 chars).
+qatar_search:
+  max_listings: 200
+  inter_page_delay: 0.5
+  note: "Avature HTML scraping; article.article--result; jobOffset= pagination; desc in first <section>."
+
 # Lufthansa Technik uses a custom Lufthansa Group ATS at apply.lufthansagroup.careers.
 # REST API returns all ~305 Lufthansa Group jobs in one GET call.
 # Filter locally: ParentOrganizationName contains "Lufthansa Technik".
