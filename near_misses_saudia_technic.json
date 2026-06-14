@@ -670,5 +670,65 @@
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=1, needed 1 engine + 3 total",
     "run_timestamp": "2026-06-14T08:01:11+00:00"
+  },
+  {
+    "id": "1100085817",
+    "title": "Manager, International Stations",
+    "company": "Saudia Technic",
+    "location": "Jeddah , Saudi Arabia",
+    "posting_date": "2026-06-14",
+    "url": "https://careers.saudiatechnic.com/en/saudi-arabia/jobs/manager-international-stations-1100085817/",
+    "source": "saudia_technic",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=3, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-14T09:32:21+00:00"
+  },
+  {
+    "id": "1100085810",
+    "title": "Manager, CASS",
+    "company": "Saudia Technic",
+    "location": "Jeddah , Saudi Arabia",
+    "posting_date": "2026-06-14",
+    "url": "https://careers.saudiatechnic.com/en/saudi-arabia/jobs/manager-cass-1100085810/",
+    "source": "saudia_technic",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=2, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-14T09:32:21+00:00"
+  },
+  {
+    "id": "1100085808",
+    "title": "Manager Powerplant Cost, Contract & Vendor Management",
+    "company": "Saudia Technic",
+    "location": "Jeddah , Saudi Arabia",
+    "posting_date": "2026-06-14",
+    "url": "https://careers.saudiatechnic.com/en/saudi-arabia/jobs/manager-powerplant-cost-contract-vendor-management-1100085808/",
+    "source": "saudia_technic",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=2, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-14T09:32:21+00:00"
+  },
+  {
+    "id": "1100085807",
+    "title": "Manager Powerplant (APU)",
+    "company": "Saudia Technic",
+    "location": "Jeddah , Saudi Arabia",
+    "posting_date": "2026-06-14",
+    "url": "https://careers.saudiatechnic.com/en/saudi-arabia/jobs/manager-powerplant-apu-1100085807/",
+    "source": "saudia_technic",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=5, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-14T09:32:21+00:00"
+  },
+  {
+    "id": "1100080639",
+    "title": "Lead Investigator",
+    "company": "Saudia Technic",
+    "location": "Jeddah , Saudi Arabia",
+    "posting_date": "2026-05-11",
+    "url": "https://careers.saudiatechnic.com/en/saudi-arabia/jobs/lead-investigator-1100080639/",
+    "source": "saudia_technic",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=1, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-14T09:32:21+00:00"
   }
 ]

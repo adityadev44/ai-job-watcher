@@ -218,5 +218,49 @@
     "gate_failed": "gate3",
     "reason": "excluded term 'sales' in title",
     "run_timestamp": "2026-06-14T08:01:09+00:00"
+  },
+  {
+    "title": "Storeman",
+    "url": "https://magnetic.bamboohr.com/careers/64",
+    "location": "Tallinn, Harjumaa",
+    "company": "Magnetic MRO",
+    "source": "magnetic",
+    "posting_date": "",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-14T09:32:05+00:00"
+  },
+  {
+    "title": "Sales Executive",
+    "url": "https://magnetic.bamboohr.com/careers/137",
+    "location": "Miami, Florida",
+    "company": "Magnetic MRO",
+    "source": "magnetic",
+    "posting_date": "",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-14T09:32:05+00:00"
+  },
+  {
+    "title": "Customer Support Coordinator",
+    "url": "https://magnetic.bamboohr.com/careers/182",
+    "location": "Tallinn, Harjumaa",
+    "company": "Magnetic MRO",
+    "source": "magnetic",
+    "posting_date": "",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-14T09:32:05+00:00"
+  },
+  {
+    "title": "Sales Manager for the Component Workshop",
+    "url": "https://magnetic.bamboohr.com/careers/220",
+    "location": "Tallinn, Harjumaa",
+    "company": "Magnetic MRO",
+    "source": "magnetic",
+    "posting_date": "",
+    "gate_failed": "gate3",
+    "reason": "excluded term 'sales' in title",
+    "run_timestamp": "2026-06-14T09:32:05+00:00"
   }
 ]
