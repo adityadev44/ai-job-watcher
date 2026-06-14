@@ -814,5 +814,113 @@
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=1, needed 1 engine + 3 total",
     "run_timestamp": "2026-06-14T10:01:27+00:00"
+  },
+  {
+    "id": "1100085828",
+    "title": "Senior Specialist, Technical Supply Chain Management",
+    "company": "Saudia Technic",
+    "location": "Jeddah , Saudi Arabia",
+    "posting_date": "2026-06-14",
+    "url": "https://careers.saudiatechnic.com/en/saudi-arabia/jobs/senior-specialist-technical-supply-chain-management-1100085828/",
+    "source": "saudia_technic",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-14T13:00:05+00:00"
+  },
+  {
+    "id": "1100085826",
+    "title": "Sr Manager, Strategic Planning",
+    "company": "Saudia Technic",
+    "location": "Jeddah , Saudi Arabia",
+    "posting_date": "2026-06-14",
+    "url": "https://careers.saudiatechnic.com/en/saudi-arabia/jobs/sr-manager-strategic-planning-1100085826/",
+    "source": "saudia_technic",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=0, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-14T13:00:05+00:00"
+  },
+  {
+    "id": "1100085825",
+    "title": "Manager, Vendor Management",
+    "company": "Saudia Technic",
+    "location": "Jeddah , Saudi Arabia",
+    "posting_date": "2026-06-14",
+    "url": "https://careers.saudiatechnic.com/en/saudi-arabia/jobs/manager-vendor-management-1100085825/",
+    "source": "saudia_technic",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=0, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-14T13:00:05+00:00"
+  },
+  {
+    "id": "1100085824",
+    "title": "Manager, Strategic Procurement",
+    "company": "Saudia Technic",
+    "location": "Jeddah , Saudi Arabia",
+    "posting_date": "2026-06-14",
+    "url": "https://careers.saudiatechnic.com/en/saudi-arabia/jobs/manager-strategic-procurement-1100085824/",
+    "source": "saudia_technic",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=0, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-14T13:00:05+00:00"
+  },
+  {
+    "id": "1100085820",
+    "title": "Manager Fleet A330",
+    "company": "Saudia Technic",
+    "location": "Jeddah , Saudi Arabia",
+    "posting_date": "2026-06-14",
+    "url": "https://careers.saudiatechnic.com/en/saudi-arabia/jobs/manager-fleet-a330-1100085820/",
+    "source": "saudia_technic",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=4, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-14T13:00:05+00:00"
+  },
+  {
+    "id": "1100085819",
+    "title": "Manager, Heavy Maintenance Oversight",
+    "company": "Saudia Technic",
+    "location": "Jeddah , Saudi Arabia",
+    "posting_date": "2026-06-14",
+    "url": "https://careers.saudiatechnic.com/en/saudi-arabia/jobs/manager-heavy-maintenance-oversight-1100085819/",
+    "source": "saudia_technic",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=5, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-14T13:00:05+00:00"
+  },
+  {
+    "id": "1100085817",
+    "title": "Manager, International Stations",
+    "company": "Saudia Technic",
+    "location": "Jeddah , Saudi Arabia",
+    "posting_date": "2026-06-14",
+    "url": "https://careers.saudiatechnic.com/en/saudi-arabia/jobs/manager-international-stations-1100085817/",
+    "source": "saudia_technic",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=3, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-14T13:00:05+00:00"
+  },
+  {
+    "id": "1100085810",
+    "title": "Manager, CASS",
+    "company": "Saudia Technic",
+    "location": "Jeddah , Saudi Arabia",
+    "posting_date": "2026-06-14",
+    "url": "https://careers.saudiatechnic.com/en/saudi-arabia/jobs/manager-cass-1100085810/",
+    "source": "saudia_technic",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=2, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-14T13:00:05+00:00"
+  },
+  {
+    "id": "1100085808",
+    "title": "Manager Powerplant Cost, Contract & Vendor Management",
+    "company": "Saudia Technic",
+    "location": "Jeddah , Saudi Arabia",
+    "posting_date": "2026-06-14",
+    "url": "https://careers.saudiatechnic.com/en/saudi-arabia/jobs/manager-powerplant-cost-contract-vendor-management-1100085808/",
+    "source": "saudia_technic",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=2, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-14T13:00:05+00:00"
   }
 ]
