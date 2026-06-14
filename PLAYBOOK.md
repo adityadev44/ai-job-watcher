@@ -236,6 +236,7 @@ If the ATS provides a millisecond Unix timestamp, convert: `datetime.fromtimesta
 | ST Engineering Aerospace | SAP SuccessFactors J2W (same ATS as GMR and SIA) | HTML scraping (requests + BeautifulSoup) | `run_ste.py` | `careers.stengg.com` — multi-division portal (Commercial Aerospace, Defence Aerospace, Group HQ, Urban Solutions, Marine, Land Systems, Digital Systems). Search: `GET /search/?q=&sortColumn=referencedate&sortDirection=desc&startrow=N` — **note `startrow=` not `start=`** (differs from GMR/SIA). 25 jobs/page, ~350 total across all divisions. Division in `span.jobFacility` column (labelled "Facility" in HTML). **Pre-filtered to Commercial Aerospace only in `run_ste.py`** — ~44 of ~350 total jobs. Description: `span.jobdescription` on detail page (same as GMR/SIA). Total count from `aria-label="Search results for . Page N of M, Results 1 to 25 of T"` — same `r"Results \d+ to \d+ of (\d+)"` regex as SIA. Location format: `"Division - Address, CC"` e.g. `"Aero - 501 Airport Rd, SG"` — strip division prefix with `.split(" - ", 1)[1]`, then map `"SG"` → `"Singapore"`. |
 | Qatar Airways Engineering | Avature (portal ID 23, server-side rendered HTML) | HTML scraping (requests + BeautifulSoup) | `run_qatar.py` | `careers.qatarairways.com/global/SearchJobs?jobRecordsPerPage=6&jobOffset=N` — `jobRecordsPerPage` param is ignored; always returns 6 per page; paginate via `jobOffset`. ~150 total Qatar Airways Group jobs (airline + engineering + executive). Parse `article.article--result` elements; title from `a[href*="/global/JobDetail/"]`; location from "Work locations:" text; date in `DD-MM-YYYY` format (convert to YYYY-MM-DD). Job URL: `https://careers.qatarairways.com/global/JobDetail/{slug}/{id}`. Description: GET detail page, parse first `<section>` tag (~4000 chars, plain HTTP). No Playwright needed. |
 | Lufthansa Technik | Custom Lufthansa Group ATS (`apply.lufthansagroup.careers`) | JSON REST API (requests + BeautifulSoup) | `run_lht.py` | `apply.lufthansagroup.careers` — Lufthansa Group-wide ATS, no Playwright needed. One GET call returns all ~305 Lufthansa Group jobs. Filter locally: `ParentOrganizationName` contains `"Lufthansa Technik"` → ~103 jobs across 14 subsidiary entities (Hamburg, Malta, Sofia, Shannon, Milan, Puerto Rico, Shenzhen, Portugal, etc.). API: `GET https://api-apply.lufthansagroup.careers/search/?data=<JSON>` — JSON `data` param, URL-encoded. `CountItem=500` fetches all in one call. Response: `SearchResult.SearchResultItems[].MatchedObjectDescriptor`. Job URL from `PositionURI` field (already a canonical browseable URL). Description: GET detail page `apply.lufthansagroup.careers/index.php?ac=jobad&id={ID}`, parse `soup.find(id="content")` or `soup.find("main")` (~4600 chars). German-language titles fail Gate 1 naturally (no title_family terms match German job titles). |
+| Ethiopian Airlines | Custom static HTML portal (`corporate.ethiopianairlines.com`) | HTML scraping (requests + BeautifulSoup) | `run_ethiopian.py` | `GET https://corporate.ethiopianairlines.com/AboutEthiopian/careers/vacancies/{N}` — 4 pages, ~28 jobs/page, ~74 unique total (international jobs repeat on every page — deduplicated by `title_slug\|closing_date`). Bootstrap panel structure: jobs in `<div class="card-header">` → `<a data-toggle="collapse" href="#collapseXxx_N">` → `<strong>Position : </strong>&nbsp;&nbsp;{title}` (note space before colon in label, &nbsp; before value). Collapse div `<div id="collapseOne_N">` holds full description inline — **zero extra HTTP calls**; descriptions cached in `_desc_cache` during `fetch_jobs()`. Pagination: `<a class="page-link" href="/AboutEthiopian/careers/vacancies/{N}">` — parse max N from pagination links. **No individual job URLs** — browseable URL constructed as `{page_url}#{title-slug}` (loads the right page; fragment is cosmetic). **Closing date only** (no posting date) — same approach as Sanad. Company is domain-diverse (pilots, catering, medical, airport construction, aviation university); Gate 2 with inline descriptions handles domain filtering cleanly. `ADJUNCT PROFESSOR OF GAS TURBINE ENGINES` reaches Gate 2 (title contains "engines") but correctly fails — academic description has no engine-specific terms (GE90, CFM56, test cell, etc.). 0 Gate 2 matches expected in low-MRO-activity periods — the system is working, roles will surface when Ethiopian MRO ramps hiring. |
 
 ---
 
@@ -624,6 +625,8 @@ above. `posting_date` from jobDetail is ISO 8601: `"2026-05-01T00:00:00.000+0000
 | DoD SkillBridge internship postings pass Gate 1 via role-title suffix | GE Aerospace posts US military fellowship roles as "Military DoD SkillBridge Program - [Role] Advanced Lead / Staff Engineer". The "lead"/"director" in the suffix passes Gate 1; descriptions mention LLP or engine terms and pass Gate 2. These are not real jobs — they are ~6-month internships for transitioning US military personnel. | Added "skillbridge" to exclude_terms. Word-boundary match catches "SkillBridge" in title regardless of what follows. Does not affect any other pipeline. |
 | "Engine Assembly Shop Operator" passes Gate 1 and Gate 3 | The title passes Gate 1 via "engine" (word-boundary correct) and has no Gate 3 exclusion. "Operator" is a floor-level production role, not a leadership/specialist position. Similar issue: "CNC Machine Operator", "Bench Operator". | Added "operator" to exclude_terms. "Operations Manager" / "Operations Director" are unaffected (word-boundary: `\boperator\b` does not match "operations"). |
 | CAMO roles failing Gate 2 (no engine-specific description terms) | CAMO (Continuing Airworthiness Management Organisation) job descriptions focus on regulatory compliance — Part-M, airworthiness directives, maintenance programme management. No engine model names. Previously, engine_hits=0 for all CAMO descriptions → Gate 2 failure even if the role is genuinely in scope. | Added "CAMO", "Part-M", "continuing airworthiness" to engine_specific_terms. A CAMO Manager description hitting "CAMO" + "Part-M" + domain terms now passes Gate 2. Also added "camo" and "continuing airworthiness" to title_family to catch CAMO-specific job titles at Gate 1. |
+| Ethiopian HTML parser returned 0 jobs on first live run | WebFetch described job structure as `<li>` elements — actual HTML uses Bootstrap panel divs: `<div class="card-header">` → `<a data-toggle="collapse">`. `soup.find_all("li")` found nothing. | Always verify actual HTML with `curl` before writing the parser. Real structure: `soup.find_all("div", class_="card-header")` → `a[data-toggle="collapse"]`. Also: labels use `Position : ` (space before colon) and `&nbsp;` (\xa0) before values — strip both when parsing. |
+| Ethiopian international jobs appear on all 4 pages (same jobs repeated) | The portal repeats the 9 international positions at the top of every page, then appends different local positions per page. Fetching all 4 pages without dedup would add the same Expat Captain B767 four times. | Dedup within `fetch_jobs()` using `title_slug|closing_date` key. International jobs deduplicate naturally since they have identical titles and dates across pages. |
 
 ---
 
@@ -899,6 +902,59 @@ a summary email before clearing the old entries.
 
 ---
 
+## Ethiopian Airlines Notes (custom static HTML)
+
+### Detection
+No external ATS. The careers portal at `corporate.ethiopianairlines.com/AboutEthiopian/careers/vacancies`
+is a server-rendered HTML page with Bootstrap accordion panels. No XHR/fetch calls — everything is
+in the initial page response.
+
+### Page structure
+```html
+<div class="card-header">
+  <a data-toggle="collapse" href="#collapseOne_4">
+    <strong>Position : </strong>&nbsp;&nbsp;Expat Captain B767<br>
+    <strong>Location : </strong>&nbsp;&nbsp; Send to Expatrecruitment@...<br>
+    <strong>Closing Date : </strong>&nbsp;&nbsp;Open<br>
+  </a>
+</div>
+<div id="collapseOne_4" class="panel-collapse collapse in">
+  <div class="panel-body">full description here...</div>
+</div>
+```
+Key quirks:
+- Label format: `Position : ` (space before colon) — strip with `re.sub(r"[\s:]+$", "", key)`
+- Values start with `&nbsp;&nbsp;` → decoded as `\xa0\xa0` — strip with `.replace("\xa0", " ").strip()`
+- Case-insensitive ID lookup: `soup.find(id=re.compile(f"^{collapse_id}$", re.I))`
+
+### Pagination
+`/AboutEthiopian/careers/vacancies/{N}` for N = 1 to 4 (currently).
+Detect total from `<a class="page-link" href="/AboutEthiopian/careers/vacancies/{N}">` — max N found.
+Page 1 uses the base URL (no `/1` suffix on the site) — fetcher treats page_num=1 as `VACANCIES_URL`.
+
+### International jobs repeat on every page
+All 9 international positions appear at the top of pages 1–4. Deduplicate with `title_slug|closing_date`
+key within `fetch_jobs()` — identical jobs are skipped on pages 2–4.
+
+### No individual job URLs
+Each job's `url` is `{page_url}#{title-slug}`. The fragment scrolls toward the job in the browser
+(or does nothing if the accordion ID doesn't match). The page itself loads correctly. Acceptable
+limitation — the user sees all jobs on the page and can find the one referenced in the alert.
+
+### Closing date as posting_date
+The portal shows only a closing date per job (no posting date). Stored in `posting_date` field —
+same approach as Sanad. Alerts show the closing date under `Posted :`. "Open" → `posting_date = ""`.
+
+### Expected filter behaviour
+Ethiopian is domain-diverse: pilots, catering, medical, airport construction, aviation university.
+Gate 2 with inline descriptions filters cleanly — descriptions for construction/academic/catering
+roles contain zero engine-specific terms (GE90, CFM56, test cell, CAMO, etc.).
+`ADJUNCT PROFESSOR OF GAS TURBINE ENGINES` reaches Gate 2 (title has "engines") but fails correctly
+since academic curriculum descriptions don't mention specific engine models or shop activities.
+0 Gate 2 passes in quiet MRO hiring periods is **normal** — not broken.
+
+---
+
 ## Company Pipeline Roadmap
 
 | Phase | Company | ATS guess | Priority reason |
@@ -925,5 +981,6 @@ a summary email before clearing the old entries.
 | ✅ 5 | Saudia Technic | Talentera by Bayt.com (NOT Custom — AJAX via POST /app/control/byt_job_search_manager; USER_token from page HTML) | Middle East |
 | ✅ 6 | Lufthansa Technik | Custom Lufthansa Group ATS (REST JSON API at api-apply.lufthansagroup.careers; no Playwright; one GET call for all 305 group jobs; filter locally by ParentOrganizationName) | Global chain |
 | ✅ 6 | StandardAero | Oracle HCM Cloud (NOT Workday — standardaero.com/careers redirects directly to cva.fa.us1.oraclecloud.com; same API as Etihad but different data centre, site=CX_3, description in ExternalDescriptionStr) | US/Canada/Singapore |
-| 6 | MTU Maintenance | Custom | Germany/Canada/Serbia |
-| 6 | AFI KLM E&M | Custom French | Global chain |
+| ✅ 7 | Ethiopian Airlines | Custom static HTML (Bootstrap panel accordion; closing date only; no individual job URLs; inline descriptions; 4 pages ~74 jobs) | Africa's largest MRO — EASA/FAA approved, handles GE90/CFM56/Trent; active hiring expected when MRO ramps |
+| 7 | MTU Maintenance | Custom | Germany/Canada/Serbia |
+| 7 | AFI KLM E&M | Custom French | Global chain |

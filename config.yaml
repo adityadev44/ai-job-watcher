@@ -291,6 +291,17 @@ lht_search:
   inter_page_delay: 0.3
   note: "Lufthansa Group REST API; one GET call; filter locally by ParentOrganizationName."
 
+# Ethiopian Airlines uses a custom static HTML portal at corporate.ethiopianairlines.com.
+# No external ATS — plain requests + BeautifulSoup. 4 paginated pages of listings.
+# Jobs have no individual URLs; browseable URL is the page URL + #title-slug fragment.
+# Descriptions are inline in accordion HTML — cached during fetch_jobs(), zero extra HTTP calls.
+# Closing date only (no posting date) — same approach as Sanad.
+# Dedup by title_slug|closing_date since no stable job IDs exist.
+ethiopian_search:
+  max_listings: 200
+  inter_page_delay: 0.5
+  note: "Custom HTML scraping; /vacancies/{N} pagination; inline accordion descriptions; closing-date as posting_date."
+
 notifications:
   email:
     recipient: ""
