@@ -302,6 +302,34 @@ ethiopian_search:
   inter_page_delay: 0.5
   note: "Custom HTML scraping; /vacancies/{N} pagination; inline accordion descriptions; closing-date as posting_date."
 
+# GA Telesis uses JazzHR / ApplyToJob (applytojob.com). Single listing page,
+# all 40-50 jobs in one table. Row ID encodes posting date (YYYYMMDDHHMMSS).
+# GATES dept label = GA Telesis Engine Services (Finland/Dubai engine shops).
+# Description: GET /apply/jobs/details/{ID} → div.job_full_listing.clrfix.
+gatelesis_search:
+  max_listings: 200
+  inter_page_delay: 0.5
+  note: "ApplyToJob HTML; tr.resumator_even/odd_row; posting date from row ID; desc in div.job_full_listing."
+
+# FL Technics uses A&G Solutions Careers (asgc) WordPress plugin.
+# Listing pages are server-side rendered HTML (10 jobs/page, ?p-page=N).
+# Individual job URLs redirect to main careers page; descriptions open via JS modal.
+# Gate 2 is BYPASSED — descriptions not retrievable without Playwright click-in-modal.
+# Expect some false positives from Gate 1+3 passes (Head/Lead non-engine roles).
+fltechnics_search:
+  max_listings: 200
+  inter_page_delay: 0.5
+  note: "asgc WP plugin; 10 jobs/page via ?p-page=N; descriptions JS-modal — Gate 2 bypassed; expect false positives."
+
+# Magnetic MRO uses BambooHR. JSON API at /careers/list returns all jobs (currently ~4).
+# BambooHR detail pages are React SPAs — descriptions not available in static HTML.
+# Gate 2 is BYPASSED — returns ('', '') unconditionally. Low volume, low false-positive risk.
+# Engine roles (if any) would appear in Magnetic Engines department.
+magnetic_search:
+  max_listings: 200
+  inter_page_delay: 0.5
+  note: "BambooHR JSON API /careers/list; no descriptions (React SPA); Gate 2 bypassed; dept=Magnetic Engines for engine roles."
+
 notifications:
   email:
     recipient: ""

@@ -237,6 +237,9 @@ If the ATS provides a millisecond Unix timestamp, convert: `datetime.fromtimesta
 | Qatar Airways Engineering | Avature (portal ID 23, server-side rendered HTML) | HTML scraping (requests + BeautifulSoup) | `run_qatar.py` | `careers.qatarairways.com/global/SearchJobs?jobRecordsPerPage=6&jobOffset=N` — `jobRecordsPerPage` param is ignored; always returns 6 per page; paginate via `jobOffset`. ~150 total Qatar Airways Group jobs (airline + engineering + executive). Parse `article.article--result` elements; title from `a[href*="/global/JobDetail/"]`; location from "Work locations:" text; date in `DD-MM-YYYY` format (convert to YYYY-MM-DD). Job URL: `https://careers.qatarairways.com/global/JobDetail/{slug}/{id}`. Description: GET detail page, parse first `<section>` tag (~4000 chars, plain HTTP). No Playwright needed. |
 | Lufthansa Technik | Custom Lufthansa Group ATS (`apply.lufthansagroup.careers`) | JSON REST API (requests + BeautifulSoup) | `run_lht.py` | `apply.lufthansagroup.careers` — Lufthansa Group-wide ATS, no Playwright needed. One GET call returns all ~305 Lufthansa Group jobs. Filter locally: `ParentOrganizationName` contains `"Lufthansa Technik"` → ~103 jobs across 14 subsidiary entities (Hamburg, Malta, Sofia, Shannon, Milan, Puerto Rico, Shenzhen, Portugal, etc.). API: `GET https://api-apply.lufthansagroup.careers/search/?data=<JSON>` — JSON `data` param, URL-encoded. `CountItem=500` fetches all in one call. Response: `SearchResult.SearchResultItems[].MatchedObjectDescriptor`. Job URL from `PositionURI` field (already a canonical browseable URL). Description: GET detail page `apply.lufthansagroup.careers/index.php?ac=jobad&id={ID}`, parse `soup.find(id="content")` or `soup.find("main")` (~4600 chars). German-language titles fail Gate 1 naturally (no title_family terms match German job titles). |
 | Ethiopian Airlines | Custom static HTML portal (`corporate.ethiopianairlines.com`) | HTML scraping (requests + BeautifulSoup) | `run_ethiopian.py` | `GET https://corporate.ethiopianairlines.com/AboutEthiopian/careers/vacancies/{N}` — 4 pages, ~28 jobs/page, ~74 unique total (international jobs repeat on every page — deduplicated by `title_slug\|closing_date`). Bootstrap panel structure: jobs in `<div class="card-header">` → `<a data-toggle="collapse" href="#collapseXxx_N">` → `<strong>Position : </strong>&nbsp;&nbsp;{title}` (note space before colon in label, &nbsp; before value). Collapse div `<div id="collapseOne_N">` holds full description inline — **zero extra HTTP calls**; descriptions cached in `_desc_cache` during `fetch_jobs()`. Pagination: `<a class="page-link" href="/AboutEthiopian/careers/vacancies/{N}">` — parse max N from pagination links. **No individual job URLs** — browseable URL constructed as `{page_url}#{title-slug}` (loads the right page; fragment is cosmetic). **Closing date only** (no posting date) — same approach as Sanad. Company is domain-diverse (pilots, catering, medical, airport construction, aviation university); Gate 2 with inline descriptions handles domain filtering cleanly. `ADJUNCT PROFESSOR OF GAS TURBINE ENGINES` reaches Gate 2 (title contains "engines") but correctly fails — academic description has no engine-specific terms (GE90, CFM56, test cell, etc.). 0 Gate 2 matches expected in low-MRO-activity periods — the system is working, roles will surface when Ethiopian MRO ramps hiring. |
+| GA Telesis Engine Services | JazzHR / ApplyToJob (`gatelesis.applytojob.com`) | HTML scraping (requests + BeautifulSoup) | `run_gatelesis.py` | `GET https://gatelesis.applytojob.com/apply/jobs/` — all 43 jobs on a single page, no pagination. Rows: `tr.resumator_even_row` / `tr.resumator_odd_row`. Title from `a.job_title_link`; relative href `/apply/jobs/details/{ID}?&` → prepend base URL, strip `?&` for clean browseable URL. Location from 2nd `<td>`. Posting date from row `id="row_job_YYYYMMDDHHMMSS_*"` → extract first 8 digits as YYYY-MM-DD. Division from `span.resumator_department` — `"GATES Finland"` / `"GATES Dubai"` → company set to "GA Telesis Engine Services"; others → "GA Telesis". Description: `div.job_full_listing.clrfix` on detail page. Gate 2 is fully active — descriptions available, engine filtering works correctly. 0 Gate 2 matches expected until GATES Finland/Dubai posts engine leadership roles. |
+| FL Technics | WordPress + A&G Solutions Careers (asgc) plugin (`fltechnics.com`) | HTML scraping (requests + BeautifulSoup) | `run_fltechnics.py` | `GET https://fltechnics.com/careers/` → `?p-page=N` for subsequent pages. 10 jobs/page, ~41 total (5 pages). Parse `div.asgc-list-item-details` → title/URL from `div.asgc-list-col.col-title > a`, company from `div.asgc-list-col.col-company`, location from `div.asgc-list-col.col-location`. **Individual job URLs redirect to main careers page** — the WordPress CPT is registered with `show_in_rest=false`, AJAX calls return 400, and JS descriptions load via modal click. `fetch_job_description` returns `("","")`. **Gate 2 bypassed** — false positives expected for non-engine "head/lead" roles. Run adds a NOTE line to the log. No posting date available. |
+| Magnetic MRO | BambooHR JSON API (`magnetic.bamboohr.com`) | JSON REST API (requests) | `run_magnetic.py` | `GET https://magnetic.bamboohr.com/careers/list` → `{"meta":{"totalCount":N},"result":[...]}`. Fields: `id`, `jobOpeningName`, `departmentLabel`, `location.city`, `location.state`. Browseable URL: `https://magnetic.bamboohr.com/careers/{id}` (React SPA, opens correctly for humans). **No descriptions** — BambooHR detail pages are React SPAs; `fetch_job_description` returns `("","")`. **Gate 2 bypassed**. Currently 4 non-engine jobs. Engine roles would appear in `departmentLabel` containing "engine" → `company="Magnetic Engines"`. No posting date in JSON. |
 
 ---
 
@@ -627,6 +630,9 @@ above. `posting_date` from jobDetail is ISO 8601: `"2026-05-01T00:00:00.000+0000
 | CAMO roles failing Gate 2 (no engine-specific description terms) | CAMO (Continuing Airworthiness Management Organisation) job descriptions focus on regulatory compliance — Part-M, airworthiness directives, maintenance programme management. No engine model names. Previously, engine_hits=0 for all CAMO descriptions → Gate 2 failure even if the role is genuinely in scope. | Added "CAMO", "Part-M", "continuing airworthiness" to engine_specific_terms. A CAMO Manager description hitting "CAMO" + "Part-M" + domain terms now passes Gate 2. Also added "camo" and "continuing airworthiness" to title_family to catch CAMO-specific job titles at Gate 1. |
 | Ethiopian HTML parser returned 0 jobs on first live run | WebFetch described job structure as `<li>` elements — actual HTML uses Bootstrap panel divs: `<div class="card-header">` → `<a data-toggle="collapse">`. `soup.find_all("li")` found nothing. | Always verify actual HTML with `curl` before writing the parser. Real structure: `soup.find_all("div", class_="card-header")` → `a[data-toggle="collapse"]`. Also: labels use `Position : ` (space before colon) and `&nbsp;` (\xa0) before values — strip both when parsing. |
 | Ethiopian international jobs appear on all 4 pages (same jobs repeated) | The portal repeats the 9 international positions at the top of every page, then appends different local positions per page. Fetching all 4 pages without dedup would add the same Expat Captain B767 four times. | Dedup within `fetch_jobs()` using `title_slug|closing_date` key. International jobs deduplicate naturally since they have identical titles and dates across pages. |
+| FL Technics individual job URLs redirect to main careers page | `https://fltechnics.com/careers/technical-training-specialist/` returns HTTP 200 with page-id-36 (the main careers listing). The asgc WordPress plugin registers a custom post type for jobs but with `show_in_rest=false` — not exposed to WP REST API. WordPress `/wp-json/wp/v2/types` confirms: no career CPT in REST API. AJAX endpoint at `/wp-admin/admin-ajax.php` returns `0` (unknown action) for all attempted `asgc_*` action names. | Descriptions are in a JS-rendered modal — only accessible if Playwright clicks a job link on the listing page. Too complex for the `fetch_job_description(url)` interface. Accept Gate 2 bypass; document false positive risk. |
+| FL Technics descriptions rendered via JS modal (not Playwright-navigable) | Even with Playwright, navigating to an individual FL Technics job URL redirects to `/careers/` without opening the modal. The modal only opens when JavaScript detects a user click event on the listing page — pure URL navigation is insufficient. Headless rendering of the same URL returns the full job listing without any specific job's description. | Accepted limitation. Gate 2 is bypassed. False positives from Gate 1+3 passes (e.g., "Head of Legal", "Lead Atlassian Engineer") will appear. These are seen on first run and won't re-alert. |
+| BambooHR job detail pages are React SPAs (Magnetic MRO descriptions unavailable) | `GET https://magnetic.bamboohr.com/careers/{id}` returns 200 with a 110KB React shell. No `__NEXT_DATA__` or `window.__bamboo__` data blob. No separate REST API for job details beyond the list JSON. The content renders entirely in JavaScript. | Return `("","")` from `fetch_job_description`. Gate 2 bypassed. Magnetic MRO is currently 4 non-engine jobs; bypass is low-risk since Gate 1+3 filters are tight for these non-engine titles. |
 
 ---
 
@@ -955,6 +961,80 @@ since academic curriculum descriptions don't mention specific engine models or s
 
 ---
 
+## GA Telesis / ApplyToJob (JazzHR) Notes
+
+### Detection
+`gatelesis.applytojob.com` — ApplyToJob is the public-facing job board product from JazzHR.
+Jobs are in an HTML `<table>` structure. No JSON API — scrape HTML directly.
+
+### Listing structure
+```python
+rows = soup.find_all("tr", class_=re.compile(r"resumator_(even|odd)_row"))
+for row in rows:
+    a = row.find("a", class_="job_title_link")
+    title = a.get_text(strip=True)
+    href = a["href"]   # relative: /apply/jobs/details/{ID}?&
+    job_id = re.search(r"/apply/jobs/details/([^?/]+)", href).group(1)
+    tds = row.find_all("td")
+    location = tds[1].get_text(strip=True)
+    dept = row.find("span", class_="resumator_department")
+    row_id = row.get("id", "")   # row_job_YYYYMMDDHHMMSS_*
+    date_match = re.match(r"row_job_(\d{4})(\d{2})(\d{2})\d{6}_", row_id)
+    posting_date = f"{date_match.group(1)}-{date_match.group(2)}-{date_match.group(3)}"
+```
+
+### Division detection (GATES = Engine Services)
+`departmentLabel` containing `"GATES"` indicates GA Telesis Engine Services (Finland and Dubai
+engine shops). Set `company = "GA Telesis Engine Services"` for these rows, `"GA Telesis"` for all others.
+
+### Description
+`GET https://gatelesis.applytojob.com/apply/jobs/details/{ID}` → `div.job_full_listing.clrfix`.
+Gate 2 is fully active — descriptions are available and correctly filter to engine roles.
+
+### Key quirks
+- All jobs on one page (no pagination)
+- `href` in `<a>` is relative (`/apply/jobs/details/{ID}?&`) — must prepend base URL
+- `?&` suffix in href is vestigial — strip it for clean browseable URLs
+- Job IDs are alphanumeric strings (`qcpRkZ9nRU`), stable across sessions
+- Posting date embedded in row `id` attribute, not in a visible cell
+
+---
+
+## Gate 2 Bypass — FL Technics and Magnetic MRO
+
+Both pipelines bypass Gate 2 because descriptions are not accessible in static HTML.
+
+### Why Gate 2 bypass happens
+- **FL Technics**: Descriptions are in a JavaScript modal triggered by user click — not
+  accessible via URL navigation or any AJAX endpoint. Individual job URLs redirect to the
+  main careers page (`page-id-36`) regardless of slug.
+- **Magnetic MRO (BambooHR)**: Detail pages are React SPAs. No external data source found.
+
+### Consequences of Gate 2 bypass
+When `fetch_job_description` returns `("","")`, matcher.py logs `[kept-no-desc]` and keeps
+the job unconditionally (design principle: false negative = career cost). This means:
+- Any job that passes Gate 1 (title family) and Gate 3 (exclusion terms) is alerted
+- Non-engine "head/lead" roles (Head of Legal, Lead Atlassian Engineer) generate false positives
+- False positives are seen on first run and do not re-alert
+
+### How to limit false positive damage
+1. Gate 3 `exclude_terms` handles the most common non-engine categories: finance, sales, IT,
+   software, HR, etc. — most false positives are already caught here
+2. Remaining false positives (Head of Legal, Lead Atlassian Engineer) are low frequency
+3. First-run alerts seed `seen_jobs_<company>.json` — they won't recur
+4. If false positives grow: add "legal", "atlassian", "jira" to `exclude_terms` (global config —
+   only do this if you're seeing these titles from other pipelines too)
+
+### When to revisit
+- **FL Technics**: If Playwright click-in-modal support is added, descriptions become available.
+  The fetcher would need to open `/careers/`, find the job title, click it, wait for modal,
+  extract `div.asgc-single-position` or similar. Complex — defer unless false positives grow.
+- **Magnetic MRO**: If they post engine leadership roles and Gate 2 bypass causes noise, add a
+  department pre-filter: only pass jobs where `departmentLabel` contains "engine" or "engines".
+  Currently 4 jobs, all non-engine departments, so this is low priority.
+
+---
+
 ## Company Pipeline Roadmap
 
 | Phase | Company | ATS guess | Priority reason |
@@ -982,5 +1062,8 @@ since academic curriculum descriptions don't mention specific engine models or s
 | ✅ 6 | Lufthansa Technik | Custom Lufthansa Group ATS (REST JSON API at api-apply.lufthansagroup.careers; no Playwright; one GET call for all 305 group jobs; filter locally by ParentOrganizationName) | Global chain |
 | ✅ 6 | StandardAero | Oracle HCM Cloud (NOT Workday — standardaero.com/careers redirects directly to cva.fa.us1.oraclecloud.com; same API as Etihad but different data centre, site=CX_3, description in ExternalDescriptionStr) | US/Canada/Singapore |
 | ✅ 7 | Ethiopian Airlines | Custom static HTML (Bootstrap panel accordion; closing date only; no individual job URLs; inline descriptions; 4 pages ~74 jobs) | Africa's largest MRO — EASA/FAA approved, handles GE90/CFM56/Trent; active hiring expected when MRO ramps |
-| 7 | MTU Maintenance | Custom | Germany/Canada/Serbia |
-| 7 | AFI KLM E&M | Custom French | Global chain |
+| ✅ 8 | GA Telesis Engine Services | JazzHR / ApplyToJob (single listing page; row ID encodes posting date; Gate 2 active) | Global engine shop (Finland/Dubai) — high engine content, Gate 2 works well |
+| ✅ 8 | FL Technics | WordPress / asgc plugin (5 pages; descriptions JS-modal, Gate 2 bypassed) | Line/base MRO + small engine repair shop — Gate 2 bypass means some false positives |
+| ✅ 8 | Magnetic MRO | BambooHR JSON (4 jobs currently; descriptions React SPA, Gate 2 bypassed) | Estonian MRO; Magnetic Engines handles V2500/CFM56-5B — low volume, monitoring only |
+| 9 | MTU Maintenance | Custom | Germany/Canada/Serbia |
+| 9 | AFI KLM E&M | Custom French | Global chain |
