@@ -1510,5 +1510,53 @@
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=0, needed 1 engine + 3 total",
     "run_timestamp": "2026-06-16T19:50:59+00:00"
+  },
+  {
+    "id": "1100085915",
+    "title": "Senior Specialist, Technical Records and Publications",
+    "company": "Saudia Technic",
+    "location": "Jeddah , Saudi Arabia",
+    "posting_date": "2026-06-15",
+    "url": "https://careers.saudiatechnic.com/en/saudi-arabia/jobs/senior-specialist-technical-records-and-publications-1100085915/",
+    "source": "saudia_technic",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-16T20:52:12+00:00"
+  },
+  {
+    "id": "1100085914",
+    "title": "Senior Specialist, Aircraft Maintenance Safety and Quality ‎",
+    "company": "Saudia Technic",
+    "location": "Jeddah , Saudi Arabia",
+    "posting_date": "2026-06-15",
+    "url": "https://careers.saudiatechnic.com/en/saudi-arabia/jobs/senior-specialist-aircraft-maintenance-safety-and-quality-1100085914/",
+    "source": "saudia_technic",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-16T20:52:12+00:00"
+  },
+  {
+    "id": "1100085913",
+    "title": "Senior Specialist, Aircraft Engineering and Maintenance",
+    "company": "Saudia Technic",
+    "location": "Jeddah , Saudi Arabia",
+    "posting_date": "2026-06-15",
+    "url": "https://careers.saudiatechnic.com/en/saudi-arabia/jobs/senior-specialist-aircraft-engineering-and-maintenance-1100085913/",
+    "source": "saudia_technic",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-16T20:52:12+00:00"
+  },
+  {
+    "id": "1100085828",
+    "title": "Senior Specialist, Technical Supply Chain Management",
+    "company": "Saudia Technic",
+    "location": "Jeddah , Saudi Arabia",
+    "posting_date": "2026-06-14",
+    "url": "https://careers.saudiatechnic.com/en/saudi-arabia/jobs/senior-specialist-technical-supply-chain-management-1100085828/",
+    "source": "saudia_technic",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-16T20:52:12+00:00"
   }
 ]
