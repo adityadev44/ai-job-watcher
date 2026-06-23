@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "id": "9339",
+    "title": "AME Trainee (A&C)",
+    "posting_date": "2026-04-30",
+    "location": "Pan-India",
+    "url": "https://career-in10.hr.cloud.sap/career?career%5fns=job%5flisting&company=interglobe&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=9339",
+    "company": "IndiGo",
+    "source": "indigo",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-23T08:01:39+00:00"
+  },
+  {
+    "id": "9323",
+    "title": "Fleet Engineer (A&C)",
+    "posting_date": "2026-04-30",
+    "location": "Noida",
+    "url": "https://career-in10.hr.cloud.sap/career?career%5fns=job%5flisting&company=interglobe&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=9323",
+    "company": "IndiGo",
+    "source": "indigo",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-23T08:01:39+00:00"
+  },
+  {
+    "id": "9322",
+    "title": "Aircraft Maintenance Engineer (A&C)",
+    "posting_date": "2026-04-30",
+    "location": "Pan-India",
+    "url": "https://career-in10.hr.cloud.sap/career?career%5fns=job%5flisting&company=interglobe&navBarLevel=JOB%5fSEARCH&rcm%5fsite%5flocale=en%5fGB&career_job_req_id=9322",
+    "company": "IndiGo",
+    "source": "indigo",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-23T08:01:39+00:00"
+  }
+]
