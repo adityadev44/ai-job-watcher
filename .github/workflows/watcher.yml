@@ -88,6 +88,12 @@ jobs:
           pid17=$!
           python -u -m src.run_magnetic &
           pid18=$!
+          python -u -m src.run_mtu &
+          pid19=$!
+          python -u -m src.run_air_india &
+          pid20=$!
+          python -u -m src.run_dgca &
+          pid21=$!
           wait $pid1
           s1=$?
           wait $pid2
@@ -124,7 +130,13 @@ jobs:
           s17=$?
           wait $pid18
           s18=$?
-          exit $((s1 | s2 | s3 | s4 | s5 | s6 | s7 | s8 | s9 | s10 | s11 | s12 | s13 | s14 | s15 | s16 | s17 | s18))
+          wait $pid19
+          s19=$?
+          wait $pid20
+          s20=$?
+          wait $pid21
+          s21=$?
+          exit $((s1 | s2 | s3 | s4 | s5 | s6 | s7 | s8 | s9 | s10 | s11 | s12 | s13 | s14 | s15 | s16 | s17 | s18 | s19 | s20 | s21))
 
       - name: Save state to repo
         run: |
@@ -147,7 +159,10 @@ jobs:
                   seen_jobs_ethiopian.json near_misses_ethiopian.json \
                   seen_jobs_gatelesis.json near_misses_gatelesis.json \
                   seen_jobs_fltechnics.json near_misses_fltechnics.json \
-                  seen_jobs_magnetic.json near_misses_magnetic.json
+                  seen_jobs_magnetic.json near_misses_magnetic.json \
+                  seen_jobs_mtu.json near_misses_mtu.json \
+                  seen_jobs_air_india.json near_misses_air_india.json \
+                  seen_jobs_dgca.json near_misses_dgca.json
           if git diff --staged --quiet; then
             echo "No changes to commit — state unchanged"
           else

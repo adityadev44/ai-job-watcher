@@ -6,6 +6,7 @@ matching:
     - "lead"
     - "chief"
     - "consultant"
+    - "consultants"
     - "advisor"
     - "compliance"
     - "powerplant"
@@ -329,6 +330,34 @@ magnetic_search:
   max_listings: 200
   inter_page_delay: 0.5
   note: "BambooHR JSON API /careers/list; no descriptions (React SPA); Gate 2 bypassed; dept=Magnetic Engines for engine roles."
+
+# MTU Maintenance uses a custom TYPO3 CMS portal at mtu.de/careers.
+# All MTU entities on one page — pre-filtered to MTU Maintenance subsidiaries in run_mtu.py.
+# No server-side keyword filtering. No posting date available on this portal.
+# German-language titles fail Gate 1 naturally (same as LHT German branches).
+# Subsidiaries: Hannover (CFM56/V2500/CF6/GP7200/PW800), Berlin-Brandenburg (GE90/LEAP/CFM56),
+# Canada (Delta BC), Fort Worth TX, Australia, Serbia.
+mtu_search:
+  max_listings: 300
+  inter_page_delay: 0.3
+  note: "Custom TYPO3 CMS; single page, no pagination; pre-filter to MTU Maintenance; no posting date."
+
+# DGCA uses a NIC DigiGov portal (AJAX-rendered). Requires Playwright.
+# Vacancy page: dgca.gov.in/?page=4368/4646/servicename — one datatable,
+# ~320 rows of all-time circulars (newest first). max_listings=50 gets recent ones.
+# Vacancy documents are PDFs — Gate 2 bypassed (fetch_job_description returns "").
+# All Gate-1+3-passing rows are kept and alerted on first appearance.
+# First run seeds seen list with all current rows to avoid bulk alert.
+dgca_search:
+  max_listings: 50
+  note: "Playwright; datatable table.datatable; Gate 2 bypassed (PDFs); first-run seeds seen list."
+
+# Air India uses SAP SuccessFactors J2W — same ATS as GMR, SIA, STE.
+# Portal: careers.airindia.com — no server-side keyword filtering.
+air_india_search:
+  max_listings: 200
+  inter_page_delay: 0.5
+  note: "J2W HTML scraping; start= pagination; no server-side filtering; predominantly India-based."
 
 notifications:
   email:
