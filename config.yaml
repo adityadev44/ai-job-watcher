@@ -348,6 +348,57 @@ air_india_search:
   inter_page_delay: 0.5
   note: "J2W HTML scraping; start= pagination; no server-side filtering; predominantly India-based."
 
+# SAESL (Singapore Aero Engine Services, Rolls-Royce / SIA Engineering JV,
+# Trent engine MRO) uses the ApplyOurJobs ATS. Listing via JSON PageMethod
+# (default.aspx/GetJobList) — no session/cookies needed, no keyword filtering
+# server-side. ~30 total jobs, single call returns everything.
+saesl_search:
+  max_listings: 200
+  inter_page_delay: 0.3
+  note: "ApplyOurJobs PageMethod JSON API; default.aspx/GetJobList; no server-side keyword filtering."
+
+# Oman Air uses a legacy Java/Struts "eRecruit" portal (services.omanair.com).
+# www.omanair.com is behind an Incapsula bot challenge — services.omanair.com
+# serves the identical backend without it. No server-side keyword filtering;
+# all departments returned, Gate 1-4 filter to engineering/MRO roles.
+# CONFIRMED EMPTY at build time (0 active vacancies) — row/detail markup was
+# inferred from the URL contract only, not verified against live data. Watch
+# the first run with real postings closely.
+oman_air_search:
+  max_listings: 200
+  inter_page_delay: 0.5
+  note: "Legacy Struts eRecruit; services.omanair.com avoids Incapsula challenge on www; 0 vacancies at build time."
+
+# Gulf Air Group uses the same Sniperhire ATS as Sanad (gulfairgroup.sniperhire.net).
+# No server-side keyword filtering — all ~13 group-wide jobs returned, Gate 1-4
+# filter to engineering/MRO roles. Note: detail-page field value class is
+# "sc-val" here, not "categVal" as on Sanad's portal — same vendor, different
+# template revision.
+gulf_air_search:
+  max_listings: 200
+  inter_page_delay: 0.3
+  note: "Sniperhire HTML; /?pg=N pagination (0-indexed); detail page div.sc-val for field values."
+
+# Kuwait Airways uses Zoho Recruit's Career Site 2.0 product. The entire job
+# list (including full plain-text descriptions) is server-rendered into a
+# hidden #jobs input on a single GET — no pagination, no separate detail
+# fetch needed. 0 active vacancies at build time (confirmed via empty list).
+kuwait_airways_search:
+  max_listings: 200
+  inter_page_delay: 0.3
+  note: "Zoho Recruit Career Site; #jobs hidden input has inline JSON incl. descriptions; single GET."
+
+# AMMROC was folded into EDGE Group's unified careers portal
+# (careers.edgegroup.ae) — ammroc.ae and ammroc.edgegroup.ae do not resolve
+# (DNS failure). Same SAP SuccessFactors J2W ATS as GMR/SIA/STE/Air India,
+# Taleo-style "/go/View-All-Jobs/{catId}/{offset}/" pagination. ~145 jobs
+# across ~25 EDGE Group subsidiaries; pre-filtered to AMMROC entity only in
+# run_ammroc.py. 0 AMMROC jobs at build time (other entities have postings).
+ammroc_search:
+  max_listings: 200
+  inter_page_delay: 0.3
+  note: "J2W via careers.edgegroup.ae; offset-based /go/View-All-Jobs/ pagination; pre-filtered to AMMROC entity."
+
 notifications:
   email:
     recipient: ""

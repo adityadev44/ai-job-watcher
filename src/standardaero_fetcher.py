@@ -126,9 +126,13 @@ def fetch_jobs(max_listings: int = 300, inter_page_delay: float = 0.2) -> list[d
         if not req_list:
             break
 
-        new_jobs = [_build_job(r) for r in req_list if r.get("Id") and str(r["Id"]) not in seen_ids]
-        for j in new_jobs:
-            seen_ids.add(j["id"])
+        new_jobs = []
+        for r in req_list:
+            rid = str(r.get("Id", ""))
+            if not rid or rid in seen_ids:
+                continue
+            seen_ids.add(rid)
+            new_jobs.append(_build_job(r))
 
         if not new_jobs:
             break
