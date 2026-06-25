@@ -7474,5 +7474,77 @@
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
     "run_timestamp": "2026-06-25T08:58:52+00:00"
+  },
+  {
+    "id": "651",
+    "title": "B1 Aircraft Engineer - Base Maintenance",
+    "location": "Abu Dhabi, United Arab Emirates",
+    "posting_date": "2026-06-25",
+    "url": "https://careers.etihadengineering.com/en/sites/careers/job/651",
+    "company": "Etihad Engineering",
+    "source": "etihad",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-25T12:01:21+00:00"
+  },
+  {
+    "id": "825",
+    "title": "B1/B2 Production Trainer",
+    "location": "Abu Dhabi, United Arab Emirates",
+    "posting_date": "2026-06-22",
+    "url": "https://careers.etihadengineering.com/en/sites/careers/job/825",
+    "company": "Etihad Engineering",
+    "source": "etihad",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-25T12:01:21+00:00"
+  },
+  {
+    "id": "601",
+    "title": "Manager - Strategic Procurement & Performance Management",
+    "location": "Abu Dhabi, United Arab Emirates",
+    "posting_date": "2026-06-19",
+    "url": "https://careers.etihadengineering.com/en/sites/careers/job/601",
+    "company": "Etihad Engineering",
+    "source": "etihad",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=3, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-25T12:01:21+00:00"
+  },
+  {
+    "id": "808",
+    "title": "Manager Warehousing",
+    "location": "Abu Dhabi, United Arab Emirates",
+    "posting_date": "2026-06-18",
+    "url": "https://careers.etihadengineering.com/en/sites/careers/job/808",
+    "company": "Etihad Engineering",
+    "source": "etihad",
+    "gate_failed": "gate3",
+    "reason": "excluded term 'warehousing' in title",
+    "run_timestamp": "2026-06-25T12:01:21+00:00"
+  },
+  {
+    "id": "375",
+    "title": "Manager Aircraft Fleet Appearance",
+    "location": "Abu Dhabi, United Arab Emirates",
+    "posting_date": "2026-06-11",
+    "url": "https://careers.etihadengineering.com/en/sites/careers/job/375",
+    "company": "Etihad Engineering",
+    "source": "etihad",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=4, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-25T12:01:21+00:00"
+  },
+  {
+    "id": "811",
+    "title": "Material Inspector",
+    "location": "Abu Dhabi, United Arab Emirates",
+    "posting_date": "2026-06-02",
+    "url": "https://careers.etihadengineering.com/en/sites/careers/job/811",
+    "company": "Etihad Engineering",
+    "source": "etihad",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-25T12:01:21+00:00"
   }
 ]
