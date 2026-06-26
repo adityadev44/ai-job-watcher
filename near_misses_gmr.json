@@ -2830,5 +2830,53 @@
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=1, needed 1 engine + 3 total",
     "run_timestamp": "2026-06-26T02:01:13+00:00"
+  },
+  {
+    "id": "1407929633",
+    "title": "Executive - Airside Ops",
+    "company": "GMR Group",
+    "location": "Bhogapuram, India",
+    "posting_date": "2026-06-24",
+    "url": "https://careers.gmrgroup.in/job/R-P-C-Layout-Executive-Airside-Ops-Bhog/1407929633/",
+    "source": "gmr",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-26T10:01:20+00:00"
+  },
+  {
+    "id": "1196717201",
+    "title": "Executive - Safety",
+    "company": "GMR Group",
+    "location": "Goa, India",
+    "posting_date": "2026-06-18",
+    "url": "https://careers.gmrgroup.in/job/Goa-Executive-Safety-GMR/1196717201/",
+    "source": "gmr",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-26T10:01:20+00:00"
+  },
+  {
+    "id": "1148195701",
+    "title": "Manager - F&A",
+    "company": "GMR Group",
+    "location": "PG03FA06, India",
+    "posting_date": "2026-06-15",
+    "url": "https://careers.gmrgroup.in/job/Tutt-fa-Pura-Manager-F&A-PG03/1148195701/",
+    "source": "gmr",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=1, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-26T10:01:20+00:00"
+  },
+  {
+    "id": "1396784333",
+    "title": "Associate Manager - Electrical",
+    "company": "GMR Group",
+    "location": "Warora, India",
+    "posting_date": "2026-05-23",
+    "url": "https://careers.gmrgroup.in/job/Warora-Associate-Manager-Electrical-Waro/1396784333/",
+    "source": "gmr",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=2, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-26T10:01:20+00:00"
   }
 ]
