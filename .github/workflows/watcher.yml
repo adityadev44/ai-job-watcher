@@ -183,6 +183,7 @@ jobs:
                   seen_jobs_gulf_air.json near_misses_gulf_air.json \
                   seen_jobs_kuwait_airways.json near_misses_kuwait_airways.json \
                   seen_jobs_ammroc.json near_misses_ammroc.json
+          test -f pipeline_failures.json && git add pipeline_failures.json || true
           if git diff --staged --quiet; then
             echo "No changes to commit — state unchanged"
           else

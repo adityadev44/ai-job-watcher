@@ -2,12 +2,15 @@ import sys
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
+import json
 import os
 import re
 import smtplib
+import tempfile
 import textwrap
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from pathlib import Path
 
 # ── Location-priority sort (India → Middle East → Singapore/Asia → Others) ──
 
@@ -185,6 +188,61 @@ def notify_matches(jobs):
         subject="Aviation MRO job matches",
         body=message.replace("<b>", "").replace("</b>", ""),
     )
+
+
+_FAILURES_PATH = Path(__file__).parent.parent / "pipeline_failures.json"
+_FAILURE_THRESHOLD = 3
+
+
+def _read_failures() -> dict:
+    try:
+        return json.loads(_FAILURES_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def _write_failures(data: dict) -> None:
+    dir_ = _FAILURES_PATH.parent
+    with tempfile.NamedTemporaryFile("w", dir=dir_, delete=False, suffix=".tmp", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
+        tmp = f.name
+    os.replace(tmp, _FAILURES_PATH)
+
+
+def notify_pipeline_error(source: str, exc: Exception) -> None:
+    """Email when a pipeline crashes 3 consecutive times. Silent on 1st/2nd failure."""
+    try:
+        data = _read_failures()
+        data[source] = data.get(source, 0) + 1
+        count = data[source]
+        _write_failures(data)
+        print(f"[{source}] Consecutive failure count: {count}/{_FAILURE_THRESHOLD}")
+        if count < _FAILURE_THRESHOLD:
+            return
+        # Threshold reached — alert, then reset so next streak of 3 also triggers
+        data[source] = 0
+        _write_failures(data)
+        send_email(
+            subject=f"[{source}] pipeline error — Aviation MRO Watcher ({_FAILURE_THRESHOLD} consecutive failures)",
+            body=(
+                f"The [{source}] pipeline has failed {_FAILURE_THRESHOLD} consecutive times "
+                f"and did not run.\n\nMost recent error: {exc}"
+            ),
+        )
+        print(f"[{source}] Error notification sent after {_FAILURE_THRESHOLD} consecutive failures.")
+    except Exception:
+        pass
+
+
+def reset_failure_count(source: str) -> None:
+    """Reset consecutive failure counter after a successful run."""
+    try:
+        data = _read_failures()
+        if data.get(source, 0) != 0:
+            data[source] = 0
+            _write_failures(data)
+    except Exception:
+        pass
 
 
 def notify_digest(near_misses_text):

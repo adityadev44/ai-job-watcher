@@ -122,6 +122,7 @@ def run_pipeline(seen_path=None, near_miss_path=None):
 if __name__ == "__main__":
     try:
         run_pipeline()
+        notifier.reset_failure_count("emirates")
     except Exception as exc:
         print(f"[emirates] PIPELINE ERROR (non-fatal to outer scheduler): {exc}")
-        raise
+        notifier.notify_pipeline_error("emirates", exc)
