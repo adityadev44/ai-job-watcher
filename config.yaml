@@ -400,6 +400,30 @@ ammroc_search:
   inter_page_delay: 0.3
   note: "J2W via careers.edgegroup.ae; offset-based /go/View-All-Jobs/ pagination; pre-filtered to AMMROC entity."
 
+# Willis Lease Finance Corporation (WLFC) — engine and spare-parts lessor, Nasdaq: WLFC.
+# Careers page: wlfc.global/careers (NOT willislease.com — that domain returns 404).
+# Single GET returns all jobs in ul#careerfilter-result; full inline descriptions in
+# div.careerfilter-cltxt — Gate 2 is fully active. No pagination, no posting date.
+# URL per job: wlfc.global/careers#{title-location-slug}. Dedup by URL.
+# Entity name (company field) from span.filt-business: Willis Engine Repair Centre,
+# Willis Mitsui & Co. Asset Management Limited, Willis Aviation Services Limited, etc.
+wlfc_search:
+  max_listings: 50
+  inter_page_delay: 0.0
+  note: "Single GET wlfc.global/careers; ul#careerfilter-result; inline descriptions in div.careerfilter-cltxt; Gate 2 active; no posting date."
+
+# ELFC (Engine Lease Finance Corporation) — Dublin-based engine lessor, SMBC subsidiary.
+# ATS: PinPoint HQ at elfc.pinpointhq.com.
+# API: GET https://elfc.pinpointhq.com/postings.json → {"data": [...]}
+# Fields: id, title, url (browseable, elfc.pinpointhq.com/en/postings/{uuid}),
+#   description + key_responsibilities + skills_knowledge_expertise (all HTML — strip with BS4).
+# Small company (~50 employees); currently 0-2 postings. Gate 2 fully active.
+# No posting date (deadline_at often null; no created_at exposed in API).
+elfc_search:
+  max_listings: 50
+  inter_page_delay: 0.0
+  note: "PinPoint HQ JSON API elfc.pinpointhq.com/postings.json; single GET; description+responsibilities+expertise combined for Gate 2."
+
 notifications:
   email:
     recipient: ""

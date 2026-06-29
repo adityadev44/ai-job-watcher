@@ -102,6 +102,10 @@ jobs:
           pid25=$!
           python -u -m src.run_ammroc &
           pid26=$!
+          python -u -m src.run_wlfc &
+          pid37=$!
+          python -u -m src.run_elfc &
+          pid38=$!
           wait $pid1
           s1=$?
           wait $pid2
@@ -152,7 +156,11 @@ jobs:
           s25=$?
           wait $pid26
           s26=$?
-          exit $((s1 | s2 | s3 | s4 | s5 | s6 | s7 | s8 | s9 | s10 | s11 | s12 | s13 | s14 | s15 | s16 | s17 | s18 | s20 | s21 | s22 | s23 | s24 | s25 | s26))
+          wait $pid37
+          s37=$?
+          wait $pid38
+          s38=$?
+          exit $((s1 | s2 | s3 | s4 | s5 | s6 | s7 | s8 | s9 | s10 | s11 | s12 | s13 | s14 | s15 | s16 | s17 | s18 | s20 | s21 | s22 | s23 | s24 | s25 | s26 | s37 | s38))
 
       - name: Save state to repo
         run: |
@@ -182,7 +190,9 @@ jobs:
                   seen_jobs_oman_air.json near_misses_oman_air.json \
                   seen_jobs_gulf_air.json near_misses_gulf_air.json \
                   seen_jobs_kuwait_airways.json near_misses_kuwait_airways.json \
-                  seen_jobs_ammroc.json near_misses_ammroc.json
+                  seen_jobs_ammroc.json near_misses_ammroc.json \
+                  seen_jobs_wlfc.json near_misses_wlfc.json \
+                  seen_jobs_elfc.json near_misses_elfc.json
           test -f pipeline_failures.json && git add pipeline_failures.json || true
           if git diff --staged --quiet; then
             echo "No changes to commit — state unchanged"
