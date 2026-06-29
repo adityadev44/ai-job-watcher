@@ -20,5 +20,27 @@
     "gate_failed": "gate3",
     "reason": "excluded term 'it' in title",
     "run_timestamp": "2026-06-29T11:46:55+00:00"
+  },
+  {
+    "title": "Graduate Management Associate (GMA) Program",
+    "url": "https://www.bocaviation.com/en/Careers/Graduate-Management-Associate-GMA-Program",
+    "location": "Singapore",
+    "company": "BOC Aviation",
+    "source": "boc_aviation",
+    "posting_date": "2026-05-06",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T19:55:11+00:00"
+  },
+  {
+    "title": "Manager, IT (AI Enablement/ Digital Transformation)",
+    "url": "https://www.bocaviation.com/en/Careers/Manager-IT-AI-Enablement-Digital-Transformation",
+    "location": "Singapore",
+    "company": "BOC Aviation",
+    "source": "boc_aviation",
+    "posting_date": "2026-04-24",
+    "gate_failed": "gate3",
+    "reason": "excluded term 'it' in title",
+    "run_timestamp": "2026-06-29T19:55:11+00:00"
   }
 ]
