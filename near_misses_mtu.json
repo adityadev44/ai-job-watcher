@@ -1,0 +1,596 @@
+[
+  {
+    "title": "Manual Worker C - Welder (all genders)New",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/manual-worker-c-welder-all-genders/",
+    "location": "Nova Pazova_Srb",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Inspector of aircraft engine parts (all genders)New",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/inspector-of-aircraft-engine-parts-all-genders/",
+    "location": "Nova Pazova_Srb",
+    "source": "mtu",
+    "gate_failed": "gate3",
+    "reason": "excluded term 'inspector' in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "SAP MDM Consultant (W/M)New",
+    "url": "https://www.mtu.de/mtupolska/career/online-job-market/job-posting/sap-mdm-consultant-w/m/",
+    "location": "Jasionka_Pol",
+    "source": "mtu",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=5, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Working Student Digital Community & Microsoft 365 Communication (all genders)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/working-student-digital-community-microsoft-365-communication-all-genders/",
+    "location": "München_Ger",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Intern in the field of corporate development - focus on strategy (all genders)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/intern-in-the-field-of-corporate-development-focus-on-strategy-all-genders/",
+    "location": "München_Ger",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Aerospace Training Coordinator",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/aerospace-training-coordinator/",
+    "location": "Fort Worth_Usa",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "IT Security Analyst  (W/M)",
+    "url": "https://www.mtu.de/mtupolska/career/online-job-market/job-posting/it-security-analyst-w/m/",
+    "location": "Jasionka_Pol",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Passion For Engines Cross-Trade Academy",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/passion-for-engines-cross-trade-academy/",
+    "location": "Delta_Can",
+    "source": "mtu",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=4, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Material Planner (All genders)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/material-planner-all-genders/",
+    "location": "Nova Pazova_Srb",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Customer Support Assistant (All genders)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/customer-support-assistant-all-genders/",
+    "location": "Nova Pazova_Srb",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "System Engineering Inspection",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/system-engineering-inspection/",
+    "location": "Delta_Can",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Business Systems Specialist (W/M)",
+    "url": "https://www.mtu.de/mtupolska/career/online-job-market/job-posting/business-systems-specialist-w/m/",
+    "location": "Jasionka_Pol",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Junior Production Planner (Accessories)-3 Year Fixed Term Contract",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/junior-production-planner-accessories-3-year-fixed-term-contract/",
+    "location": "Delta_Can",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Material Coordinator",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/material-coordinator/",
+    "location": "Fort Worth_Usa",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Project and Process Coordinator - Foreign Trade (W/M)",
+    "url": "https://www.mtu.de/mtupolska/career/online-job-market/job-posting/project-and-process-coordinator-foreign-trade-w/m/",
+    "location": "Jasionka_Pol",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Konsultant SAP CS/PS (W/M)",
+    "url": "https://www.mtu.de/mtupolska/career/online-job-market/job-posting/konsultant-sap-cs/ps-w/m/",
+    "location": "Jasionka_Pol",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Konsultant SAP LE (W/M)",
+    "url": "https://www.mtu.de/mtupolska/career/online-job-market/job-posting/konsultant-sap-le-w/m/",
+    "location": "Jasionka_Pol",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Customs Operations Manager",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/customs-operations-manager/",
+    "location": "Fort Worth_Usa",
+    "source": "mtu",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=1, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "SAP BTP Operations Engineer (W/M)",
+    "url": "https://www.mtu.de/mtupolska/career/online-job-market/job-posting/sap-btp-operations-engineer-w/m/",
+    "location": "Rzeszow_Pol",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "SAP Full-stack developer GTS (W/M)",
+    "url": "https://www.mtu.de/mtupolska/career/online-job-market/job-posting/sap-full-stack-developer-gts-w/m/",
+    "location": "Rzeszow_Pol",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "(Senior) Manager: Logistics",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/senior-manager-logistics/",
+    "location": "Fort Worth_Usa",
+    "source": "mtu",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=1, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Lean Manager",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/lean-manager/",
+    "location": "Fort Worth_Usa",
+    "source": "mtu",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=0, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "IT Integration Engineer & API Developer (W/M)",
+    "url": "https://www.mtu.de/mtupolska/career/online-job-market/job-posting/it-integration-engineer-api-developer-w/m/",
+    "location": "Rzeszow_Pol",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Controlling Specialist (W/M)",
+    "url": "https://www.mtu.de/mtupolska/career/online-job-market/job-posting/controlling-specialist-w/m/",
+    "location": "Jasionka_Pol",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Invoicing Specialist (W/M)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/invoicing-specialist-w/m/",
+    "location": "Jasionka_Pol",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Deputy Quality and Safety Manager (all genders)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/deputy-quality-and-safety-manager-all-genders/",
+    "location": "Perth_Wa",
+    "source": "mtu",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=10, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Fall 2026 Sales Engineering - Internship [Customer Support]",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/fall-2026-sales-engineering-internship-customer-support/",
+    "location": "Fort Worth_Usa",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Senior Technical Integration Engineer I",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/senior-technical-integration-engineer-i/",
+    "location": "Rockyhill_Usa",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "L2 NDT Inspector (all genders)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/l2-ndt-inspector-all-genders/",
+    "location": "Nova Pazova_Srb",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Painter",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/painter/",
+    "location": "Nova Pazova_Srb",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Quality Systems and Administration Intern (all genders)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/quality-systems-and-administration-intern-all-genders/",
+    "location": "Nova Pazova_Srb",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Quality Inspector (all genders)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/quality-inspector-all-genders/",
+    "location": "Nova Pazova_Srb",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Peen and HPWJ machine operator",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/peen-and-hpwj-machine-operator/",
+    "location": "Nova Pazova_Srb",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Buyer",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/buyer/",
+    "location": "Delta_Can",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Intern Digital Method Development and Data Engineering (all genders)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/intern-digital-method-development-and-data-engineering-all-genders/",
+    "location": "München_Ger",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Product Owner (W/M)",
+    "url": "https://www.mtu.de/mtupolska/career/online-job-market/job-posting/product-owner-w/m/",
+    "location": "Jasionka_Pol",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Intern Graphical user interface development for mechanical predesign calculations (all genders)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/intern-graphical-user-interface-development-for-mechanical-predesign-calculations-all-genders/",
+    "location": "München_Ger",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Master Thesis: Oil Condition Monitoring",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/master-thesis-oil-condition-monitoring/",
+    "location": "München_Ger",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Design Integration Engineer II",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/design-integration-engineer-ii/",
+    "location": "Rockyhill_Usa",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Sales Director - Parts Repair Services (all genders)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/sales-director-parts-repair-services-all-genders/",
+    "location": "Hannover_Ger",
+    "source": "mtu",
+    "gate_failed": "gate3",
+    "reason": "excluded term 'sales' in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Flying Fuel Cell Mechanical Design and Integration Engineer (all genders)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/flying-fuel-cell-mechanical-design-and-integration-engineer-all-genders/",
+    "location": "München_Ger",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Senior Accounting & Finance Specialist I",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/senior-accounting-finance-specialist-i/",
+    "location": "Rockyhill_Usa",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Heavy Machinery Operator – Balance & Grinding (Engine Module Assembly)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/heavy-machinery-operator-balance-grinding-engine-module-assembly/",
+    "location": "Fort Worth_Usa",
+    "source": "mtu",
+    "gate_failed": "gate3",
+    "reason": "excluded term 'operator' in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Performance Engineer II",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/performance-engineer-ii/",
+    "location": "Rockyhill_Usa",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Senior Thermals Engineer I",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/senior-thermals-engineer-i/",
+    "location": "Rockyhill_Usa",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Intern - Leasing and Asset Management (all genders)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/intern-leasing-and-asset-management-all-genders/",
+    "location": "Singapore_Sg",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Sales Manager APAC - LM Gas Turbine Maintenance and Parts Repair Services (all genders)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/sales-manager-apac-lm-gas-turbine-maintenance-and-parts-repair-services-all-genders/",
+    "location": "Singapore_Sg",
+    "source": "mtu",
+    "gate_failed": "gate3",
+    "reason": "excluded term 'sales' in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Component Mechanic (Position#: MMA-26014)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/component-mechanic-position-mma-26014/",
+    "location": "Delta_Can",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Bid Manager",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/bid-manager/",
+    "location": "Fort Worth_Usa",
+    "source": "mtu",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=3, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Field Service Representative Industrial Gas Turbines (all genders)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/field-service-representative-industrial-gas-turbines-all-genders/",
+    "location": "Cotia_Bra",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Tool Calibration Technician",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/tool-calibration-technician/",
+    "location": "Fort Worth_Usa",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Tool Technician",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/tool-technician/",
+    "location": "Fort Worth_Usa",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Process Engineer",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/process-engineer/",
+    "location": "Fort Worth_Usa",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Fieldservice Representative Industrial Gas Turbines (all genders)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/fieldservice-representative-industrial-gas-turbines-all-genders/",
+    "location": "Ayutthaya_Tha",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "(Senior) Manager: Facilities & Cleaning, Inspection and Repair Project Manager",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/senior-manager-facilities-cleaning-inspection-and-repair-project-manager/",
+    "location": "Fort Worth_Usa",
+    "source": "mtu",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=7, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Component Apprentice",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/component-apprentice/",
+    "location": "Delta_Can",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Aviation DAT Engine Technician",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/aviation-dat-engine-technician/",
+    "location": "Fort Worth_Usa",
+    "source": "mtu",
+    "gate_failed": "gate3",
+    "reason": "excluded term 'technician' in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Aviation Parts and Process Inspector (DAT)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/aviation-parts-and-process-inspector-dat/",
+    "location": "Fort Worth_Usa",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Shipping/Receiving Logistics Coordinator",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/shipping/receiving-logistics-coordinator/",
+    "location": "Fort Worth_Usa",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Facilities Maintenance Technician",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/facilities-maintenance-technician/",
+    "location": "Fort Worth_Usa",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Integrated Management System Specialist",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/integrated-management-system-specialist/",
+    "location": "Fort Worth_Usa",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Gas Turbine Engine Mechanic",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/gas-turbine-engine-mechanic/",
+    "location": "Delta_Can",
+    "source": "mtu",
+    "gate_failed": "gate3",
+    "reason": "excluded term 'mechanic' in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Buyer/Procurement Specialist (Aviation)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/buyer/procurement-specialist-aviation/",
+    "location": "Fort Worth_Usa",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Group Lead",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/group-lead/",
+    "location": "Rockyhill_Usa",
+    "source": "mtu",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=1, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Commercial Engine A&P Technician (CFM 56)",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/commercial-engine-ap-technician-cfm-56/",
+    "location": "Fort Worth_Usa",
+    "source": "mtu",
+    "gate_failed": "gate3",
+    "reason": "excluded term 'technician' in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  },
+  {
+    "title": "Senior Structural Engineer II",
+    "url": "https://www.mtu.de/careers/online-job-market/job-posting/senior-structural-engineer-ii/",
+    "location": "Rockyhill_Usa",
+    "source": "mtu",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T11:45:19+00:00"
+  }
+]

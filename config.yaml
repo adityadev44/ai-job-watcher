@@ -424,6 +424,107 @@ elfc_search:
   inter_page_delay: 0.0
   note: "PinPoint HQ JSON API elfc.pinpointhq.com/postings.json; single GET; description+responsibilities+expertise combined for Gate 2."
 
+# Boeing Global Services — engine MRO, line maintenance, engineering.
+# ATS: Workday at boeing.wd1.myworkdayjobs.com/EXTERNAL_CAREERS.
+# All Boeing jobs fetched (~1000+); Gate 4 blocks US citizenship / clearance roles.
+# Gate 2 targets BGS engine-shop roles (737/777 engines, overhaul, shop visit).
+boeing_search:
+  max_listings: 200
+  inter_page_delay: 0.2
+  note: "Workday; boeing.wd1.myworkdayjobs.com/EXTERNAL_CAREERS; Gate 4 handles citizenship-restricted defense roles."
+
+# ICF International — aviation/MRO consulting.
+# ATS: Phenom People at careers.icf.com/us/en; refNum=IIIIIIUS.
+# All ICF jobs fetched; Gate 1-4 filter to aviation MRO consulting roles.
+# Tail-end pagination returns newest max_listings jobs.
+icf_search:
+  max_listings: 200
+  inter_page_delay: 0.2
+  note: "Phenom People; careers.icf.com; refNum=IIIIIIUS; /us/en/search-results bootstrap; tail-end pagination."
+
+# Oliver Wyman / CAVOK — aviation MRO consulting (Marsh subsidiary).
+# ATS: Phenom People at careers.marsh.com/global/en; refNum=MAMCGLOBAL.
+# Pre-filtered to Oliver Wyman entity by title/company field check.
+oliver_wyman_search:
+  max_listings: 200
+  inter_page_delay: 0.2
+  note: "Phenom People; careers.marsh.com; refNum=MAMCGLOBAL; /global/en/oliver-wyman-search bootstrap; pre-filtered to OW by title."
+
+# Rolls-Royce Civil Aerospace — engine OEM (Trent family).
+# ATS: Custom React SPA at careers.rolls-royce.com/en/jobs.
+# Playwright intercepts XHR/fetch API responses; falls back to DOM extraction.
+rolls_royce_search:
+  max_listings: 200
+  inter_page_delay: 0.2
+  note: "Playwright React SPA; careers.rolls-royce.com/en/jobs; XHR interception with DOM fallback."
+
+# Honeywell Aerospace — engines (HTF7000, TFE731), APUs, avionics.
+# ATS: Phenom People at careers.honeywell.com/us/en; refNum auto-discovered.
+# All Honeywell jobs fetched; Gate 1-4 filter to aerospace MRO / engine roles.
+honeywell_search:
+  max_listings: 200
+  inter_page_delay: 0.2
+  note: "Phenom People; careers.honeywell.com; /us/en/search-results bootstrap; refNum auto-discovered from page JS."
+
+# MTU Aero Engines — engine MRO (V2500, CF6, GP7200, PW1100G).
+# ATS: Custom HTML portal at mtu.de/careers/online-job-market/.
+# All jobs on a single page; filter to data-locale=en_US only (~78 English jobs).
+# Descriptions fetched from individual job pages (<main> tag).
+mtu_search:
+  max_listings: 200
+  inter_page_delay: 0.5
+  note: "Custom HTML; mtu.de/careers/online-job-market/; div.jobs-list__item filtered to en_US locale; single page, no pagination."
+
+# AAR Corp — MRO services (line maintenance, heavy maintenance, engineering).
+# ATS: Oracle Taleo Enterprise at aarcorp.taleo.net/careersection/2/.
+# JavaScript-rendered; Playwright loads the page and parses job table rows.
+aar_search:
+  max_listings: 200
+  inter_page_delay: 0.5
+  note: "Taleo Enterprise; aarcorp.taleo.net/careersection/2/; Playwright renders JS; parses job link href=jobdetail.ftl?job=NNN."
+
+# AerCap — aircraft and engine lessor (engine MRO coordination roles).
+# ATS: Custom careers portal at www.aercap.com/careers/career-opportunities.
+# HTML scraping: table.content-table > tbody > tr; job ID from /job/{id}/ URL.
+aercap_search:
+  max_listings: 200
+  inter_page_delay: 0.5
+  note: "AerCap custom careers portal; HTML scraping table.content-table; job ID from /job/{id}/ URL pattern."
+
+# Avolon — aircraft lessor (engine MRO coordination roles).
+# ATS: Custom careers portal at avolon.aero/careers.
+# HTML scraping: finds 'LATEST JOBS' h2, extracts links; 0 vacancies at build time.
+avolon_search:
+  max_listings: 200
+  inter_page_delay: 0.5
+  note: "Avolon custom careers portal; avolon.aero/careers; HTML scraping near 'LATEST JOBS' h2; 0 vacancies at build time."
+
+# BOC Aviation — aircraft lessor (Singapore).
+# ATS: Custom careers portal at www.bocaviation.com/en/careers.
+# HTML scraping: div.bg-gray-4 cards with h6.font-size-18 (title), p elements for date/location.
+boc_aviation_search:
+  max_listings: 200
+  inter_page_delay: 0.5
+  note: "BOC Aviation custom careers portal; bocaviation.com/en/careers; HTML scraping div.bg-gray-4 cards."
+
+# Aviation Capital Group (ACG) — aircraft lessor.
+# ATS: WordPress/Elementor accordion at www.aviationcapitalgroup.com/careers.
+# a.elementor-toggle-title for titles; div.elementor-tab-content for descriptions.
+# Descriptions cached inline during fetch_jobs() — no extra HTTP calls needed.
+acg_search:
+  max_listings: 200
+  inter_page_delay: 0.5
+  note: "Elementor accordion WordPress; aviationcapitalgroup.com/careers; descriptions cached inline; fragment URL per job."
+
+# SMBC Aviation Capital — aircraft/engine lessor (Dublin, SMBC subsidiary).
+# ATS: BambooHR at smbcaviationcapital.bamboohr.com (tenant confirmed).
+# Public listing API (/careers/list) not accessible as of 2026-06 — redirects to
+# bamboohr.com. Fetcher returns [] until public API becomes available.
+smbc_aviation_search:
+  max_listings: 50
+  inter_page_delay: 0.5
+  note: "BambooHR smbcaviationcapital.bamboohr.com; public /careers/list redirects to bamboohr.com as of 2026-06 — returns 0 jobs."
+
 notifications:
   email:
     recipient: ""

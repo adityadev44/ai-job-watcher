@@ -106,6 +106,30 @@ jobs:
           pid37=$!
           python -u -m src.run_elfc &
           pid38=$!
+          python -u -m src.run_rolls_royce &
+          pid27=$!
+          python -u -m src.run_honeywell &
+          pid28=$!
+          python -u -m src.run_mtu &
+          pid29=$!
+          python -u -m src.run_boeing &
+          pid30=$!
+          python -u -m src.run_aar &
+          pid31=$!
+          python -u -m src.run_icf &
+          pid32=$!
+          python -u -m src.run_oliver_wyman &
+          pid34=$!
+          python -u -m src.run_smbc_aviation &
+          pid41=$!
+          python -u -m src.run_aercap &
+          pid40=$!
+          python -u -m src.run_avolon &
+          pid42=$!
+          python -u -m src.run_boc_aviation &
+          pid43=$!
+          python -u -m src.run_acg &
+          pid44=$!
           wait $pid1
           s1=$?
           wait $pid2
@@ -160,7 +184,31 @@ jobs:
           s37=$?
           wait $pid38
           s38=$?
-          exit $((s1 | s2 | s3 | s4 | s5 | s6 | s7 | s8 | s9 | s10 | s11 | s12 | s13 | s14 | s15 | s16 | s17 | s18 | s20 | s21 | s22 | s23 | s24 | s25 | s26 | s37 | s38))
+          wait $pid27
+          s27=$?
+          wait $pid28
+          s28=$?
+          wait $pid29
+          s29=$?
+          wait $pid30
+          s30=$?
+          wait $pid31
+          s31=$?
+          wait $pid32
+          s32=$?
+          wait $pid34
+          s34=$?
+          wait $pid41
+          s41=$?
+          wait $pid40
+          s40=$?
+          wait $pid42
+          s42=$?
+          wait $pid43
+          s43=$?
+          wait $pid44
+          s44=$?
+          exit $((s1 | s2 | s3 | s4 | s5 | s6 | s7 | s8 | s9 | s10 | s11 | s12 | s13 | s14 | s15 | s16 | s17 | s18 | s20 | s21 | s22 | s23 | s24 | s25 | s26 | s37 | s38 | s27 | s28 | s29 | s30 | s31 | s32 | s34 | s40 | s41 | s42 | s43 | s44))
 
       - name: Save state to repo
         run: |
@@ -192,7 +240,19 @@ jobs:
                   seen_jobs_kuwait_airways.json near_misses_kuwait_airways.json \
                   seen_jobs_ammroc.json near_misses_ammroc.json \
                   seen_jobs_wlfc.json near_misses_wlfc.json \
-                  seen_jobs_elfc.json near_misses_elfc.json
+                  seen_jobs_elfc.json near_misses_elfc.json \
+                  seen_jobs_rolls_royce.json near_misses_rolls_royce.json \
+                  seen_jobs_honeywell.json near_misses_honeywell.json \
+                  seen_jobs_mtu.json near_misses_mtu.json \
+                  seen_jobs_boeing.json near_misses_boeing.json \
+                  seen_jobs_aar.json near_misses_aar.json \
+                  seen_jobs_icf.json near_misses_icf.json \
+                  seen_jobs_oliver_wyman.json near_misses_oliver_wyman.json \
+                  seen_jobs_smbc_aviation.json near_misses_smbc_aviation.json \
+                  seen_jobs_aercap.json near_misses_aercap.json \
+                  seen_jobs_avolon.json near_misses_avolon.json \
+                  seen_jobs_boc_aviation.json near_misses_boc_aviation.json \
+                  seen_jobs_acg.json near_misses_acg.json
           test -f pipeline_failures.json && git add pipeline_failures.json || true
           if git diff --staged --quiet; then
             echo "No changes to commit — state unchanged"

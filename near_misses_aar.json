@@ -1,0 +1,252 @@
+[
+  {
+    "id": "18516",
+    "title": "Stores Manager",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=18516&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=0, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "18056",
+    "title": "Aviation Maintenance Manager",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=18056&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=0, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "18275",
+    "title": "Auditor, Quality Assurance",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=18275&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "16677",
+    "title": "A&P III",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=16677&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "16783",
+    "title": "Alternate Lead, A&P",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=16783&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=0, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "17793",
+    "title": "Aircraft Sheet Metal Mechanic II",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=17793&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "16437",
+    "title": "Aircraft Sheet Metal Lead",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=16437&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=0, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "16436",
+    "title": "Aircraft Sheet Metal Alternate Lead",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=16436&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=0, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "17094",
+    "title": "Aircraft Quality Control Inspector",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=17094&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "17249",
+    "title": "Aircraft Interior Alternate Lead",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=17249&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=0, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "16429",
+    "title": "Aircraft Inspector NDT NAS410 Level 2 – 16429",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=16429&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "17912",
+    "title": "Aircraft Avionics Tech III",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=17912&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "16428",
+    "title": "Aircraft Avionics Tech II",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=16428&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "16427",
+    "title": "Aircraft Avionics Tech I",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=16427&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "16426",
+    "title": "Aircraft Avionics Lead",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=16426&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate3",
+    "reason": "excluded term 'avionics' in title",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "16416",
+    "title": "Aircraft Avionics Alternate Lead",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=16416&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate3",
+    "reason": "excluded term 'avionics' in title",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "18517",
+    "title": "Senior Accountant",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=18517&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "18510",
+    "title": "Senior Engineering Manager",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=18510&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=0, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "18454",
+    "title": "Sr Manager, Programs",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=18454&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=0, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "18460",
+    "title": "C-40A Aircraft Mechanic",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=18460&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "18500",
+    "title": "Sr. Analyst, Business Dev",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=18500&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "18501",
+    "title": "Lead/Manager, Engineering",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=18501&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=0, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "18486",
+    "title": "Aircraft (DHC-8) Avionics Technician Lead",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=18486&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate3",
+    "reason": "excluded term 'technician' in title",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "18497",
+    "title": "Aircraft (H-60) Mechanic 3",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=18497&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  },
+  {
+    "id": "18493",
+    "title": "Flight Operations Manager (Peru)",
+    "url": "https://aarcorp.taleo.net/careersection/2/jobdetail.ftl?job=18493&lang=en",
+    "location": "",
+    "source": "aar",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=0, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-29T12:02:42+00:00"
+  }
+]
