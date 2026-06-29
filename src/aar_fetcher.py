@@ -80,6 +80,7 @@ def _parse_jobs_from_html(html: str) -> list[dict]:
             "title": title,
             "url": url,
             "location": location,
+            "company": "AAR Corp",
             "source": SOURCE,
         })
 

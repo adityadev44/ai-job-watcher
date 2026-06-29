@@ -89,6 +89,7 @@ def fetch_jobs(config: dict | None = None):
             "title": title,
             "url": url,
             "location": location,
+            "company": "MTU Aero Engines",
             "source": SOURCE,
         })
 

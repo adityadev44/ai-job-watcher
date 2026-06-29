@@ -91,6 +91,7 @@ def _parse_job(raw: dict) -> dict:
         "url": _build_url(raw),
         "location": location,
         "posting_date": str(posted),
+        "company": "Rolls-Royce Civil Aerospace",
         "source": SOURCE,
     }
 
