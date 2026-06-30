@@ -3,7 +3,6 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 import json
-import datetime
 from pathlib import Path
 
 import yaml
@@ -15,7 +14,6 @@ from src import notifier
 ROOT = Path(__file__).parent.parent
 CONFIG_PATH = ROOT / "config.yaml"
 SEEN_PATH = ROOT / "seen_jobs_oman_air.json"
-NEAR_MISS_PATH = ROOT / "near_misses_oman_air.json"
 
 
 def _load_config():
@@ -39,9 +37,8 @@ def _save_json(path, data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def run_pipeline(seen_path=None, near_miss_path=None):
+def run_pipeline(seen_path=None):
     seen_path = Path(seen_path) if seen_path else SEEN_PATH
-    near_miss_path = Path(near_miss_path) if near_miss_path else NEAR_MISS_PATH
 
     config = _load_config()
     oman_air_cfg = config.get("oman_air_search", {})
@@ -49,7 +46,7 @@ def run_pipeline(seen_path=None, near_miss_path=None):
     inter_page_delay = oman_air_cfg.get("inter_page_delay", 0.5)
 
     print("[oman_air] ── Oman Air pipeline starting ──")
-    print(f"[oman_air] Config: seen_path={seen_path.name}, near_miss_path={near_miss_path.name}")
+    print(f"[oman_air] Config: seen_path={seen_path.name}")
 
     raw_jobs = oman_air_fetcher.fetch_jobs(max_listings=max_listings, inter_page_delay=inter_page_delay)
     total_fetched = len(raw_jobs)
@@ -78,14 +75,6 @@ def run_pipeline(seen_path=None, near_miss_path=None):
     else:
         print("[oman_air] No new matches — nothing to alert")
 
-    if near_misses:
-        existing = _load_json(near_miss_path)
-        timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
-        for nm in near_misses:
-            nm["run_timestamp"] = timestamp
-        existing.extend(near_misses)
-        _save_json(near_miss_path, existing)
-        print(f"[oman_air] {len(near_misses)} near-miss(es) appended to {near_miss_path.name}")
 
     if total_fetched == 0:
         print("[oman_air] NOTE: 0 jobs fetched — Oman Air currently has no active vacancies posted "
@@ -108,7 +97,6 @@ def run_pipeline(seen_path=None, near_miss_path=None):
         "g3_pass": g3_pass,
         "total_matched": total_matched,
         "new_matches": new_matches,
-        "near_misses": near_misses,
         "alert_sent": alert_sent,
     }
 

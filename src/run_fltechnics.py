@@ -3,7 +3,6 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 import json
-import datetime
 from pathlib import Path
 
 import yaml
@@ -15,7 +14,20 @@ from src import notifier
 ROOT = Path(__file__).parent.parent
 CONFIG_PATH = ROOT / "config.yaml"
 SEEN_PATH = ROOT / "seen_jobs_fltechnics.json"
-NEAR_MISS_PATH = ROOT / "near_misses_fltechnics.json"
+
+# FL Technics descriptions are in a JS modal — unavailable via requests.
+# Gate 2 is bypassed via [kept-no-desc], so without this pre-filter all
+# Gate-1+3-passing jobs alert, including accounting, legal, and IT roles.
+_AVIATION_TITLE_TERMS = [
+    "aerospace", "engine", "engines", "powerplant", "propulsion",
+    "turbine", "apu", "overhaul", "mro", "maintenance", "airworthiness",
+    "aviation", "avionics", "aircraft", "camo", "airframe", "inspector",
+]
+
+
+def _is_aviation_title(title: str) -> bool:
+    t = title.lower()
+    return any(term in t for term in _AVIATION_TITLE_TERMS)
 
 
 def _load_config():
@@ -39,14 +51,13 @@ def _save_json(path, data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def run_pipeline(seen_path=None, near_miss_path=None):
+def run_pipeline(seen_path=None):
     seen_path = Path(seen_path) if seen_path else SEEN_PATH
-    near_miss_path = Path(near_miss_path) if near_miss_path else NEAR_MISS_PATH
 
     config = _load_config()
 
     print("[fltechnics] ── FL Technics pipeline starting ──")
-    print(f"[fltechnics] Config: seen_path={seen_path.name}, near_miss_path={near_miss_path.name}")
+    print(f"[fltechnics] Config: seen_path={seen_path.name}")
     print("[fltechnics] NOTE: descriptions not available (JS modal) — Gate 2 bypassed")
 
     # ── 1. Fetch ─────────────────────────────────────────────────────────────
@@ -54,13 +65,19 @@ def run_pipeline(seen_path=None, near_miss_path=None):
     total_fetched = len(raw_jobs)
     print(f"[fltechnics] Fetched {total_fetched} unique listings")
 
+    # ── 1.5. Aviation title pre-filter ──────────────────────────────────────
+    aviation_jobs = [j for j in raw_jobs if _is_aviation_title(j["title"])]
+    pre_filter_dropped = total_fetched - len(aviation_jobs)
+    if pre_filter_dropped:
+        print(f"[fltechnics] Pre-filter: dropped {pre_filter_dropped} non-aviation title(s)")
+
     # ── 2. Filter through 4-gate matcher ────────────────────────────────────
-    matched, near_misses = filter_jobs(raw_jobs, fltechnics_fetcher, config=config)
+    matched, near_misses = filter_jobs(aviation_jobs, fltechnics_fetcher, config=config)
 
     g1_fail = sum(1 for nm in near_misses if nm["gate_failed"] == "gate1")
     g3_fail = sum(1 for nm in near_misses if nm["gate_failed"] == "gate3")
     g4_fail = sum(1 for nm in near_misses if nm["gate_failed"] == "gate4")
-    g1_pass = total_fetched - g1_fail
+    g1_pass = len(aviation_jobs) - g1_fail
     g3_pass = g1_pass - g3_fail
     g4_pass = g3_pass - g4_fail
     total_matched = len(matched)
@@ -82,20 +99,12 @@ def run_pipeline(seen_path=None, near_miss_path=None):
     else:
         print("[fltechnics] No new matches — nothing to alert")
 
-    # ── 5. Persist near-misses ───────────────────────────────────────────────
-    if near_misses:
-        existing = _load_json(near_miss_path)
-        timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
-        for nm in near_misses:
-            nm["run_timestamp"] = timestamp
-        existing.extend(near_misses)
-        _save_json(near_miss_path, existing)
-        print(f"[fltechnics] {len(near_misses)} near-miss(es) appended to {near_miss_path.name}")
 
     # ── 6. Run summary ───────────────────────────────────────────────────────
     print()
     print("[fltechnics] ── Run summary ──────────────────────────────")
     print(f"[fltechnics]  Total fetched     : {total_fetched}")
+    print(f"[fltechnics]  Aviation titles   : {len(aviation_jobs)}  (pre-filter: {pre_filter_dropped} non-aviation dropped)")
     print(f"[fltechnics]  Passed Gate 1     : {g1_pass}  (title family match)")
     print(f"[fltechnics]  Passed Gate 3     : {g3_pass}  (exclude filter clear)")
     print(f"[fltechnics]  Passed Gate 4     : {g4_pass}  (description exclusion clear)")
@@ -111,7 +120,6 @@ def run_pipeline(seen_path=None, near_miss_path=None):
         "g4_pass": g4_pass,
         "total_matched": total_matched,
         "new_matches": new_matches,
-        "near_misses": near_misses,
         "alert_sent": alert_sent,
     }
 

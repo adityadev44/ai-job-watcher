@@ -3,7 +3,6 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 import json
-import datetime
 from pathlib import Path
 
 import yaml
@@ -15,7 +14,6 @@ from src import notifier
 ROOT = Path(__file__).parent.parent
 CONFIG_PATH = ROOT / "config.yaml"
 SEEN_PATH = ROOT / "seen_jobs_oliver_wyman.json"
-NEAR_MISS_PATH = ROOT / "near_misses_oliver_wyman.json"
 
 
 def _load_config():
@@ -55,7 +53,7 @@ def _is_oliver_wyman_job(job: dict) -> bool:
     return "oliver wyman" in title or "oliver wyman" in company
 
 
-def run_pipeline(seen_path=None, near_miss_path=None):
+def run_pipeline(seen_path=None):
     """
     Full Oliver Wyman / CAVOK pipeline: fetch → pre-filter → gate-filter → dedup → alert → persist.
 
@@ -64,12 +62,11 @@ def run_pipeline(seen_path=None, near_miss_path=None):
     further filters to aviation MRO consulting roles via domain_terms + engine_specific_terms.
     """
     seen_path = Path(seen_path) if seen_path else SEEN_PATH
-    near_miss_path = Path(near_miss_path) if near_miss_path else NEAR_MISS_PATH
 
     config = _load_config()
 
     print("[oliver_wyman] ── Oliver Wyman / CAVOK pipeline starting ──")
-    print(f"[oliver_wyman] Config: seen_path={seen_path.name}, near_miss_path={near_miss_path.name}")
+    print(f"[oliver_wyman] Config: seen_path={seen_path.name}")
 
     # ── 1. Fetch ─────────────────────────────────────────────────────────────
     raw_jobs = oliver_wyman_fetcher.fetch_jobs()
@@ -107,15 +104,6 @@ def run_pipeline(seen_path=None, near_miss_path=None):
     else:
         print("[oliver_wyman] No new matches — nothing to alert")
 
-    # ── 5. Persist near-misses with timestamp ───────────────────────────────
-    if near_misses:
-        existing_near_misses = _load_json(near_miss_path)
-        timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
-        for nm in near_misses:
-            nm["run_timestamp"] = timestamp
-        existing_near_misses.extend(near_misses)
-        _save_json(near_miss_path, existing_near_misses)
-        print(f"[oliver_wyman] {len(near_misses)} near-miss(es) appended to {near_miss_path.name}")
 
     # ── 6. Run summary ───────────────────────────────────────────────────────
     print()
@@ -134,7 +122,6 @@ def run_pipeline(seen_path=None, near_miss_path=None):
         "g3_pass": g3_pass,
         "total_matched": total_matched,
         "new_matches": new_matches,
-        "near_misses": near_misses,
         "alert_sent": alert_sent,
     }
 

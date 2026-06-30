@@ -72,9 +72,7 @@ def _load(path):
 
 def test_new_match_triggers_alert_and_saves(tmp_path):
     seen = tmp_path / "seen.json"
-    near = tmp_path / "near.json"
     seen.write_text("[]")
-    near.write_text("[]")
 
     fake_fetcher = _make_fetcher_module([MATCHING_JOB])
 
@@ -82,7 +80,7 @@ def test_new_match_triggers_alert_and_saves(tmp_path):
          patch("src.run_safran.notifier") as mock_notifier:
 
         from src.run_safran import run_pipeline
-        result = run_pipeline(seen_path=seen, near_miss_path=near)
+        result = run_pipeline(seen_path=seen)
 
     assert result["alert_sent"] is True, "Alert should have been sent"
     assert len(result["new_matches"]) == 1
@@ -102,10 +100,7 @@ def test_new_match_triggers_alert_and_saves(tmp_path):
 
 def test_second_run_sends_no_alert(tmp_path):
     seen = tmp_path / "seen.json"
-    near = tmp_path / "near.json"
-    # Pre-populate seen with the matching job URL
     seen.write_text(json.dumps([MATCHING_JOB["url"]]))
-    near.write_text("[]")
 
     fake_fetcher = _make_fetcher_module([MATCHING_JOB])
 
@@ -113,7 +108,7 @@ def test_second_run_sends_no_alert(tmp_path):
          patch("src.run_safran.notifier") as mock_notifier:
 
         from src.run_safran import run_pipeline
-        result = run_pipeline(seen_path=seen, near_miss_path=near)
+        result = run_pipeline(seen_path=seen)
 
     assert result["alert_sent"] is False, "No alert should fire for already-seen job"
     assert result["new_matches"] == []
@@ -121,87 +116,32 @@ def test_second_run_sends_no_alert(tmp_path):
 
 
 # ---------------------------------------------------------------------------
-# Test 3: near-misses are written to near_misses file
-# ---------------------------------------------------------------------------
-
-def test_near_misses_are_persisted(tmp_path):
-    seen = tmp_path / "seen.json"
-    near = tmp_path / "near.json"
-    seen.write_text("[]")
-    near.write_text("[]")
-
-    # NON_MATCHING_JOB fails Gate 1 → becomes a near-miss
-    fake_fetcher = _make_fetcher_module([NON_MATCHING_JOB])
-
-    with patch("src.run_safran.safran_fetcher", fake_fetcher), \
-         patch("src.run_safran.notifier"):
-
-        from src.run_safran import run_pipeline
-        result = run_pipeline(seen_path=seen, near_miss_path=near)
-
-    assert result["total_matched"] == 0
-    nm_data = _load(near)
-    assert len(nm_data) == 1
-    assert nm_data[0]["title"] == "Warehouse Associate"
-    assert nm_data[0]["gate_failed"] == "gate1"
-    assert "run_timestamp" in nm_data[0]
-
-
-# ---------------------------------------------------------------------------
-# Test 4: near-misses accumulate across runs (append, not overwrite)
-# ---------------------------------------------------------------------------
-
-def test_near_misses_accumulate(tmp_path):
-    seen = tmp_path / "seen.json"
-    near = tmp_path / "near.json"
-    seen.write_text("[]")
-    near.write_text("[]")
-
-    fake_fetcher = _make_fetcher_module([NON_MATCHING_JOB])
-
-    with patch("src.run_safran.safran_fetcher", fake_fetcher), \
-         patch("src.run_safran.notifier"):
-        from src.run_safran import run_pipeline
-        run_pipeline(seen_path=seen, near_miss_path=near)
-        run_pipeline(seen_path=seen, near_miss_path=near)
-
-    nm_data = _load(near)
-    assert len(nm_data) == 2, "Two runs of the same near-miss should accumulate to 2 entries"
-
-
-# ---------------------------------------------------------------------------
-# Test 5: summary counters are correct
+# Test 3: summary counters are correct
 # ---------------------------------------------------------------------------
 
 def test_summary_counters(tmp_path):
     seen = tmp_path / "seen.json"
-    near = tmp_path / "near.json"
     seen.write_text("[]")
-    near.write_text("[]")
 
-    # Provide one matching + one non-matching job
     fake_fetcher = _make_fetcher_module([MATCHING_JOB, NON_MATCHING_JOB])
 
     with patch("src.run_safran.safran_fetcher", fake_fetcher), \
          patch("src.run_safran.notifier"):
         from src.run_safran import run_pipeline
-        result = run_pipeline(seen_path=seen, near_miss_path=near)
+        result = run_pipeline(seen_path=seen)
 
     assert result["total_fetched"] == 2
     assert result["total_matched"] == 1    # only MATCHING_JOB passes all gates
     assert result["g1_pass"] == 1          # NON_MATCHING_JOB fails Gate 1
-    assert len(result["near_misses"]) == 1
 
 
 # ---------------------------------------------------------------------------
-# Test 6: pipeline crash is contained (re-raises but doesn't silently swallow)
+# Test 4: pipeline crash is contained (re-raises but doesn't silently swallow)
 # ---------------------------------------------------------------------------
 
 def test_pipeline_error_propagates(tmp_path):
     seen = tmp_path / "seen.json"
-    near = tmp_path / "near.json"
     seen.write_text("[]")
-    near.write_text("[]")
 
     fake_fetcher = MagicMock()
     fake_fetcher.fetch_jobs.side_effect = RuntimeError("network down")
@@ -214,4 +154,4 @@ def test_pipeline_error_propagates(tmp_path):
          patch("src.run_safran.notifier"):
         from src.run_safran import run_pipeline
         with pytest.raises(RuntimeError, match="network down"):
-            run_pipeline(seen_path=seen, near_miss_path=near)
+            run_pipeline(seen_path=seen)

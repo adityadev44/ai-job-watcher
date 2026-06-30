@@ -3,7 +3,6 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 import json
-import datetime
 from pathlib import Path
 
 import yaml
@@ -15,7 +14,6 @@ from src import notifier
 ROOT = Path(__file__).parent.parent
 CONFIG_PATH = ROOT / "config.yaml"
 SEEN_PATH = ROOT / "seen_jobs_aar.json"
-NEAR_MISS_PATH = ROOT / "near_misses_aar.json"
 
 
 def _load_config():
@@ -39,23 +37,20 @@ def _save_json(path, data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def run_pipeline(seen_path=None, near_miss_path=None):
+def run_pipeline(seen_path=None):
     """
     Full AAR Corp pipeline: fetch → filter → dedup → alert → persist.
 
     AAR Corp uses Oracle Taleo Enterprise Edition at aarcorp.taleo.net.
     Playwright renders the session-based JavaScript page and extracts job rows.
 
-    seen_path / near_miss_path let tests inject temp files without
-    touching the real ones on disk.
     """
     seen_path = Path(seen_path) if seen_path else SEEN_PATH
-    near_miss_path = Path(near_miss_path) if near_miss_path else NEAR_MISS_PATH
 
     config = _load_config()
 
     print("[aar] ── AAR Corp pipeline starting ──")
-    print(f"[aar] Config: seen_path={seen_path.name}, near_miss_path={near_miss_path.name}")
+    print(f"[aar] Config: seen_path={seen_path.name}")
 
     # ── 1. Fetch ─────────────────────────────────────────────────────────────
     raw_jobs = aar_fetcher.fetch_jobs(config=config)
@@ -89,15 +84,6 @@ def run_pipeline(seen_path=None, near_miss_path=None):
     else:
         print("[aar] No new matches — nothing to alert")
 
-    # ── 5. Persist near-misses with timestamp ───────────────────────────────
-    if near_misses:
-        existing_near_misses = _load_json(near_miss_path)
-        timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
-        for nm in near_misses:
-            nm["run_timestamp"] = timestamp
-        existing_near_misses.extend(near_misses)
-        _save_json(near_miss_path, existing_near_misses)
-        print(f"[aar] {len(near_misses)} near-miss(es) appended to {near_miss_path.name}")
 
     # ── 6. Run summary ───────────────────────────────────────────────────────
     print()
@@ -116,7 +102,6 @@ def run_pipeline(seen_path=None, near_miss_path=None):
         "g3_pass": g3_pass,
         "total_matched": total_matched,
         "new_matches": new_matches,
-        "near_misses": near_misses,
         "alert_sent": alert_sent,
     }
 
