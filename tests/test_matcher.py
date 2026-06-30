@@ -33,6 +33,22 @@ CONFIG = {
             "aviation", "aerospace", "aircraft", "airline", "ame", "amo",
             "mro", "sms", "human factors",
         ],
+        "description_exclude_terms": [
+            "u.s. citizenship required",
+            "must be a u.s. citizen",
+            "us citizenship required",
+            "u.s. citizens only",
+            "us citizens only",
+            "u.s. persons only",
+            "us persons only",
+            "u.s. citizenship is required",
+            "us citizenship is required",
+            "only u.s. citizens are authorized",
+            "only us citizens are authorized",
+            "authorized to access information under this program",
+            "must be a u.s. person",
+            "u.s. person status",
+        ],
     }
 }
 
@@ -325,3 +341,127 @@ def test_gate1_engine_does_not_match_engines():
     matched, near_misses = filter_jobs(jobs, fetcher, config=config_no_engines)
     assert len(matched) == 0
     assert near_misses[0]["gate_failed"] == "gate1"
+
+
+# ---------------------------------------------------------------------------
+# Gate 4 tests — US-citizenship / ITAR restriction filtering
+# ---------------------------------------------------------------------------
+
+# Engine title + sufficient description to pass Gates 1/2/3 if Gate 4 doesn't fire.
+_ENGINE_TITLE = "Engine Overhaul Manager"
+_ENGINE_DESC_SUFFIX = (
+    " GE90 engine overhaul, test cell operations, Part 145 MRO facility, EASA compliance."
+)
+
+
+def _gate4_job(desc):
+    """Return (matched, near_misses) for an engine-title job with the given description."""
+    jobs = [{"title": _ENGINE_TITLE, "url": "http://x", "location": "East Hartford, CT"}]
+    return run(jobs, desc)
+
+
+def test_gate4_pw_failing_example():
+    """Exact phrase from the P&W role that previously slipped through Gate 4."""
+    desc = (
+        "U.S. citizenship is required, as only U.S. citizens are authorized to "
+        "access information under this program/contract."
+        + _ENGINE_DESC_SUFFIX
+    )
+    matched, near_misses = _gate4_job(desc)
+    assert len(matched) == 0, "P&W citizenship phrase must be rejected at Gate 4"
+    assert len(near_misses) == 1
+    assert near_misses[0]["gate_failed"] == "gate4"
+
+
+def test_gate4_citizenship_is_required_connector():
+    """'citizenship is required' (with 'is') must be caught — substring 'citizenship required' alone misses it."""
+    desc = "U.S. citizenship is required for this position." + _ENGINE_DESC_SUFFIX
+    matched, near_misses = _gate4_job(desc)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate4"
+
+
+def test_gate4_citizenship_will_be_required():
+    """'citizenship will be required' variant caught by regex."""
+    desc = "U.S. citizenship will be required." + _ENGINE_DESC_SUFFIX
+    matched, near_misses = _gate4_job(desc)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate4"
+
+
+def test_gate4_citizens_only():
+    """'U.S. citizens only' literal and regex both fire."""
+    desc = "U.S. citizens only may apply to this role." + _ENGINE_DESC_SUFFIX
+    matched, near_misses = _gate4_job(desc)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate4"
+
+
+def test_gate4_only_citizens_authorized():
+    """'only U.S. citizens are authorized' pattern caught."""
+    desc = "Only U.S. citizens are authorized to perform this work." + _ENGINE_DESC_SUFFIX
+    matched, near_misses = _gate4_job(desc)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate4"
+
+
+def test_gate4_itar_boilerplate():
+    """ITAR 'authorized to access information under this program' caught."""
+    desc = (
+        "Applicants must be authorized to access information under this program "
+        "per ITAR regulations."
+        + _ENGINE_DESC_SUFFIX
+    )
+    matched, near_misses = _gate4_job(desc)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate4"
+
+
+def test_gate4_us_person_status():
+    """'U.S. person status' ITAR term caught."""
+    desc = "Must hold U.S. person status as defined under ITAR." + _ENGINE_DESC_SUFFIX
+    matched, near_misses = _gate4_job(desc)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate4"
+
+
+def test_gate4_inclusive_language_not_rejected():
+    """'U.S. citizens are encouraged to apply' must NOT trigger Gate 4 — inclusive, not restrictive."""
+    desc = (
+        "We welcome applications from U.S. citizens and international candidates alike. "
+        "We are an equal opportunity employer."
+        + _ENGINE_DESC_SUFFIX
+    )
+    matched, near_misses = _gate4_job(desc)
+    assert len(matched) == 1, "Inclusive-language description must pass Gate 4"
+    assert len(near_misses) == 0
+
+
+def test_gate4_security_clearance_not_rejected():
+    """'security clearance required' alone must NOT trigger Gate 4 (playbook warning)."""
+    desc = (
+        "This role may require a security clearance. Active DoD clearance preferred."
+        + _ENGINE_DESC_SUFFIX
+    )
+    matched, near_misses = _gate4_job(desc)
+    assert len(matched) == 1, "Security clearance alone must not trigger Gate 4"
+    assert len(near_misses) == 0
+
+
+def test_gate4_work_authorization_not_rejected():
+    """'authorized to work in the US' is work-auth, not citizenship — must pass Gate 4."""
+    desc = (
+        "Must be authorized to work in the United States without employer sponsorship."
+        + _ENGINE_DESC_SUFFIX
+    )
+    matched, near_misses = _gate4_job(desc)
+    assert len(matched) == 1, "Work-authorization language must not trigger Gate 4"
+    assert len(near_misses) == 0
+
+
+def test_gate4_original_terms_still_fire():
+    """Original 'u.s. citizenship required' (no 'is') is still caught by the literal list."""
+    desc = "u.s. citizenship required for this defense program." + _ENGINE_DESC_SUFFIX
+    matched, near_misses = _gate4_job(desc)
+    assert len(matched) == 0
+    assert near_misses[0]["gate_failed"] == "gate4"

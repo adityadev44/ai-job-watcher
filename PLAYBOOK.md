@@ -112,17 +112,57 @@ domain terms, despite having nothing to do with engine maintenance.
 
 **Gate 4 — Description exclusion (US-citizens-only and inaccessible roles)**
 After the description is fetched and confirmed ≥100 chars, the description is checked for
-any term in `matching.description_exclude_terms` using case-insensitive substring matching.
-If found, the job is rejected regardless of engine domain content.
-Current terms: "u.s. citizenship required", "must be a u.s. citizen", "us citizenship required",
-"u.s. citizens only", "us citizens only", "u.s. persons only", "us persons only".
+citizenship/ITAR restriction language using **two complementary mechanisms**:
+
+1. **Literal substring list** (`matching.description_exclude_terms` in config.yaml) —
+   case-insensitive substring match. Fast, exact, easy to audit.
+2. **Compiled regex** (`_GATE4_CITIZENSHIP_RE` in matcher.py) — structural pattern matching
+   that catches phrasing variants the literal list cannot express.
+
+**Why both?** Substring matching requires the phrase to appear verbatim. A connective word
+like "is" between "citizenship" and "required" breaks the match: "citizenship required" does
+NOT substring-match "citizenship is required". Enumerating every connective variant
+("is required", "are required", "will be required") as separate literals is brittle — the
+regex catches the restriction class structurally rather than by enumeration.
+
+Current config.yaml literal terms (7 original + 8 added):
+- "u.s. citizenship required" / "us citizenship required"
+- "must be a u.s. citizen"
+- "u.s. citizens only" / "us citizens only"
+- "u.s. persons only" / "us persons only"
+- "u.s. citizenship is required" / "us citizenship is required"   ← added (connector "is")
+- "only u.s. citizens are authorized" / "only us citizens are authorized"  ← added
+- "authorized to access information under this program"           ← added (ITAR boilerplate)
+- "must be a u.s. person" / "u.s. person status"                 ← added (ITAR legal terms)
+
+Regex patterns (matcher.py `_GATE4_CITIZENSHIP_RE`, re.IGNORECASE):
+- `u\.?s\.?\s+citizens?\s+only`
+- `u\.?s\.?\s+citizen(?:ship)?\s+(?:(?:is|are|will\s+be)\s+)?required`
+- `only\s+u\.?s\.?\s+citizens?\s+(?:are\s+)?(?:authorized|eligible)`
+- `must\s+be\s+(?:a\s+)?u\.?s\.?\s+(?:citizen|person)\b`
+- `u\.?s\.?\s+person\s+status`
+- `authorized\s+to\s+access\s+(?:classified\s+)?information\s+under\s+this\s+program`
+
 Purpose: US defense contractors (RTX/Pratt & Whitney in particular) post engine-adjacent roles
-that are legally restricted to US citizens. These jobs are unreachable for non-US candidates
-regardless of qualifications. Gate 4 filters them without touching Gate 3 title logic.
+that are legally restricted to US citizens or ITAR-authorized persons. These jobs are
+unreachable for non-US candidates regardless of qualifications. Gate 4 filters them without
+touching Gate 3 title logic.
+
+**False-positive guard (Gate 4 asymmetry):** A Gate 4 false positive wrongly rejects a
+reachable international role — that is the costly error (career cost). Optimize for
+avoiding false rejections, not for maximising citizenship-restriction recall. The regex
+patterns are anchored so that inclusive language like "U.S. citizens are encouraged to apply"
+(restriction word absent) and "applications from U.S. citizens and international candidates
+alike" (no adjacent restriction word) do NOT match.
+Validated non-match cases: security clearance language, work-authorization-only language
+("authorized to work in the US"), inclusive equal-opportunity language. See test_matcher.py.
+
 Note: short/unavailable descriptions bypass Gate 4 (same as Gate 2) — the job is kept
 unconditionally when description fetch fails or returns < 100 chars.
-Note: avoid overly broad terms like "security clearance required" — these appear in descriptions
-for legitimate international roles involving classified supplier data, not citizenship restrictions.
+Note: avoid overly broad terms like "security clearance required" — these appear in
+descriptions for legitimate international roles involving classified supplier data, not
+citizenship restrictions. "Permanent resident" alone is also unsafe — only reject when
+paired with an explicit citizenship restriction (which the regex handles structurally).
 
 **Gate 2 — Engine domain (description-based, ≥3 hits including ≥1 engine-specific)**
 Description must contain:
@@ -660,6 +700,7 @@ above. `posting_date` from jobDetail is ISO 8601: `"2026-05-01T00:00:00.000+0000
 | DoD SkillBridge internship postings pass Gate 1 via role-title suffix | GE Aerospace posts US military fellowship roles as "Military DoD SkillBridge Program - [Role] Advanced Lead / Staff Engineer". The "lead"/"director" in the suffix passes Gate 1; descriptions mention LLP or engine terms and pass Gate 2. These are not real jobs — they are ~6-month internships for transitioning US military personnel. | Added "skillbridge" to exclude_terms. Word-boundary match catches "SkillBridge" in title regardless of what follows. Does not affect any other pipeline. |
 | "Engine Assembly Shop Operator" passes Gate 1 and Gate 3 | The title passes Gate 1 via "engine" (word-boundary correct) and has no Gate 3 exclusion. "Operator" is a floor-level production role, not a leadership/specialist position. Similar issue: "CNC Machine Operator", "Bench Operator". | Added "operator" to exclude_terms. "Operations Manager" / "Operations Director" are unaffected (word-boundary: `\boperator\b` does not match "operations"). |
 | "Workplace Safety & Health Manager - Construction" alerted at SAESL — a building/facilities construction role, not engine MRO | Passed Gate 1 via "manager", had no Gate 3 exclusion, and passed Gate 2 because its description was rich enough in generic MRO-facility domain terms (aviation, MRO, EASA-adjacent compliance language) to clear the 1-engine + 3-total threshold despite having nothing to do with actual engine maintenance. | Added "construction" to exclude_terms. Low blast-radius — no legitimate senior MRO/engine title in any existing pipeline contains "construction" as a term. |
+| P&W role with "U.S. citizenship is required" slipped through Gate 4 | Gate 4 used pure substring matching. The literal "u.s. citizenship required" does NOT substring-match "u.s. citizenship **is** required" — the word "is" between "citizenship" and "required" breaks the match. All 7 existing Gate 4 terms missed the failing phrase. Root cause: substring matching treats each connective word as a distinct phrase, so enumerating "citizenship required" ≠ covering "citizenship is required" or "citizenship will be required". | Added 8 new targeted literal phrases to config.yaml covering "is required", "only ... are authorized", ITAR boilerplate, and US-person terms. Also added `_GATE4_CITIZENSHIP_RE` compiled regex in matcher.py that catches the structural class of US citizenship restrictions (required/only/authorized/eligible co-occurring with a US-citizen/person token). Regex checked before and after the literal list. Validated: inclusive language ("U.S. citizens are encouraged to apply", "security clearance required", "authorized to work in the US") does NOT trigger the regex. See tests/test_matcher.py for 11 new Gate 4 test cases. |
 | CAMO roles failing Gate 2 (no engine-specific description terms) | CAMO (Continuing Airworthiness Management Organisation) job descriptions focus on regulatory compliance — Part-M, airworthiness directives, maintenance programme management. No engine model names. Previously, engine_hits=0 for all CAMO descriptions → Gate 2 failure even if the role is genuinely in scope. | Added "CAMO", "Part-M", "continuing airworthiness" to engine_specific_terms. A CAMO Manager description hitting "CAMO" + "Part-M" + domain terms now passes Gate 2. Also added "camo" and "continuing airworthiness" to title_family to catch CAMO-specific job titles at Gate 1. |
 | Ethiopian HTML parser returned 0 jobs on first live run | WebFetch described job structure as `<li>` elements — actual HTML uses Bootstrap panel divs: `<div class="card-header">` → `<a data-toggle="collapse">`. `soup.find_all("li")` found nothing. | Always verify actual HTML with `curl` before writing the parser. Real structure: `soup.find_all("div", class_="card-header")` → `a[data-toggle="collapse"]`. Also: labels use `Position : ` (space before colon) and `&nbsp;` (\xa0) before values — strip both when parsing. |
 | Ethiopian international jobs appear on all 4 pages (same jobs repeated) | The portal repeats the 9 international positions at the top of every page, then appends different local positions per page. Fetching all 4 pages without dedup would add the same Expat Captain B767 four times. | Dedup within `fetch_jobs()` using `title_slug|closing_date` key. International jobs deduplicate naturally since they have identical titles and dates across pages. |

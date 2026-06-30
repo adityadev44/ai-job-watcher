@@ -7,6 +7,30 @@ import re
 import yaml
 from pathlib import Path
 
+# Compiled regex for US-citizenship and ITAR restriction patterns.
+#
+# Why regex alongside the config literal list:
+#   Substring matching requires the phrase to appear verbatim. Common connective
+#   words ("is", "are", "will be") mean "citizenship required" does NOT substring-
+#   match "citizenship is required". Enumerating every connective variant as a
+#   separate literal is brittle — this regex catches the restriction class
+#   structurally instead.
+#
+# False-positive guard: every pattern anchors the citizenship/person token to an
+# adjacent restriction word (required / only / authorized / eligible / status).
+# Inclusive language like "U.S. citizens are encouraged to apply" does not match
+# because the next word after "citizens" is "are encouraged", not a restriction word.
+# See tests/test_matcher.py for the validated non-match cases.
+_GATE4_CITIZENSHIP_RE = re.compile(
+    r"u\.?\s*s\.?\s+citizens?\s+only"                                          # "U.S. citizens only"
+    r"|u\.?\s*s\.?\s+citizen(?:ship)?\s+(?:(?:is|are|will\s+be)\s+)?required"  # "U.S. citizenship [is/are/will be] required"
+    r"|only\s+u\.?\s*s\.?\s+citizens?\s+(?:are\s+)?(?:authorized|eligible)"    # "only U.S. citizens are authorized/eligible"
+    r"|must\s+be\s+(?:a\s+)?u\.?\s*s\.?\s+(?:citizen|person)\b"               # "must be a U.S. citizen/person"
+    r"|u\.?\s*s\.?\s+person\s+status"                                          # "U.S. person status" (ITAR term)
+    r"|authorized\s+to\s+access\s+(?:classified\s+)?information\s+under\s+this\s+program",  # ITAR boilerplate
+    re.IGNORECASE,
+)
+
 
 def _load_config():
     config_path = Path(__file__).parent.parent / "config.yaml"
@@ -89,8 +113,15 @@ def filter_jobs(jobs, fetcher, config=None):
             matched.append(job)
             continue
 
-        # Gate 4 — description exclusion (US-citizens-only and similar inaccessible roles)
+        # Gate 4 — description exclusion (US-citizens-only and similar inaccessible roles).
+        # Two checks in sequence: (1) literal substring list from config.yaml, then
+        # (2) compiled regex for structural patterns the literal list can't catch
+        # (e.g. "citizenship is required" vs "citizenship required" differ by one word).
         desc_exc_hit = next((t for t in desc_exclude_terms if t in desc_lc), None)
+        if desc_exc_hit is None:
+            _m = _GATE4_CITIZENSHIP_RE.search(description)
+            if _m:
+                desc_exc_hit = _m.group(0)
         if desc_exc_hit is not None:
             reason = f"description contains '{desc_exc_hit}'"
             print(f"[gate4] {title} ({reason})")

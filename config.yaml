@@ -95,6 +95,7 @@ matching:
     - "CAR 145"
     - "CRS"
   description_exclude_terms:
+    # Original phrases (kept for direct substring match)
     - "u.s. citizenship required"
     - "must be a u.s. citizen"
     - "us citizenship required"
@@ -102,6 +103,17 @@ matching:
     - "us citizens only"
     - "u.s. persons only"
     - "us persons only"
+    # Added: "is required" / "are required" connector variants (substring ≠ regex)
+    - "u.s. citizenship is required"
+    - "us citizenship is required"
+    # Added: ITAR / US-person restriction phrases
+    - "only u.s. citizens are authorized"
+    - "only us citizens are authorized"
+    - "authorized to access information under this program"
+    - "must be a u.s. person"
+    - "u.s. person status"
+    # Note: matcher.py _GATE4_CITIZENSHIP_RE also catches these patterns via regex,
+    # providing structural coverage beyond what literal substring matching can express.
 
 safran_search:
   max_listings: 200
