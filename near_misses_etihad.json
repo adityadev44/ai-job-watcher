@@ -8890,5 +8890,65 @@
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
     "run_timestamp": "2026-06-30T04:01:15+00:00"
+  },
+  {
+    "id": "403",
+    "title": "HR Specialist - (UAE National)",
+    "location": "Abu Dhabi, United Arab Emirates",
+    "posting_date": "2026-06-26",
+    "url": "https://careers.etihadengineering.com/en/sites/careers/job/403",
+    "company": "Etihad Engineering",
+    "source": "etihad",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-30T10:01:16+00:00"
+  },
+  {
+    "id": "507",
+    "title": "202011.Aircraft Engineer-Avionics",
+    "location": "Abu Dhabi, United Arab Emirates",
+    "posting_date": "2026-06-26",
+    "url": "https://careers.etihadengineering.com/en/sites/careers/job/507",
+    "company": "Etihad Engineering",
+    "source": "etihad",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-30T10:01:16+00:00"
+  },
+  {
+    "id": "651",
+    "title": "B1 Aircraft Engineer - Base Maintenance",
+    "location": "Abu Dhabi, United Arab Emirates",
+    "posting_date": "2026-06-25",
+    "url": "https://careers.etihadengineering.com/en/sites/careers/job/651",
+    "company": "Etihad Engineering",
+    "source": "etihad",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-30T10:01:16+00:00"
+  },
+  {
+    "id": "825",
+    "title": "B1/B2 Production Trainer",
+    "location": "Abu Dhabi, United Arab Emirates",
+    "posting_date": "2026-06-22",
+    "url": "https://careers.etihadengineering.com/en/sites/careers/job/825",
+    "company": "Etihad Engineering",
+    "source": "etihad",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-30T10:01:16+00:00"
+  },
+  {
+    "id": "811",
+    "title": "Material Inspector",
+    "location": "Abu Dhabi, United Arab Emirates",
+    "posting_date": "2026-06-02",
+    "url": "https://careers.etihadengineering.com/en/sites/careers/job/811",
+    "company": "Etihad Engineering",
+    "source": "etihad",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-30T10:01:16+00:00"
   }
 ]

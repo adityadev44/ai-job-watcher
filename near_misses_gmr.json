@@ -3298,5 +3298,53 @@
     "gate_failed": "gate2",
     "reason": "engine_hits=0, domain_hits=1, needed 1 engine + 3 total",
     "run_timestamp": "2026-06-30T04:01:18+00:00"
+  },
+  {
+    "id": "1178515701",
+    "title": "Business Development Lead - Utility Bidding",
+    "company": "GMR Group",
+    "location": "Delhi, India",
+    "posting_date": "2026-06-30",
+    "url": "https://careers.gmrgroup.in/job/New-Delhi-Business-Development-Lead-Utility-Bidding-Delh/1178515701/",
+    "source": "gmr",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=1, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-30T10:01:19+00:00"
+  },
+  {
+    "id": "1407929633",
+    "title": "Executive - Airside Ops",
+    "company": "GMR Group",
+    "location": "Bhogapuram, India",
+    "posting_date": "2026-06-24",
+    "url": "https://careers.gmrgroup.in/job/R-P-C-Layout-Executive-Airside-Ops-Bhog/1407929633/",
+    "source": "gmr",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-30T10:01:19+00:00"
+  },
+  {
+    "id": "1148195701",
+    "title": "Manager - F&A",
+    "company": "GMR Group",
+    "location": "PG03FA06, India",
+    "posting_date": "2026-06-15",
+    "url": "https://careers.gmrgroup.in/job/Tutt-fa-Pura-Manager-F&A-PG03/1148195701/",
+    "source": "gmr",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=1, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-30T10:01:19+00:00"
+  },
+  {
+    "id": "1258309201",
+    "title": "Duty Manager - Airside Operations",
+    "company": "GMR Group",
+    "location": "Visakhapatnam, India",
+    "posting_date": "2025-10-14",
+    "url": "https://careers.gmrgroup.in/job/Vishakhapatnam-Duty-Manager-Airside-Operations-Visa/1258309201/",
+    "source": "gmr",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=4, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-30T10:01:19+00:00"
   }
 ]
