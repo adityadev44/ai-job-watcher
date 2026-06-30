@@ -2182,5 +2182,77 @@
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
     "run_timestamp": "2026-06-29T19:55:11+00:00"
+  },
+  {
+    "id": "175498",
+    "title": "MANAGER – SYSTEM ADMINISTRATION",
+    "company": "Gulf Air Group",
+    "location": "Bahrain - Head Quarter",
+    "posting_date": "2026-06-30",
+    "url": "https://gulfairgroup.sniperhire.net/vacancy/175498",
+    "source": "gulf_air",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=1, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-30T04:01:16+00:00"
+  },
+  {
+    "id": "175499",
+    "title": "LEGAL ENGINEER",
+    "company": "Gulf Air Group",
+    "location": "Bahrain - Head Quarter",
+    "posting_date": "2026-06-30",
+    "url": "https://gulfairgroup.sniperhire.net/vacancy/175499",
+    "source": "gulf_air",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-30T04:01:16+00:00"
+  },
+  {
+    "id": "175101",
+    "title": "CABIN CREW - BAHRAIN “Join Our Gulf Air Team – Your flying journey begins here!”",
+    "company": "Gulf Air",
+    "location": "Bahrain - Head Quarter",
+    "posting_date": "2027-04-05",
+    "url": "https://gulfairgroup.sniperhire.net/vacancy/175101",
+    "source": "gulf_air",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-30T04:01:16+00:00"
+  },
+  {
+    "id": "175047",
+    "title": "Join Gulf Air as Captain – Airbus A320",
+    "company": "Gulf Air",
+    "location": "Bahrain - Head Quarter",
+    "posting_date": "2026-06-30",
+    "url": "https://gulfairgroup.sniperhire.net/vacancy/175047",
+    "source": "gulf_air",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-30T04:01:16+00:00"
+  },
+  {
+    "id": "175079",
+    "title": "Join Gulf Air as a First Officer – Airbus A320",
+    "company": "Gulf Air",
+    "location": "Bahrain - Head Quarter",
+    "posting_date": "2026-06-30",
+    "url": "https://gulfairgroup.sniperhire.net/vacancy/175079",
+    "source": "gulf_air",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-30T04:01:16+00:00"
+  },
+  {
+    "id": "174592",
+    "title": "CABIN CREW - BAHRAIN “Join Our Gulf Air Team – Your flying journey begins here!”",
+    "company": "Gulf Air",
+    "location": "Bahrain - Head Quarter",
+    "posting_date": "2026-12-31",
+    "url": "https://gulfairgroup.sniperhire.net/vacancy/174592",
+    "source": "gulf_air",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-30T04:01:16+00:00"
   }
 ]
