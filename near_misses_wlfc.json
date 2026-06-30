@@ -460,5 +460,159 @@
     "gate_failed": "gate1",
     "reason": "no title-family term found in title",
     "run_timestamp": "2026-06-30T10:01:15+00:00"
+  },
+  {
+    "title": "B1/B2/C Licensed Aircraft Engineer - Multiple Openings  (Available 2026/2027)",
+    "url": "https://www.wlfc.global/careers#b1-b2-c-licensed-aircraft-engineer-multiple-openings-available-2026-2027-teessid",
+    "location": "Teesside, UK",
+    "company": "Willis Aviation Services Limited",
+    "source": "wlfc",
+    "posting_date": "",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-30T12:01:21+00:00"
+  },
+  {
+    "title": "Mechanic - Multiple Openings (Available 2026/2027)",
+    "url": "https://www.wlfc.global/careers#mechanic-multiple-openings-available-2026-2027-teesside-uk",
+    "location": "Teesside, UK",
+    "company": "Willis Aviation Services Limited",
+    "source": "wlfc",
+    "posting_date": "",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-30T12:01:21+00:00"
+  },
+  {
+    "title": "Technical Records Auditor",
+    "url": "https://www.wlfc.global/careers#technical-records-auditor-bridgend-uk",
+    "location": "Bridgend, UK",
+    "company": "Willis Mitsui & Co. Asset Management Limited",
+    "source": "wlfc",
+    "posting_date": "",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-30T12:01:21+00:00"
+  },
+  {
+    "title": "B2 Licensed Aircraft Engineer",
+    "url": "https://www.wlfc.global/careers#b2-licensed-aircraft-engineer-teesside-uk",
+    "location": "Teesside, UK",
+    "company": "Willis Aviation Services Limited",
+    "source": "wlfc",
+    "posting_date": "",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-30T12:01:21+00:00"
+  },
+  {
+    "title": "Check Manager Support Mechanic (CMSM)  (Available 2026/2027)",
+    "url": "https://www.wlfc.global/careers#check-manager-support-mechanic-cmsm-available-2026-2027-teesside-uk",
+    "location": "Teesside, UK",
+    "company": "Willis Aviation Services Limited",
+    "source": "wlfc",
+    "posting_date": "",
+    "gate_failed": "gate3",
+    "reason": "excluded term 'mechanic' in title",
+    "run_timestamp": "2026-06-30T12:01:21+00:00"
+  },
+  {
+    "title": "Check Manager (Available 2026/2027)",
+    "url": "https://www.wlfc.global/careers#check-manager-available-2026-2027-teesside-uk",
+    "location": "Teesside, UK",
+    "company": "Willis Aviation Services Limited",
+    "source": "wlfc",
+    "posting_date": "",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=5, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-30T12:01:21+00:00"
+  },
+  {
+    "title": "Graduate Technical Records Administrator",
+    "url": "https://www.wlfc.global/careers#graduate-technical-records-administrator-bridgend-uk",
+    "location": "Bridgend, UK",
+    "company": "Willis Mitsui & Co. Asset Management Limited",
+    "source": "wlfc",
+    "posting_date": "",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-30T12:01:21+00:00"
+  },
+  {
+    "title": "Ramp Agent - Part Time",
+    "url": "https://www.wlfc.global/careers#ramp-agent-part-time-teesside-uk",
+    "location": "Teesside, UK",
+    "company": "Willis Aviation Services Limited",
+    "source": "wlfc",
+    "posting_date": "",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-30T12:01:21+00:00"
+  },
+  {
+    "title": "Sales Director - APAC",
+    "url": "https://www.wlfc.global/careers#sales-director-apac-bridgend-uk",
+    "location": "Bridgend, UK",
+    "company": "Willis Mitsui & Co. Asset Management Limited",
+    "source": "wlfc",
+    "posting_date": "",
+    "gate_failed": "gate3",
+    "reason": "excluded term 'sales' in title",
+    "run_timestamp": "2026-06-30T12:01:21+00:00"
+  },
+  {
+    "title": "Imports/Exports Controller, International Transportation",
+    "url": "https://www.wlfc.global/careers#imports-exports-controller-international-transportation-bridgend-uk",
+    "location": "Bridgend, UK",
+    "company": "Willis Mitsui & Co. Asset Management Limited",
+    "source": "wlfc",
+    "posting_date": "",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-30T12:01:21+00:00"
+  },
+  {
+    "title": "AVP, Powerplant IP & Digital Analytics",
+    "url": "https://www.wlfc.global/careers#avp-powerplant-ip-digital-analytics-bridgend-uk-or-remote-within-europe",
+    "location": "Bridgend, UK or Remote (within Europe)",
+    "company": "Willis Mitsui & Co. Asset Management Limited",
+    "source": "wlfc",
+    "posting_date": "",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=3, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-30T12:01:21+00:00"
+  },
+  {
+    "title": "Sales Director - EMEA",
+    "url": "https://www.wlfc.global/careers#sales-director-emea-bridgend-uk-or-dublin-ie",
+    "location": "Bridgend, UK or Dublin, IE",
+    "company": "Willis Mitsui & Co. Asset Management Limited",
+    "source": "wlfc",
+    "posting_date": "",
+    "gate_failed": "gate3",
+    "reason": "excluded term 'sales' in title",
+    "run_timestamp": "2026-06-30T12:01:21+00:00"
+  },
+  {
+    "title": "Junior Compliance & Safety Engineer",
+    "url": "https://www.wlfc.global/careers#junior-compliance-safety-engineer-bridgend-uk",
+    "location": "Bridgend, UK",
+    "company": "Willis Engine Repair Centre",
+    "source": "wlfc",
+    "posting_date": "",
+    "gate_failed": "gate2",
+    "reason": "engine_hits=0, domain_hits=8, needed 1 engine + 3 total",
+    "run_timestamp": "2026-06-30T12:01:21+00:00"
+  },
+  {
+    "title": "Maintenance Technician",
+    "url": "https://www.wlfc.global/careers#maintenance-technician-bridgend-uk",
+    "location": "Bridgend, UK",
+    "company": "Willis Engine Repair Centre",
+    "source": "wlfc",
+    "posting_date": "",
+    "gate_failed": "gate1",
+    "reason": "no title-family term found in title",
+    "run_timestamp": "2026-06-30T12:01:21+00:00"
   }
 ]
