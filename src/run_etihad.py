@@ -19,17 +19,18 @@ NEAR_MISS_PATH = ROOT / "near_misses_etihad.json"
 
 
 def _load_config():
-    with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+    with open(CONFIG_PATH, "r", encoding="utf-8-sig") as f:
         return yaml.safe_load(f)
 
 
 def _load_json(path):
     if not path.exists():
         return []
-    with open(path, "r", encoding="utf-8") as f:
+    with open(path, "r", encoding="utf-8-sig") as f:
         try:
             return json.load(f)
-        except json.JSONDecodeError:
+        except json.JSONDecodeError as _e:
+            print(f"[WARNING] {path.name}: JSON parse error ({_e}) — returning empty list (check for file corruption)")
             return []
 
 

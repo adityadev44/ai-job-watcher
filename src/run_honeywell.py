@@ -17,19 +17,38 @@ CONFIG_PATH = ROOT / "config.yaml"
 SEEN_PATH = ROOT / "seen_jobs_honeywell.json"
 NEAR_MISS_PATH = ROOT / "near_misses_honeywell.json"
 
+# Honeywell has many non-aerospace divisions (HBS = Building Solutions,
+# PMT = Performance Materials, SPS = Safety & Productivity, UOP = Process
+# Technologies). Gate 2 is bypassed (descriptions unavailable), so without
+# this pre-filter all Gate-1+3-passing Honeywell jobs alert — including
+# "HBS Projects General Manager" and "Sr Product Manager Building Automation".
+# Require at least one aerospace-domain term in the title before handing off.
+_AEROSPACE_TITLE_TERMS = [
+    "aerospace", "engine", "engines", "powerplant", "propulsion",
+    "turbine", "apu", "auxiliary power",
+    "overhaul", "mro", "maintenance", "airworthiness", "aviation",
+    "avionics",
+]
+
+
+def _is_aerospace_title(title: str) -> bool:
+    t = title.lower()
+    return any(term in t for term in _AEROSPACE_TITLE_TERMS)
+
 
 def _load_config():
-    with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+    with open(CONFIG_PATH, "r", encoding="utf-8-sig") as f:
         return yaml.safe_load(f)
 
 
 def _load_json(path):
     if not path.exists():
         return []
-    with open(path, "r", encoding="utf-8") as f:
+    with open(path, "r", encoding="utf-8-sig") as f:
         try:
             return json.load(f)
-        except json.JSONDecodeError:
+        except json.JSONDecodeError as _e:
+            print(f"[WARNING] {path.name}: JSON parse error ({_e}) — returning empty list (check for file corruption)")
             return []
 
 
@@ -61,13 +80,22 @@ def run_pipeline(seen_path=None, near_miss_path=None):
     total_fetched = len(raw_jobs)
     print(f"[honeywell] Fetched {total_fetched} unique listings")
 
-    # ── 2. Filter through 3-gate matcher ────────────────────────────────────
-    matched, near_misses = filter_jobs(raw_jobs, honeywell_fetcher, config=config)
+    # ── 1.5. Aerospace title pre-filter ─────────────────────────────────────
+    # Gate 2 is bypassed for Honeywell (descriptions unavailable), so without
+    # this step ALL Gate-1+3-passing jobs alert — including HBS / PMT / SPS
+    # business-unit managers that are unrelated to Aerospace.
+    aerospace_jobs = [j for j in raw_jobs if _is_aerospace_title(j["title"])]
+    pre_filter_dropped = total_fetched - len(aerospace_jobs)
+    if pre_filter_dropped:
+        print(f"[honeywell] Pre-filter: dropped {pre_filter_dropped} non-aerospace title(s)")
+
+    # ── 2. Filter through 4-gate matcher ────────────────────────────────────
+    matched, near_misses = filter_jobs(aerospace_jobs, honeywell_fetcher, config=config)
 
     # Derive gate-pass counts from near_misses for the summary
     g1_fail = sum(1 for nm in near_misses if nm["gate_failed"] == "gate1")
     g3_fail = sum(1 for nm in near_misses if nm["gate_failed"] == "gate3")
-    g1_pass = total_fetched - g1_fail
+    g1_pass = len(aerospace_jobs) - g1_fail
     g3_pass = g1_pass - g3_fail
     total_matched = len(matched)
 
@@ -102,6 +130,7 @@ def run_pipeline(seen_path=None, near_miss_path=None):
     print()
     print("[honeywell] ── Run summary ──────────────────────────────")
     print(f"[honeywell]  Total fetched     : {total_fetched}")
+    print(f"[honeywell]  Aerospace titles  : {len(aerospace_jobs)}  (pre-filter: {pre_filter_dropped} non-aerospace dropped)")
     print(f"[honeywell]  Passed Gate 1     : {g1_pass}  (title family match)")
     print(f"[honeywell]  Passed Gate 3     : {g3_pass}  (exclude filter clear)")
     print(f"[honeywell]  Passed Gate 2     : {total_matched}  (engine domain match)")
@@ -111,6 +140,7 @@ def run_pipeline(seen_path=None, near_miss_path=None):
 
     return {
         "total_fetched": total_fetched,
+        "pre_filter_dropped": pre_filter_dropped,
         "g1_pass": g1_pass,
         "g3_pass": g3_pass,
         "total_matched": total_matched,

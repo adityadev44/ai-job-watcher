@@ -50,6 +50,9 @@ jobs:
         if: steps.cache-firefox.outputs.cache-hit != 'true'
         run: playwright install firefox
 
+      - name: Install Firefox system dependencies
+        run: playwright install-deps firefox
+
       - name: Run all pipelines (parallel)
         run: |
           python -u -m src.run_safran &
