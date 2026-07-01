@@ -217,45 +217,45 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add seen_jobs_safran.json near_misses_safran.json \
-                  seen_jobs_ge.json near_misses_ge.json \
-                  seen_jobs_sanad.json near_misses_sanad.json \
-                  seen_jobs_emirates.json near_misses_emirates.json \
-                  seen_jobs_gmr.json near_misses_gmr.json \
-                  seen_jobs_rtx.json near_misses_rtx.json \
-                  seen_jobs_indigo.json near_misses_indigo.json \
-                  seen_jobs_etihad.json near_misses_etihad.json \
-                  seen_jobs_sia.json near_misses_sia.json \
-                  seen_jobs_ste.json near_misses_ste.json \
-                  seen_jobs_standardaero.json near_misses_standardaero.json \
-                  seen_jobs_saudia_technic.json near_misses_saudia_technic.json \
-                  seen_jobs_lht.json near_misses_lht.json \
-                  seen_jobs_qatar.json near_misses_qatar.json \
-                  seen_jobs_ethiopian.json near_misses_ethiopian.json \
-                  seen_jobs_gatelesis.json near_misses_gatelesis.json \
-                  seen_jobs_fltechnics.json near_misses_fltechnics.json \
-                  seen_jobs_magnetic.json near_misses_magnetic.json \
-                  seen_jobs_air_india.json near_misses_air_india.json \
-                  seen_jobs_dgca.json near_misses_dgca.json \
-                  seen_jobs_saesl.json near_misses_saesl.json \
-                  seen_jobs_oman_air.json near_misses_oman_air.json \
-                  seen_jobs_gulf_air.json near_misses_gulf_air.json \
-                  seen_jobs_kuwait_airways.json near_misses_kuwait_airways.json \
-                  seen_jobs_ammroc.json near_misses_ammroc.json \
-                  seen_jobs_wlfc.json near_misses_wlfc.json \
-                  seen_jobs_elfc.json near_misses_elfc.json \
-                  seen_jobs_rolls_royce.json near_misses_rolls_royce.json \
-                  seen_jobs_honeywell.json near_misses_honeywell.json \
-                  seen_jobs_mtu.json near_misses_mtu.json \
-                  seen_jobs_boeing.json near_misses_boeing.json \
-                  seen_jobs_aar.json near_misses_aar.json \
-                  seen_jobs_icf.json near_misses_icf.json \
-                  seen_jobs_oliver_wyman.json near_misses_oliver_wyman.json \
-                  seen_jobs_smbc_aviation.json near_misses_smbc_aviation.json \
-                  seen_jobs_aercap.json near_misses_aercap.json \
-                  seen_jobs_avolon.json near_misses_avolon.json \
-                  seen_jobs_boc_aviation.json near_misses_boc_aviation.json \
-                  seen_jobs_acg.json near_misses_acg.json
+          git add seen_jobs_safran.json \
+                  seen_jobs_ge.json \
+                  seen_jobs_sanad.json \
+                  seen_jobs_emirates.json \
+                  seen_jobs_gmr.json \
+                  seen_jobs_rtx.json \
+                  seen_jobs_indigo.json \
+                  seen_jobs_etihad.json \
+                  seen_jobs_sia.json \
+                  seen_jobs_ste.json \
+                  seen_jobs_standardaero.json \
+                  seen_jobs_saudia_technic.json \
+                  seen_jobs_lht.json \
+                  seen_jobs_qatar.json \
+                  seen_jobs_ethiopian.json \
+                  seen_jobs_gatelesis.json \
+                  seen_jobs_fltechnics.json \
+                  seen_jobs_magnetic.json \
+                  seen_jobs_air_india.json \
+                  seen_jobs_dgca.json \
+                  seen_jobs_saesl.json \
+                  seen_jobs_oman_air.json \
+                  seen_jobs_gulf_air.json \
+                  seen_jobs_kuwait_airways.json \
+                  seen_jobs_ammroc.json \
+                  seen_jobs_wlfc.json \
+                  seen_jobs_elfc.json \
+                  seen_jobs_rolls_royce.json \
+                  seen_jobs_honeywell.json \
+                  seen_jobs_mtu.json \
+                  seen_jobs_boeing.json \
+                  seen_jobs_aar.json \
+                  seen_jobs_icf.json \
+                  seen_jobs_oliver_wyman.json \
+                  seen_jobs_smbc_aviation.json \
+                  seen_jobs_aercap.json \
+                  seen_jobs_avolon.json \
+                  seen_jobs_boc_aviation.json \
+                  seen_jobs_acg.json
           test -f pipeline_failures.json && git add pipeline_failures.json || true
           if git diff --staged --quiet; then
             echo "No changes to commit — state unchanged"
