@@ -142,6 +142,12 @@ def fetch_jobs(max_listings=200, inter_page_delay=0.5):
             break
         if len(jobs_raw) < JOBS_PER_PAGE:
             break
+        if not new_jobs:
+            # A full page came back with zero unseen jobs — the API is not
+            # advancing pages (it re-served page 1's results). Stop here
+            # instead of looping forever incrementing `page`.
+            print(f"[saudia_technic] page={page}: full page but 0 new — pagination not advancing, stopping")
+            break
 
         page += 1
         if inter_page_delay:

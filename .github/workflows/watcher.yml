@@ -8,9 +8,14 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: watcher
+  cancel-in-progress: false   # let an in-flight run finish/commit rather than losing its state
+
 jobs:
   run-watcher:
     runs-on: ubuntu-latest
+    timeout-minutes: 45   # a single hung fetcher must not block state-save for 6h (GitHub's default)
 
     env:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -55,83 +60,83 @@ jobs:
 
       - name: Run all pipelines (parallel)
         run: |
-          python -u -m src.run_safran &
+          timeout 300 python -u -m src.run_safran &
           pid1=$!
-          python -u -m src.run_ge &
+          timeout 300 python -u -m src.run_ge &
           pid2=$!
-          python -u -m src.run_sanad &
+          timeout 300 python -u -m src.run_sanad &
           pid3=$!
-          python -u -m src.run_emirates &
+          timeout 300 python -u -m src.run_emirates &
           pid4=$!
-          python -u -m src.run_gmr &
+          timeout 300 python -u -m src.run_gmr &
           pid5=$!
-          python -u -m src.run_rtx &
+          timeout 300 python -u -m src.run_rtx &
           pid6=$!
-          python -u -m src.run_indigo &
+          timeout 300 python -u -m src.run_indigo &
           pid7=$!
-          python -u -m src.run_etihad &
+          timeout 300 python -u -m src.run_etihad &
           pid8=$!
-          python -u -m src.run_sia &
+          timeout 300 python -u -m src.run_sia &
           pid9=$!
-          python -u -m src.run_ste &
+          timeout 300 python -u -m src.run_ste &
           pid10=$!
-          python -u -m src.run_standardaero &
+          timeout 300 python -u -m src.run_standardaero &
           pid11=$!
-          python -u -m src.run_saudia_technic &
+          timeout 300 python -u -m src.run_saudia_technic &
           pid12=$!
-          python -u -m src.run_lht &
+          timeout 300 python -u -m src.run_lht &
           pid13=$!
-          python -u -m src.run_qatar &
+          timeout 300 python -u -m src.run_qatar &
           pid14=$!
-          python -u -m src.run_ethiopian &
+          timeout 300 python -u -m src.run_ethiopian &
           pid15=$!
-          python -u -m src.run_gatelesis &
+          timeout 300 python -u -m src.run_gatelesis &
           pid16=$!
-          python -u -m src.run_fltechnics &
+          timeout 300 python -u -m src.run_fltechnics &
           pid17=$!
-          python -u -m src.run_magnetic &
+          timeout 300 python -u -m src.run_magnetic &
           pid18=$!
-          python -u -m src.run_air_india &
+          timeout 300 python -u -m src.run_air_india &
           pid20=$!
-          python -u -m src.run_dgca &
+          timeout 300 python -u -m src.run_dgca &
           pid21=$!
-          python -u -m src.run_saesl &
+          timeout 300 python -u -m src.run_saesl &
           pid22=$!
-          python -u -m src.run_oman_air &
+          timeout 300 python -u -m src.run_oman_air &
           pid23=$!
-          python -u -m src.run_gulf_air &
+          timeout 300 python -u -m src.run_gulf_air &
           pid24=$!
-          python -u -m src.run_kuwait_airways &
+          timeout 300 python -u -m src.run_kuwait_airways &
           pid25=$!
-          python -u -m src.run_ammroc &
+          timeout 300 python -u -m src.run_ammroc &
           pid26=$!
-          python -u -m src.run_wlfc &
+          timeout 300 python -u -m src.run_wlfc &
           pid37=$!
-          python -u -m src.run_elfc &
+          timeout 300 python -u -m src.run_elfc &
           pid38=$!
-          python -u -m src.run_rolls_royce &
+          timeout 300 python -u -m src.run_rolls_royce &
           pid27=$!
-          python -u -m src.run_honeywell &
+          timeout 300 python -u -m src.run_honeywell &
           pid28=$!
-          python -u -m src.run_mtu &
+          timeout 300 python -u -m src.run_mtu &
           pid29=$!
-          python -u -m src.run_boeing &
+          timeout 300 python -u -m src.run_boeing &
           pid30=$!
-          python -u -m src.run_aar &
+          timeout 300 python -u -m src.run_aar &
           pid31=$!
-          python -u -m src.run_icf &
+          timeout 300 python -u -m src.run_icf &
           pid32=$!
-          python -u -m src.run_oliver_wyman &
+          timeout 300 python -u -m src.run_oliver_wyman &
           pid34=$!
-          python -u -m src.run_smbc_aviation &
+          timeout 300 python -u -m src.run_smbc_aviation &
           pid41=$!
-          python -u -m src.run_aercap &
+          timeout 300 python -u -m src.run_aercap &
           pid40=$!
-          python -u -m src.run_avolon &
+          timeout 300 python -u -m src.run_avolon &
           pid42=$!
-          python -u -m src.run_boc_aviation &
+          timeout 300 python -u -m src.run_boc_aviation &
           pid43=$!
-          python -u -m src.run_acg &
+          timeout 300 python -u -m src.run_acg &
           pid44=$!
           wait $pid1
           s1=$?
