@@ -69,8 +69,11 @@ def run_pipeline(seen_path=None):
     total_matched = len(matched)
 
     # ── 3. Deduplicate against seen_jobs ────────────────────────────────────
-    seen_urls = set(_load_json(seen_path))
-    new_matches = [j for j in matched if j["url"] not in seen_urls]
+    # Dedup by job["id"] (stable jobRequisitionId), not URL — ConnectID assigns
+    # a new posting id/URL every time the same requisition is reposted, so
+    # URL-based dedup re-alerts the same job on every repost cycle.
+    seen_ids = set(_load_json(seen_path))
+    new_matches = [j for j in matched if j["id"] not in seen_ids]
 
     # ── 4. Alert if new matches found ───────────────────────────────────────
     alert_sent = False
@@ -80,8 +83,8 @@ def run_pipeline(seen_path=None):
         alert_sent = True
 
         for job in new_matches:
-            seen_urls.add(job["url"])
-        _save_json(seen_path, sorted(seen_urls))
+            seen_ids.add(job["id"])
+        _save_json(seen_path, sorted(seen_ids))
     else:
         print("[rolls_royce] No new matches — nothing to alert")
 

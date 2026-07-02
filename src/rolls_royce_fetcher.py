@@ -72,13 +72,19 @@ def _build_url(job: dict) -> str:
 
 
 def _parse_job(raw: dict) -> dict:
-    job_id = str(raw.get("id", ""))
+    # `id` is a per-POSTING identifier that ConnectID regenerates every time the
+    # same requisition is reposted/refreshed (confirmed live: the same job title
+    # cycled through 6+ different `id`/URL values over consecutive runs while
+    # `jobRequisitionId` stayed constant). Dedup must key on the stable
+    # requisition id, not the posting id or the URL built from it.
+    posting_id = str(raw.get("id", ""))
+    req_id = str(raw.get("jobRequisitionId") or "").strip() or posting_id
     title = (raw.get("jobTitle") or raw.get("title") or "").strip()
 
     html_desc = raw.get("jobDescription") or raw.get("description") or ""
-    if html_desc and job_id:
+    if html_desc and posting_id:
         soup = BeautifulSoup(html_desc, "html.parser")
-        _desc_cache[job_id] = soup.get_text(separator=" ", strip=True)[:8000]
+        _desc_cache[posting_id] = soup.get_text(separator=" ", strip=True)[:8000]
 
     location = _parse_location(
         raw.get("jobLocation") or raw.get("location") or raw.get("city") or ""
@@ -86,7 +92,7 @@ def _parse_job(raw: dict) -> dict:
     posted = raw.get("postedOn") or raw.get("posted_at") or raw.get("createdAt") or ""
 
     return {
-        "id": job_id,
+        "id": req_id,
         "title": title,
         "url": _build_url(raw),
         "location": location,
