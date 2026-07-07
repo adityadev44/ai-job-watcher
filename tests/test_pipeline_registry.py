@@ -70,3 +70,21 @@ def test_oliver_wyman_pre_filter_matches_brand():
     pre_filter = SPECS["oliver_wyman"].pre_filter
     assert pre_filter({"title": "Oliver Wyman - Principal, Aviation", "company": ""}) is True
     assert pre_filter({"title": "Actuarial Analyst", "company": "Mercer"}) is False
+
+
+def test_delta_pre_filter_keeps_engine_mro_titles():
+    # Delta's Gate 2 is NOT bypassed (real descriptions available) — this
+    # pre-filter exists only to bound expensive per-job Playwright renders,
+    # not to compensate for a missing gate. Still must not silently narrow
+    # what Gate 1-4 would otherwise catch.
+    pre_filter = SPECS["delta"].pre_filter
+    assert pre_filter({"title": "Manager, Engine Overhaul Shop"}) is True
+    assert pre_filter({"title": "Director, TechOps Line Maintenance"}) is True
+    assert pre_filter({"title": "Senior Manager, Finance"}) is False
+
+
+def test_delta_dedupe_key_is_id():
+    # Job detail URLs embed a title-derived slug that can drift if a
+    # requisition's title is edited — dedupe on the stable numeric jobId
+    # instead, same reasoning as Rolls-Royce and IndiGo.
+    assert SPECS["delta"].dedupe_key == "id"

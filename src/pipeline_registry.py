@@ -12,6 +12,7 @@ from src import ammroc_fetcher
 from src import avolon_fetcher
 from src import boc_aviation_fetcher
 from src import boeing_fetcher
+from src import delta_fetcher
 from src import dgca_fetcher
 from src import elfc_fetcher
 from src import emirates_fetcher
@@ -74,6 +75,16 @@ _FLTECHNICS_TITLE_TERMS = [
     "airworthiness", "aviation", "avionics", "airframe", "inspector", "camo",
 ]
 
+# Delta: Gate 2 is NOT bypassed (real descriptions are available) — this
+# pre-filter exists purely to bound the number of expensive per-job
+# Playwright renders fetch_job_description() needs (see delta_fetcher.py),
+# not to compensate for a missing Gate 2 the way the lists above do.
+_DELTA_TITLE_TERMS = [
+    "aerospace", "aircraft", "engine", "engines", "powerplant", "propulsion",
+    "turbine", "apu", "auxiliary power", "overhaul", "mro", "maintenance",
+    "airworthiness", "aviation", "avionics", "techops", "tech ops",
+]
+
 
 def _aviation_title(job: dict) -> bool:
     return _title_has_any(job, _AVIATION_TITLE_TERMS)
@@ -85,6 +96,10 @@ def _aerospace_title(job: dict) -> bool:
 
 def _fltechnics_title(job: dict) -> bool:
     return _title_has_any(job, _FLTECHNICS_TITLE_TERMS)
+
+
+def _delta_title(job: dict) -> bool:
+    return _title_has_any(job, _DELTA_TITLE_TERMS)
 
 
 def _ammroc_entity(job: dict) -> bool:
@@ -116,6 +131,20 @@ def _populate_company_from(fetcher):
     return _inner
 
 
+def _populate_delta(job: dict) -> None:
+    # Delta's posting date isn't on the listing page — it's only known after
+    # fetch_job_description() renders the detail page, so (unlike the other
+    # populate_company hooks) this also backfills posting_date from the same
+    # per-job cache. matcher.py discards fetch_job_description's own tuple
+    # date return (see PLAYBOOK.md "Bugs We Hit"), so this hook is the only
+    # path that gets a real date into the alert.
+    if not job.get("company"):
+        job["company"] = delta_fetcher.get_company(job.get("url", ""))
+    posting_date = delta_fetcher.get_posting_date(job.get("url", ""))
+    if posting_date:
+        job["posting_date"] = posting_date
+
+
 SPECS = {
     "aar": PipelineSpec("aar", "AAR Corp", aar_fetcher, "seen_jobs_aar.json", fetch_mode="config"),
     "acg": PipelineSpec("acg", "Aviation Capital Group", acg_fetcher, "seen_jobs_acg.json"),
@@ -139,6 +168,18 @@ SPECS = {
         boeing_fetcher,
         "seen_jobs_boeing.json",
         populate_company=_populate_company_from(boeing_fetcher),
+    ),
+    "delta": PipelineSpec(
+        "delta",
+        "Delta Air Lines TechOps",
+        delta_fetcher,
+        "seen_jobs_delta.json",
+        fetch_mode="search_params",
+        dedupe_key="id",
+        pre_filter=_delta_title,
+        pre_filter_label="Aviation title pre-filter",
+        pre_filter_pass_label="Aviation titles",
+        populate_company=_populate_delta,
     ),
     "dgca": PipelineSpec(
         "dgca",

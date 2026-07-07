@@ -45,6 +45,7 @@ PIPELINES = [
     "avolon",
     "boc_aviation",
     "acg",
+    "delta",
 ]
 
 

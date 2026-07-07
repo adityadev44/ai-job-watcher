@@ -537,6 +537,21 @@ smbc_aviation_search:
   inter_page_delay: 0.5
   note: "BambooHR smbcaviationcapital.bamboohr.com; public /careers/list redirects to bamboohr.com as of 2026-06 — returns 0 jobs."
 
+# Delta Air Lines TechOps — largest US in-house engine MRO shop (CF6, CFM56,
+# GEnx, PW2000, Trent overhaul). ATS: Avature at delta.avature.net, behind an
+# AWS WAF JS challenge (Playwright required — plain requests/curl_cffi get a
+# 202 challenge page). Listing pages are server-rendered (cheap pagination via
+# jobOffset=N); job detail pages require a real per-job Playwright render
+# since the description is assembled client-side. ~141 US jobs, dominated by
+# "Aircraft Maintenance Technician" (excluded by Gate 3). Aviation-domain
+# title pre-filter in pipeline_registry.py exists purely to bound the number
+# of expensive per-job Playwright renders — Gate 2 itself is fully active
+# (real descriptions available, not bypassed).
+delta_search:
+  max_listings: 150
+  inter_page_delay: 0.3
+  note: "Avature behind AWS WAF challenge; Playwright required; listing pages server-rendered, detail pages need real render for description."
+
 notifications:
   email:
     recipient: ""

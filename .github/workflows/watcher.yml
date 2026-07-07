@@ -110,7 +110,8 @@ jobs:
                   seen_jobs_aercap.json \
                   seen_jobs_avolon.json \
                   seen_jobs_boc_aviation.json \
-                  seen_jobs_acg.json
+                  seen_jobs_acg.json \
+                  seen_jobs_delta.json
           test -f pipeline_failures.json && git add pipeline_failures.json || true
           test -f pipeline_health.json && git add pipeline_health.json || true
           if git diff --staged --quiet; then
