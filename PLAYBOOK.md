@@ -25,7 +25,8 @@ When adding a new company: read the playbook for context, then investigate the a
 Monitors job postings from global aerospace and MRO companies every 3 hours via GitHub Actions.
 Filters for **senior engine operations, MRO leadership, quality, compliance, and powerplant roles**
 at the right seniority level. Sends Telegram + email alerts only for jobs not seen before.
-Each company has its own fetcher, run script, seen-jobs file, and config section — all isolated.
+Each company has its own fetcher, thin run script, seen-jobs file, config section, and
+`PipelineSpec` registry entry. The shared runner handles the common fetch/filter/dedupe/alert path.
 
 ---
 
@@ -39,14 +40,18 @@ Absence of proof is not proof of absence for a rare senior role.
 
 **2. Failure isolation is non-negotiable.**
 With 18+ sources, something is always broken. One company's crash must never affect others.
-Every `run_<company>.py` wraps its `__main__` in try/except. Every fetcher raises `RateLimitError`
-on 429 so matcher.py can log a warning and continue — never propagate a crash upward.
+`src.run_all` starts each company in its own Python process with a 300s timeout. Each
+`run_<company>.py` calls `run_cli(spec)`, which logs errors through the consecutive-failure
+counter without crashing the whole watcher. Every fetcher raises `RateLimitError` on 429 so
+matcher.py can log a warning and continue.
 
 **3. Silence needs to be distinguishable from broken.**
 Senior MRO roles appear once a month, sometimes less. A watcher that's quiet for 3 weeks
-looks identical to a watcher that's been broken for 3 weeks. Two mechanisms prevent this:
-- Gate-by-gate summary printed on every run (fetched → G1 → G3 → G2 → new → sent)
-- Weekly near-miss digest email (proves the system ran and what almost matched)
+looks identical to a watcher that's been broken for 3 weeks. These mechanisms prevent this:
+- Gate-by-gate summary printed on every run (fetched → G1 → G3 → G4 → G2 → new → sent)
+- `pipeline_failures.json` counts hard crashes and alerts only after 3 consecutive failures
+- `pipeline_health.json` tracks recent fetch counts and warns on 3 successful zero-fetch runs
+- Weekly near-miss digest code exists, but near-miss persistence is intentionally disabled
 
 **4. UTF-8 everywhere, always.**
 Job titles at Safran, Emirates, Lufthansa, and Sanad contain Arabic, French, German characters.
@@ -63,7 +68,7 @@ Unlike Shivangi's India-only search, this watcher is global. There are no locati
 Location appears in the alert so the candidate can decide — the filter never rejects on geography.
 
 **6. Parallel pipelines, polite cadence.**
-All company pipelines run in parallel (`& pid=$!` pattern). The 3-hour schedule is deliberate —
+All company pipelines run in parallel through `python -u -m src.run_all`. The 3-hour schedule is deliberate —
 rare postings don't need aggressive polling, and 18 sources need API politeness.
 Never reduce below 2 hours.
 
@@ -202,11 +207,48 @@ config.yaml                       ← all config: shared matching rules + per-co
 src/
   matcher.py                      ← shared 4-gate filter engine + weekly digest builder
   notifier.py                     ← Telegram (chunked) + Gmail (multi-recipient) alerts
+  pipeline_runner.py              ← shared fetch → filter → dedupe → alert → health runner
+  pipeline_registry.py            ← per-company PipelineSpec entries and source hooks
+  run_all.py                      ← parallel process orchestrator with 300s per-source timeout
   <company>_fetcher.py            ← data source: fetch_jobs() + fetch_job_description()
-  run_<company>.py                ← pipeline entry point (fetch → match → dedupe → alert → persist)
+  run_<company>.py                ← thin entry point that calls the shared runner
 seen_jobs_<company>.json          ← deduplication memory (tracked by git, never gitignored)
+pipeline_failures.json            ← consecutive hard-failure counters
+pipeline_health.json              ← recent successful fetch counts / zero-fetch streaks
 .github/workflows/watcher.yml     ← parallel pipeline runner, every 3 hours
 ```
+
+**PipelineSpec contract — every source must be represented in `pipeline_registry.py`:**
+```python
+PipelineSpec(
+    source="rolls_royce",
+    display_name="Rolls-Royce Civil Aerospace",
+    fetcher=rolls_royce_fetcher,
+    seen_filename="seen_jobs_rolls_royce.json",
+    fetch_mode="default",          # default | config | search_params
+    dedupe_key="id",               # "url" by default; use "id" for unstable URLs
+    pre_filter=None,               # optional source-level filter before matcher.py
+)
+```
+
+The run script should stay tiny:
+```python
+from src.pipeline_registry import get_spec
+from src.pipeline_runner import run_cli, run_pipeline as _run_pipeline
+
+SPEC = get_spec("<company>")
+
+def run_pipeline(seen_path=None):
+    return _run_pipeline(SPEC, seen_path=seen_path)
+
+if __name__ == "__main__":
+    run_cli(SPEC)
+```
+
+Do not put new pipeline logic back into `run_<company>.py`. Add source behavior to the
+registry or shared runner so all pipelines keep the same failure handling, Gate 4 summary,
+health tracking, BOM-tolerant seen-file loading, and dedupe behavior.
+
 
 **matcher.py interface contract — every fetcher must export exactly:**
 ```python
@@ -421,17 +463,18 @@ Must always include:
 - Browseable `url` — use the API's canonical URL field if one exists; never guess a path you haven't tested
 - `fetch_job_description` returns `("", "")` on ANY failure — never raises
 
-### Step 4 — Create `src/run_<company>.py`
+### Step 4 — Add the pipeline registry entry and thin run script
 
-Copy `run_safran.py` exactly. Change 4 things:
-```python
-from src import safran_fetcher     →  from src import <company>_fetcher
-"safran_search"                    →  "<company>_search"
-"seen_jobs_safran.json"            →  "seen_jobs_<company>.json"
-source="Safran"                    →  source="<Company Display Name>"
-```
+Add a `PipelineSpec` to `src/pipeline_registry.py`. This is where source behavior belongs:
+fetch signature, dedupe key, source-specific pre-filter, first-run seeding, and company
+enrichment hooks.
 
-Always wrap `__main__` in try/except — a crash here must not affect parallel pipelines.
+Use `fetch_mode="search_params"` when the fetcher accepts `max_listings` and
+`inter_page_delay` from `<company>_search`. Use `fetch_mode="config"` when the fetcher
+expects the full config dict. Otherwise leave `fetch_mode="default"`.
+
+Create `src/run_<company>.py` as the thin wrapper shown in the Architecture section.
+Do not copy old runner logic into the wrapper.
 
 **If descriptions are unavailable AND the company is domain-diverse** (full-service airline, conglomerate, airport group), add an aviation pre-filter before `filter_jobs()`:
 ```python
@@ -446,20 +489,25 @@ def _is_aviation_title(title: str) -> bool:
     t = title.lower()
     return any(term in t for term in _AVIATION_TITLE_TERMS)
 
-# In run_pipeline(), before filter_jobs():
-aviation_jobs = [j for j in raw_jobs if _is_aviation_title(j["title"])]
+# In pipeline_registry.py:
+PipelineSpec(
+    source="<company>",
+    display_name="<Company>",
+    fetcher=<company>_fetcher,
+    seen_filename="seen_jobs_<company>.json",
+    pre_filter=lambda job: _is_aviation_title(job["title"]),
+)
 ```
 This is the right fix when Gate 2 is bypassed — tighten Gate 1 at source level rather than adding more generic `exclude_terms` globally (which would break other pipelines).
 
-**If the URL is session-scoped** (see Step 0 question 2), deduplicate by `j["id"]` instead of `j["url"]`:
+**If the URL is session-scoped or repost-prone** (see Step 0 question 2), deduplicate by `j["id"]` instead of `j["url"]`:
 ```python
-seen_ids = set(_load_json(seen_path))
-new_matches = [j for j in matched if j["id"] not in seen_ids]
-# ...
-for job in new_matches:
-    seen_ids.add(job["id"])
-_save_json(seen_path, sorted(seen_ids))
+PipelineSpec(..., dedupe_key="id")
 ```
+
+Do not silently migrate an existing `seen_jobs_<company>.json` from URL values to ID values.
+When changing dedupe key for an existing source, seed the state file with current stable IDs
+or the next deploy will re-alert old matches.
 
 ### Step 5 — Add to `config.yaml`
 
@@ -487,19 +535,16 @@ Check: does this ATS use server-side keyword filtering (Workday does) or ignore 
 (Safran doesn't — all keywords return the same result set, deduplication handles it)?
 If it ignores keywords, reduce to 2–3 representative keywords to avoid redundant fetches.
 
-### Step 6 — Update `.github/workflows/watcher.yml`
+### Step 6 — Update workflow/state coverage
 
-**In the parallel run step** — add next pid:
-```yaml
-python -u -m src.run_<company> & pid<N>=$!
-...
-wait $pid<N> || fail=1
-```
-
-**In the save step** — add the state file:
+Add the source name to `PIPELINES` in `src/run_all.py`; the workflow calls that orchestrator
+instead of listing every runner in shell. In `.github/workflows/watcher.yml`, add the state file
+to the save step:
 ```bash
 test -f seen_jobs_<company>.json && git add seen_jobs_<company>.json || true
 ```
+
+The workflow already persists `pipeline_failures.json` and `pipeline_health.json` when present.
 
 ### Step 7 — Create state files
 
@@ -687,7 +732,7 @@ above. `posting_date` from jobDetail is ISO 8601: `"2026-05-01T00:00:00.000+0000
 | GitHub Actions cron drifts 30–90 min | GitHub scheduler is best-effort, not guaranteed | Wire cron-job.org as external trigger; keep GitHub cron as backup |
 | `[skip ci]` commit re-triggers workflow | Missing tag on state commit message | Always use `[skip ci]` in the git commit message for seen_jobs updates |
 | Alert fires for wrong Safran division | Gate 2 passed on generic MRO words for non-engine divisions | Acceptable for now — add optional company-name filter later if noise grows |
-| Parallel pipeline: one crash kills all | Exception escaped `__main__` try/except | Every `run_<company>.py` must wrap `__main__` in try/except with `sys.exit(1)` |
+| Parallel pipeline: one crash kills all | Exception escaped `__main__` try/except | Keep `run_<company>.py` thin and call `run_cli(SPEC)`, which records the failure and returns without killing other sources. |
 | Phenom site probed as Workday (wasted 30 min) | GE's "Apply" button links to `wd5.myworkdayjobs.com` — looks like Workday | Workday is the downstream ATS for applications; Phenom is the job search UI. Check page source for `cdn.phenompeople.com` before assuming Workday. |
 | Phenom API returns 0 jobs / `tokenAvailable:false` | POST to `/widgets` without a valid session — no CSRF token | Bootstrap a `requests.Session` first: GET the search-results page to get the `PLAY_SESSION` cookie and `csrfToken` div, then add `csrf-token` header to all subsequent POSTs. |
 | Emirates job URLs opened to "page not found" in Chrome | URL was constructed by guessing `/en_US/careersmarketplace/JobDetails?jobId=X` — that path doesn't exist. The API's own `redirectionurl` field had the correct URL: `/careersmarketplace/ApplicationMethods?jobId=X&source=CareerWebsite` | Always look for a canonical URL field in the API response before constructing one. Test the URL with a real GET before shipping. |
@@ -698,7 +743,7 @@ above. `posting_date` from jobDetail is ISO 8601: `"2026-05-01T00:00:00.000+0000
 | RTX `company`/`companyName` always null in listing | Unlike GE Aerospace (dedicated domain = one company), RTX hosts all divisions on one portal. The `company` and `companyName` Phenom fields are null in listing responses. | Use the `businessUnit` field instead — present in every listing row, correctly set to "Pratt & Whitney", "Collins Aerospace", "Raytheon", etc. |
 | Gate 1 substring match: "engine" triggers on "engineer/engineering" (50+ false positives) | `term in title_lc` is plain Python substring — "engine" is literally a substring of "engineer" and "engineering". Same issue: "lead" in "leader", "production" in "production engineer". Root cause of ~50% of all false positives observed across GE, RTX, Emirates, Safran. | Use word-boundary regex in Gate 1 AND Gate 3: `re.search(r'\b' + re.escape(t) + r'\b', title_lc)`. Prevents substring collision between any two terms that share a stem. |
 | "engine" (singular) does not match "engines" (plural) after word-boundary fix | `\bengine\b` requires word boundaries on both sides; "engines" has a word character ('s') immediately after "engine", so no boundary. A legitimate role like "Specialist, Strategic Procurement, Engines Materials and USM" at Sanad was silently dropped at Gate 1. | Add both "engine" AND "engines" as separate entries in `title_family`. Treat singular/plural as distinct items whenever both appear in real job titles. |
-| Multi-division portals pass Gate 2 on wrong-division descriptions | RTX (Collins + Raytheon + P&W), Sanad (Aerotech + Capital): the wrong division's descriptions are rich in aerospace domain terms and engine model names, so Gate 2 alone cannot distinguish. "Repair Station Quality Manager" at Safran Landing Systems had 10 domain hits but 0 engine-specific hits. | Add a company-name pre-filter in `run_<company>.py` before `filter_jobs()`: `raw_jobs = [j for j in raw_jobs if "pratt" in j.get("company","").lower()]`. Do this whenever a portal mixes divisions and Gate 2 is insufficient. Note: moving MRO/SMS/human factors from engine_specific_terms to domain_terms also helped — a description with only "MRO" + generic aviation terms now fails Gate 2. |
+| Multi-division portals pass Gate 2 on wrong-division descriptions | RTX (Collins + Raytheon + P&W), Sanad (Aerotech + Capital): the wrong division's descriptions are rich in aerospace domain terms and engine model names, so Gate 2 alone cannot distinguish. "Repair Station Quality Manager" at Safran Landing Systems had 10 domain hits but 0 engine-specific hits. | Add a company-name pre-filter in `pipeline_registry.py` before `filter_jobs()` via `PipelineSpec(pre_filter=...)`. Do this whenever a portal mixes divisions and Gate 2 is insufficient. Note: moving MRO/SMS/human factors from engine_specific_terms to domain_terms also helped — a description with only "MRO" + generic aviation terms now fails Gate 2. |
 | Broad title_family terms ("quality", "safety", "production") catch unintended roles | "Quality Engineer", "Safety Engineer", "Production Engineer" all passed Gate 1 and Gate 2 (engine company descriptions are generic). These are junior individual-contributor roles, not the senior MRO leadership the system targets. | Remove standalone "quality", "safety", "production" from title_family. "Quality Manager", "Safety Director", "Head of Production" still pass via "manager"/"director"/"head" — the seniority shape is preserved. |
 | "Part 145" / "CAR 145" / "CRS" in engine_specific_terms allows airframe/avionics shop roles to pass Gate 2 | These three are MRO certification standards held by ALL Part 145 shops regardless of what they maintain (engines, airframes, avionics, cabin). A description for an airframe base maintenance supervisor saying "our Part 145 approved facility" gave engine_hits=1, allowing it to pass Gate 2 with just one more domain term. | Moved "Part 145", "CAR 145", "CRS" from engine_specific_terms to domain_terms. Gate 2 now requires a hit on something truly exclusive to engine or CAMO work (engine model, test cell, shop visit, CAMO, Part-M, LLP, etc.). Gate 2 total threshold also raised from ≥2 to ≥3 for additional margin. |
 | DoD SkillBridge internship postings pass Gate 1 via role-title suffix | GE Aerospace posts US military fellowship roles as "Military DoD SkillBridge Program - [Role] Advanced Lead / Staff Engineer". The "lead"/"director" in the suffix passes Gate 1; descriptions mention LLP or engine terms and pass Gate 2. These are not real jobs — they are ~6-month internships for transitioning US military personnel. | Added "skillbridge" to exclude_terms. Word-boundary match catches "SkillBridge" in title regardless of what follows. Does not affect any other pipeline. |
@@ -712,7 +757,7 @@ above. `posting_date` from jobDetail is ISO 8601: `"2026-05-01T00:00:00.000+0000
 | FL Technics descriptions rendered via JS modal (not Playwright-navigable) | Even with Playwright, navigating to an individual FL Technics job URL redirects to `/careers/` without opening the modal. The modal only opens when JavaScript detects a user click event on the listing page — pure URL navigation is insufficient. Headless rendering of the same URL returns the full job listing without any specific job's description. | Accepted limitation. Gate 2 is bypassed. False positives from Gate 1+3 passes (e.g., "Head of Legal", "Lead Atlassian Engineer") will appear. These are seen on first run and won't re-alert. |
 | BambooHR job detail pages are React SPAs (Magnetic MRO descriptions unavailable) | `GET https://magnetic.bamboohr.com/careers/{id}` returns 200 with a 110KB React shell. No `__NEXT_DATA__` or `window.__bamboo__` data blob. No separate REST API for job details beyond the list JSON. The content renders entirely in JavaScript. | Return `("","")` from `fetch_job_description`. Gate 2 bypassed. Magnetic MRO is currently 4 non-engine jobs; bypass is low-risk since Gate 1+3 filters are tight for these non-engine titles. |
 | UTF-8 BOM in `seen_jobs_*.json` caused duplicate notifications every 3 hours | Windows tools (Notepad, VS Code with "UTF-8 with BOM" encoding) write a `\xef\xbb\xbf` byte-order-mark prefix. Python's `json.load(..., encoding='utf-8')` raises `JSONDecodeError` on BOM; `_load_json()` caught it silently and returned `[]`. Every run then treated ALL Gate-passing matches as new → re-alerted indefinitely. Affected files: `seen_jobs_aar`, `seen_jobs_aercap`, `seen_jobs_avolon`, `seen_jobs_boeing`, `seen_jobs_icf`, `seen_jobs_oliver_wyman`, `seen_jobs_smbc_aviation` (also fixed earlier: etihad, gmr, sia). | Changed ALL `_load_json` calls across all 39 run scripts to use `encoding='utf-8-sig'` (strips BOM transparently if present). Also added a visible `print(f"[WARNING] ...")` on `JSONDecodeError` so future corruption shows in CI logs instead of silently re-alerting. Files were rewritten as clean UTF-8 `[]`. |
-| Gate-2-bypass companies (Honeywell, FL Technics) alerted on non-aviation management roles | When `fetch_job_description` returns `("","")`, the matcher takes the `[kept-no-desc]` path and keeps the job unconditionally — Gate 2 is never applied. For large multi-division companies this produced alerts for "HBS Projects General Manager", "Head of Legal", "Lead Atlassian Engineer (Jira/Confluence)", etc. These alerted once on first encounter and did not re-alert, but they were noise. | Added an aviation title pre-filter before `filter_jobs()` in `run_honeywell.py` and `run_fltechnics.py`. Requires at least one domain term in the title (aerospace, engine, powerplant, propulsion, turbine, apu, overhaul, mro, maintenance, airworthiness, aviation, avionics, aircraft, camo, airframe, inspector). FL Technics includes airframe/inspector since it is a line/base MRO shop. Do the same for any new Gate-2-bypass company that operates multiple non-aviation divisions. |
+| Gate-2-bypass companies (Honeywell, FL Technics) alerted on non-aviation management roles | When `fetch_job_description` returns `("","")`, the matcher takes the `[kept-no-desc]` path and keeps the job unconditionally — Gate 2 is never applied. For large multi-division companies this produced alerts for "HBS Projects General Manager", "Head of Legal", "Lead Atlassian Engineer (Jira/Confluence)", etc. These alerted once on first encounter and did not re-alert, but they were noise. | Added aviation title pre-filters in `pipeline_registry.py` for Honeywell and FL Technics. Requires at least one domain term in the title (aerospace, engine, powerplant, propulsion, turbine, apu, overhaul, mro, maintenance, airworthiness, aviation, avionics, aircraft, camo, airframe, inspector). FL Technics includes airframe/inspector since it is a line/base MRO shop. Do the same for any new Gate-2-bypass company that operates multiple non-aviation divisions. |
 | Playwright Firefox failing on all 4 pipelines simultaneously (rolls_royce, aar, indigo, dgca) | GitHub's `ubuntu-latest` runner image is periodically updated. When the OS updates break system-library compatibility, the cached Firefox binary (cached based on `hashFiles('requirements.txt')`) continues to be used but fails at launch. `playwright install firefox` only downloads the browser binary; it does not install OS-level dependencies. | Added `playwright install-deps firefox` as a separate unconditional workflow step (runs even on cache hit). This is a fast apt-only install that keeps system deps current without re-downloading Firefox. |
 | AMMROC's own domains (`ammroc.ae`, `ammroc.edgegroup.ae`) fail DNS resolution entirely | AMMROC has no standalone careers infrastructure — it was absorbed into EDGE Group's unified careers portal at a third, unguessable domain (`careers.edgegroup.ae`). Plausible-looking subdomain guesses (`ammroc.edgegroup.ae`) don't exist; the real domain only surfaced by reading the EDGE Group corporate homepage's own footer link. | When a company is a subsidiary of a larger group/conglomerate, and its own domain doesn't resolve, check the **parent's** corporate homepage footer for a unified careers link before concluding "no portal exists." Same root cause class as Sanad/RTX division mixing, just one level up the ownership chain. |
 | Gulf Air detail-page closing date silently empty if copying Sanad's `categVal` selector verbatim | Gulf Air Group's Sniperhire tenant (`gulfairgroup.sniperhire.net`) renders the same `ul.searchCategs > li > div.descr` label structure as Sanad, but the value div's class is `sc-val`, not `categVal`. Copy-pasting Sanad's selector would silently return `("desc", "")` instead of failing loudly — the matcher doesn't use this date anyway (see note below) so it would never surface as a bug. | Verify selectors per-tenant even for "confirmed same ATS" cases — vendor templates drift between deployments. Also worth knowing: `matcher.py`'s `filter_jobs` only ever reads `raw[0]` (the description) from `fetch_job_description`'s tuple return — the second element (date) is currently dead weight, kept only for interface-contract symmetry; `posting_date` shown in alerts always comes from the listing page, not the detail page. |
@@ -981,7 +1026,7 @@ unless the portal is scoped to that sub-entity only.
 - The browseable URL is already the canonical link (the `/job/{slug}/{id}/` path the user clicks)
 - Low-volume portals (< 10 total jobs) are common — 0 Gate 2 matches is expected until MRO hiring ramps
 - **Pagination parameter varies by deployment**: GMR and SIA use `?start=N`; ST Engineering uses `?startrow=N`. Probe the actual URL before copying from another J2W fetcher.
-- **Division/facility column varies by portal**: ST Engineering has a `span.jobFacility` column (HTML header `hdrFacility`) with the business unit name ("Commercial Aerospace", "Marine", etc.). GMR and SIA do not expose this column — their portals are scoped to a single entity. If the portal is multi-division, add a `facility` field to the job dict and pre-filter in `run_<company>.py`.
+- **Division/facility column varies by portal**: ST Engineering has a `span.jobFacility` column (HTML header `hdrFacility`) with the business unit name ("Commercial Aerospace", "Marine", etc.). GMR and SIA do not expose this column — their portals are scoped to a single entity. If the portal is multi-division, add a `facility` field to the job dict and pre-filter in `pipeline_registry.py`.
 
 ---
 
@@ -990,26 +1035,35 @@ unless the portal is scoped to that sub-entity only.
 ```yaml
 # Key patterns — don't change these without understanding the why
 
-# 1. Module mode — required for src imports
-run: python -u -m src.run_<company>
+# 1. Module mode — required for src imports; run_all starts each company process
+run: python -u -m src.run_all
 
-# 2. Parallel execution — all pipelines run simultaneously
-python -u -m src.run_safran  & pid1=$!
-python -u -m src.run_ge      & pid2=$!
-wait $pid1 || fail=1
-wait $pid2 || fail=1
+# 2. Per-source timeout — src.run_all enforces 300s per company
 
 # 3. State persistence — only commit if files changed
 git diff --quiet seen_jobs_safran.json || \
   git commit -m "chore: update state [skip ci]"
 
-# 4. Firefox cache — keyed on requirements.txt hash
+# 4. Health/failure state — persisted when present
+test -f pipeline_failures.json && git add pipeline_failures.json || true
+test -f pipeline_health.json && git add pipeline_health.json || true
+
+# 5. Firefox cache — keyed on requirements.txt hash
 key: playwright-firefox-${{ hashFiles('requirements.txt') }}
 
-# 5. Node.js 24 future-proofing
+# 6. Node.js 24 future-proofing
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 ```
+
+`src.run_all` returns success when every child process exits successfully. The thin
+`run_<company>.py` wrappers intentionally swallow source exceptions after recording the
+failure counter, so a broken portal does not prevent other sources from updating their
+seen-job state. Timeouts still return a non-zero child status.
+
+`pipeline_health.json` is not a failure counter. It records recent successful fetch counts
+and sends one warning when a source fetches 0 jobs for 3 consecutive successful runs. This
+catches silent breakages where a portal changes shape but the fetcher does not raise.
 
 ---
 
