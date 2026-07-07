@@ -71,7 +71,7 @@ _AEROSPACE_TITLE_TERMS = [
 _FLTECHNICS_TITLE_TERMS = [
     "aerospace", "aircraft", "engine", "engines", "powerplant", "propulsion",
     "turbine", "apu", "auxiliary power", "overhaul", "mro", "maintenance",
-    "airworthiness", "aviation", "avionics", "airframe", "inspector",
+    "airworthiness", "aviation", "avionics", "airframe", "inspector", "camo",
 ]
 
 

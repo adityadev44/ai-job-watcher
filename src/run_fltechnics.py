@@ -9,7 +9,7 @@ SPEC = get_spec("fltechnics")
 _AVIATION_TITLE_TERMS = [
     "aerospace", "aircraft", "engine", "engines", "powerplant", "propulsion",
     "turbine", "apu", "auxiliary power", "overhaul", "mro", "maintenance",
-    "airworthiness", "aviation", "avionics", "airframe", "inspector",
+    "airworthiness", "aviation", "avionics", "airframe", "inspector", "camo",
 ]
 
 

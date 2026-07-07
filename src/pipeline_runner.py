@@ -205,13 +205,13 @@ def run_pipeline(spec: PipelineSpec, seen_path: str | Path | None = None) -> dic
     print(total_line)
     if spec.pre_filter is not None:
         print(
-            f"[{spec.source}]  {spec.pre_filter_pass_label:<17}: "
+            f"[{spec.source}]  {spec.pre_filter_pass_label:<18}: "
             f"{len(filter_input)}  (pre-filter: {pre_filter_dropped} dropped)"
         )
     print(f"[{spec.source}]  Passed Gate 1     : {gate_counts['g1_pass']}  (title family match)")
     print(f"[{spec.source}]  Passed Gate 3     : {gate_counts['g3_pass']}  (exclude filter clear)")
     print(f"[{spec.source}]  Passed Gate 4     : {gate_counts['g4_pass']}  (description exclusion clear)")
-    print(f"[{spec.source}]  {spec.matched_label:<17}: {gate_counts['total_matched']}  ({spec.matched_note})")
+    print(f"[{spec.source}]  {spec.matched_label:<18}: {gate_counts['total_matched']}  ({spec.matched_note})")
     print(f"[{spec.source}]  New (not seen)    : {len(new_matches)}")
     print(f"[{spec.source}]  Alert sent        : {'YES' if alert_sent else 'no'}")
     print(f"[{spec.source}] --------------------------------------------")
