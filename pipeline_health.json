@@ -2,7 +2,7 @@
   "gatelesis": {
     "recent_counts": [
       29,
-      29,
+      30,
       30,
       30,
       30,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 141
+    "zero_streak": 142
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 135
+    "zero_streak": 136
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 138
+    "zero_streak": 139
   },
   "magnetic": {
     "recent_counts": [
@@ -178,7 +178,6 @@
   "emirates": {
     "recent_counts": [
       97,
-      97,
       96,
       96,
       91,
@@ -186,9 +185,10 @@
       91,
       93,
       93,
-      93
+      93,
+      95
     ],
-    "last_fetched": 93,
+    "last_fetched": 95,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -218,9 +218,9 @@
       46,
       46,
       46,
-      46
+      45
     ],
-    "last_fetched": 46,
+    "last_fetched": 45,
     "zero_streak": 0
   },
   "gmr": {
@@ -244,7 +244,7 @@
       7,
       7,
       7,
-      7,
+      6,
       6,
       6,
       6,
@@ -257,7 +257,6 @@
   },
   "lht": {
     "recent_counts": [
-      96,
       97,
       97,
       97,
@@ -266,9 +265,10 @@
       97,
       97,
       97,
-      97
+      97,
+      98
     ],
-    "last_fetched": 97,
+    "last_fetched": 98,
     "zero_streak": 0
   },
   "sia": {
@@ -346,9 +346,9 @@
       78,
       78,
       78,
-      78
+      77
     ],
-    "last_fetched": 78,
+    "last_fetched": 77,
     "zero_streak": 0
   },
   "air_india": {
@@ -437,7 +437,7 @@
       234,
       234,
       234,
-      234,
+      233,
       233,
       233,
       233,
@@ -466,7 +466,6 @@
   "ammroc": {
     "recent_counts": [
       143,
-      143,
       139,
       139,
       139,
@@ -474,9 +473,10 @@
       139,
       139,
       139,
-      139
+      139,
+      141
     ],
-    "last_fetched": 139,
+    "last_fetched": 141,
     "zero_streak": 0
   },
   "fltechnics": {
@@ -517,14 +517,14 @@
       330,
       330,
       330,
-      330,
       326,
       325,
       329,
       329,
-      329
+      329,
+      334
     ],
-    "last_fetched": 329,
+    "last_fetched": 334,
     "zero_streak": 0
   },
   "boeing": {
@@ -561,7 +561,6 @@
   },
   "rolls_royce": {
     "recent_counts": [
-      201,
       204,
       204,
       204,
@@ -570,9 +569,10 @@
       206,
       206,
       206,
-      206
+      206,
+      207
     ],
-    "last_fetched": 206,
+    "last_fetched": 207,
     "zero_streak": 0
   },
   "indigo": {
@@ -599,12 +599,12 @@
       139,
       139,
       139,
-      139,
       124,
       124,
-      129
+      129,
+      132
     ],
-    "last_fetched": 129,
+    "last_fetched": 132,
     "zero_streak": 0
   },
   "safran": {
@@ -626,9 +626,9 @@
   "delta": {
     "recent_counts": [
       125,
+      126,
+      126,
       125,
-      126,
-      126,
       125,
       125,
       125,
