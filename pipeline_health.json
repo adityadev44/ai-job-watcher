@@ -1,8 +1,8 @@
 {
   "gatelesis": {
     "recent_counts": [
-      31,
       32,
+      33,
       33,
       33,
       33,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 196
+    "zero_streak": 197
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 186
+    "zero_streak": 187
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 193
+    "zero_streak": 194
   },
   "magnetic": {
     "recent_counts": [
@@ -182,7 +182,7 @@
       103,
       103,
       103,
-      103,
+      100,
       100,
       100,
       100,
@@ -233,7 +233,7 @@
       5,
       5,
       5,
-      5,
+      6,
       6
     ],
     "last_fetched": 6,
@@ -245,7 +245,7 @@
       6,
       6,
       6,
-      6,
+      4,
       4,
       4,
       4,
@@ -435,9 +435,9 @@
     "recent_counts": [
       231,
       231,
-      231,
       233,
       233,
+      234,
       234,
       234,
       234,
@@ -457,17 +457,17 @@
       200,
       200,
       200,
-      200,
-      0
+      0,
+      200
     ],
-    "last_fetched": 0,
-    "zero_streak": 1
+    "last_fetched": 200,
+    "zero_streak": 0
   },
   "ammroc": {
     "recent_counts": [
       152,
       152,
-      152,
+      151,
       151,
       151,
       151,
@@ -562,7 +562,6 @@
   "rolls_royce": {
     "recent_counts": [
       200,
-      200,
       201,
       201,
       205,
@@ -570,15 +569,16 @@
       204,
       204,
       206,
-      206
+      206,
+      203
     ],
-    "last_fetched": 206,
+    "last_fetched": 203,
     "zero_streak": 0
   },
   "indigo": {
     "recent_counts": [
       1,
-      1,
+      0,
       0,
       0,
       0,
@@ -589,7 +589,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 8
+    "zero_streak": 9
   },
   "qatar": {
     "recent_counts": [
@@ -600,8 +600,8 @@
       138,
       138,
       138,
-      138,
       136,
+      137,
       137
     ],
     "last_fetched": 137,
@@ -627,7 +627,7 @@
     "recent_counts": [
       126,
       126,
-      126,
+      127,
       127,
       127,
       127,
