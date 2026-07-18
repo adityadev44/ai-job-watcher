@@ -1,7 +1,7 @@
 {
   "gatelesis": {
     "recent_counts": [
-      32,
+      33,
       33,
       33,
       33,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 197
+    "zero_streak": 198
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 187
+    "zero_streak": 188
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 194
+    "zero_streak": 195
   },
   "magnetic": {
     "recent_counts": [
@@ -181,7 +181,7 @@
       103,
       103,
       103,
-      103,
+      100,
       100,
       100,
       100,
@@ -232,7 +232,7 @@
       5,
       5,
       5,
-      5,
+      6,
       6,
       6
     ],
@@ -244,7 +244,7 @@
       6,
       6,
       6,
-      6,
+      4,
       4,
       4,
       4,
@@ -434,9 +434,9 @@
   "standardaero": {
     "recent_counts": [
       231,
-      231,
       233,
       233,
+      234,
       234,
       234,
       234,
@@ -456,8 +456,8 @@
       200,
       200,
       200,
-      200,
       0,
+      200,
       200
     ],
     "last_fetched": 200,
@@ -466,7 +466,7 @@
   "ammroc": {
     "recent_counts": [
       152,
-      152,
+      151,
       151,
       151,
       151,
@@ -561,7 +561,6 @@
   },
   "rolls_royce": {
     "recent_counts": [
-      200,
       201,
       201,
       205,
@@ -570,6 +569,7 @@
       204,
       206,
       206,
+      203,
       203
     ],
     "last_fetched": 203,
@@ -577,7 +577,7 @@
   },
   "indigo": {
     "recent_counts": [
-      1,
+      0,
       0,
       0,
       0,
@@ -589,7 +589,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 9
+    "zero_streak": 10
   },
   "qatar": {
     "recent_counts": [
@@ -599,8 +599,8 @@
       138,
       138,
       138,
-      138,
       136,
+      137,
       137,
       137
     ],
@@ -626,7 +626,7 @@
   "delta": {
     "recent_counts": [
       126,
-      126,
+      127,
       127,
       127,
       127,
