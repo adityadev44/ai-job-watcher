@@ -1,7 +1,7 @@
 {
   "gatelesis": {
     "recent_counts": [
-      37,
+      39,
       39,
       39,
       39,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 318
+    "zero_streak": 319
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 309
+    "zero_streak": 310
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 319
+    "zero_streak": 320
   },
   "magnetic": {
     "recent_counts": [
@@ -177,13 +177,13 @@
   },
   "emirates": {
     "recent_counts": [
-      135,
       137,
       138,
       138,
       138,
       138,
       138,
+      132,
       132,
       132,
       132
@@ -261,7 +261,7 @@
       101,
       101,
       101,
-      101,
+      99,
       99,
       99,
       99,
@@ -294,7 +294,7 @@
       5,
       5,
       5,
-      5,
+      4,
       4,
       4,
       4,
@@ -433,11 +433,11 @@
   },
   "standardaero": {
     "recent_counts": [
-      226,
       228,
       227,
       227,
       226,
+      225,
       225,
       225,
       225,
@@ -469,7 +469,7 @@
       146,
       146,
       146,
-      146,
+      140,
       140,
       140,
       140,
@@ -513,7 +513,7 @@
   },
   "ste": {
     "recent_counts": [
-      341,
+      340,
       340,
       340,
       340,
@@ -562,7 +562,6 @@
   "rolls_royce": {
     "recent_counts": [
       200,
-      200,
       204,
       204,
       207,
@@ -570,6 +569,7 @@
       200,
       203,
       203,
+      204,
       204
     ],
     "last_fetched": 204,
@@ -589,7 +589,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 138
+    "zero_streak": 139
   },
   "qatar": {
     "recent_counts": [
@@ -601,10 +601,10 @@
       165,
       165,
       165,
-      165,
-      163
+      163,
+      164
     ],
-    "last_fetched": 163,
+    "last_fetched": 164,
     "zero_streak": 0
   },
   "safran": {
@@ -626,8 +626,8 @@
   "delta": {
     "recent_counts": [
       138,
-      138,
       141,
+      138,
       138,
       138,
       138,
