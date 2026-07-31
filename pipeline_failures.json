@@ -2,6 +2,8 @@
   "boeing": 0,
   "indigo": 0,
   "delta": 0,
-  "oliver_wyman": 0,
-  "ge": 0
+  "oliver_wyman": 1,
+  "ge": 1,
+  "icf": 1,
+  "mtu": 1
 }
