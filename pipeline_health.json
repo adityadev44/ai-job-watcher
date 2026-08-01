@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 453
+    "zero_streak": 454
   },
   "aercap": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 453
+    "zero_streak": 454
   },
   "magnetic": {
     "recent_counts": [
@@ -183,7 +183,7 @@
       114,
       114,
       114,
-      114,
+      115,
       115,
       115,
       115
@@ -484,8 +484,8 @@
       41,
       41,
       41,
-      41,
       10,
+      41,
       41,
       41,
       41,
@@ -519,12 +519,12 @@
       335,
       335,
       335,
-      335,
       328,
       335,
-      329
+      329,
+      334
     ],
-    "last_fetched": 329,
+    "last_fetched": 334,
     "zero_streak": 0
   },
   "boeing": {
