@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 465
+    "zero_streak": 466
   },
   "aercap": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 464
+    "zero_streak": 465
   },
   "magnetic": {
     "recent_counts": [
@@ -321,8 +321,8 @@
   },
   "ethiopian": {
     "recent_counts": [
-      52,
       0,
+      52,
       52,
       52,
       52,
@@ -481,8 +481,8 @@
   },
   "fltechnics": {
     "recent_counts": [
-      41,
       10,
+      41,
       41,
       41,
       41,
@@ -596,15 +596,15 @@
       121,
       121,
       121,
-      121,
       118,
       119,
       121,
       132,
       132,
-      137
+      137,
+      146
     ],
-    "last_fetched": 137,
+    "last_fetched": 146,
     "zero_streak": 0
   },
   "safran": {
