@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 467
+    "zero_streak": 468
   },
   "aercap": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 466
+    "zero_streak": 467
   },
   "magnetic": {
     "recent_counts": [
@@ -489,10 +489,10 @@
       41,
       41,
       41,
-      41,
-      10
+      10,
+      41
     ],
-    "last_fetched": 10,
+    "last_fetched": 41,
     "zero_streak": 0
   },
   "aar": {
@@ -594,7 +594,6 @@
   "qatar": {
     "recent_counts": [
       121,
-      121,
       118,
       119,
       121,
@@ -602,9 +601,10 @@
       132,
       137,
       146,
-      147
+      147,
+      148
     ],
-    "last_fetched": 147,
+    "last_fetched": 148,
     "zero_streak": 0
   },
   "safran": {
