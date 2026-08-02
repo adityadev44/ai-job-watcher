@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 468
+    "zero_streak": 469
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 448
+    "zero_streak": 449
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 467
+    "zero_streak": 468
   },
   "magnetic": {
     "recent_counts": [
@@ -488,11 +488,11 @@
       41,
       41,
       41,
-      41,
       10,
-      41
+      41,
+      30
     ],
-    "last_fetched": 41,
+    "last_fetched": 30,
     "zero_streak": 0
   },
   "aar": {
@@ -593,7 +593,6 @@
   },
   "qatar": {
     "recent_counts": [
-      121,
       118,
       119,
       121,
@@ -602,6 +601,7 @@
       137,
       146,
       147,
+      148,
       148
     ],
     "last_fetched": 148,
