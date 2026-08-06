@@ -5,9 +5,9 @@
       43,
       43,
       43,
-      43,
       42,
       42,
+      41,
       41,
       41,
       41
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 534
+    "zero_streak": 535
   },
   "aercap": {
     "recent_counts": [
@@ -67,7 +67,7 @@
     "recent_counts": [
       6,
       6,
-      6,
+      4,
       4,
       4,
       4,
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 511
+    "zero_streak": 512
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 533
+    "zero_streak": 534
   },
   "magnetic": {
     "recent_counts": [
@@ -180,15 +180,15 @@
       120,
       120,
       120,
-      120,
       121,
       121,
       115,
       115,
       116,
-      116
+      116,
+      117
     ],
-    "last_fetched": 116,
+    "last_fetched": 117,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -337,7 +337,7 @@
   },
   "mtu": {
     "recent_counts": [
-      79,
+      80,
       80,
       80,
       80,
@@ -434,11 +434,11 @@
   "standardaero": {
     "recent_counts": [
       235,
-      235,
       233,
       233,
       233,
       232,
+      231,
       231,
       231,
       231,
@@ -467,13 +467,13 @@
     "recent_counts": [
       120,
       120,
-      120,
       118,
       118,
       118,
       118,
       118,
       118,
+      122,
       122
     ],
     "last_fetched": 122,
@@ -483,7 +483,7 @@
     "recent_counts": [
       46,
       46,
-      46,
+      47,
       47,
       47,
       47,
@@ -518,13 +518,13 @@
       333,
       333,
       333,
-      333,
       332,
       332,
       331,
-      331
+      331,
+      330
     ],
-    "last_fetched": 331,
+    "last_fetched": 330,
     "zero_streak": 0
   },
   "boeing": {
@@ -600,7 +600,7 @@
       165,
       165,
       165,
-      165,
+      153,
       153,
       153
     ],
