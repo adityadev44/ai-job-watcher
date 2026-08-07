@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 559
+    "zero_streak": 560
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 536
+    "zero_streak": 537
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 558
+    "zero_streak": 559
   },
   "magnetic": {
     "recent_counts": [
@@ -146,7 +146,7 @@
   "etihad": {
     "recent_counts": [
       1,
-      1,
+      2,
       2,
       2,
       2,
@@ -177,8 +177,8 @@
   },
   "emirates": {
     "recent_counts": [
-      118,
       119,
+      122,
       122,
       122,
       122,
@@ -260,7 +260,7 @@
       117,
       117,
       117,
-      117,
+      118,
       118,
       118,
       118,
@@ -322,9 +322,9 @@
   "ethiopian": {
     "recent_counts": [
       57,
-      57,
       0,
       57,
+      58,
       58,
       58,
       58,
@@ -337,8 +337,8 @@
   },
   "mtu": {
     "recent_counts": [
-      82,
       83,
+      84,
       84,
       84,
       84,
@@ -434,7 +434,6 @@
   "standardaero": {
     "recent_counts": [
       232,
-      232,
       235,
       235,
       234,
@@ -442,9 +441,10 @@
       235,
       234,
       234,
-      234
+      234,
+      235
     ],
-    "last_fetched": 234,
+    "last_fetched": 235,
     "zero_streak": 0
   },
   "honeywell": {
@@ -465,7 +465,6 @@
   },
   "ammroc": {
     "recent_counts": [
-      130,
       132,
       134,
       134,
@@ -474,9 +473,10 @@
       134,
       134,
       134,
-      134
+      134,
+      120
     ],
-    "last_fetched": 134,
+    "last_fetched": 120,
     "zero_streak": 0
   },
   "fltechnics": {
@@ -484,7 +484,7 @@
       50,
       50,
       50,
-      50,
+      51,
       51,
       51,
       51,
@@ -513,13 +513,13 @@
   },
   "ste": {
     "recent_counts": [
-      331,
       330,
       330,
       330,
       330,
       330,
       312,
+      325,
       325,
       325,
       325
