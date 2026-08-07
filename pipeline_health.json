@@ -1,7 +1,6 @@
 {
   "gatelesis": {
     "recent_counts": [
-      41,
       42,
       42,
       42,
@@ -10,9 +9,10 @@
       42,
       42,
       42,
-      42
+      42,
+      43
     ],
-    "last_fetched": 42,
+    "last_fetched": 43,
     "zero_streak": 0
   },
   "smbc_aviation": {
@@ -29,11 +29,11 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 549
+    "zero_streak": 550
   },
   "aercap": {
     "recent_counts": [
-      4,
+      3,
       3,
       3,
       3,
@@ -49,7 +49,7 @@
   },
   "wlfc": {
     "recent_counts": [
-      19,
+      18,
       18,
       18,
       18,
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 526
+    "zero_streak": 527
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 548
+    "zero_streak": 549
   },
   "magnetic": {
     "recent_counts": [
@@ -180,15 +180,15 @@
       126,
       126,
       126,
-      126,
       115,
       115,
       116,
       116,
       118,
-      118
+      118,
+      119
     ],
-    "last_fetched": 118,
+    "last_fetched": 119,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -226,8 +226,8 @@
   "gmr": {
     "recent_counts": [
       10,
-      10,
       0,
+      10,
       10,
       10,
       10,
@@ -244,7 +244,7 @@
       7,
       7,
       7,
-      7,
+      6,
       6,
       6,
       6,
@@ -266,9 +266,9 @@
       116,
       116,
       116,
-      116
+      117
     ],
-    "last_fetched": 116,
+    "last_fetched": 117,
     "zero_streak": 0
   },
   "sia": {
@@ -329,7 +329,7 @@
       56,
       56,
       56,
-      56,
+      57,
       57
     ],
     "last_fetched": 57,
@@ -433,7 +433,6 @@
   },
   "standardaero": {
     "recent_counts": [
-      230,
       232,
       233,
       233,
@@ -442,6 +441,7 @@
       233,
       233,
       233,
+      232,
       232
     ],
     "last_fetched": 232,
@@ -449,7 +449,7 @@
   },
   "honeywell": {
     "recent_counts": [
-      199,
+      200,
       200,
       200,
       200,
@@ -465,7 +465,6 @@
   },
   "ammroc": {
     "recent_counts": [
-      126,
       128,
       127,
       0,
@@ -474,6 +473,7 @@
       127,
       127,
       127,
+      130,
       130
     ],
     "last_fetched": 130,
@@ -483,10 +483,10 @@
     "recent_counts": [
       50,
       50,
+      49,
+      49,
+      49,
       50,
-      49,
-      49,
-      49,
       50,
       50,
       50,
@@ -513,7 +513,6 @@
   },
   "ste": {
     "recent_counts": [
-      326,
       330,
       330,
       330,
@@ -522,6 +521,7 @@
       330,
       329,
       329,
+      331,
       331
     ],
     "last_fetched": 331,
@@ -598,7 +598,7 @@
       174,
       174,
       174,
-      174,
+      164,
       164,
       164,
       164,
