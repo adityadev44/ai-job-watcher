@@ -1,7 +1,7 @@
 {
   "gatelesis": {
     "recent_counts": [
-      43,
+      44,
       44,
       44,
       44,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 571
+    "zero_streak": 572
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 548
+    "zero_streak": 549
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 569
+    "zero_streak": 570
   },
   "magnetic": {
     "recent_counts": [
@@ -179,7 +179,7 @@
     "recent_counts": [
       122,
       122,
-      122,
+      112,
       112,
       112,
       112,
@@ -233,11 +233,11 @@
       10,
       10,
       10,
-      10,
-      0
+      0,
+      10
     ],
-    "last_fetched": 0,
-    "zero_streak": 1
+    "last_fetched": 10,
+    "zero_streak": 0
   },
   "gulf_air": {
     "recent_counts": [
@@ -473,11 +473,11 @@
       120,
       120,
       120,
-      120,
-      0
+      0,
+      120
     ],
-    "last_fetched": 0,
-    "zero_streak": 1
+    "last_fetched": 120,
+    "zero_streak": 0
   },
   "fltechnics": {
     "recent_counts": [
@@ -595,7 +595,7 @@
     "recent_counts": [
       164,
       164,
-      164,
+      158,
       158,
       158,
       158,
@@ -609,7 +609,7 @@
   },
   "safran": {
     "recent_counts": [
-      26,
+      27,
       27,
       27,
       27,
