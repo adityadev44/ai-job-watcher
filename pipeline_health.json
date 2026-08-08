@@ -10,9 +10,9 @@
       43,
       43,
       43,
-      43
+      44
     ],
-    "last_fetched": 43,
+    "last_fetched": 44,
     "zero_streak": 0
   },
   "smbc_aviation": {
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 561
+    "zero_streak": 562
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 538
+    "zero_streak": 539
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 560
+    "zero_streak": 561
   },
   "magnetic": {
     "recent_counts": [
@@ -233,11 +233,11 @@
       10,
       10,
       10,
-      10,
-      0
+      0,
+      10
     ],
-    "last_fetched": 0,
-    "zero_streak": 1
+    "last_fetched": 10,
+    "zero_streak": 0
   },
   "gulf_air": {
     "recent_counts": [
@@ -258,7 +258,6 @@
   "lht": {
     "recent_counts": [
       117,
-      117,
       118,
       118,
       118,
@@ -266,6 +265,7 @@
       118,
       118,
       118,
+      115,
       115
     ],
     "last_fetched": 115,
@@ -298,9 +298,9 @@
       18,
       18,
       18,
-      18
+      17
     ],
-    "last_fetched": 18,
+    "last_fetched": 17,
     "zero_streak": 0
   },
   "saudia_technic": {
@@ -321,8 +321,8 @@
   },
   "ethiopian": {
     "recent_counts": [
-      0,
       57,
+      58,
       58,
       58,
       58,
@@ -434,13 +434,13 @@
   "standardaero": {
     "recent_counts": [
       235,
-      235,
       234,
       235,
       235,
       234,
       234,
       234,
+      235,
       235,
       235
     ],
@@ -472,17 +472,17 @@
       134,
       134,
       134,
-      134,
       120,
-      0
+      0,
+      120
     ],
-    "last_fetched": 0,
-    "zero_streak": 1
+    "last_fetched": 120,
+    "zero_streak": 0
   },
   "fltechnics": {
     "recent_counts": [
       50,
-      50,
+      51,
       51,
       51,
       51,
@@ -516,8 +516,8 @@
       330,
       330,
       330,
-      330,
       312,
+      325,
       325,
       325,
       325,
