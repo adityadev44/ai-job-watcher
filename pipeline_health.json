@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 589
+    "zero_streak": 590
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 566
+    "zero_streak": 567
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 587
+    "zero_streak": 588
   },
   "magnetic": {
     "recent_counts": [
@@ -180,7 +180,7 @@
       112,
       112,
       112,
-      112,
+      110,
       110,
       110,
       110,
@@ -250,15 +250,15 @@
       6,
       6,
       6,
-      6
+      7
     ],
-    "last_fetched": 6,
+    "last_fetched": 7,
     "zero_streak": 0
   },
   "lht": {
     "recent_counts": [
       115,
-      115,
+      113,
       113,
       113,
       113,
@@ -290,7 +290,7 @@
   "sanad": {
     "recent_counts": [
       17,
-      17,
+      16,
       16,
       16,
       16,
@@ -597,14 +597,14 @@
       160,
       160,
       160,
-      160,
       152,
       152,
       152,
       152,
-      152
+      152,
+      155
     ],
-    "last_fetched": 152,
+    "last_fetched": 155,
     "zero_streak": 0
   },
   "safran": {
