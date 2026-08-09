@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 583
+    "zero_streak": 584
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 560
+    "zero_streak": 561
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 581
+    "zero_streak": 582
   },
   "magnetic": {
     "recent_counts": [
@@ -186,9 +186,9 @@
       112,
       112,
       112,
-      112
+      110
     ],
-    "last_fetched": 112,
+    "last_fetched": 110,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -264,7 +264,7 @@
       115,
       115,
       115,
-      115,
+      113,
       113,
       113
     ],
@@ -296,7 +296,7 @@
       17,
       17,
       17,
-      17,
+      16,
       16,
       16
     ],
@@ -470,7 +470,7 @@
       120,
       120,
       120,
-      120,
+      119,
       119,
       119,
       119,
@@ -514,8 +514,8 @@
   "ste": {
     "recent_counts": [
       325,
-      325,
       313,
+      321,
       321,
       321,
       321,
