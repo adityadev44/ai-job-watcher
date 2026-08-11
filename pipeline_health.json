@@ -1,7 +1,6 @@
 {
   "gatelesis": {
     "recent_counts": [
-      44,
       43,
       43,
       43,
@@ -9,6 +8,7 @@
       44,
       44,
       44,
+      42,
       42,
       42
     ],
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 619
+    "zero_streak": 620
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 593
+    "zero_streak": 594
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 616
+    "zero_streak": 617
   },
   "magnetic": {
     "recent_counts": [
@@ -257,7 +257,6 @@
   },
   "lht": {
     "recent_counts": [
-      112,
       113,
       114,
       114,
@@ -266,6 +265,7 @@
       114,
       114,
       114,
+      112,
       112
     ],
     "last_fetched": 112,
@@ -342,7 +342,7 @@
       85,
       85,
       85,
-      85,
+      86,
       86,
       86,
       86,
@@ -393,10 +393,10 @@
       200,
       200,
       200,
-      200,
-      140
+      140,
+      200
     ],
-    "last_fetched": 140,
+    "last_fetched": 200,
     "zero_streak": 0
   },
   "oliver_wyman": {
@@ -438,13 +438,13 @@
       234,
       234,
       234,
-      234,
       232,
       232,
       233,
-      233
+      233,
+      234
     ],
-    "last_fetched": 233,
+    "last_fetched": 234,
     "zero_streak": 0
   },
   "honeywell": {
@@ -467,12 +467,12 @@
     "recent_counts": [
       120,
       120,
-      120,
       121,
       121,
       121,
       124,
       125,
+      124,
       124,
       124
     ],
@@ -513,11 +513,11 @@
   },
   "ste": {
     "recent_counts": [
-      318,
       319,
       319,
       319,
       315,
+      318,
       318,
       318,
       318,
@@ -593,8 +593,8 @@
   },
   "qatar": {
     "recent_counts": [
-      156,
       157,
+      158,
       158,
       158,
       158,
