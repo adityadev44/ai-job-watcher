@@ -8,11 +8,11 @@
       42,
       42,
       42,
-      42,
       44,
-      44
+      44,
+      45
     ],
-    "last_fetched": 44,
+    "last_fetched": 45,
     "zero_streak": 0
   },
   "smbc_aviation": {
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 673
+    "zero_streak": 674
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 641
+    "zero_streak": 642
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 668
+    "zero_streak": 669
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 34
+    "zero_streak": 35
   },
   "emirates": {
     "recent_counts": [
@@ -242,7 +242,7 @@
   "gulf_air": {
     "recent_counts": [
       20,
-      20,
+      21,
       21,
       21,
       21,
@@ -257,11 +257,11 @@
   },
   "lht": {
     "recent_counts": [
-      119,
       120,
       120,
       120,
       120,
+      121,
       121,
       121,
       121,
@@ -342,7 +342,7 @@
       81,
       81,
       81,
-      81,
+      82,
       82,
       82,
       82,
@@ -356,7 +356,7 @@
       16,
       16,
       16,
-      16,
+      18,
       18,
       18,
       18,
@@ -436,11 +436,11 @@
       234,
       234,
       234,
-      234,
       233,
       233,
       232,
       232,
+      233,
       233,
       233
     ],
@@ -465,10 +465,10 @@
   },
   "ammroc": {
     "recent_counts": [
-      132,
       133,
       135,
       138,
+      139,
       139,
       139,
       139,
@@ -514,7 +514,6 @@
   "ste": {
     "recent_counts": [
       324,
-      324,
       325,
       323,
       324,
@@ -522,6 +521,7 @@
       325,
       325,
       324,
+      323,
       323
     ],
     "last_fetched": 323,
@@ -593,7 +593,6 @@
   },
   "qatar": {
     "recent_counts": [
-      162,
       163,
       167,
       167,
@@ -602,6 +601,7 @@
       172,
       172,
       172,
+      171,
       171
     ],
     "last_fetched": 171,
