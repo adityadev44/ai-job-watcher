@@ -1,7 +1,7 @@
 {
   "gatelesis": {
     "recent_counts": [
-      41,
+      42,
       42,
       42,
       42,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 662
+    "zero_streak": 663
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 632
+    "zero_streak": 633
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 658
+    "zero_streak": 659
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 24
+    "zero_streak": 25
   },
   "emirates": {
     "recent_counts": [
@@ -182,7 +182,7 @@
       103,
       103,
       103,
-      103,
+      96,
       96,
       96,
       96,
@@ -260,7 +260,7 @@
       122,
       122,
       122,
-      122,
+      119,
       119,
       119,
       119,
@@ -297,10 +297,10 @@
       20,
       20,
       20,
-      20,
-      21
+      21,
+      22
     ],
-    "last_fetched": 21,
+    "last_fetched": 22,
     "zero_streak": 0
   },
   "saudia_technic": {
@@ -337,7 +337,7 @@
   },
   "mtu": {
     "recent_counts": [
-      83,
+      81,
       81,
       81,
       81,
@@ -354,7 +354,7 @@
   "air_india": {
     "recent_counts": [
       21,
-      21,
+      16,
       16,
       16,
       16,
@@ -433,12 +433,12 @@
   },
   "standardaero": {
     "recent_counts": [
-      230,
       232,
       232,
       232,
       234,
       235,
+      234,
       234,
       234,
       234,
@@ -467,16 +467,16 @@
     "recent_counts": [
       133,
       133,
-      133,
       131,
       131,
       131,
       131,
       131,
       131,
-      131
+      131,
+      132
     ],
-    "last_fetched": 131,
+    "last_fetched": 132,
     "zero_streak": 0
   },
   "fltechnics": {
@@ -518,8 +518,8 @@
       322,
       322,
       322,
-      322,
       323,
+      324,
       324,
       324,
       324
@@ -530,9 +530,9 @@
   "boeing": {
     "recent_counts": [
       200,
-      200,
       60,
       0,
+      200,
       200,
       200,
       200,
@@ -594,7 +594,6 @@
   "qatar": {
     "recent_counts": [
       172,
-      172,
       173,
       173,
       173,
@@ -602,9 +601,10 @@
       173,
       173,
       158,
-      158
+      158,
+      160
     ],
-    "last_fetched": 158,
+    "last_fetched": 160,
     "zero_streak": 0
   },
   "safran": {
