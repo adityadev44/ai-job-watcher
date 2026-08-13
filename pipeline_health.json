@@ -6,9 +6,9 @@
       42,
       42,
       42,
-      42,
       44,
       44,
+      45,
       45,
       45
     ],
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 675
+    "zero_streak": 676
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 643
+    "zero_streak": 644
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 670
+    "zero_streak": 671
   },
   "magnetic": {
     "recent_counts": [
@@ -173,13 +173,13 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 36
+    "zero_streak": 37
   },
   "emirates": {
     "recent_counts": [
-      98,
       100,
       101,
+      102,
       102,
       102,
       102,
@@ -259,16 +259,16 @@
     "recent_counts": [
       120,
       120,
-      120,
       121,
       121,
       121,
       121,
       121,
       121,
-      121
+      121,
+      118
     ],
-    "last_fetched": 121,
+    "last_fetched": 118,
     "zero_streak": 0
   },
   "sia": {
@@ -340,7 +340,7 @@
       81,
       81,
       81,
-      81,
+      82,
       82,
       82,
       82,
@@ -354,7 +354,7 @@
   "air_india": {
     "recent_counts": [
       16,
-      16,
+      18,
       18,
       18,
       18,
@@ -434,7 +434,6 @@
   "standardaero": {
     "recent_counts": [
       234,
-      234,
       233,
       233,
       232,
@@ -442,6 +441,7 @@
       233,
       233,
       233,
+      235,
       235
     ],
     "last_fetched": 235,
@@ -465,7 +465,6 @@
   },
   "ammroc": {
     "recent_counts": [
-      135,
       138,
       139,
       139,
@@ -474,6 +473,7 @@
       139,
       139,
       139,
+      138,
       138
     ],
     "last_fetched": 138,
@@ -513,13 +513,13 @@
   },
   "ste": {
     "recent_counts": [
-      325,
       323,
       324,
       326,
       325,
       325,
       324,
+      323,
       323,
       323,
       323
@@ -594,12 +594,12 @@
   "qatar": {
     "recent_counts": [
       167,
-      167,
       172,
       172,
       172,
       172,
       172,
+      171,
       171,
       171,
       171
