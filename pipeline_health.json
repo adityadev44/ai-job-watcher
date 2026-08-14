@@ -2,7 +2,7 @@
   "gatelesis": {
     "recent_counts": [
       44,
-      44,
+      45,
       45,
       45,
       45,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 681
+    "zero_streak": 682
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 649
+    "zero_streak": 650
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 676
+    "zero_streak": 677
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 42
+    "zero_streak": 43
   },
   "emirates": {
     "recent_counts": [
@@ -182,13 +182,13 @@
       102,
       102,
       102,
-      102,
       96,
       96,
       96,
-      96
+      96,
+      97
     ],
-    "last_fetched": 96,
+    "last_fetched": 97,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -260,7 +260,7 @@
       121,
       121,
       121,
-      121,
+      118,
       118,
       118,
       118,
@@ -280,7 +280,7 @@
       9,
       9,
       9,
-      9,
+      10,
       10,
       10
     ],
@@ -293,7 +293,7 @@
       22,
       22,
       22,
-      22,
+      21,
       21,
       21,
       21,
@@ -362,9 +362,9 @@
       18,
       18,
       18,
-      18
+      19
     ],
-    "last_fetched": 18,
+    "last_fetched": 19,
     "zero_streak": 0
   },
   "icf": {
@@ -435,7 +435,7 @@
     "recent_counts": [
       233,
       233,
-      233,
+      235,
       235,
       235,
       235,
@@ -467,7 +467,7 @@
     "recent_counts": [
       139,
       139,
-      139,
+      138,
       138,
       138,
       138,
@@ -485,7 +485,7 @@
       54,
       54,
       54,
-      54,
+      52,
       52,
       52,
       52,
@@ -513,7 +513,7 @@
   },
   "ste": {
     "recent_counts": [
-      324,
+      323,
       323,
       323,
       323,
@@ -593,7 +593,6 @@
   },
   "qatar": {
     "recent_counts": [
-      172,
       171,
       171,
       171,
@@ -601,6 +600,7 @@
       171,
       171,
       171,
+      165,
       165,
       165
     ],
