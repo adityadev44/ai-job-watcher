@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 675
+    "zero_streak": 676
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 701
+    "zero_streak": 702
   },
   "magnetic": {
     "recent_counts": [
@@ -362,9 +362,9 @@
       20,
       20,
       20,
-      20
+      21
     ],
-    "last_fetched": 20,
+    "last_fetched": 21,
     "zero_streak": 0
   },
   "icf": {
@@ -593,7 +593,6 @@
   },
   "qatar": {
     "recent_counts": [
-      175,
       167,
       167,
       167,
@@ -601,6 +600,7 @@
       167,
       169,
       170,
+      169,
       169,
       169
     ],
