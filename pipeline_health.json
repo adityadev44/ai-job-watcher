@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 731
+    "zero_streak": 732
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 697
+    "zero_streak": 698
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 726
+    "zero_streak": 727
   },
   "magnetic": {
     "recent_counts": [
@@ -154,9 +154,9 @@
       6,
       6,
       6,
-      6
+      5
     ],
-    "last_fetched": 6,
+    "last_fetched": 5,
     "zero_streak": 0
   },
   "kuwait_airways": {
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 90
+    "zero_streak": 91
   },
   "emirates": {
     "recent_counts": [
@@ -227,8 +227,8 @@
     "recent_counts": [
       10,
       10,
-      10,
       0,
+      10,
       10,
       10,
       10,
@@ -341,7 +341,7 @@
       83,
       83,
       83,
-      83,
+      84,
       84,
       84,
       84,
@@ -353,7 +353,6 @@
   },
   "air_india": {
     "recent_counts": [
-      22,
       23,
       23,
       23,
@@ -362,9 +361,10 @@
       23,
       23,
       23,
-      23
+      23,
+      22
     ],
-    "last_fetched": 23,
+    "last_fetched": 22,
     "zero_streak": 0
   },
   "icf": {
@@ -467,8 +467,8 @@
     "recent_counts": [
       129,
       129,
-      129,
       0,
+      129,
       129,
       129,
       129,
@@ -514,11 +514,11 @@
   "ste": {
     "recent_counts": [
       315,
-      315,
       313,
       315,
       315,
       315,
+      316,
       316,
       316,
       316,
@@ -593,12 +593,12 @@
   },
   "qatar": {
     "recent_counts": [
-      180,
       190,
       191,
       192,
       192,
       176,
+      177,
       177,
       177,
       177,
