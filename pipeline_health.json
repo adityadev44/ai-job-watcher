@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 746
+    "zero_streak": 747
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 711
+    "zero_streak": 712
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 741
+    "zero_streak": 742
   },
   "magnetic": {
     "recent_counts": [
@@ -152,7 +152,7 @@
       5,
       5,
       5,
-      5,
+      4,
       4,
       4
     ],
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 104
+    "zero_streak": 105
   },
   "emirates": {
     "recent_counts": [
@@ -182,7 +182,7 @@
       89,
       89,
       89,
-      89,
+      93,
       93,
       93,
       93,
@@ -262,9 +262,9 @@
       115,
       115,
       115,
-      115,
       116,
       116,
+      118,
       118,
       118
     ],
@@ -330,9 +330,9 @@
       81,
       81,
       81,
-      81
+      82
     ],
-    "last_fetched": 81,
+    "last_fetched": 82,
     "zero_streak": 0
   },
   "mtu": {
@@ -442,9 +442,9 @@
       233,
       233,
       233,
-      233
+      235
     ],
-    "last_fetched": 233,
+    "last_fetched": 235,
     "zero_streak": 0
   },
   "honeywell": {
@@ -454,8 +454,8 @@
       200,
       200,
       200,
-      200,
       199,
+      200,
       200,
       200,
       200
@@ -468,15 +468,15 @@
       129,
       129,
       129,
-      129,
       130,
       132,
       132,
       133,
       134,
-      131
+      131,
+      129
     ],
-    "last_fetched": 131,
+    "last_fetched": 129,
     "zero_streak": 0
   },
   "fltechnics": {
@@ -486,7 +486,7 @@
       52,
       52,
       52,
-      52,
+      53,
       53,
       53,
       53,
@@ -513,11 +513,11 @@
   },
   "ste": {
     "recent_counts": [
-      315,
       313,
       313,
       315,
       316,
+      317,
       317,
       317,
       317,
@@ -593,7 +593,6 @@
   },
   "qatar": {
     "recent_counts": [
-      177,
       158,
       158,
       173,
@@ -602,9 +601,10 @@
       175,
       175,
       180,
-      180
+      180,
+      182
     ],
-    "last_fetched": 180,
+    "last_fetched": 182,
     "zero_streak": 0
   },
   "safran": {
@@ -618,9 +618,9 @@
       26,
       26,
       26,
-      26
+      27
     ],
-    "last_fetched": 26,
+    "last_fetched": 27,
     "zero_streak": 0
   },
   "delta": {
