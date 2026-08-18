@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 761
+    "zero_streak": 762
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 726
+    "zero_streak": 727
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 755
+    "zero_streak": 756
   },
   "magnetic": {
     "recent_counts": [
@@ -173,17 +173,17 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 119
+    "zero_streak": 120
   },
   "emirates": {
     "recent_counts": [
       93,
       93,
-      93,
       85,
       85,
       85,
       85,
+      86,
       86,
       86,
       86
@@ -242,7 +242,7 @@
   "gulf_air": {
     "recent_counts": [
       17,
-      17,
+      12,
       12,
       12,
       12,
@@ -258,17 +258,17 @@
   "lht": {
     "recent_counts": [
       117,
+      116,
+      116,
+      116,
+      116,
+      116,
+      116,
+      116,
       117,
-      116,
-      116,
-      116,
-      116,
-      116,
-      116,
-      116,
-      117
+      116
     ],
-    "last_fetched": 117,
+    "last_fetched": 116,
     "zero_streak": 0
   },
   "sia": {
@@ -297,10 +297,10 @@
       11,
       11,
       11,
-      11,
-      12
+      12,
+      13
     ],
-    "last_fetched": 12,
+    "last_fetched": 13,
     "zero_streak": 0
   },
   "saudia_technic": {
@@ -329,7 +329,7 @@
       82,
       82,
       82,
-      82,
+      84,
       84
     ],
     "last_fetched": 84,
@@ -345,7 +345,7 @@
       86,
       86,
       86,
-      86,
+      87,
       87
     ],
     "last_fetched": 87,
@@ -450,9 +450,9 @@
   "honeywell": {
     "recent_counts": [
       200,
+      0,
+      0,
       200,
-      0,
-      0,
       200,
       200,
       200,
@@ -471,8 +471,8 @@
       128,
       128,
       128,
-      128,
       134,
+      133,
       133,
       133
     ],
@@ -482,7 +482,7 @@
   "fltechnics": {
     "recent_counts": [
       53,
-      53,
+      52,
       52,
       52,
       52,
@@ -516,12 +516,12 @@
       317,
       317,
       317,
-      317,
       318,
       318,
       318,
       319,
       319,
+      320,
       320
     ],
     "last_fetched": 320,
@@ -595,13 +595,13 @@
     "recent_counts": [
       182,
       182,
-      182,
       183,
       183,
       171,
       171,
       171,
       171,
+      175,
       175
     ],
     "last_fetched": 175,
