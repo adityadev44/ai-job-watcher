@@ -1,8 +1,8 @@
 {
   "gatelesis": {
     "recent_counts": [
-      47,
       46,
+      45,
       45,
       45,
       45,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 759
+    "zero_streak": 760
   },
   "aercap": {
     "recent_counts": [
@@ -50,7 +50,7 @@
   "wlfc": {
     "recent_counts": [
       18,
-      18,
+      19,
       19,
       19,
       19,
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 724
+    "zero_streak": 725
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 753
+    "zero_streak": 754
   },
   "magnetic": {
     "recent_counts": [
@@ -173,11 +173,10 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 117
+    "zero_streak": 118
   },
   "emirates": {
     "recent_counts": [
-      93,
       0,
       93,
       93,
@@ -186,6 +185,7 @@
       85,
       85,
       85,
+      86,
       86
     ],
     "last_fetched": 86,
@@ -244,7 +244,7 @@
       17,
       17,
       17,
-      17,
+      12,
       12,
       12,
       12,
@@ -260,7 +260,7 @@
       117,
       117,
       117,
-      117,
+      116,
       116,
       116,
       116,
@@ -337,7 +337,7 @@
   },
   "mtu": {
     "recent_counts": [
-      87,
+      86,
       86,
       86,
       86,
@@ -353,7 +353,7 @@
   },
   "air_india": {
     "recent_counts": [
-      22,
+      19,
       19,
       19,
       19,
@@ -433,8 +433,8 @@
   },
   "standardaero": {
     "recent_counts": [
-      234,
       233,
+      232,
       232,
       232,
       232,
@@ -449,12 +449,12 @@
   },
   "honeywell": {
     "recent_counts": [
-      200,
       199,
       200,
       200,
       0,
       0,
+      200,
       200,
       200,
       200,
@@ -466,7 +466,6 @@
   "ammroc": {
     "recent_counts": [
       129,
-      129,
       128,
       128,
       128,
@@ -474,9 +473,10 @@
       128,
       128,
       128,
-      134
+      134,
+      133
     ],
-    "last_fetched": 134,
+    "last_fetched": 133,
     "zero_streak": 0
   },
   "fltechnics": {
@@ -484,7 +484,7 @@
       53,
       53,
       53,
-      53,
+      52,
       52,
       52,
       52,
@@ -518,10 +518,10 @@
       317,
       317,
       317,
-      317,
       318,
       318,
       318,
+      319,
       319
     ],
     "last_fetched": 319,
@@ -597,9 +597,9 @@
       182,
       182,
       182,
-      182,
       183,
       183,
+      171,
       171,
       171,
       171
