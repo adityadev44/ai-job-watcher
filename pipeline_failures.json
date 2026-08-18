@@ -1,13 +1,13 @@
 {
   "boeing": 0,
-  "indigo": 1,
-  "delta": 1,
+  "indigo": 2,
+  "delta": 2,
   "oliver_wyman": 0,
   "ge": 0,
   "icf": 0,
   "mtu": 0,
-  "rolls_royce": 2,
-  "dgca": 2,
-  "aar": 0,
+  "rolls_royce": 0,
+  "dgca": 0,
+  "aar": 1,
   "rtx": 0
 }
