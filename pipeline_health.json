@@ -3,7 +3,7 @@
     "recent_counts": [
       46,
       46,
-      46,
+      45,
       45,
       45,
       45,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 777
+    "zero_streak": 778
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 743
+    "zero_streak": 744
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 771
+    "zero_streak": 772
   },
   "magnetic": {
     "recent_counts": [
@@ -173,18 +173,18 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 136
+    "zero_streak": 137
   },
   "emirates": {
     "recent_counts": [
       88,
       88,
       88,
-      88,
       83,
       83,
       83,
       83,
+      84,
       84,
       84
     ],
@@ -216,11 +216,11 @@
       44,
       44,
       44,
-      44,
       47,
-      47
+      47,
+      45
     ],
-    "last_fetched": 47,
+    "last_fetched": 45,
     "zero_streak": 0
   },
   "gmr": {
@@ -297,7 +297,7 @@
       13,
       13,
       13,
-      13,
+      21,
       21
     ],
     "last_fetched": 21,
@@ -360,7 +360,7 @@
       22,
       22,
       22,
-      22,
+      25,
       25,
       25
     ],
@@ -433,7 +433,7 @@
   },
   "standardaero": {
     "recent_counts": [
-      232,
+      233,
       233,
       233,
       233,
@@ -456,8 +456,8 @@
       200,
       200,
       200,
-      200,
       0,
+      200,
       200
     ],
     "last_fetched": 200,
@@ -472,7 +472,7 @@
       134,
       134,
       134,
-      134,
+      133,
       133,
       133
     ],
@@ -484,8 +484,8 @@
       52,
       52,
       52,
-      52,
       0,
+      52,
       52,
       52,
       52,
@@ -516,15 +516,15 @@
       320,
       320,
       320,
-      320,
       319,
       320,
       319,
       319,
       319,
-      319
+      319,
+      320
     ],
-    "last_fetched": 319,
+    "last_fetched": 320,
     "zero_streak": 0
   },
   "boeing": {
@@ -598,13 +598,13 @@
       182,
       182,
       182,
-      182,
       172,
       172,
       172,
-      176
+      176,
+      178
     ],
-    "last_fetched": 176,
+    "last_fetched": 178,
     "zero_streak": 0
   },
   "safran": {
