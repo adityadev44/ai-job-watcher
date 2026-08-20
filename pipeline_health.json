@@ -8,7 +8,7 @@
       43,
       43,
       43,
-      43,
+      42,
       42,
       42
     ],
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 799
+    "zero_streak": 800
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 764
+    "zero_streak": 765
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 793
+    "zero_streak": 794
   },
   "magnetic": {
     "recent_counts": [
@@ -151,7 +151,7 @@
       2,
       2,
       2,
-      2,
+      3,
       3,
       3,
       3
@@ -173,11 +173,10 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 158
+    "zero_streak": 159
   },
   "emirates": {
     "recent_counts": [
-      79,
       79,
       79,
       80,
@@ -186,9 +185,10 @@
       82,
       82,
       82,
-      82
+      82,
+      83
     ],
-    "last_fetched": 82,
+    "last_fetched": 83,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -248,11 +248,11 @@
       16,
       16,
       16,
-      16,
       20,
-      20
+      20,
+      21
     ],
-    "last_fetched": 20,
+    "last_fetched": 21,
     "zero_streak": 0
   },
   "lht": {
@@ -276,7 +276,7 @@
       10,
       10,
       10,
-      10,
+      9,
       9,
       9,
       9,
@@ -294,10 +294,10 @@
       20,
       20,
       20,
+      21,
+      21,
+      21,
       20,
-      21,
-      21,
-      21,
       20
     ],
     "last_fetched": 20,
@@ -323,7 +323,7 @@
     "recent_counts": [
       59,
       59,
-      59,
+      105,
       105,
       105,
       105,
@@ -451,8 +451,8 @@
     "recent_counts": [
       200,
       200,
-      200,
       199,
+      200,
       200,
       200,
       200,
@@ -467,13 +467,13 @@
     "recent_counts": [
       133,
       133,
-      133,
       134,
       134,
       134,
       132,
       133,
       131,
+      132,
       132
     ],
     "last_fetched": 132,
@@ -482,7 +482,6 @@
   "fltechnics": {
     "recent_counts": [
       54,
-      54,
       50,
       54,
       54,
@@ -490,9 +489,10 @@
       54,
       54,
       54,
-      54
+      54,
+      55
     ],
-    "last_fetched": 54,
+    "last_fetched": 55,
     "zero_streak": 0
   },
   "aar": {
@@ -513,14 +513,14 @@
   },
   "ste": {
     "recent_counts": [
+      321,
+      321,
+      321,
+      323,
+      323,
+      323,
+      323,
       322,
-      321,
-      321,
-      321,
-      323,
-      323,
-      323,
-      323,
       322,
       322
     ],
@@ -593,7 +593,6 @@
   },
   "qatar": {
     "recent_counts": [
-      187,
       175,
       175,
       177,
@@ -602,9 +601,10 @@
       181,
       182,
       185,
-      186
+      186,
+      192
     ],
-    "last_fetched": 186,
+    "last_fetched": 192,
     "zero_streak": 0
   },
   "safran": {
