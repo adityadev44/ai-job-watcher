@@ -3,9 +3,9 @@
     "recent_counts": [
       44,
       44,
-      44,
       45,
       45,
+      46,
       46,
       46,
       46,
@@ -29,11 +29,11 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 829
+    "zero_streak": 830
   },
   "aercap": {
     "recent_counts": [
-      3,
+      4,
       4,
       4,
       4,
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 793
+    "zero_streak": 794
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 821
+    "zero_streak": 822
   },
   "magnetic": {
     "recent_counts": [
@@ -145,7 +145,7 @@
   },
   "etihad": {
     "recent_counts": [
-      0,
+      4,
       4,
       4,
       4,
@@ -173,11 +173,10 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 188
+    "zero_streak": 189
   },
   "emirates": {
     "recent_counts": [
-      80,
       82,
       82,
       82,
@@ -186,9 +185,10 @@
       82,
       82,
       82,
-      82
+      82,
+      75
     ],
-    "last_fetched": 82,
+    "last_fetched": 75,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -264,7 +264,7 @@
       120,
       120,
       120,
-      120,
+      119,
       119,
       119
     ],
@@ -339,7 +339,7 @@
     "recent_counts": [
       86,
       86,
-      86,
+      85,
       85,
       85,
       85,
@@ -433,7 +433,6 @@
   },
   "standardaero": {
     "recent_counts": [
-      204,
       202,
       201,
       191,
@@ -441,6 +440,7 @@
       191,
       191,
       184,
+      182,
       182,
       182
     ],
@@ -465,12 +465,12 @@
   },
   "ammroc": {
     "recent_counts": [
-      134,
       135,
       135,
       135,
       135,
       135,
+      132,
       132,
       132,
       132,
@@ -515,7 +515,7 @@
     "recent_counts": [
       322,
       322,
-      322,
+      317,
       317,
       317,
       317,
@@ -597,7 +597,7 @@
       178,
       178,
       178,
-      178,
+      179,
       179,
       179,
       179,
@@ -611,7 +611,7 @@
     "recent_counts": [
       27,
       27,
-      27,
+      26,
       26,
       26,
       26,
