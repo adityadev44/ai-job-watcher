@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 854
+    "zero_streak": 855
   },
   "aercap": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 845
+    "zero_streak": 846
   },
   "magnetic": {
     "recent_counts": [
@@ -181,7 +181,7 @@
       75,
       75,
       75,
-      75,
+      72,
       72,
       72,
       72,
@@ -225,8 +225,8 @@
   },
   "gmr": {
     "recent_counts": [
-      10,
       0,
+      10,
       10,
       10,
       10,
@@ -465,7 +465,7 @@
   },
   "ammroc": {
     "recent_counts": [
-      0,
+      133,
       133,
       133,
       133,
@@ -600,11 +600,11 @@
       177,
       177,
       177,
-      177,
       179,
-      179
+      179,
+      182
     ],
-    "last_fetched": 179,
+    "last_fetched": 182,
     "zero_streak": 0
   },
   "safran": {
