@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 877
+    "zero_streak": 878
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 838
+    "zero_streak": 839
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 867
+    "zero_streak": 868
   },
   "magnetic": {
     "recent_counts": [
@@ -173,11 +173,10 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 234
+    "zero_streak": 235
   },
   "emirates": {
     "recent_counts": [
-      72,
       70,
       70,
       70,
@@ -186,9 +185,10 @@
       70,
       72,
       74,
-      74
+      74,
+      77
     ],
-    "last_fetched": 74,
+    "last_fetched": 77,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -262,9 +262,9 @@
       118,
       118,
       118,
-      118,
       117,
       117,
+      120,
       120,
       120
     ],
@@ -293,7 +293,7 @@
       20,
       20,
       20,
-      20,
+      21,
       21,
       21,
       21,
@@ -328,11 +328,11 @@
       105,
       105,
       105,
-      105,
       107,
-      107
+      107,
+      108
     ],
-    "last_fetched": 107,
+    "last_fetched": 108,
     "zero_streak": 0
   },
   "mtu": {
@@ -344,7 +344,7 @@
       85,
       85,
       85,
-      85,
+      86,
       86,
       86
     ],
@@ -470,7 +470,7 @@
       139,
       139,
       139,
-      139,
+      141,
       141,
       141,
       141,
@@ -513,7 +513,6 @@
   },
   "ste": {
     "recent_counts": [
-      310,
       309,
       309,
       309,
@@ -521,6 +520,7 @@
       312,
       311,
       316,
+      325,
       325,
       325
     ],
@@ -595,16 +595,16 @@
     "recent_counts": [
       193,
       193,
-      193,
       186,
       186,
       187,
       187,
       191,
       193,
-      193
+      193,
+      195
     ],
-    "last_fetched": 193,
+    "last_fetched": 195,
     "zero_streak": 0
   },
   "safran": {
@@ -618,9 +618,9 @@
       26,
       26,
       26,
-      26
+      25
     ],
-    "last_fetched": 26,
+    "last_fetched": 25,
     "zero_streak": 0
   },
   "delta": {
