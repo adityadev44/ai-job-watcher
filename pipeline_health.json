@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 896
+    "zero_streak": 897
   },
   "aercap": {
     "recent_counts": [
@@ -42,9 +42,9 @@
       6,
       6,
       6,
-      6
+      5
     ],
-    "last_fetched": 6,
+    "last_fetched": 5,
     "zero_streak": 0
   },
   "wlfc": {
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 857
+    "zero_streak": 858
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 887
+    "zero_streak": 888
   },
   "magnetic": {
     "recent_counts": [
@@ -173,11 +173,10 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 255
+    "zero_streak": 256
   },
   "emirates": {
     "recent_counts": [
-      79,
       77,
       77,
       77,
@@ -186,6 +185,7 @@
       77,
       79,
       81,
+      85,
       85
     ],
     "last_fetched": 85,
@@ -199,7 +199,7 @@
       3,
       3,
       3,
-      3,
+      2,
       2,
       2,
       2
@@ -261,11 +261,11 @@
       119,
       119,
       119,
-      119,
       120,
       122,
       122,
       122,
+      121,
       121
     ],
     "last_fetched": 121,
@@ -438,7 +438,7 @@
       169,
       169,
       169,
-      169,
+      170,
       170,
       170,
       170,
@@ -449,7 +449,7 @@
   },
   "honeywell": {
     "recent_counts": [
-      199,
+      200,
       200,
       200,
       200,
@@ -468,15 +468,15 @@
       155,
       155,
       155,
-      155,
       153,
       153,
       153,
       153,
       153,
-      153
+      153,
+      155
     ],
-    "last_fetched": 153,
+    "last_fetched": 155,
     "zero_streak": 0
   },
   "fltechnics": {
@@ -489,7 +489,7 @@
       54,
       54,
       54,
-      54,
+      55,
       55
     ],
     "last_fetched": 55,
@@ -516,9 +516,9 @@
       323,
       323,
       323,
-      323,
       324,
       324,
+      327,
       327,
       327,
       327,
@@ -593,7 +593,6 @@
   },
   "qatar": {
     "recent_counts": [
-      202,
       203,
       196,
       196,
@@ -602,6 +601,7 @@
       200,
       202,
       202,
+      204,
       204
     ],
     "last_fetched": 204,
