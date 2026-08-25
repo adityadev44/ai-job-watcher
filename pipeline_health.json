@@ -29,13 +29,13 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 903
+    "zero_streak": 904
   },
   "aercap": {
     "recent_counts": [
       6,
       6,
-      6,
+      5,
       5,
       5,
       5,
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 864
+    "zero_streak": 865
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 893
+    "zero_streak": 894
   },
   "magnetic": {
     "recent_counts": [
@@ -153,7 +153,7 @@
       4,
       4,
       4,
-      4,
+      3,
       3
     ],
     "last_fetched": 3,
@@ -173,14 +173,14 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 261
+    "zero_streak": 262
   },
   "emirates": {
     "recent_counts": [
-      79,
       81,
       85,
       85,
+      86,
       86,
       86,
       86,
@@ -258,9 +258,9 @@
   "lht": {
     "recent_counts": [
       122,
+      121,
+      121,
       122,
-      121,
-      121,
       122,
       122,
       122,
@@ -340,7 +340,7 @@
       86,
       86,
       86,
-      86,
+      87,
       87,
       87,
       87,
@@ -437,14 +437,14 @@
       170,
       170,
       170,
-      170,
       164,
       164,
       163,
       163,
-      159
+      159,
+      156
     ],
-    "last_fetched": 159,
+    "last_fetched": 156,
     "zero_streak": 0
   },
   "honeywell": {
@@ -467,22 +467,22 @@
     "recent_counts": [
       153,
       153,
-      153,
       155,
       155,
       158,
       158,
       158,
       158,
-      158
+      158,
+      157
     ],
-    "last_fetched": 158,
+    "last_fetched": 157,
     "zero_streak": 0
   },
   "fltechnics": {
     "recent_counts": [
       54,
-      54,
+      55,
       55,
       55,
       55,
@@ -517,7 +517,7 @@
       327,
       327,
       327,
-      327,
+      326,
       326,
       326,
       326,
@@ -594,7 +594,7 @@
   "qatar": {
     "recent_counts": [
       202,
-      202,
+      204,
       204,
       204,
       204,
