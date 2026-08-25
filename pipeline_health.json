@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 894
+    "zero_streak": 895
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 855
+    "zero_streak": 856
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 885
+    "zero_streak": 886
   },
   "magnetic": {
     "recent_counts": [
@@ -173,22 +173,22 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 253
+    "zero_streak": 254
   },
   "emirates": {
     "recent_counts": [
       79,
       79,
+      77,
+      77,
+      77,
+      77,
+      77,
+      77,
       79,
-      77,
-      77,
-      77,
-      77,
-      77,
-      77,
-      79
+      81
     ],
-    "last_fetched": 79,
+    "last_fetched": 81,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -201,7 +201,7 @@
       3,
       3,
       3,
-      3,
+      2,
       2
     ],
     "last_fetched": 2,
@@ -263,8 +263,8 @@
       119,
       119,
       119,
-      119,
       120,
+      122,
       122,
       122
     ],
@@ -433,7 +433,6 @@
   },
   "standardaero": {
     "recent_counts": [
-      171,
       169,
       169,
       169,
@@ -441,6 +440,7 @@
       169,
       169,
       169,
+      170,
       170,
       170
     ],
@@ -450,8 +450,8 @@
   "honeywell": {
     "recent_counts": [
       200,
-      200,
       199,
+      200,
       200,
       200,
       200,
@@ -470,7 +470,7 @@
       155,
       155,
       155,
-      155,
+      153,
       153,
       153,
       153,
@@ -481,7 +481,7 @@
   },
   "fltechnics": {
     "recent_counts": [
-      55,
+      54,
       54,
       54,
       54,
@@ -518,9 +518,9 @@
       323,
       323,
       323,
-      323,
       324,
       324,
+      327,
       327,
       327
     ],
@@ -595,13 +595,13 @@
     "recent_counts": [
       202,
       202,
-      202,
       203,
       196,
       196,
       196,
       197,
       200,
+      202,
       202
     ],
     "last_fetched": 202,
