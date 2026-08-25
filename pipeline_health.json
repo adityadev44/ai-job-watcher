@@ -6,9 +6,9 @@
       46,
       46,
       46,
-      46,
       47,
       47,
+      43,
       43,
       43
     ],
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 886
+    "zero_streak": 887
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 847
+    "zero_streak": 848
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 876
+    "zero_streak": 877
   },
   "magnetic": {
     "recent_counts": [
@@ -173,13 +173,13 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 244
+    "zero_streak": 245
   },
   "emirates": {
     "recent_counts": [
       77,
-      77,
       78,
+      79,
       79,
       79,
       79,
@@ -243,7 +243,7 @@
     "recent_counts": [
       19,
       19,
-      19,
+      20,
       20,
       20,
       20,
@@ -265,7 +265,7 @@
       120,
       120,
       120,
-      120,
+      119,
       119
     ],
     "last_fetched": 119,
@@ -322,7 +322,7 @@
   "ethiopian": {
     "recent_counts": [
       108,
-      108,
+      109,
       109,
       109,
       109,
@@ -433,7 +433,6 @@
   },
   "standardaero": {
     "recent_counts": [
-      182,
       181,
       178,
       176,
@@ -442,9 +441,10 @@
       174,
       172,
       172,
-      171
+      171,
+      169
     ],
-    "last_fetched": 171,
+    "last_fetched": 169,
     "zero_streak": 0
   },
   "honeywell": {
@@ -465,11 +465,11 @@
   },
   "ammroc": {
     "recent_counts": [
-      141,
       142,
       143,
       146,
       146,
+      155,
       155,
       155,
       155,
@@ -490,9 +490,9 @@
       55,
       55,
       55,
-      55
+      54
     ],
-    "last_fetched": 55,
+    "last_fetched": 54,
     "zero_streak": 0
   },
   "aar": {
@@ -516,7 +516,7 @@
       325,
       325,
       325,
-      325,
+      323,
       323,
       323,
       323,
@@ -593,9 +593,9 @@
   },
   "qatar": {
     "recent_counts": [
-      195,
       196,
       200,
+      202,
       202,
       202,
       202,
