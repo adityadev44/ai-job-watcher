@@ -1,8 +1,8 @@
 {
   "gatelesis": {
     "recent_counts": [
-      46,
       45,
+      46,
       46,
       46,
       46,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 912
+    "zero_streak": 913
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 873
+    "zero_streak": 874
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 902
+    "zero_streak": 903
   },
   "magnetic": {
     "recent_counts": [
@@ -173,22 +173,22 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 270
+    "zero_streak": 271
   },
   "emirates": {
     "recent_counts": [
       86,
       86,
       86,
-      86,
       81,
       81,
       81,
       81,
       81,
-      81
+      81,
+      82
     ],
-    "last_fetched": 81,
+    "last_fetched": 82,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -258,7 +258,7 @@
   "lht": {
     "recent_counts": [
       122,
-      122,
+      121,
       121,
       121,
       121,
@@ -362,9 +362,9 @@
       25,
       25,
       25,
-      25
+      26
     ],
-    "last_fetched": 25,
+    "last_fetched": 26,
     "zero_streak": 0
   },
   "icf": {
@@ -433,7 +433,6 @@
   },
   "standardaero": {
     "recent_counts": [
-      159,
       156,
       156,
       156,
@@ -442,9 +441,10 @@
       156,
       156,
       156,
-      156
+      156,
+      157
     ],
-    "last_fetched": 156,
+    "last_fetched": 157,
     "zero_streak": 0
   },
   "honeywell": {
@@ -465,7 +465,7 @@
   },
   "ammroc": {
     "recent_counts": [
-      158,
+      157,
       157,
       157,
       157,
@@ -516,9 +516,9 @@
       326,
       326,
       326,
-      326,
       328,
       327,
+      325,
       325,
       325,
       325,
@@ -598,13 +598,13 @@
       204,
       204,
       204,
-      204,
       199,
       199,
       199,
-      199
+      199,
+      202
     ],
-    "last_fetched": 199,
+    "last_fetched": 202,
     "zero_streak": 0
   },
   "safran": {
