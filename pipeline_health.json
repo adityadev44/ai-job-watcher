@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 875
+    "zero_streak": 876
   },
   "avolon": {
     "recent_counts": [
@@ -173,18 +173,18 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 272
+    "zero_streak": 273
   },
   "emirates": {
     "recent_counts": [
       86,
-      86,
       81,
       81,
       81,
       81,
       81,
       81,
+      82,
       82,
       82
     ],
@@ -250,9 +250,9 @@
       20,
       20,
       20,
-      20
+      22
     ],
-    "last_fetched": 20,
+    "last_fetched": 22,
     "zero_streak": 0
   },
   "lht": {
@@ -265,11 +265,11 @@
       121,
       121,
       121,
-      121,
-      0
+      0,
+      122
     ],
-    "last_fetched": 0,
-    "zero_streak": 1
+    "last_fetched": 122,
+    "zero_streak": 0
   },
   "sia": {
     "recent_counts": [
@@ -345,7 +345,7 @@
       87,
       87,
       87,
-      87,
+      70,
       70
     ],
     "last_fetched": 70,
@@ -360,8 +360,8 @@
       25,
       25,
       25,
-      25,
       26,
+      25,
       25
     ],
     "last_fetched": 25,
@@ -440,8 +440,8 @@
       156,
       156,
       156,
-      156,
       157,
+      156,
       156
     ],
     "last_fetched": 156,
@@ -458,9 +458,9 @@
       200,
       200,
       200,
-      200
+      199
     ],
-    "last_fetched": 200,
+    "last_fetched": 199,
     "zero_streak": 0
   },
   "ammroc": {
@@ -473,10 +473,10 @@
       157,
       157,
       157,
-      157,
-      163
+      163,
+      164
     ],
-    "last_fetched": 163,
+    "last_fetched": 164,
     "zero_streak": 0
   },
   "fltechnics": {
@@ -514,9 +514,9 @@
   "ste": {
     "recent_counts": [
       326,
-      326,
       328,
       327,
+      325,
       325,
       325,
       325,
@@ -596,15 +596,15 @@
       204,
       204,
       204,
-      204,
       199,
       199,
       199,
       199,
       202,
-      203
+      203,
+      204
     ],
-    "last_fetched": 203,
+    "last_fetched": 204,
     "zero_streak": 0
   },
   "safran": {
