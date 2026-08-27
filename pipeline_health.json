@@ -8,11 +8,11 @@
       47,
       47,
       47,
-      47,
       46,
-      46
+      46,
+      45
     ],
-    "last_fetched": 46,
+    "last_fetched": 45,
     "zero_streak": 0
   },
   "smbc_aviation": {
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 933
+    "zero_streak": 934
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 894
+    "zero_streak": 895
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 923
+    "zero_streak": 924
   },
   "magnetic": {
     "recent_counts": [
@@ -173,11 +173,10 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 290
+    "zero_streak": 291
   },
   "emirates": {
     "recent_counts": [
-      85,
       85,
       80,
       80,
@@ -186,9 +185,10 @@
       83,
       83,
       87,
-      87
+      87,
+      88
     ],
-    "last_fetched": 87,
+    "last_fetched": 88,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -213,7 +213,7 @@
       45,
       45,
       45,
-      45,
+      36,
       36,
       36,
       36,
@@ -291,7 +291,7 @@
     "recent_counts": [
       21,
       21,
-      21,
+      22,
       22,
       22,
       22,
@@ -357,7 +357,7 @@
       24,
       24,
       24,
-      24,
+      25,
       25,
       25,
       25,
@@ -442,9 +442,9 @@
       157,
       157,
       157,
-      157
+      158
     ],
-    "last_fetched": 157,
+    "last_fetched": 158,
     "zero_streak": 0
   },
   "honeywell": {
@@ -469,14 +469,14 @@
       160,
       160,
       160,
-      160,
       162,
       163,
       164,
       166,
-      166
+      166,
+      167
     ],
-    "last_fetched": 166,
+    "last_fetched": 167,
     "zero_streak": 0
   },
   "fltechnics": {
@@ -487,7 +487,7 @@
       54,
       54,
       54,
-      54,
+      53,
       53,
       53,
       53
@@ -515,10 +515,10 @@
     "recent_counts": [
       321,
       321,
-      321,
       325,
       324,
       327,
+      334,
       334,
       334,
       334,
@@ -595,10 +595,10 @@
     "recent_counts": [
       204,
       204,
-      204,
       196,
       197,
       197,
+      204,
       204,
       204,
       204,
