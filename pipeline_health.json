@@ -4,10 +4,10 @@
       46,
       46,
       46,
-      46,
       47,
       48,
       48,
+      47,
       47,
       47,
       47
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 926
+    "zero_streak": 927
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 887
+    "zero_streak": 888
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 916
+    "zero_streak": 917
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 284
+    "zero_streak": 285
   },
   "emirates": {
     "recent_counts": [
@@ -182,10 +182,10 @@
       83,
       83,
       83,
-      83,
       84,
       85,
       85,
+      80,
       80
     ],
     "last_fetched": 80,
@@ -218,9 +218,9 @@
       45,
       45,
       45,
-      45
+      36
     ],
-    "last_fetched": 45,
+    "last_fetched": 36,
     "zero_streak": 0
   },
   "gmr": {
@@ -262,8 +262,8 @@
       122,
       122,
       122,
-      122,
       123,
+      120,
       120,
       120,
       120
@@ -298,9 +298,9 @@
       21,
       21,
       21,
-      21
+      22
     ],
-    "last_fetched": 21,
+    "last_fetched": 22,
     "zero_streak": 0
   },
   "saudia_technic": {
@@ -337,7 +337,7 @@
   },
   "mtu": {
     "recent_counts": [
-      70,
+      71,
       71,
       71,
       71,
@@ -356,7 +356,7 @@
       25,
       25,
       25,
-      25,
+      24,
       24,
       24,
       24,
@@ -435,7 +435,7 @@
     "recent_counts": [
       155,
       155,
-      155,
+      157,
       157,
       157,
       157,
@@ -450,8 +450,8 @@
   "honeywell": {
     "recent_counts": [
       200,
-      200,
       194,
+      200,
       200,
       200,
       200,
@@ -470,7 +470,7 @@
       164,
       164,
       164,
-      164,
+      160,
       160,
       160,
       160,
@@ -513,7 +513,6 @@
   },
   "ste": {
     "recent_counts": [
-      324,
       318,
       321,
       321,
@@ -522,9 +521,10 @@
       321,
       321,
       321,
-      321
+      321,
+      325
     ],
-    "last_fetched": 321,
+    "last_fetched": 325,
     "zero_streak": 0
   },
   "boeing": {
@@ -602,9 +602,9 @@
       204,
       204,
       204,
-      204
+      196
     ],
-    "last_fetched": 204,
+    "last_fetched": 196,
     "zero_streak": 0
   },
   "safran": {
