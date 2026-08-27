@@ -1,10 +1,10 @@
 {
   "gatelesis": {
     "recent_counts": [
-      46,
       47,
       48,
       48,
+      47,
       47,
       47,
       47,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 929
+    "zero_streak": 930
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 890
+    "zero_streak": 891
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 919
+    "zero_streak": 920
   },
   "magnetic": {
     "recent_counts": [
@@ -173,11 +173,10 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 287
+    "zero_streak": 288
   },
   "emirates": {
     "recent_counts": [
-      83,
       83,
       83,
       84,
@@ -186,9 +185,10 @@
       80,
       80,
       80,
-      81
+      81,
+      83
     ],
-    "last_fetched": 81,
+    "last_fetched": 83,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -259,8 +259,8 @@
     "recent_counts": [
       122,
       122,
-      122,
       123,
+      120,
       120,
       120,
       120,
@@ -295,7 +295,7 @@
       21,
       21,
       21,
-      21,
+      22,
       22,
       22,
       22
@@ -353,15 +353,15 @@
   },
   "air_india": {
     "recent_counts": [
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
+      24,
       25,
-      24,
-      24,
-      24,
-      24,
-      24,
-      24,
-      24,
-      24,
       25
     ],
     "last_fetched": 25,
@@ -468,15 +468,15 @@
       164,
       164,
       164,
-      164,
       160,
       160,
       160,
       160,
       160,
-      162
+      162,
+      163
     ],
-    "last_fetched": 162,
+    "last_fetched": 163,
     "zero_streak": 0
   },
   "fltechnics": {
@@ -519,12 +519,12 @@
       321,
       321,
       321,
-      321,
       325,
       324,
-      327
+      327,
+      334
     ],
-    "last_fetched": 327,
+    "last_fetched": 334,
     "zero_streak": 0
   },
   "boeing": {
@@ -599,12 +599,12 @@
       204,
       204,
       204,
-      204,
       196,
       197,
-      197
+      197,
+      204
     ],
-    "last_fetched": 197,
+    "last_fetched": 204,
     "zero_streak": 0
   },
   "safran": {
