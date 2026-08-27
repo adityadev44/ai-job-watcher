@@ -1,9 +1,9 @@
 {
   "gatelesis": {
     "recent_counts": [
+      48,
+      48,
       47,
-      48,
-      48,
       47,
       47,
       47,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 930
+    "zero_streak": 931
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 891
+    "zero_streak": 892
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 920
+    "zero_streak": 921
   },
   "magnetic": {
     "recent_counts": [
@@ -173,11 +173,10 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 288
+    "zero_streak": 289
   },
   "emirates": {
     "recent_counts": [
-      83,
       83,
       84,
       85,
@@ -186,6 +185,7 @@
       80,
       80,
       81,
+      83,
       83
     ],
     "last_fetched": 83,
@@ -258,8 +258,8 @@
   "lht": {
     "recent_counts": [
       122,
-      122,
       123,
+      120,
       120,
       120,
       120,
@@ -294,7 +294,7 @@
       21,
       21,
       21,
-      21,
+      22,
       22,
       22,
       22,
@@ -360,7 +360,7 @@
       24,
       24,
       24,
-      24,
+      25,
       25,
       25
     ],
@@ -467,16 +467,16 @@
     "recent_counts": [
       164,
       164,
-      164,
       160,
       160,
       160,
       160,
       160,
       162,
-      163
+      163,
+      164
     ],
-    "last_fetched": 163,
+    "last_fetched": 164,
     "zero_streak": 0
   },
   "fltechnics": {
@@ -490,9 +490,9 @@
       54,
       54,
       54,
-      54
+      53
     ],
-    "last_fetched": 54,
+    "last_fetched": 53,
     "zero_streak": 0
   },
   "aar": {
@@ -518,10 +518,10 @@
       321,
       321,
       321,
-      321,
       325,
       324,
       327,
+      334,
       334
     ],
     "last_fetched": 334,
@@ -598,10 +598,10 @@
       204,
       204,
       204,
-      204,
       196,
       197,
       197,
+      204,
       204
     ],
     "last_fetched": 204,
