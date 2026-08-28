@@ -2,8 +2,8 @@
   "gatelesis": {
     "recent_counts": [
       45,
-      45,
       44,
+      43,
       43,
       43,
       43,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 943
+    "zero_streak": 944
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 904
+    "zero_streak": 905
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 932
+    "zero_streak": 933
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 299
+    "zero_streak": 300
   },
   "emirates": {
     "recent_counts": [
@@ -182,7 +182,7 @@
       88,
       88,
       88,
-      88,
+      85,
       85,
       85,
       85,
@@ -244,7 +244,7 @@
       22,
       22,
       22,
-      22,
+      16,
       16,
       16,
       16,
@@ -257,9 +257,9 @@
   },
   "lht": {
     "recent_counts": [
-      120,
       122,
       122,
+      121,
       121,
       121,
       121,
@@ -354,7 +354,7 @@
   "air_india": {
     "recent_counts": [
       25,
-      25,
+      24,
       24,
       24,
       24,
@@ -433,7 +433,6 @@
   },
   "standardaero": {
     "recent_counts": [
-      157,
       158,
       157,
       156,
@@ -442,6 +441,7 @@
       154,
       154,
       154,
+      155,
       155
     ],
     "last_fetched": 155,
@@ -452,8 +452,8 @@
       200,
       200,
       200,
-      200,
       199,
+      200,
       200,
       200,
       200,
@@ -467,7 +467,7 @@
     "recent_counts": [
       167,
       167,
-      167,
+      160,
       160,
       160,
       160,
@@ -484,7 +484,7 @@
       53,
       53,
       53,
-      53,
+      52,
       52,
       52,
       52,
@@ -514,7 +514,6 @@
   "ste": {
     "recent_counts": [
       334,
-      334,
       335,
       335,
       335,
@@ -522,6 +521,7 @@
       334,
       338,
       339,
+      343,
       343
     ],
     "last_fetched": 343,
