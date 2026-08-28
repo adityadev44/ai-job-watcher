@@ -1,7 +1,7 @@
 {
   "gatelesis": {
     "recent_counts": [
-      44,
+      43,
       43,
       43,
       43,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 945
+    "zero_streak": 946
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 906
+    "zero_streak": 907
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 934
+    "zero_streak": 935
   },
   "magnetic": {
     "recent_counts": [
@@ -173,14 +173,14 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 301
+    "zero_streak": 302
   },
   "emirates": {
     "recent_counts": [
       88,
       88,
       88,
-      88,
+      85,
       85,
       85,
       85,
@@ -242,7 +242,7 @@
   "gulf_air": {
     "recent_counts": [
       22,
-      22,
+      16,
       16,
       16,
       16,
@@ -257,7 +257,6 @@
   },
   "lht": {
     "recent_counts": [
-      122,
       121,
       121,
       121,
@@ -266,9 +265,10 @@
       121,
       121,
       121,
-      121
+      121,
+      122
     ],
-    "last_fetched": 121,
+    "last_fetched": 122,
     "zero_streak": 0
   },
   "sia": {
@@ -433,7 +433,6 @@
   },
   "standardaero": {
     "recent_counts": [
-      157,
       156,
       154,
       154,
@@ -442,6 +441,7 @@
       154,
       155,
       155,
+      153,
       153
     ],
     "last_fetched": 153,
@@ -450,8 +450,8 @@
   "honeywell": {
     "recent_counts": [
       200,
-      200,
       199,
+      200,
       200,
       200,
       200,
@@ -482,7 +482,7 @@
   "fltechnics": {
     "recent_counts": [
       53,
-      53,
+      52,
       52,
       52,
       52,
@@ -516,10 +516,10 @@
       335,
       335,
       335,
-      335,
       334,
       338,
       339,
+      343,
       343,
       343,
       343
@@ -617,7 +617,7 @@
       25,
       25,
       25,
-      25,
+      24,
       24
     ],
     "last_fetched": 24,
