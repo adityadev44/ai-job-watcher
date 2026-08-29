@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 963
+    "zero_streak": 964
   },
   "aercap": {
     "recent_counts": [
@@ -137,11 +137,11 @@
       5,
       5,
       5,
-      5,
-      0
+      0,
+      5
     ],
-    "last_fetched": 0,
-    "zero_streak": 1
+    "last_fetched": 5,
+    "zero_streak": 0
   },
   "etihad": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 318
+    "zero_streak": 319
   },
   "emirates": {
     "recent_counts": [
@@ -329,10 +329,10 @@
       109,
       109,
       109,
-      109,
-      89
+      89,
+      109
     ],
-    "last_fetched": 89,
+    "last_fetched": 109,
     "zero_streak": 0
   },
   "mtu": {
@@ -522,9 +522,9 @@
       339,
       339,
       339,
-      339
+      337
     ],
-    "last_fetched": 339,
+    "last_fetched": 337,
     "zero_streak": 0
   },
   "boeing": {
