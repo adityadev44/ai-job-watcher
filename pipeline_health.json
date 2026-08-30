@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 973
+    "zero_streak": 974
   },
   "aercap": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 962
+    "zero_streak": 963
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 328
+    "zero_streak": 329
   },
   "emirates": {
     "recent_counts": [
@@ -259,7 +259,7 @@
     "recent_counts": [
       122,
       122,
-      122,
+      121,
       121,
       121,
       121,
@@ -466,7 +466,6 @@
   "ammroc": {
     "recent_counts": [
       133,
-      133,
       131,
       131,
       131,
@@ -474,9 +473,10 @@
       131,
       131,
       131,
-      131
+      131,
+      132
     ],
-    "last_fetched": 131,
+    "last_fetched": 132,
     "zero_streak": 0
   },
   "fltechnics": {
