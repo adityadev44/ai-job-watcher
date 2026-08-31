@@ -8,11 +8,11 @@
       46,
       46,
       46,
-      46,
       45,
-      44
+      44,
+      45
     ],
-    "last_fetched": 44,
+    "last_fetched": 45,
     "zero_streak": 0
   },
   "smbc_aviation": {
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 995
+    "zero_streak": 996
   },
   "aercap": {
     "recent_counts": [
@@ -74,9 +74,9 @@
       3,
       3,
       3,
-      3
+      1
     ],
-    "last_fetched": 3,
+    "last_fetched": 1,
     "zero_streak": 0
   },
   "elfc": {
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 954
+    "zero_streak": 955
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 985
+    "zero_streak": 986
   },
   "magnetic": {
     "recent_counts": [
@@ -173,12 +173,12 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 348
+    "zero_streak": 349
   },
   "emirates": {
     "recent_counts": [
       79,
-      79,
+      81,
       81,
       81,
       81,
@@ -227,8 +227,8 @@
     "recent_counts": [
       10,
       10,
-      10,
       0,
+      10,
       10,
       10,
       10,
@@ -260,7 +260,7 @@
       121,
       121,
       121,
-      121,
+      123,
       123,
       123,
       123,
@@ -289,7 +289,7 @@
   },
   "sanad": {
     "recent_counts": [
-      23,
+      24,
       24,
       24,
       24,
@@ -339,11 +339,11 @@
     "recent_counts": [
       71,
       71,
-      71,
       86,
       86,
       86,
       89,
+      88,
       88,
       88,
       88
@@ -354,14 +354,14 @@
   "air_india": {
     "recent_counts": [
       23,
+      24,
+      24,
+      25,
+      25,
+      25,
+      25,
+      25,
       23,
-      24,
-      24,
-      25,
-      25,
-      25,
-      25,
-      25,
       23
     ],
     "last_fetched": 23,
@@ -437,11 +437,11 @@
       155,
       155,
       155,
-      155,
       152,
       149,
       150,
       151,
+      152,
       152
     ],
     "last_fetched": 152,
@@ -466,7 +466,6 @@
   "ammroc": {
     "recent_counts": [
       132,
-      132,
       135,
       0,
       144,
@@ -474,9 +473,10 @@
       144,
       146,
       146,
-      147
+      147,
+      137
     ],
-    "last_fetched": 147,
+    "last_fetched": 137,
     "zero_streak": 0
   },
   "fltechnics": {
@@ -513,7 +513,6 @@
   },
   "ste": {
     "recent_counts": [
-      338,
       336,
       343,
       342,
@@ -521,6 +520,7 @@
       343,
       343,
       334,
+      339,
       339,
       339
     ],
