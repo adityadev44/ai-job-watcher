@@ -3,6 +3,6 @@ requests
 curl_cffi
 pyyaml
 python-dotenv
-playwright
+playwright==1.62.0
 beautifulsoup4
 lxml

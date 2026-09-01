@@ -55,10 +55,21 @@ jobs:
         if: steps.cache-firefox.outputs.cache-hit != 'true'
         run: playwright install firefox
 
-      - name: Verify Firefox binary (repair corrupted cache)
+      - name: Verify Firefox binary (repair corrupted or stale-version cache)
         run: |
-          if ! find ~/.cache/ms-playwright -type f -path "*/firefox/firefox" 2>/dev/null | grep -q .; then
-            echo "Firefox binary missing despite cache restore — reinstalling"
+          # A file existing under */firefox/firefox is not enough -- a stale
+          # cache (browser build left over from a previously-installed,
+          # unpinned playwright version) satisfies that check while still
+          # being the wrong build for the *currently installed* playwright
+          # package, which fails at launch with "Executable doesn't exist at
+          # <expected-build-path>". Actually launch it to catch that case.
+          if ! python -c "
+          from playwright.sync_api import sync_playwright
+          with sync_playwright() as p:
+              b = p.firefox.launch(headless=True)
+              b.close()
+          " 2>/dev/null; then
+            echo "Firefox binary missing or wrong build for the installed playwright version — reinstalling"
             playwright install firefox
           fi
 
