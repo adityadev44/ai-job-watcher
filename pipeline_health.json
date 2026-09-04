@@ -2,14 +2,14 @@
   "gatelesis": {
     "recent_counts": [
       42,
+      41,
+      41,
+      41,
+      41,
+      41,
+      41,
+      41,
       42,
-      41,
-      41,
-      41,
-      41,
-      41,
-      41,
-      41,
       42
     ],
     "last_fetched": 42,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1058
+    "zero_streak": 1059
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1014
+    "zero_streak": 1015
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1046
+    "zero_streak": 1047
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 411
+    "zero_streak": 412
   },
   "emirates": {
     "recent_counts": [
@@ -181,7 +181,7 @@
       82,
       82,
       82,
-      82,
+      84,
       84,
       84,
       84,
@@ -227,8 +227,8 @@
     "recent_counts": [
       10,
       10,
-      10,
       0,
+      10,
       10,
       10,
       10,
@@ -321,12 +321,12 @@
   },
   "ethiopian": {
     "recent_counts": [
-      111,
       12,
       12,
       12,
       12,
       29,
+      28,
       28,
       28,
       28,
@@ -344,8 +344,8 @@
       88,
       88,
       88,
-      88,
       90,
+      91,
       91
     ],
     "last_fetched": 91,
@@ -437,14 +437,14 @@
       154,
       154,
       154,
-      154,
       155,
       156,
       157,
       159,
-      159
+      159,
+      160
     ],
-    "last_fetched": 159,
+    "last_fetched": 160,
     "zero_streak": 0
   },
   "honeywell": {
@@ -465,10 +465,10 @@
   },
   "ammroc": {
     "recent_counts": [
-      156,
       155,
       156,
       0,
+      162,
       162,
       162,
       162,
@@ -490,9 +490,9 @@
       56,
       56,
       56,
-      56
+      55
     ],
-    "last_fetched": 56,
+    "last_fetched": 55,
     "zero_streak": 0
   },
   "aar": {
@@ -513,13 +513,13 @@
   },
   "ste": {
     "recent_counts": [
-      345,
       344,
       344,
       344,
       344,
       344,
       344,
+      343,
       343,
       343,
       343
@@ -569,15 +569,15 @@
       0,
       0,
       0,
-      0,
-      202
+      202,
+      0
     ],
-    "last_fetched": 202,
-    "zero_streak": 0
+    "last_fetched": 0,
+    "zero_streak": 1
   },
   "indigo": {
     "recent_counts": [
-      3,
+      4,
       4,
       4,
       4,
@@ -631,8 +631,8 @@
       150,
       150,
       150,
-      150,
       147,
+      150,
       150,
       150
     ],
