@@ -1,0 +1,21 @@
+name: Heartbeat
+
+# Fires every hour and does nothing — its completion event triggers Aviation
+# MRO Job Watcher via workflow_run. This is the primary cadence driver.
+#
+# Why a separate workflow instead of self-referential workflow_run on
+# watcher.yml itself: GitHub blocks same-workflow workflow_run triggers
+# entirely. Cross-workflow triggers work normally. Same pattern already
+# proven in ms-job-watcher (see that repo's heartbeat.yml) — ported here
+# because GitHub's native `schedule:` trigger is documented as best-effort
+# and was observed firing every 4-7h instead of the configured 3h.
+on:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping
+        run: echo "heartbeat"

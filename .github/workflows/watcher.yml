@@ -1,7 +1,22 @@
 name: Aviation MRO Job Watcher
 
 on:
+  # Primary cadence: the Heartbeat workflow (hourly cron) completes in
+  # seconds, and its completion fires this workflow_run trigger. GitHub's
+  # native `schedule:` trigger on THIS workflow was observed firing every
+  # 4-7h instead of the configured 3h (documented GitHub Actions platform
+  # behavior: scheduled workflows are best-effort and get delayed/dropped
+  # under load) -- routing cadence through a separate, trivial workflow
+  # sidesteps that. Same pattern already proven in ms-job-watcher.
+  workflow_run:
+    workflows: ["Heartbeat"]
+    types: [completed]
+
   workflow_dispatch:
+
+  # Backup schedule: guards against GitHub cron delays on the Heartbeat
+  # workflow itself. Kept at the original 3h interval -- Heartbeat is the
+  # primary driver now, this is just insurance.
   schedule:
     - cron: '0 */3 * * *'   # every 3 hours
 
@@ -28,6 +43,15 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+
+      - name: Sync to latest master
+        # actions/checkout pins the SHA at run-creation time, not job-start
+        # time. With Heartbeat now driving cadence, queued runs must
+        # fast-forward past any state commit made while they waited, or a
+        # queued run starts from stale dedup state and can re-alert jobs
+        # already sent minutes earlier (exact failure ms-job-watcher hit
+        # before this same fix was added there).
+        run: git pull --ff-only origin master
 
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
@@ -129,5 +153,17 @@ jobs:
             echo "No changes to commit — state unchanged"
           else
             git commit -m "chore: update job state [skip ci]"
-            git push
+            pushed=0
+            for attempt in 1 2 3; do
+              if git pull --rebase origin master && git push; then
+                pushed=1
+                break
+              fi
+              echo "push attempt $attempt failed, retrying..."
+              sleep 5
+            done
+            if [ "$pushed" -ne 1 ]; then
+              echo "::error::Failed to push watcher state after 3 attempts -- dedup state was NOT saved; expect duplicate alerts next run."
+              exit 1
+            fi
           fi
