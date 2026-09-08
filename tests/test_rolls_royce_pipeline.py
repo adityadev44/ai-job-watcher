@@ -46,3 +46,30 @@ def test_rolls_royce_reposted_requisition_does_not_realert(tmp_path, monkeypatch
     assert result["new_matches"] == []
     assert json.loads(seen.read_text(encoding="utf-8")) == ["RR-REQ-1"]
     mock_notifier.notify_matches.assert_not_called()
+
+
+# ── _looks_like_jwt ────────────────────────────────────────────────────────
+#
+# Regression coverage for a real outage: careers.rolls-royce.com's own React
+# app races its async gettoken() call, so its FIRST /api/jobs POST fires with
+# the literal header "Authorization: Bearer undefined". The fetcher used to
+# sniff that request and lock onto "undefined" as *the* captured token,
+# permanently 403ing every subsequent page fetch with "Invalid or expired
+# token" -- silently zeroing out this entire source (576 live postings)
+# indefinitely. A real JWT always has 3 dot-separated segments.
+
+import src.rolls_royce_fetcher as rolls_royce_fetcher
+
+
+def test_looks_like_jwt_rejects_undefined():
+    assert rolls_royce_fetcher._looks_like_jwt("undefined") is False
+
+
+def test_looks_like_jwt_rejects_null_and_empty():
+    assert rolls_royce_fetcher._looks_like_jwt("null") is False
+    assert rolls_royce_fetcher._looks_like_jwt("") is False
+
+
+def test_looks_like_jwt_accepts_real_jwt_shape():
+    real = "eyJhbGciOiJIUzI1NiJ9.eyJ0aW1lIjoiMjAyNi0wOSJ9.804k0Ld5Xp8Jlw5Q-49dLw"
+    assert rolls_royce_fetcher._looks_like_jwt(real) is True

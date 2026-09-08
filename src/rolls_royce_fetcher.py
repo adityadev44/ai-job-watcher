@@ -49,6 +49,20 @@ class RateLimitError(Exception):
     """Raised when the portal returns HTTP 429."""
 
 
+def _looks_like_jwt(token_val: str) -> bool:
+    """True if *token_val* has the 3 dot-separated segments of a real JWT.
+
+    Guards against the site's own frontend race: careers.rolls-royce.com's
+    React app fires its FIRST /api/jobs POST with the literal header
+    "Authorization: Bearer undefined" before its async gettoken() call
+    resolves. Sniffing that outgoing request used to permanently lock onto
+    that literal string as "the" captured token, so every subsequent page
+    fetch 403'd forever with "Invalid or expired token". A real JWT always
+    has 3 dot-separated segments; "undefined"/"null"/"" all fail this check.
+    """
+    return bool(token_val) and token_val.count(".") == 2
+
+
 def _parse_location(raw_loc) -> str:
     if isinstance(raw_loc, str):
         return raw_loc.strip()
@@ -137,13 +151,22 @@ def fetch_jobs(config: dict | None = None) -> list[dict]:
 
             bearer_token: list[str] = []
 
-            def _on_request(request):
-                if TOKEN_URL in request.url or (API_HOST in request.url and "/api/jobs" in request.url):
-                    auth = request.headers.get("authorization", "")
-                    if auth.startswith("Bearer ") and not bearer_token:
-                        bearer_token.append(auth)
+            def _capture(token_val: str) -> None:
+                if _looks_like_jwt(token_val) and not bearer_token:
+                    bearer_token.append(f"Bearer {token_val}")
 
-            page.on("request", _on_request)
+            def _on_response(response):
+                # Read the token straight from the /auth/gettoken response
+                # body -- server-authoritative and immune to whatever order
+                # the page's own JS fires requests in.
+                if TOKEN_URL in response.url and response.ok:
+                    try:
+                        data = response.json()
+                    except Exception:
+                        return
+                    _capture(data.get("token") or data.get("accessToken") or "")
+
+            page.on("response", _on_response)
 
             print(f"[rolls_royce] Loading {CAREERS_URL} to capture JWT …")
             try:
@@ -153,14 +176,13 @@ def fetch_jobs(config: dict | None = None) -> list[dict]:
             page.wait_for_timeout(4000)
 
             if not bearer_token:
-                # Try fetching the token directly via page.request
+                # Response listener missed it (e.g. gettoken resolved before
+                # we attached) — fetch the token directly.
                 try:
                     tok_resp = page.request.get(TOKEN_URL, headers={"Accept": "application/json"})
                     if tok_resp.ok:
                         tok_data = tok_resp.json()
-                        token_val = tok_data.get("token") or tok_data.get("accessToken") or ""
-                        if token_val:
-                            bearer_token.append(f"Bearer {token_val}")
+                        _capture(tok_data.get("token") or tok_data.get("accessToken") or "")
                 except Exception as exc:
                     print(f"[rolls_royce] Token fallback failed: {exc}")
 
