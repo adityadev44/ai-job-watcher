@@ -8,6 +8,7 @@ import re
 import smtplib
 import tempfile
 import textwrap
+import time
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from pathlib import Path
@@ -191,7 +192,47 @@ def notify_matches(jobs):
 
 
 _FAILURES_PATH = Path(__file__).parent.parent / "pipeline_failures.json"
+_FAILURES_LOCK_PATH = _FAILURES_PATH.parent / ".pipeline_failures.lock"
 _FAILURE_THRESHOLD = 3
+
+
+class _CrossProcessLock:
+    """Mutex via atomic directory creation -- safe across separate processes,
+    not just threads.
+
+    run_all.py runs every company pipeline as its own subprocess
+    (ThreadPoolExecutor + subprocess.run), so up to 40 independent Python
+    processes can call notify_pipeline_error()/reset_failure_count() around
+    the same moment. A threading.Lock offers zero protection across process
+    boundaries; os.mkdir() is atomic on every OS Python supports (fails with
+    FileExistsError if another process already holds it), so it works here
+    where a thread lock wouldn't.
+    """
+
+    def __init__(self, path: Path, timeout: float = 10.0, poll: float = 0.05):
+        self._path = path
+        self._timeout = timeout
+        self._poll = poll
+
+    def __enter__(self):
+        deadline = time.monotonic() + self._timeout
+        while True:
+            try:
+                os.mkdir(self._path)
+                return self
+            except FileExistsError:
+                if time.monotonic() >= deadline:
+                    # A previous holder crashed mid-write and left the lock
+                    # directory behind. Proceed unlocked rather than hang the
+                    # whole pipeline run over a non-critical counter file.
+                    return self
+                time.sleep(self._poll)
+
+    def __exit__(self, *exc_info):
+        try:
+            os.rmdir(self._path)
+        except OSError:
+            pass
 
 
 def _read_failures() -> dict:
@@ -212,16 +253,21 @@ def _write_failures(data: dict) -> None:
 def notify_pipeline_error(source: str, exc: Exception) -> None:
     """Email when a pipeline crashes 3 consecutive times. Silent on 1st/2nd failure."""
     try:
-        data = _read_failures()
-        data[source] = data.get(source, 0) + 1
-        count = data[source]
-        _write_failures(data)
+        with _CrossProcessLock(_FAILURES_LOCK_PATH):
+            data = _read_failures()
+            data[source] = data.get(source, 0) + 1
+            count = data[source]
+            _write_failures(data)
+            if count >= _FAILURE_THRESHOLD:
+                # Reset in the same locked transaction so another process
+                # cannot overwrite it with a stale snapshot.
+                data[source] = 0
+                _write_failures(data)
         print(f"[{source}] Consecutive failure count: {count}/{_FAILURE_THRESHOLD}")
         if count < _FAILURE_THRESHOLD:
             return
-        # Threshold reached — alert, then reset so next streak of 3 also triggers
-        data[source] = 0
-        _write_failures(data)
+        # Alert after releasing the lock so a slow SMTP connection cannot
+        # block unrelated pipelines' state updates.
         send_email(
             subject=f"[{source}] pipeline error — Aviation MRO Watcher ({_FAILURE_THRESHOLD} consecutive failures)",
             body=(
@@ -237,10 +283,11 @@ def notify_pipeline_error(source: str, exc: Exception) -> None:
 def reset_failure_count(source: str) -> None:
     """Reset consecutive failure counter after a successful run."""
     try:
-        data = _read_failures()
-        if data.get(source, 0) != 0:
-            data[source] = 0
-            _write_failures(data)
+        with _CrossProcessLock(_FAILURES_LOCK_PATH):
+            data = _read_failures()
+            if data.get(source, 0) != 0:
+                data[source] = 0
+                _write_failures(data)
     except Exception:
         pass
 
