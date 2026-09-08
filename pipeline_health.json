@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1118
+    "zero_streak": 1119
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1070
+    "zero_streak": 1071
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1107
+    "zero_streak": 1108
   },
   "magnetic": {
     "recent_counts": [
@@ -173,11 +173,10 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 472
+    "zero_streak": 473
   },
   "emirates": {
     "recent_counts": [
-      89,
       86,
       86,
       86,
@@ -186,9 +185,10 @@
       86,
       88,
       88,
-      90
+      90,
+      91
     ],
-    "last_fetched": 90,
+    "last_fetched": 91,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -279,7 +279,7 @@
       6,
       6,
       6,
-      6,
+      5,
       5,
       5,
       5
@@ -328,7 +328,7 @@
       28,
       28,
       28,
-      28,
+      29,
       29,
       29
     ],
@@ -471,12 +471,12 @@
       159,
       159,
       159,
+      158,
+      158,
       159,
-      158,
-      158,
-      159
+      161
     ],
-    "last_fetched": 159,
+    "last_fetched": 161,
     "zero_streak": 0
   },
   "fltechnics": {
@@ -517,11 +517,11 @@
       343,
       343,
       343,
-      343,
       345,
       346,
       347,
       348,
+      349,
       349
     ],
     "last_fetched": 349,
@@ -561,7 +561,6 @@
   },
   "rolls_royce": {
     "recent_counts": [
-      0,
       201,
       201,
       201,
@@ -570,9 +569,10 @@
       203,
       204,
       204,
-      200
+      200,
+      204
     ],
-    "last_fetched": 200,
+    "last_fetched": 204,
     "zero_streak": 0
   },
   "indigo": {
@@ -597,14 +597,14 @@
       204,
       204,
       204,
-      204,
       193,
       193,
       194,
       194,
-      195
+      195,
+      196
     ],
-    "last_fetched": 195,
+    "last_fetched": 196,
     "zero_streak": 0
   },
   "safran": {
