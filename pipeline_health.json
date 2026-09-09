@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1137
+    "zero_streak": 1138
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1088
+    "zero_streak": 1089
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1126
+    "zero_streak": 1127
   },
   "magnetic": {
     "recent_counts": [
@@ -173,17 +173,17 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 490
+    "zero_streak": 491
   },
   "emirates": {
     "recent_counts": [
       93,
-      93,
       94,
       94,
       94,
       94,
       94,
+      91,
       91,
       91,
       91
@@ -245,7 +245,7 @@
       17,
       17,
       17,
-      17,
+      15,
       15,
       15,
       15,
@@ -258,7 +258,7 @@
   "lht": {
     "recent_counts": [
       121,
-      121,
+      118,
       118,
       118,
       118,
@@ -298,9 +298,9 @@
       47,
       47,
       47,
-      47
+      46
     ],
-    "last_fetched": 47,
+    "last_fetched": 46,
     "zero_streak": 0
   },
   "saudia_technic": {
@@ -434,7 +434,6 @@
   "standardaero": {
     "recent_counts": [
       168,
-      168,
       169,
       170,
       169,
@@ -442,9 +441,10 @@
       169,
       169,
       169,
-      169
+      169,
+      168
     ],
-    "last_fetched": 169,
+    "last_fetched": 168,
     "zero_streak": 0
   },
   "honeywell": {
@@ -465,7 +465,6 @@
   },
   "ammroc": {
     "recent_counts": [
-      163,
       160,
       160,
       160,
@@ -474,9 +473,10 @@
       160,
       160,
       160,
-      160
+      160,
+      161
     ],
-    "last_fetched": 160,
+    "last_fetched": 161,
     "zero_streak": 0
   },
   "fltechnics": {
@@ -520,7 +520,7 @@
       348,
       348,
       348,
-      348,
+      349,
       349,
       349
     ],
@@ -562,12 +562,12 @@
   "rolls_royce": {
     "recent_counts": [
       207,
-      207,
       206,
       206,
       206,
       201,
       201,
+      209,
       209,
       209,
       209
@@ -597,14 +597,14 @@
       201,
       201,
       201,
-      201,
       202,
       202,
       203,
       195,
-      195
+      195,
+      196
     ],
-    "last_fetched": 195,
+    "last_fetched": 196,
     "zero_streak": 0
   },
   "safran": {
