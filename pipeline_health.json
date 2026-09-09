@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1138
+    "zero_streak": 1139
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1089
+    "zero_streak": 1090
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1127
+    "zero_streak": 1128
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 491
+    "zero_streak": 492
   },
   "emirates": {
     "recent_counts": [
@@ -244,7 +244,7 @@
       17,
       17,
       17,
-      17,
+      15,
       15,
       15,
       15,
@@ -257,7 +257,7 @@
   },
   "lht": {
     "recent_counts": [
-      121,
+      118,
       118,
       118,
       118,
@@ -297,7 +297,7 @@
       47,
       47,
       47,
-      47,
+      46,
       46
     ],
     "last_fetched": 46,
@@ -433,7 +433,6 @@
   },
   "standardaero": {
     "recent_counts": [
-      168,
       169,
       170,
       169,
@@ -442,6 +441,7 @@
       169,
       169,
       169,
+      168,
       168
     ],
     "last_fetched": 168,
@@ -473,10 +473,10 @@
       160,
       160,
       160,
-      160,
-      161
+      161,
+      159
     ],
-    "last_fetched": 161,
+    "last_fetched": 159,
     "zero_streak": 0
   },
   "fltechnics": {
@@ -519,7 +519,7 @@
       348,
       348,
       348,
-      348,
+      349,
       349,
       349,
       349
@@ -561,7 +561,6 @@
   },
   "rolls_royce": {
     "recent_counts": [
-      207,
       206,
       206,
       206,
@@ -570,9 +569,10 @@
       209,
       209,
       209,
-      209
+      209,
+      206
     ],
-    "last_fetched": 209,
+    "last_fetched": 206,
     "zero_streak": 0
   },
   "indigo": {
@@ -596,15 +596,15 @@
       201,
       201,
       201,
-      201,
       202,
       202,
       203,
       195,
       195,
-      196
+      196,
+      197
     ],
-    "last_fetched": 196,
+    "last_fetched": 197,
     "zero_streak": 0
   },
   "safran": {
