@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1211
+    "zero_streak": 1212
   },
   "aercap": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1200
+    "zero_streak": 1201
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 565
+    "zero_streak": 566
   },
   "emirates": {
     "recent_counts": [
@@ -353,8 +353,8 @@
   },
   "air_india": {
     "recent_counts": [
-      24,
       23,
+      22,
       22,
       22,
       22,
@@ -515,17 +515,17 @@
     "recent_counts": [
       357,
       357,
-      357,
       356,
       356,
       357,
       357,
       357,
       357,
-      0
+      0,
+      355
     ],
-    "last_fetched": 0,
-    "zero_streak": 1
+    "last_fetched": 355,
+    "zero_streak": 0
   },
   "boeing": {
     "recent_counts": [
