@@ -6,7 +6,7 @@
       49,
       49,
       49,
-      49,
+      50,
       50,
       50,
       50,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1264
+    "zero_streak": 1265
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1214
+    "zero_streak": 1215
   },
   "avolon": {
     "recent_counts": [
@@ -146,7 +146,7 @@
   "etihad": {
     "recent_counts": [
       1,
-      1,
+      2,
       2,
       2,
       2,
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 617
+    "zero_streak": 618
   },
   "emirates": {
     "recent_counts": [
@@ -186,9 +186,9 @@
       98,
       98,
       98,
-      98
+      94
     ],
-    "last_fetched": 98,
+    "last_fetched": 94,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -218,9 +218,9 @@
       36,
       36,
       36,
-      36
+      39
     ],
-    "last_fetched": 36,
+    "last_fetched": 39,
     "zero_streak": 0
   },
   "gmr": {
@@ -249,7 +249,7 @@
       17,
       17,
       17,
-      17,
+      15,
       15
     ],
     "last_fetched": 15,
@@ -263,7 +263,7 @@
       128,
       128,
       128,
-      128,
+      126,
       126,
       126,
       126
@@ -297,7 +297,7 @@
       38,
       38,
       38,
-      38,
+      37,
       37
     ],
     "last_fetched": 37,
@@ -434,11 +434,11 @@
   "standardaero": {
     "recent_counts": [
       162,
-      162,
       164,
       163,
       163,
       163,
+      165,
       165,
       165,
       165,
@@ -470,7 +470,7 @@
       162,
       162,
       162,
-      162,
+      152,
       152,
       152,
       152,
@@ -522,9 +522,9 @@
       359,
       359,
       359,
-      359
+      361
     ],
-    "last_fetched": 359,
+    "last_fetched": 361,
     "zero_streak": 0
   },
   "boeing": {
@@ -561,13 +561,13 @@
   },
   "rolls_royce": {
     "recent_counts": [
-      204,
       202,
       202,
       201,
       208,
       208,
       208,
+      201,
       201,
       201,
       201
@@ -596,7 +596,7 @@
       188,
       188,
       188,
-      188,
+      189,
       189,
       189,
       189,
