@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1290
+    "zero_streak": 1291
   },
   "aercap": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1280
+    "zero_streak": 1281
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 642
+    "zero_streak": 643
   },
   "emirates": {
     "recent_counts": [
@@ -183,12 +183,12 @@
       106,
       106,
       106,
-      106,
       102,
       102,
-      102
+      102,
+      101
     ],
-    "last_fetched": 102,
+    "last_fetched": 101,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -230,8 +230,8 @@
       10,
       10,
       10,
-      10,
       0,
+      10,
       10,
       10,
       10
@@ -259,7 +259,7 @@
     "recent_counts": [
       129,
       129,
-      129,
+      126,
       126,
       126,
       126,
@@ -294,7 +294,7 @@
       38,
       38,
       38,
-      38,
+      31,
       31,
       31,
       31,
@@ -434,8 +434,8 @@
   "standardaero": {
     "recent_counts": [
       161,
-      161,
       160,
+      162,
       162,
       162,
       162,
@@ -465,13 +465,13 @@
   },
   "ammroc": {
     "recent_counts": [
-      157,
       149,
       149,
       149,
       149,
       149,
       0,
+      149,
       149,
       149,
       149
@@ -483,7 +483,7 @@
     "recent_counts": [
       50,
       50,
-      50,
+      51,
       51,
       51,
       51,
@@ -566,13 +566,13 @@
       201,
       201,
       201,
-      201,
       202,
       201,
       201,
-      201
+      201,
+      206
     ],
-    "last_fetched": 201,
+    "last_fetched": 206,
     "zero_streak": 0
   },
   "indigo": {
@@ -595,13 +595,13 @@
     "recent_counts": [
       186,
       186,
-      186,
       187,
       187,
       187,
       187,
       190,
       190,
+      175,
       175
     ],
     "last_fetched": 175,
@@ -626,8 +626,8 @@
   "delta": {
     "recent_counts": [
       150,
-      150,
       149,
+      150,
       150,
       150,
       150,
