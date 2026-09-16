@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1298
+    "zero_streak": 1299
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1245
+    "zero_streak": 1246
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1288
+    "zero_streak": 1289
   },
   "magnetic": {
     "recent_counts": [
@@ -173,17 +173,17 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 648
+    "zero_streak": 649
   },
   "emirates": {
     "recent_counts": [
-      102,
       102,
       102,
       101,
       102,
       102,
       102,
+      104,
       104,
       104,
       104
@@ -246,7 +246,7 @@
       18,
       18,
       18,
-      18,
+      17,
       17,
       17,
       17,
@@ -263,9 +263,9 @@
       126,
       126,
       126,
-      126,
       127,
       127,
+      129,
       129
     ],
     "last_fetched": 129,
@@ -326,7 +326,7 @@
       37,
       37,
       37,
-      37,
+      38,
       38,
       38,
       38,
@@ -345,7 +345,7 @@
       87,
       87,
       87,
-      87,
+      86,
       86
     ],
     "last_fetched": 86,
@@ -467,13 +467,13 @@
     "recent_counts": [
       149,
       149,
-      149,
       150,
       151,
       151,
       151,
       151,
       154,
+      157,
       157
     ],
     "last_fetched": 157,
@@ -562,7 +562,6 @@
   "rolls_royce": {
     "recent_counts": [
       201,
-      201,
       206,
       202,
       204,
@@ -570,9 +569,10 @@
       207,
       0,
       206,
-      206
+      206,
+      207
     ],
-    "last_fetched": 206,
+    "last_fetched": 207,
     "zero_streak": 0
   },
   "indigo": {
@@ -593,7 +593,6 @@
   },
   "qatar": {
     "recent_counts": [
-      190,
       175,
       175,
       177,
@@ -602,9 +601,10 @@
       180,
       180,
       181,
-      183
+      183,
+      184
     ],
-    "last_fetched": 183,
+    "last_fetched": 184,
     "zero_streak": 0
   },
   "safran": {
