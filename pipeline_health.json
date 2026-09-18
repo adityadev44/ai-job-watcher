@@ -5,7 +5,7 @@
       49,
       49,
       49,
-      49,
+      52,
       52,
       52,
       52,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1348
+    "zero_streak": 1349
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1293
+    "zero_streak": 1294
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1338
+    "zero_streak": 1339
   },
   "magnetic": {
     "recent_counts": [
@@ -146,8 +146,8 @@
   "etihad": {
     "recent_counts": [
       3,
-      3,
       0,
+      4,
       4,
       4,
       4,
@@ -177,7 +177,7 @@
   },
   "emirates": {
     "recent_counts": [
-      109,
+      110,
       110,
       110,
       110,
@@ -258,7 +258,7 @@
   "lht": {
     "recent_counts": [
       126,
-      126,
+      127,
       127,
       127,
       127,
@@ -291,7 +291,7 @@
     "recent_counts": [
       29,
       29,
-      29,
+      32,
       32,
       32,
       32,
@@ -339,7 +339,7 @@
     "recent_counts": [
       85,
       85,
-      85,
+      84,
       84,
       84,
       84,
@@ -434,12 +434,12 @@
   "standardaero": {
     "recent_counts": [
       165,
-      165,
       166,
       162,
       162,
       163,
       164,
+      165,
       165,
       165,
       165
@@ -465,7 +465,6 @@
   },
   "ammroc": {
     "recent_counts": [
-      169,
       171,
       171,
       176,
@@ -474,9 +473,10 @@
       177,
       177,
       177,
-      177
+      177,
+      168
     ],
-    "last_fetched": 177,
+    "last_fetched": 168,
     "zero_streak": 0
   },
   "fltechnics": {
@@ -513,7 +513,7 @@
   },
   "ste": {
     "recent_counts": [
-      357,
+      354,
       354,
       354,
       354,
@@ -562,7 +562,6 @@
   "rolls_royce": {
     "recent_counts": [
       201,
-      201,
       209,
       209,
       205,
@@ -570,9 +569,10 @@
       200,
       200,
       200,
-      200
+      200,
+      203
     ],
-    "last_fetched": 200,
+    "last_fetched": 203,
     "zero_streak": 0
   },
   "indigo": {
@@ -583,7 +583,7 @@
       4,
       4,
       4,
-      4,
+      3,
       3,
       3,
       3
