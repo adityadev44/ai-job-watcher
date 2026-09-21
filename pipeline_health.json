@@ -3,7 +3,7 @@
     "recent_counts": [
       52,
       52,
-      52,
+      51,
       51,
       51,
       51,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1413
+    "zero_streak": 1414
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1360
+    "zero_streak": 1361
   },
   "avolon": {
     "recent_counts": [
@@ -125,11 +125,11 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1407
+    "zero_streak": 1408
   },
   "magnetic": {
     "recent_counts": [
-      6,
+      7,
       7,
       7,
       7,
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 761
+    "zero_streak": 762
   },
   "emirates": {
     "recent_counts": [
@@ -259,9 +259,9 @@
     "recent_counts": [
       125,
       125,
-      125,
       126,
       126,
+      127,
       127,
       127,
       127,
@@ -434,11 +434,11 @@
   "standardaero": {
     "recent_counts": [
       164,
-      164,
       160,
       159,
       156,
       157,
+      158,
       158,
       158,
       158,
@@ -449,11 +449,11 @@
   },
   "honeywell": {
     "recent_counts": [
-      196,
       200,
       200,
       199,
       199,
+      200,
       200,
       200,
       200,
@@ -472,7 +472,7 @@
       178,
       178,
       178,
-      178,
+      170,
       170,
       170
     ],
@@ -483,8 +483,8 @@
     "recent_counts": [
       51,
       51,
-      51,
       50,
+      51,
       51,
       51,
       51,
@@ -513,10 +513,10 @@
   },
   "ste": {
     "recent_counts": [
-      343,
       342,
       344,
       328,
+      344,
       344,
       344,
       344,
@@ -562,7 +562,6 @@
   "rolls_royce": {
     "recent_counts": [
       204,
-      204,
       201,
       207,
       207,
@@ -570,6 +569,7 @@
       201,
       202,
       202,
+      200,
       200
     ],
     "last_fetched": 200,
@@ -594,13 +594,13 @@
   "qatar": {
     "recent_counts": [
       195,
-      195,
       196,
       197,
       197,
       197,
       198,
       198,
+      199,
       199,
       199
     ],
