@@ -28,6 +28,11 @@ at the right seniority level. Sends Telegram + email alerts only for jobs not se
 Each company has its own fetcher, thin run script, seen-jobs file, config section, and
 `PipelineSpec` registry entry. The shared runner handles the common fetch/filter/dedupe/alert path.
 
+**Repository ownership and email routing:** this is Ambrish Dev's aviation/MRO watcher. Its
+GitHub Actions `ALERT_RECIPIENT` secret is `ambrishdev@rediffmail.com`. Shivangi's separate
+MS/software-engineering watcher lives in `adityadev44/ms-job-watcher` and uses its own secret,
+`shivangikant31@gmail.com`. Never copy notification secrets between the two repositories.
+
 ---
 
 ## Core Design Principles (read before touching anything)
