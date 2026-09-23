@@ -29,13 +29,13 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1442
+    "zero_streak": 1443
   },
   "aercap": {
     "recent_counts": [
       4,
       4,
-      4,
+      5,
       5,
       5,
       5,
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1390
+    "zero_streak": 1391
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1435
+    "zero_streak": 1436
   },
   "magnetic": {
     "recent_counts": [
@@ -173,11 +173,10 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 790
+    "zero_streak": 791
   },
   "emirates": {
     "recent_counts": [
-      109,
       109,
       109,
       109,
@@ -186,6 +185,7 @@
       97,
       98,
       99,
+      100,
       100
     ],
     "last_fetched": 100,
@@ -296,7 +296,7 @@
       35,
       35,
       35,
-      35,
+      36,
       36,
       36
     ],
@@ -329,7 +329,7 @@
       40,
       40,
       40,
-      40,
+      41,
       41
     ],
     "last_fetched": 41,
@@ -442,9 +442,9 @@
       167,
       167,
       167,
-      167
+      166
     ],
-    "last_fetched": 167,
+    "last_fetched": 166,
     "zero_streak": 0
   },
   "honeywell": {
@@ -472,18 +472,18 @@
       176,
       176,
       176,
-      176,
       179,
-      177
+      177,
+      179
     ],
-    "last_fetched": 177,
+    "last_fetched": 179,
     "zero_streak": 0
   },
   "fltechnics": {
     "recent_counts": [
       57,
       57,
-      57,
+      56,
       56,
       56,
       56,
@@ -513,7 +513,6 @@
   },
   "ste": {
     "recent_counts": [
-      343,
       344,
       344,
       344,
@@ -521,6 +520,7 @@
       343,
       345,
       345,
+      344,
       344,
       344
     ],
@@ -563,16 +563,16 @@
     "recent_counts": [
       202,
       202,
-      202,
       205,
       205,
       200,
       200,
       203,
       203,
-      203
+      203,
+      205
     ],
-    "last_fetched": 203,
+    "last_fetched": 205,
     "zero_streak": 0
   },
   "indigo": {
@@ -598,13 +598,13 @@
       187,
       187,
       187,
-      187,
       174,
       174,
       175,
-      175
+      175,
+      176
     ],
-    "last_fetched": 175,
+    "last_fetched": 176,
     "zero_streak": 0
   },
   "safran": {
