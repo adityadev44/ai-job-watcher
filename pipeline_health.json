@@ -7,7 +7,7 @@
       52,
       52,
       52,
-      52,
+      53,
       53,
       53,
       53
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1497
+    "zero_streak": 1498
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1446
+    "zero_streak": 1447
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1492
+    "zero_streak": 1493
   },
   "magnetic": {
     "recent_counts": [
@@ -173,12 +173,11 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 848
+    "zero_streak": 849
   },
   "emirates": {
     "recent_counts": [
       107,
-      107,
       108,
       108,
       108,
@@ -186,9 +185,10 @@
       108,
       108,
       108,
-      108
+      108,
+      106
     ],
-    "last_fetched": 108,
+    "last_fetched": 106,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -263,7 +263,7 @@
       124,
       124,
       124,
-      124,
+      123,
       123,
       123,
       123
@@ -297,7 +297,7 @@
       38,
       38,
       38,
-      38,
+      37,
       37
     ],
     "last_fetched": 37,
@@ -433,13 +433,13 @@
   },
   "standardaero": {
     "recent_counts": [
-      167,
       168,
       168,
       168,
       168,
       169,
       169,
+      170,
       170,
       170,
       170
@@ -470,7 +470,7 @@
       177,
       177,
       177,
-      177,
+      170,
       170,
       170,
       170,
@@ -514,8 +514,8 @@
   "ste": {
     "recent_counts": [
       342,
-      342,
       340,
+      342,
       342,
       342,
       342,
@@ -563,13 +563,13 @@
     "recent_counts": [
       206,
       206,
-      206,
       205,
       205,
       208,
       208,
       207,
       207,
+      202,
       202
     ],
     "last_fetched": 202,
@@ -578,7 +578,7 @@
   "indigo": {
     "recent_counts": [
       2,
-      2,
+      3,
       3,
       3,
       3,
@@ -611,13 +611,13 @@
     "recent_counts": [
       25,
       25,
-      25,
       26,
       26,
       26,
       26,
       26,
       26,
+      23,
       23
     ],
     "last_fetched": 23,
