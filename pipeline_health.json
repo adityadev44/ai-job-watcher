@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1541
+    "zero_streak": 1542
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1494
+    "zero_streak": 1495
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1538
+    "zero_streak": 1539
   },
   "magnetic": {
     "recent_counts": [
@@ -146,7 +146,7 @@
   "etihad": {
     "recent_counts": [
       5,
-      5,
+      4,
       4,
       4,
       4,
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 895
+    "zero_streak": 896
   },
   "emirates": {
     "recent_counts": [
@@ -184,11 +184,11 @@
       102,
       102,
       102,
-      102,
       99,
-      99
+      99,
+      98
     ],
-    "last_fetched": 99,
+    "last_fetched": 98,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -259,7 +259,7 @@
     "recent_counts": [
       123,
       123,
-      123,
+      122,
       122,
       122,
       122,
@@ -342,7 +342,7 @@
       87,
       87,
       87,
-      87,
+      88,
       88,
       88,
       88,
@@ -466,7 +466,7 @@
   "ammroc": {
     "recent_counts": [
       171,
-      171,
+      170,
       170,
       170,
       170,
@@ -520,11 +520,11 @@
       327,
       327,
       327,
-      327,
       324,
-      324
+      324,
+      325
     ],
-    "last_fetched": 324,
+    "last_fetched": 325,
     "zero_streak": 0
   },
   "boeing": {
@@ -562,7 +562,6 @@
   "rolls_royce": {
     "recent_counts": [
       202,
-      202,
       206,
       206,
       202,
@@ -570,6 +569,7 @@
       202,
       201,
       201,
+      206,
       206
     ],
     "last_fetched": 206,
@@ -602,9 +602,9 @@
       185,
       185,
       185,
-      185
+      178
     ],
-    "last_fetched": 185,
+    "last_fetched": 178,
     "zero_streak": 0
   },
   "safran": {
@@ -618,9 +618,9 @@
       23,
       23,
       23,
-      23
+      22
     ],
-    "last_fetched": 23,
+    "last_fetched": 22,
     "zero_streak": 0
   },
   "delta": {
