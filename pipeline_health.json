@@ -2,7 +2,7 @@
   "gatelesis": {
     "recent_counts": [
       52,
-      52,
+      54,
       54,
       54,
       54,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1640
+    "zero_streak": 1641
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1588
+    "zero_streak": 1589
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1632
+    "zero_streak": 1633
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 994
+    "zero_streak": 995
   },
   "emirates": {
     "recent_counts": [
@@ -181,7 +181,7 @@
       105,
       105,
       105,
-      105,
+      94,
       94,
       94,
       94,
@@ -293,7 +293,7 @@
       25,
       25,
       25,
-      25,
+      22,
       22,
       22,
       22,
@@ -339,7 +339,7 @@
     "recent_counts": [
       66,
       66,
-      66,
+      65,
       65,
       65,
       65,
@@ -433,10 +433,10 @@
   },
   "standardaero": {
     "recent_counts": [
+      194,
+      194,
+      194,
       193,
-      194,
-      194,
-      194,
       193,
       193,
       193,
@@ -465,7 +465,7 @@
   },
   "ammroc": {
     "recent_counts": [
-      157,
+      153,
       153,
       153,
       153,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 90
+    "zero_streak": 91
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 53
+    "zero_streak": 54
   },
   "boeing": {
     "recent_counts": [
@@ -562,7 +562,6 @@
   "rolls_royce": {
     "recent_counts": [
       206,
-      206,
       201,
       201,
       203,
@@ -570,6 +569,7 @@
       203,
       203,
       202,
+      204,
       204
     ],
     "last_fetched": 204,
@@ -599,7 +599,7 @@
       175,
       175,
       175,
-      175,
+      168,
       168,
       168,
       168
@@ -625,14 +625,14 @@
   },
   "delta": {
     "recent_counts": [
+      149,
+      149,
+      149,
+      149,
+      149,
+      149,
+      149,
       148,
-      149,
-      149,
-      149,
-      149,
-      149,
-      149,
-      149,
       148,
       148
     ],
