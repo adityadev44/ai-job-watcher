@@ -3,9 +3,9 @@
     "recent_counts": [
       51,
       51,
-      51,
       52,
       52,
+      54,
       54,
       54,
       54,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1636
+    "zero_streak": 1637
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1584
+    "zero_streak": 1585
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1628
+    "zero_streak": 1629
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 990
+    "zero_streak": 991
   },
   "emirates": {
     "recent_counts": [
@@ -185,7 +185,7 @@
       105,
       105,
       105,
-      105,
+      94,
       94
     ],
     "last_fetched": 94,
@@ -260,7 +260,7 @@
       109,
       109,
       109,
-      109,
+      110,
       110,
       110,
       110,
@@ -343,7 +343,7 @@
       66,
       66,
       66,
-      66,
+      65,
       65,
       65,
       65
@@ -434,13 +434,13 @@
   "standardaero": {
     "recent_counts": [
       192,
-      192,
       193,
       192,
       193,
       194,
       194,
       194,
+      193,
       193,
       193
     ],
@@ -469,7 +469,7 @@
       157,
       157,
       157,
-      157,
+      153,
       153,
       153,
       153,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 86
+    "zero_streak": 87
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 49
+    "zero_streak": 50
   },
   "boeing": {
     "recent_counts": [
@@ -562,13 +562,13 @@
   "rolls_royce": {
     "recent_counts": [
       205,
-      205,
       202,
       202,
       206,
       206,
       201,
       201,
+      203,
       203,
       203
     ],
@@ -625,11 +625,11 @@
   },
   "delta": {
     "recent_counts": [
-      150,
       148,
       149,
       150,
       148,
+      149,
       149,
       149,
       149,
