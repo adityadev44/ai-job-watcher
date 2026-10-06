@@ -5,7 +5,7 @@
       54,
       54,
       54,
-      54,
+      55,
       55,
       55,
       55,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1697
+    "zero_streak": 1698
   },
   "aercap": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1690
+    "zero_streak": 1691
   },
   "magnetic": {
     "recent_counts": [
@@ -146,7 +146,7 @@
   "etihad": {
     "recent_counts": [
       6,
-      6,
+      7,
       7,
       7,
       7,
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1046
+    "zero_streak": 1047
   },
   "emirates": {
     "recent_counts": [
@@ -183,7 +183,7 @@
       99,
       99,
       99,
-      99,
+      96,
       96,
       96,
       96
@@ -257,10 +257,10 @@
   },
   "lht": {
     "recent_counts": [
-      106,
       107,
       107,
       107,
+      103,
       103,
       103,
       103,
@@ -433,9 +433,9 @@
   },
   "standardaero": {
     "recent_counts": [
-      196,
       197,
       196,
+      198,
       198,
       198,
       198,
@@ -467,7 +467,7 @@
     "recent_counts": [
       152,
       152,
-      152,
+      148,
       148,
       148,
       148,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 148
+    "zero_streak": 149
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 107
+    "zero_streak": 108
   },
   "boeing": {
     "recent_counts": [
@@ -551,8 +551,8 @@
       50,
       50,
       50,
-      50,
       0,
+      50,
       50,
       50
     ],
@@ -563,13 +563,13 @@
     "recent_counts": [
       204,
       204,
-      204,
       205,
       202,
       202,
       208,
       200,
       200,
+      208,
       208
     ],
     "last_fetched": 208,
@@ -601,7 +601,7 @@
       182,
       182,
       182,
-      182,
+      157,
       157
     ],
     "last_fetched": 157,
@@ -609,7 +609,7 @@
   },
   "safran": {
     "recent_counts": [
-      23,
+      22,
       22,
       22,
       22,
@@ -625,11 +625,11 @@
   },
   "delta": {
     "recent_counts": [
-      147,
       146,
       144,
       145,
       145,
+      144,
       144,
       144,
       144,
