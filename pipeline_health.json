@@ -1,7 +1,7 @@
 {
   "gatelesis": {
     "recent_counts": [
-      51,
+      52,
       52,
       52,
       52,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1776
+    "zero_streak": 1777
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1723
+    "zero_streak": 1724
   },
   "avolon": {
     "recent_counts": [
@@ -173,11 +173,11 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1125
+    "zero_streak": 1126
   },
   "emirates": {
     "recent_counts": [
-      114,
+      106,
       106,
       106,
       106,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 225
+    "zero_streak": 226
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 185
+    "zero_streak": 186
   },
   "boeing": {
     "recent_counts": [
@@ -561,7 +561,6 @@
   },
   "rolls_royce": {
     "recent_counts": [
-      201,
       207,
       207,
       200,
@@ -570,9 +569,10 @@
       200,
       204,
       204,
-      204
+      204,
+      200
     ],
-    "last_fetched": 204,
+    "last_fetched": 200,
     "zero_streak": 0
   },
   "indigo": {
@@ -594,7 +594,7 @@
   "qatar": {
     "recent_counts": [
       188,
-      188,
+      186,
       186,
       186,
       186,
@@ -628,7 +628,7 @@
       140,
       140,
       140,
-      140,
+      139,
       139,
       139,
       139,
