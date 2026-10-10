@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1767
+    "zero_streak": 1768
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1714
+    "zero_streak": 1715
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1761
+    "zero_streak": 1762
   },
   "magnetic": {
     "recent_counts": [
@@ -173,11 +173,10 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1116
+    "zero_streak": 1117
   },
   "emirates": {
     "recent_counts": [
-      108,
       111,
       112,
       114,
@@ -186,9 +185,10 @@
       114,
       114,
       114,
-      114
+      114,
+      106
     ],
-    "last_fetched": 114,
+    "last_fetched": 106,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -257,13 +257,13 @@
   },
   "lht": {
     "recent_counts": [
-      120,
       121,
       121,
       121,
       121,
       122,
       122,
+      119,
       119,
       119,
       119
@@ -321,7 +321,7 @@
   },
   "ethiopian": {
     "recent_counts": [
-      0,
+      28,
       28,
       28,
       28,
@@ -470,7 +470,7 @@
       174,
       174,
       174,
-      174,
+      170,
       170,
       170,
       170,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 218
+    "zero_streak": 219
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 176
+    "zero_streak": 177
   },
   "boeing": {
     "recent_counts": [
@@ -561,7 +561,6 @@
   },
   "rolls_royce": {
     "recent_counts": [
-      204,
       200,
       200,
       208,
@@ -570,9 +569,10 @@
       207,
       207,
       207,
-      201
+      201,
+      207
     ],
-    "last_fetched": 201,
+    "last_fetched": 207,
     "zero_streak": 0
   },
   "indigo": {
@@ -596,7 +596,7 @@
       187,
       187,
       187,
-      187,
+      188,
       188,
       188,
       188,
@@ -627,10 +627,10 @@
     "recent_counts": [
       137,
       137,
-      137,
       136,
       139,
       139,
+      140,
       140,
       140,
       140,
