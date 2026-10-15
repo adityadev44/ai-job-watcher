@@ -3,7 +3,7 @@
     "recent_counts": [
       55,
       55,
-      55,
+      54,
       54,
       54,
       54,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1881
+    "zero_streak": 1882
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1829
+    "zero_streak": 1830
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1878
+    "zero_streak": 1879
   },
   "magnetic": {
     "recent_counts": [
@@ -150,7 +150,7 @@
       9,
       9,
       9,
-      9,
+      8,
       8,
       8,
       8,
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1226
+    "zero_streak": 1227
   },
   "emirates": {
     "recent_counts": [
@@ -257,7 +257,6 @@
   },
   "lht": {
     "recent_counts": [
-      127,
       128,
       128,
       128,
@@ -265,6 +264,7 @@
       129,
       129,
       129,
+      128,
       128,
       128
     ],
@@ -433,11 +433,11 @@
   },
   "standardaero": {
     "recent_counts": [
-      235,
       234,
       234,
       233,
       233,
+      231,
       231,
       231,
       231,
@@ -450,8 +450,8 @@
   "honeywell": {
     "recent_counts": [
       199,
-      199,
       198,
+      199,
       199,
       199,
       199,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 336
+    "zero_streak": 337
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 287
+    "zero_streak": 288
   },
   "boeing": {
     "recent_counts": [
@@ -564,11 +564,11 @@
       205,
       205,
       205,
-      205,
       201,
       208,
       208,
       208,
+      205,
       205,
       205
     ],
@@ -593,9 +593,9 @@
   },
   "qatar": {
     "recent_counts": [
-      192,
       193,
       193,
+      195,
       195,
       195,
       195,
@@ -611,9 +611,9 @@
     "recent_counts": [
       20,
       20,
+      21,
+      21,
       20,
-      21,
-      21,
       20,
       20,
       20,
@@ -629,7 +629,7 @@
       150,
       150,
       150,
-      150,
+      148,
       148,
       148,
       148,
