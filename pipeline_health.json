@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1864
+    "zero_streak": 1865
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1812
+    "zero_streak": 1813
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1861
+    "zero_streak": 1862
   },
   "magnetic": {
     "recent_counts": [
@@ -145,7 +145,7 @@
   },
   "etihad": {
     "recent_counts": [
-      8,
+      7,
       7,
       7,
       7,
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1210
+    "zero_streak": 1211
   },
   "emirates": {
     "recent_counts": [
@@ -182,13 +182,13 @@
       107,
       107,
       107,
-      107,
       101,
       101,
       102,
-      104
+      104,
+      105
     ],
-    "last_fetched": 104,
+    "last_fetched": 105,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -245,7 +245,7 @@
       14,
       14,
       14,
-      14,
+      11,
       11,
       11,
       11,
@@ -258,7 +258,7 @@
   "lht": {
     "recent_counts": [
       124,
-      124,
+      125,
       125,
       125,
       125,
@@ -298,9 +298,9 @@
       25,
       25,
       25,
-      25
+      26
     ],
-    "last_fetched": 25,
+    "last_fetched": 26,
     "zero_streak": 0
   },
   "saudia_technic": {
@@ -434,7 +434,6 @@
   "standardaero": {
     "recent_counts": [
       230,
-      230,
       233,
       234,
       235,
@@ -442,6 +441,7 @@
       234,
       234,
       234,
+      233,
       233
     ],
     "last_fetched": 233,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 319
+    "zero_streak": 320
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 270
+    "zero_streak": 271
   },
   "boeing": {
     "recent_counts": [
@@ -561,7 +561,6 @@
   },
   "rolls_royce": {
     "recent_counts": [
-      203,
       206,
       203,
       203,
@@ -570,9 +569,10 @@
       201,
       200,
       200,
-      208
+      208,
+      204
     ],
-    "last_fetched": 208,
+    "last_fetched": 204,
     "zero_streak": 0
   },
   "indigo": {
@@ -600,11 +600,11 @@
       194,
       194,
       194,
-      194,
       186,
-      186
+      186,
+      187
     ],
-    "last_fetched": 186,
+    "last_fetched": 187,
     "zero_streak": 0
   },
   "safran": {
@@ -633,7 +633,7 @@
       149,
       149,
       149,
-      149,
+      148,
       148
     ],
     "last_fetched": 148,
