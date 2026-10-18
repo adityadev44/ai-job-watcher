@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1937
+    "zero_streak": 1938
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1885
+    "zero_streak": 1886
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1931
+    "zero_streak": 1932
   },
   "magnetic": {
     "recent_counts": [
@@ -173,12 +173,12 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1283
+    "zero_streak": 1284
   },
   "emirates": {
     "recent_counts": [
       114,
-      114,
+      113,
       113,
       113,
       113,
@@ -230,26 +230,26 @@
       10,
       10,
       10,
-      10,
+      0,
       0,
       0,
       0,
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 4
+    "zero_streak": 5
   },
   "gulf_air": {
     "recent_counts": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
       6,
-      5,
-      5,
-      5,
-      5,
-      5,
-      5,
-      5,
-      5,
       6
     ],
     "last_fetched": 6,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 394
+    "zero_streak": 395
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 338
+    "zero_streak": 339
   },
   "boeing": {
     "recent_counts": [
@@ -553,19 +553,19 @@
       50,
       50,
       50,
-      50,
-      0
+      0,
+      50
     ],
-    "last_fetched": 0,
-    "zero_streak": 1
+    "last_fetched": 50,
+    "zero_streak": 0
   },
   "rolls_royce": {
     "recent_counts": [
-      203,
       208,
       205,
       205,
       205,
+      203,
       203,
       203,
       203,
@@ -596,12 +596,12 @@
       176,
       176,
       176,
-      176,
       173,
       173,
       174,
       177,
       177,
+      178,
       178
     ],
     "last_fetched": 178,
@@ -612,7 +612,7 @@
       18,
       18,
       18,
-      18,
+      19,
       19,
       19,
       19,
