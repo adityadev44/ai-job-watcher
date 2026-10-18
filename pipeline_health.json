@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1938
+    "zero_streak": 1939
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1886
+    "zero_streak": 1887
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1932
+    "zero_streak": 1933
   },
   "magnetic": {
     "recent_counts": [
@@ -173,11 +173,11 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1284
+    "zero_streak": 1285
   },
   "emirates": {
     "recent_counts": [
-      114,
+      113,
       113,
       113,
       113,
@@ -229,7 +229,7 @@
       10,
       10,
       10,
-      10,
+      0,
       0,
       0,
       0,
@@ -237,7 +237,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 5
+    "zero_streak": 6
   },
   "gulf_air": {
     "recent_counts": [
@@ -248,7 +248,7 @@
       5,
       5,
       5,
-      5,
+      6,
       6,
       6
     ],
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 395
+    "zero_streak": 396
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 339
+    "zero_streak": 340
   },
   "boeing": {
     "recent_counts": [
@@ -552,8 +552,8 @@
       50,
       50,
       50,
-      50,
       0,
+      50,
       50
     ],
     "last_fetched": 50,
@@ -561,7 +561,6 @@
   },
   "rolls_royce": {
     "recent_counts": [
-      208,
       205,
       205,
       205,
@@ -570,9 +569,10 @@
       203,
       203,
       203,
-      203
+      203,
+      206
     ],
-    "last_fetched": 203,
+    "last_fetched": 206,
     "zero_streak": 0
   },
   "indigo": {
@@ -595,23 +595,23 @@
     "recent_counts": [
       176,
       176,
-      176,
       173,
       173,
       174,
       177,
       177,
       178,
-      178
+      178,
+      179
     ],
-    "last_fetched": 178,
+    "last_fetched": 179,
     "zero_streak": 0
   },
   "safran": {
     "recent_counts": [
       18,
       18,
-      18,
+      19,
       19,
       19,
       19,
