@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1936
+    "zero_streak": 1937
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1884
+    "zero_streak": 1885
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1930
+    "zero_streak": 1931
   },
   "magnetic": {
     "recent_counts": [
@@ -173,13 +173,13 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1282
+    "zero_streak": 1283
   },
   "emirates": {
     "recent_counts": [
       114,
       114,
-      114,
+      113,
       113,
       113,
       113,
@@ -231,18 +231,17 @@
       10,
       10,
       10,
-      10,
+      0,
       0,
       0,
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 3
+    "zero_streak": 4
   },
   "gulf_air": {
     "recent_counts": [
       6,
-      6,
       5,
       5,
       5,
@@ -250,9 +249,10 @@
       5,
       5,
       5,
-      5
+      5,
+      6
     ],
-    "last_fetched": 5,
+    "last_fetched": 6,
     "zero_streak": 0
   },
   "lht": {
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 393
+    "zero_streak": 394
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 337
+    "zero_streak": 338
   },
   "boeing": {
     "recent_counts": [
@@ -554,19 +554,19 @@
       50,
       50,
       50,
-      50
+      0
     ],
-    "last_fetched": 50,
-    "zero_streak": 0
+    "last_fetched": 0,
+    "zero_streak": 1
   },
   "rolls_royce": {
     "recent_counts": [
-      203,
       203,
       208,
       205,
       205,
       205,
+      203,
       203,
       203,
       203,
@@ -597,14 +597,14 @@
       176,
       176,
       176,
-      176,
       173,
       173,
       174,
       177,
-      177
+      177,
+      178
     ],
-    "last_fetched": 177,
+    "last_fetched": 178,
     "zero_streak": 0
   },
   "safran": {
@@ -613,7 +613,7 @@
       18,
       18,
       18,
-      18,
+      19,
       19,
       19,
       19,
