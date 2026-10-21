@@ -10,9 +10,9 @@
       56,
       56,
       56,
-      56
+      57
     ],
-    "last_fetched": 56,
+    "last_fetched": 57,
     "zero_streak": 0
   },
   "smbc_aviation": {
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1997
+    "zero_streak": 1998
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1943
+    "zero_streak": 1944
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1993
+    "zero_streak": 1994
   },
   "magnetic": {
     "recent_counts": [
@@ -237,12 +237,12 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 67
+    "zero_streak": 68
   },
   "gulf_air": {
     "recent_counts": [
       10,
-      10,
+      8,
       8,
       8,
       8,
@@ -258,7 +258,6 @@
   "lht": {
     "recent_counts": [
       133,
-      133,
       130,
       130,
       130,
@@ -266,9 +265,10 @@
       130,
       130,
       130,
-      130
+      130,
+      131
     ],
-    "last_fetched": 130,
+    "last_fetched": 131,
     "zero_streak": 0
   },
   "sia": {
@@ -290,7 +290,7 @@
   "sanad": {
     "recent_counts": [
       18,
-      18,
+      17,
       17,
       17,
       17,
@@ -439,7 +439,7 @@
       235,
       235,
       235,
-      235,
+      236,
       236,
       236,
       236
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 459
+    "zero_streak": 460
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 396
+    "zero_streak": 397
   },
   "boeing": {
     "recent_counts": [
@@ -562,7 +562,6 @@
   "rolls_royce": {
     "recent_counts": [
       201,
-      201,
       200,
       200,
       200,
@@ -570,9 +569,10 @@
       208,
       208,
       208,
-      202
+      202,
+      204
     ],
-    "last_fetched": 202,
+    "last_fetched": 204,
     "zero_streak": 0
   },
   "indigo": {
@@ -597,14 +597,14 @@
       195,
       195,
       195,
-      195,
       185,
       185,
       185,
       185,
-      185
+      185,
+      186
     ],
-    "last_fetched": 185,
+    "last_fetched": 186,
     "zero_streak": 0
   },
   "safran": {
