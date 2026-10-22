@@ -2,11 +2,11 @@
   "gatelesis": {
     "recent_counts": [
       57,
-      57,
       59,
       59,
       59,
       59,
+      58,
       58,
       58,
       58,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2010
+    "zero_streak": 2011
   },
   "aercap": {
     "recent_counts": [
@@ -71,7 +71,7 @@
       1,
       1,
       1,
-      1,
+      3,
       3,
       3,
       3
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1956
+    "zero_streak": 1957
   },
   "avolon": {
     "recent_counts": [
@@ -125,13 +125,13 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2006
+    "zero_streak": 2007
   },
   "magnetic": {
     "recent_counts": [
       11,
-      11,
       0,
+      11,
       11,
       11,
       11,
@@ -149,7 +149,7 @@
       8,
       8,
       8,
-      8,
+      6,
       6,
       6,
       6,
@@ -173,12 +173,11 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1358
+    "zero_streak": 1359
   },
   "emirates": {
     "recent_counts": [
       118,
-      118,
       119,
       119,
       120,
@@ -186,6 +185,7 @@
       121,
       121,
       121,
+      113,
       113
     ],
     "last_fetched": 113,
@@ -237,7 +237,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 81
+    "zero_streak": 82
   },
   "gulf_air": {
     "recent_counts": [
@@ -341,7 +341,7 @@
       0,
       0,
       0,
-      0,
+      73,
       73,
       73,
       73,
@@ -433,7 +433,6 @@
   },
   "standardaero": {
     "recent_counts": [
-      236,
       237,
       238,
       238,
@@ -442,6 +441,7 @@
       240,
       240,
       241,
+      240,
       240
     ],
     "last_fetched": 240,
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 407
+    "zero_streak": 408
   },
   "boeing": {
     "recent_counts": [
@@ -561,7 +561,6 @@
   },
   "rolls_royce": {
     "recent_counts": [
-      206,
       204,
       204,
       204,
@@ -569,6 +568,7 @@
       200,
       200,
       200,
+      205,
       205,
       205
     ],
@@ -581,7 +581,7 @@
       2,
       2,
       2,
-      2,
+      1,
       1,
       1,
       1,
@@ -594,7 +594,6 @@
   "qatar": {
     "recent_counts": [
       189,
-      189,
       192,
       192,
       192,
@@ -602,6 +601,7 @@
       192,
       192,
       192,
+      193,
       193
     ],
     "last_fetched": 193,
@@ -611,27 +611,27 @@
     "recent_counts": [
       18,
       18,
-      18,
       19,
       19,
       20,
       20,
       20,
       20,
+      0,
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1
+    "zero_streak": 2
   },
   "delta": {
     "recent_counts": [
-      146,
       150,
       150,
       148,
       150,
       150,
       149,
+      150,
       150,
       150,
       150
