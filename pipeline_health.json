@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2047
+    "zero_streak": 2048
   },
   "aercap": {
     "recent_counts": [
@@ -82,8 +82,8 @@
   "elfc": {
     "recent_counts": [
       3,
-      3,
       0,
+      3,
       3,
       3,
       3,
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1994
+    "zero_streak": 1995
   },
   "avolon": {
     "recent_counts": [
@@ -173,11 +173,11 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1394
+    "zero_streak": 1395
   },
   "emirates": {
     "recent_counts": [
-      120,
+      122,
       122,
       122,
       122,
@@ -237,7 +237,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 117
+    "zero_streak": 118
   },
   "gulf_air": {
     "recent_counts": [
@@ -257,7 +257,7 @@
   },
   "lht": {
     "recent_counts": [
-      134,
+      136,
       136,
       136,
       136,
@@ -438,10 +438,10 @@
       236,
       236,
       236,
-      236,
       235,
       235,
       235,
+      237,
       237
     ],
     "last_fetched": 237,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 508
+    "zero_streak": 509
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 444
+    "zero_streak": 445
   },
   "boeing": {
     "recent_counts": [
@@ -535,8 +535,8 @@
       200,
       200,
       200,
-      200,
       140,
+      200,
       200,
       200
     ],
@@ -562,7 +562,6 @@
   "rolls_royce": {
     "recent_counts": [
       205,
-      205,
       206,
       206,
       200,
@@ -570,6 +569,7 @@
       205,
       205,
       201,
+      200,
       200
     ],
     "last_fetched": 200,
@@ -602,9 +602,9 @@
       185,
       185,
       185,
-      185
+      186
     ],
-    "last_fetched": 185,
+    "last_fetched": 186,
     "zero_streak": 0
   },
   "safran": {
@@ -628,8 +628,8 @@
       150,
       150,
       150,
-      150,
       149,
+      150,
       150,
       150,
       150,
