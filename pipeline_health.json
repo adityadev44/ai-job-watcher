@@ -1,11 +1,11 @@
 {
   "gatelesis": {
     "recent_counts": [
-      58,
       57,
       57,
       57,
       57,
+      56,
       56,
       56,
       56,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2031
+    "zero_streak": 2032
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1977
+    "zero_streak": 1978
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2026
+    "zero_streak": 2027
   },
   "magnetic": {
     "recent_counts": [
@@ -150,7 +150,7 @@
       7,
       7,
       7,
-      7,
+      4,
       4,
       4,
       4,
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1378
+    "zero_streak": 1379
   },
   "emirates": {
     "recent_counts": [
@@ -237,7 +237,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 100
+    "zero_streak": 101
   },
   "gulf_air": {
     "recent_counts": [
@@ -257,14 +257,14 @@
   },
   "lht": {
     "recent_counts": [
+      134,
+      134,
+      134,
+      134,
+      134,
+      134,
+      134,
       133,
-      134,
-      134,
-      134,
-      134,
-      134,
-      134,
-      134,
       133,
       133
     ],
@@ -298,9 +298,9 @@
       22,
       22,
       22,
-      22
+      21
     ],
-    "last_fetched": 22,
+    "last_fetched": 21,
     "zero_streak": 0
   },
   "saudia_technic": {
@@ -433,7 +433,6 @@
   },
   "standardaero": {
     "recent_counts": [
-      238,
       239,
       239,
       239,
@@ -442,9 +441,10 @@
       237,
       238,
       238,
-      238
+      238,
+      237
     ],
-    "last_fetched": 238,
+    "last_fetched": 237,
     "zero_streak": 0
   },
   "honeywell": {
@@ -454,13 +454,13 @@
       199,
       199,
       199,
-      199,
       198,
       199,
       199,
-      198
+      198,
+      199
     ],
-    "last_fetched": 198,
+    "last_fetched": 199,
     "zero_streak": 0
   },
   "ammroc": {
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 492
+    "zero_streak": 493
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 426
+    "zero_streak": 427
   },
   "boeing": {
     "recent_counts": [
@@ -562,7 +562,6 @@
   "rolls_royce": {
     "recent_counts": [
       202,
-      202,
       201,
       201,
       201,
@@ -570,9 +569,10 @@
       201,
       201,
       205,
-      205
+      205,
+      201
     ],
-    "last_fetched": 205,
+    "last_fetched": 201,
     "zero_streak": 0
   },
   "indigo": {
@@ -581,7 +581,7 @@
       2,
       2,
       2,
-      2,
+      1,
       1,
       1,
       1,
@@ -593,7 +593,7 @@
   },
   "qatar": {
     "recent_counts": [
-      199,
+      200,
       200,
       200,
       200,
@@ -621,11 +621,10 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 22
+    "zero_streak": 23
   },
   "delta": {
     "recent_counts": [
-      147,
       150,
       150,
       148,
@@ -634,9 +633,10 @@
       148,
       147,
       148,
-      149
+      149,
+      150
     ],
-    "last_fetched": 149,
+    "last_fetched": 150,
     "zero_streak": 0
   }
 }
