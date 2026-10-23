@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2042
+    "zero_streak": 2043
   },
   "aercap": {
     "recent_counts": [
@@ -86,8 +86,8 @@
       3,
       3,
       3,
-      3,
       0,
+      3,
       3,
       3,
       3
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1989
+    "zero_streak": 1990
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2037
+    "zero_streak": 2038
   },
   "magnetic": {
     "recent_counts": [
@@ -173,16 +173,16 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1389
+    "zero_streak": 1390
   },
   "emirates": {
     "recent_counts": [
       118,
       118,
-      118,
       120,
       120,
       120,
+      122,
       122,
       122,
       122,
@@ -237,7 +237,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 113
+    "zero_streak": 114
   },
   "gulf_air": {
     "recent_counts": [
@@ -260,8 +260,8 @@
       133,
       133,
       133,
-      133,
       134,
+      136,
       136,
       136,
       136,
@@ -437,7 +437,7 @@
       235,
       235,
       235,
-      235,
+      236,
       236,
       236,
       236,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 504
+    "zero_streak": 505
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 439
+    "zero_streak": 440
   },
   "boeing": {
     "recent_counts": [
@@ -561,7 +561,6 @@
   },
   "rolls_royce": {
     "recent_counts": [
-      201,
       202,
       200,
       200,
@@ -570,9 +569,10 @@
       205,
       206,
       206,
-      200
+      200,
+      205
     ],
-    "last_fetched": 200,
+    "last_fetched": 205,
     "zero_streak": 0
   },
   "indigo": {
@@ -613,7 +613,7 @@
       0,
       0,
       0,
-      0,
+      22,
       22,
       22,
       22,
@@ -633,10 +633,10 @@
       150,
       150,
       150,
-      150,
-      149
+      149,
+      150
     ],
-    "last_fetched": 149,
+    "last_fetched": 150,
     "zero_streak": 0
   }
 }
