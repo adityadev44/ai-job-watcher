@@ -1,11 +1,11 @@
 {
   "gatelesis": {
     "recent_counts": [
-      56,
       58,
       58,
       58,
       56,
+      57,
       57,
       57,
       57,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2053
+    "zero_streak": 2054
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1999
+    "zero_streak": 2000
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2047
+    "zero_streak": 2048
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1400
+    "zero_streak": 1401
   },
   "emirates": {
     "recent_counts": [
@@ -186,9 +186,9 @@
       122,
       122,
       122,
-      122
+      113
     ],
-    "last_fetched": 122,
+    "last_fetched": 113,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -237,7 +237,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 123
+    "zero_streak": 124
   },
   "gulf_air": {
     "recent_counts": [
@@ -297,7 +297,7 @@
       21,
       21,
       21,
-      21,
+      20,
       20
     ],
     "last_fetched": 20,
@@ -435,7 +435,7 @@
     "recent_counts": [
       235,
       235,
-      235,
+      237,
       237,
       237,
       237,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 514
+    "zero_streak": 515
   },
   "aar": {
     "recent_counts": [
@@ -525,12 +525,12 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 449
+    "zero_streak": 450
   },
   "boeing": {
     "recent_counts": [
-      200,
       140,
+      200,
       200,
       200,
       200,
@@ -562,7 +562,6 @@
   "rolls_royce": {
     "recent_counts": [
       205,
-      205,
       201,
       200,
       200,
@@ -570,9 +569,10 @@
       204,
       204,
       204,
-      203
+      203,
+      201
     ],
-    "last_fetched": 203,
+    "last_fetched": 201,
     "zero_streak": 0
   },
   "indigo": {
@@ -596,7 +596,7 @@
       185,
       185,
       185,
-      185,
+      186,
       186,
       186,
       186,
