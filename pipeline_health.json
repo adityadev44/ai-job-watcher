@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2136
+    "zero_streak": 2137
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2076
+    "zero_streak": 2077
   },
   "avolon": {
     "recent_counts": [
@@ -125,11 +125,11 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2128
+    "zero_streak": 2129
   },
   "magnetic": {
     "recent_counts": [
-      11,
+      10,
       10,
       10,
       10,
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1480
+    "zero_streak": 1481
   },
   "emirates": {
     "recent_counts": [
@@ -183,7 +183,7 @@
       102,
       102,
       102,
-      102,
+      103,
       103,
       103,
       103
@@ -261,14 +261,14 @@
       130,
       130,
       130,
-      130,
       131,
       131,
       131,
       131,
-      131
+      131,
+      130
     ],
-    "last_fetched": 131,
+    "last_fetched": 130,
     "zero_streak": 0
   },
   "sia": {
@@ -436,12 +436,12 @@
       241,
       241,
       241,
-      241,
       242,
       242,
       245,
       245,
       244,
+      246,
       246
     ],
     "last_fetched": 246,
@@ -472,7 +472,7 @@
       190,
       190,
       190,
-      190,
+      184,
       184,
       184
     ],
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 592
+    "zero_streak": 593
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 529
+    "zero_streak": 530
   },
   "boeing": {
     "recent_counts": [
@@ -562,7 +562,6 @@
   "rolls_royce": {
     "recent_counts": [
       201,
-      201,
       204,
       204,
       202,
@@ -570,6 +569,7 @@
       202,
       202,
       202,
+      204,
       204
     ],
     "last_fetched": 204,
@@ -593,7 +593,6 @@
   },
   "qatar": {
     "recent_counts": [
-      186,
       188,
       188,
       188,
@@ -601,6 +600,7 @@
       189,
       190,
       190,
+      189,
       189,
       189
     ],
