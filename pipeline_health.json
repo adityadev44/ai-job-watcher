@@ -1,9 +1,9 @@
 {
   "gatelesis": {
     "recent_counts": [
+      57,
+      57,
       56,
-      57,
-      57,
       56,
       56,
       56,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2123
+    "zero_streak": 2124
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2063
+    "zero_streak": 2064
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2116
+    "zero_streak": 2117
   },
   "magnetic": {
     "recent_counts": [
@@ -246,7 +246,7 @@
       11,
       11,
       11,
-      11,
+      10,
       10,
       10,
       10,
@@ -260,15 +260,15 @@
       131,
       131,
       131,
-      131,
       129,
       129,
       129,
       129,
       129,
-      129
+      129,
+      127
     ],
-    "last_fetched": 129,
+    "last_fetched": 127,
     "zero_streak": 0
   },
   "sia": {
@@ -435,16 +435,16 @@
     "recent_counts": [
       236,
       236,
-      236,
       239,
       239,
       239,
       239,
       239,
       239,
-      240
+      240,
+      241
     ],
-    "last_fetched": 240,
+    "last_fetched": 241,
     "zero_streak": 0
   },
   "honeywell": {
@@ -472,8 +472,8 @@
       187,
       187,
       187,
-      187,
       190,
+      191,
       191
     ],
     "last_fetched": 191,
@@ -504,8 +504,8 @@
       25,
       25,
       25,
-      25,
       0,
+      25,
       25
     ],
     "last_fetched": 25,
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 517
+    "zero_streak": 518
   },
   "boeing": {
     "recent_counts": [
@@ -561,7 +561,6 @@
   },
   "rolls_royce": {
     "recent_counts": [
-      204,
       205,
       205,
       205,
@@ -570,9 +569,10 @@
       201,
       203,
       203,
-      203
+      203,
+      200
     ],
-    "last_fetched": 203,
+    "last_fetched": 200,
     "zero_streak": 0
   },
   "indigo": {
@@ -595,16 +595,16 @@
     "recent_counts": [
       189,
       189,
-      189,
       190,
       190,
       189,
       189,
       182,
       184,
-      184
+      184,
+      186
     ],
-    "last_fetched": 184,
+    "last_fetched": 186,
     "zero_streak": 0
   },
   "safran": {
