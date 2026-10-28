@@ -1,9 +1,9 @@
 {
   "gatelesis": {
     "recent_counts": [
+      55,
+      55,
       56,
-      55,
-      55,
       56,
       56,
       56,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2137
+    "zero_streak": 2138
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2077
+    "zero_streak": 2078
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2129
+    "zero_streak": 2130
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1481
+    "zero_streak": 1482
   },
   "emirates": {
     "recent_counts": [
@@ -182,7 +182,7 @@
       102,
       102,
       102,
-      102,
+      103,
       103,
       103,
       103,
@@ -260,12 +260,12 @@
       130,
       130,
       130,
+      131,
+      131,
+      131,
+      131,
+      131,
       130,
-      131,
-      131,
-      131,
-      131,
-      131,
       130
     ],
     "last_fetched": 130,
@@ -435,12 +435,12 @@
     "recent_counts": [
       241,
       241,
-      241,
       242,
       242,
       245,
       245,
       244,
+      246,
       246,
       246
     ],
@@ -471,7 +471,7 @@
       190,
       190,
       190,
-      190,
+      184,
       184,
       184,
       184
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 593
+    "zero_streak": 594
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 530
+    "zero_streak": 531
   },
   "boeing": {
     "recent_counts": [
@@ -561,7 +561,6 @@
   },
   "rolls_royce": {
     "recent_counts": [
-      201,
       204,
       204,
       202,
@@ -570,9 +569,10 @@
       202,
       202,
       204,
-      204
+      204,
+      203
     ],
-    "last_fetched": 204,
+    "last_fetched": 203,
     "zero_streak": 0
   },
   "indigo": {
@@ -596,10 +596,10 @@
       188,
       188,
       188,
-      188,
       189,
       190,
       190,
+      189,
       189,
       189,
       189
