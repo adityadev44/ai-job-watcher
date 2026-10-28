@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2141
+    "zero_streak": 2142
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2081
+    "zero_streak": 2082
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2133
+    "zero_streak": 2134
   },
   "magnetic": {
     "recent_counts": [
@@ -173,12 +173,11 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1485
+    "zero_streak": 1486
   },
   "emirates": {
     "recent_counts": [
       102,
-      102,
       103,
       103,
       103,
@@ -186,6 +185,7 @@
       103,
       95,
       95,
+      96,
       96
     ],
     "last_fetched": 96,
@@ -261,7 +261,7 @@
       131,
       131,
       131,
-      131,
+      130,
       130,
       130,
       130,
@@ -433,7 +433,6 @@
   },
   "standardaero": {
     "recent_counts": [
-      242,
       245,
       245,
       244,
@@ -442,6 +441,7 @@
       246,
       246,
       246,
+      243,
       243
     ],
     "last_fetched": 243,
@@ -467,16 +467,16 @@
     "recent_counts": [
       190,
       190,
-      190,
       184,
       184,
       184,
       184,
       184,
       184,
-      184
+      184,
+      185
     ],
-    "last_fetched": 184,
+    "last_fetched": 185,
     "zero_streak": 0
   },
   "fltechnics": {
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 596
+    "zero_streak": 597
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 534
+    "zero_streak": 535
   },
   "boeing": {
     "recent_counts": [
@@ -564,12 +564,12 @@
       202,
       202,
       202,
-      202,
       204,
       204,
       203,
       204,
       204,
+      201,
       201
     ],
     "last_fetched": 201,
@@ -593,7 +593,6 @@
   },
   "qatar": {
     "recent_counts": [
-      189,
       190,
       190,
       189,
@@ -601,6 +600,7 @@
       189,
       189,
       189,
+      179,
       179,
       179
     ],
