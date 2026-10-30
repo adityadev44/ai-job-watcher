@@ -4,8 +4,8 @@
       55,
       55,
       55,
-      55,
       54,
+      53,
       53,
       53,
       53,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2192
+    "zero_streak": 2193
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2134
+    "zero_streak": 2135
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2182
+    "zero_streak": 2183
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1533
+    "zero_streak": 1534
   },
   "emirates": {
     "recent_counts": [
@@ -359,7 +359,7 @@
       17,
       17,
       17,
-      17,
+      8,
       8,
       8,
       8
@@ -434,7 +434,6 @@
   "standardaero": {
     "recent_counts": [
       251,
-      251,
       249,
       251,
       251,
@@ -442,6 +441,7 @@
       251,
       250,
       250,
+      249,
       249
     ],
     "last_fetched": 249,
@@ -465,7 +465,6 @@
   },
   "ammroc": {
     "recent_counts": [
-      197,
       200,
       200,
       200,
@@ -473,6 +472,7 @@
       200,
       200,
       200,
+      191,
       191,
       191
     ],
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 645
+    "zero_streak": 646
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 584
+    "zero_streak": 585
   },
   "boeing": {
     "recent_counts": [
@@ -561,7 +561,6 @@
   },
   "rolls_royce": {
     "recent_counts": [
-      207,
       200,
       203,
       200,
@@ -570,9 +569,10 @@
       205,
       206,
       206,
-      206
+      206,
+      203
     ],
-    "last_fetched": 206,
+    "last_fetched": 203,
     "zero_streak": 0
   },
   "indigo": {
@@ -589,7 +589,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 23
+    "zero_streak": 24
   },
   "qatar": {
     "recent_counts": [
@@ -616,7 +616,7 @@
       21,
       21,
       21,
-      21,
+      22,
       22,
       22
     ],
