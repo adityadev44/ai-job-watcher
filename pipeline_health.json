@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2232
+    "zero_streak": 2233
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2171
+    "zero_streak": 2172
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2220
+    "zero_streak": 2221
   },
   "magnetic": {
     "recent_counts": [
@@ -152,7 +152,7 @@
       2,
       2,
       2,
-      2,
+      1,
       1,
       1
     ],
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1569
+    "zero_streak": 1570
   },
   "emirates": {
     "recent_counts": [
@@ -242,7 +242,7 @@
   "gulf_air": {
     "recent_counts": [
       10,
-      10,
+      11,
       11,
       11,
       11,
@@ -266,9 +266,9 @@
       117,
       117,
       117,
-      117
+      114
     ],
-    "last_fetched": 117,
+    "last_fetched": 114,
     "zero_streak": 0
   },
   "sia": {
@@ -278,7 +278,7 @@
       8,
       8,
       8,
-      8,
+      6,
       6,
       6,
       6,
@@ -346,9 +346,9 @@
       71,
       71,
       71,
-      71
+      73
     ],
-    "last_fetched": 71,
+    "last_fetched": 73,
     "zero_streak": 0
   },
   "air_india": {
@@ -357,7 +357,7 @@
       8,
       8,
       8,
-      8,
+      7,
       7,
       7,
       7,
@@ -471,9 +471,9 @@
       176,
       176,
       176,
-      176,
       177,
       177,
+      174,
       174
     ],
     "last_fetched": 174,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 680
+    "zero_streak": 681
   },
   "aar": {
     "recent_counts": [
@@ -562,13 +562,13 @@
   "rolls_royce": {
     "recent_counts": [
       200,
-      200,
       201,
       201,
       200,
       202,
       202,
       202,
+      207,
       207,
       207
     ],
@@ -589,12 +589,12 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 64
+    "zero_streak": 65
   },
   "qatar": {
     "recent_counts": [
-      150,
       151,
+      152,
       152,
       152,
       152,
