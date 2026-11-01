@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2230
+    "zero_streak": 2231
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2169
+    "zero_streak": 2170
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2218
+    "zero_streak": 2219
   },
   "magnetic": {
     "recent_counts": [
@@ -154,9 +154,9 @@
       2,
       2,
       2,
-      2
+      1
     ],
-    "last_fetched": 2,
+    "last_fetched": 1,
     "zero_streak": 0
   },
   "kuwait_airways": {
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1567
+    "zero_streak": 1568
   },
   "emirates": {
     "recent_counts": [
@@ -244,7 +244,7 @@
       10,
       10,
       10,
-      10,
+      11,
       11,
       11,
       11,
@@ -279,7 +279,7 @@
       8,
       8,
       8,
-      8,
+      6,
       6,
       6,
       6
@@ -359,7 +359,7 @@
       8,
       8,
       8,
-      8,
+      7,
       7,
       7,
       7
@@ -473,7 +473,7 @@
       176,
       176,
       176,
-      176,
+      177,
       177
     ],
     "last_fetched": 177,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 678
+    "zero_streak": 679
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 622
+    "zero_streak": 623
   },
   "boeing": {
     "recent_counts": [
@@ -561,7 +561,6 @@
   },
   "rolls_royce": {
     "recent_counts": [
-      201,
       200,
       200,
       200,
@@ -570,9 +569,10 @@
       200,
       202,
       202,
-      202
+      202,
+      207
     ],
-    "last_fetched": 202,
+    "last_fetched": 207,
     "zero_streak": 0
   },
   "indigo": {
@@ -589,14 +589,14 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 62
+    "zero_streak": 63
   },
   "qatar": {
     "recent_counts": [
-      140,
       142,
       150,
       151,
+      152,
       152,
       152,
       152,
