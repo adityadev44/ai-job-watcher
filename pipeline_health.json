@@ -4,7 +4,7 @@
       54,
       54,
       54,
-      54,
+      53,
       53,
       53,
       53,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2272
+    "zero_streak": 2273
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2210
+    "zero_streak": 2211
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2258
+    "zero_streak": 2259
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1607
+    "zero_streak": 1608
   },
   "emirates": {
     "recent_counts": [
@@ -184,7 +184,7 @@
       98,
       98,
       98,
-      98,
+      94,
       94,
       94
     ],
@@ -260,9 +260,9 @@
       113,
       113,
       113,
-      113,
       114,
       114,
+      111,
       111,
       111,
       111,
@@ -435,9 +435,9 @@
     "recent_counts": [
       250,
       250,
-      250,
       256,
       257,
+      259,
       259,
       259,
       259,
@@ -455,8 +455,8 @@
       200,
       200,
       200,
-      200,
       199,
+      200,
       200,
       200
     ],
@@ -467,7 +467,7 @@
     "recent_counts": [
       197,
       197,
-      197,
+      190,
       190,
       190,
       190,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 719
+    "zero_streak": 720
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 661
+    "zero_streak": 662
   },
   "boeing": {
     "recent_counts": [
@@ -561,7 +561,6 @@
   },
   "rolls_royce": {
     "recent_counts": [
-      207,
       204,
       204,
       201,
@@ -570,6 +569,7 @@
       206,
       201,
       201,
+      205,
       205
     ],
     "last_fetched": 205,
@@ -589,7 +589,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 34
+    "zero_streak": 35
   },
   "qatar": {
     "recent_counts": [
@@ -602,9 +602,9 @@
       143,
       143,
       143,
-      143
+      128
     ],
-    "last_fetched": 143,
+    "last_fetched": 128,
     "zero_streak": 0
   },
   "safran": {
