@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2334
+    "zero_streak": 2335
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2271
+    "zero_streak": 2272
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2324
+    "zero_streak": 2325
   },
   "magnetic": {
     "recent_counts": [
@@ -157,7 +157,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 51
+    "zero_streak": 52
   },
   "kuwait_airways": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1669
+    "zero_streak": 1670
   },
   "emirates": {
     "recent_counts": [
@@ -292,7 +292,7 @@
       28,
       28,
       28,
-      28,
+      32,
       32,
       32,
       32,
@@ -321,8 +321,8 @@
   },
   "ethiopian": {
     "recent_counts": [
-      17,
       0,
+      17,
       17,
       17,
       17,
@@ -362,9 +362,9 @@
       13,
       13,
       13,
-      13
+      14
     ],
-    "last_fetched": 13,
+    "last_fetched": 14,
     "zero_streak": 0
   },
   "icf": {
@@ -474,9 +474,9 @@
       199,
       199,
       199,
-      199
+      195
     ],
-    "last_fetched": 199,
+    "last_fetched": 195,
     "zero_streak": 0
   },
   "fltechnics": {
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 787
+    "zero_streak": 788
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 722
+    "zero_streak": 723
   },
   "boeing": {
     "recent_counts": [
@@ -561,7 +561,6 @@
   },
   "rolls_royce": {
     "recent_counts": [
-      205,
       206,
       208,
       205,
@@ -570,6 +569,7 @@
       205,
       205,
       205,
+      207,
       207
     ],
     "last_fetched": 207,
@@ -589,7 +589,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 104
+    "zero_streak": 105
   },
   "qatar": {
     "recent_counts": [
