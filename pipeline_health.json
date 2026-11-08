@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2338
+    "zero_streak": 2339
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2276
+    "zero_streak": 2277
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2329
+    "zero_streak": 2330
   },
   "magnetic": {
     "recent_counts": [
@@ -157,7 +157,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 55
+    "zero_streak": 56
   },
   "kuwait_airways": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1674
+    "zero_streak": 1675
   },
   "emirates": {
     "recent_counts": [
@@ -263,7 +263,7 @@
       115,
       115,
       115,
-      115,
+      111,
       111,
       111,
       111
@@ -296,7 +296,7 @@
       32,
       32,
       32,
-      32,
+      30,
       30,
       30
     ],
@@ -357,7 +357,7 @@
       13,
       13,
       13,
-      13,
+      14,
       14,
       14,
       14,
@@ -469,7 +469,7 @@
       199,
       199,
       199,
-      199,
+      195,
       195,
       195,
       195,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 791
+    "zero_streak": 792
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 727
+    "zero_streak": 728
   },
   "boeing": {
     "recent_counts": [
@@ -564,12 +564,12 @@
       205,
       205,
       205,
-      205,
       207,
       207,
       207,
       207,
       201,
+      204,
       204
     ],
     "last_fetched": 204,
@@ -589,7 +589,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 109
+    "zero_streak": 110
   },
   "qatar": {
     "recent_counts": [
@@ -602,9 +602,9 @@
       141,
       141,
       141,
-      141
+      138
     ],
-    "last_fetched": 141,
+    "last_fetched": 138,
     "zero_streak": 0
   },
   "safran": {
