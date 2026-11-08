@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2344
+    "zero_streak": 2345
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2282
+    "zero_streak": 2283
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2337
+    "zero_streak": 2338
   },
   "magnetic": {
     "recent_counts": [
@@ -157,7 +157,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 62
+    "zero_streak": 63
   },
   "kuwait_airways": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1682
+    "zero_streak": 1683
   },
   "emirates": {
     "recent_counts": [
@@ -248,7 +248,7 @@
       10,
       10,
       10,
-      10,
+      11,
       11,
       11
     ],
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 798
+    "zero_streak": 799
   },
   "aar": {
     "recent_counts": [
@@ -561,7 +561,6 @@
   },
   "rolls_royce": {
     "recent_counts": [
-      201,
       204,
       204,
       204,
@@ -570,6 +569,7 @@
       203,
       207,
       207,
+      208,
       208
     ],
     "last_fetched": 208,
@@ -589,11 +589,10 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 117
+    "zero_streak": 118
   },
   "qatar": {
     "recent_counts": [
-      141,
       141,
       138,
       138,
@@ -602,9 +601,10 @@
       145,
       146,
       146,
-      148
+      148,
+      149
     ],
-    "last_fetched": 148,
+    "last_fetched": 149,
     "zero_streak": 0
   },
   "safran": {
