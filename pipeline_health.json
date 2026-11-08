@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2341
+    "zero_streak": 2342
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2280
+    "zero_streak": 2281
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2333
+    "zero_streak": 2334
   },
   "magnetic": {
     "recent_counts": [
@@ -157,7 +157,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 59
+    "zero_streak": 60
   },
   "kuwait_airways": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1678
+    "zero_streak": 1679
   },
   "emirates": {
     "recent_counts": [
@@ -259,7 +259,7 @@
     "recent_counts": [
       115,
       115,
-      115,
+      111,
       111,
       111,
       111,
@@ -292,7 +292,7 @@
       32,
       32,
       32,
-      32,
+      30,
       30,
       30,
       30,
@@ -353,7 +353,7 @@
   },
   "air_india": {
     "recent_counts": [
-      13,
+      14,
       14,
       14,
       14,
@@ -466,7 +466,7 @@
   "ammroc": {
     "recent_counts": [
       199,
-      199,
+      195,
       195,
       195,
       195,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 794
+    "zero_streak": 795
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 731
+    "zero_streak": 732
   },
   "boeing": {
     "recent_counts": [
@@ -564,12 +564,12 @@
       207,
       207,
       207,
-      207,
       201,
       204,
       204,
       204,
       204,
+      203,
       203
     ],
     "last_fetched": 203,
@@ -589,7 +589,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 113
+    "zero_streak": 114
   },
   "qatar": {
     "recent_counts": [
@@ -598,13 +598,13 @@
       141,
       141,
       141,
-      141,
       138,
       138,
       138,
-      140
+      140,
+      145
     ],
-    "last_fetched": 140,
+    "last_fetched": 145,
     "zero_streak": 0
   },
   "safran": {
