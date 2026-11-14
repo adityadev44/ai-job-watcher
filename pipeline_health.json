@@ -3,10 +3,10 @@
     "recent_counts": [
       58,
       58,
+      59,
+      59,
+      59,
       58,
-      59,
-      59,
-      59,
       58,
       58,
       58,
@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2432
+    "zero_streak": 2433
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2376
+    "zero_streak": 2377
   },
   "avolon": {
     "recent_counts": [
@@ -125,12 +125,12 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2430
+    "zero_streak": 2431
   },
   "magnetic": {
     "recent_counts": [
-      8,
       7,
+      6,
       6,
       6,
       6,
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1772
+    "zero_streak": 1773
   },
   "emirates": {
     "recent_counts": [
@@ -265,7 +265,7 @@
       112,
       112,
       112,
-      112,
+      108,
       108
     ],
     "last_fetched": 108,
@@ -297,7 +297,7 @@
       36,
       36,
       36,
-      36,
+      35,
       35
     ],
     "last_fetched": 35,
@@ -340,11 +340,11 @@
       79,
       79,
       79,
+      78,
+      78,
+      78,
+      78,
       79,
-      78,
-      78,
-      78,
-      78,
       79,
       79
     ],
@@ -433,13 +433,13 @@
   },
   "standardaero": {
     "recent_counts": [
-      274,
       275,
       275,
       276,
       277,
       277,
       277,
+      276,
       276,
       276,
       276
@@ -470,8 +470,8 @@
       200,
       200,
       200,
-      200,
       0,
+      199,
       199,
       199,
       199
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 893
+    "zero_streak": 894
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 827
+    "zero_streak": 828
   },
   "boeing": {
     "recent_counts": [
@@ -562,7 +562,6 @@
   "rolls_royce": {
     "recent_counts": [
       201,
-      201,
       203,
       204,
       206,
@@ -570,6 +569,7 @@
       205,
       205,
       201,
+      209,
       209
     ],
     "last_fetched": 209,
@@ -596,9 +596,9 @@
       176,
       176,
       176,
-      176,
       178,
       178,
+      179,
       179,
       179,
       179,
@@ -628,10 +628,10 @@
       130,
       130,
       130,
-      130,
       132,
       132,
       130,
+      128,
       128,
       128,
       128
