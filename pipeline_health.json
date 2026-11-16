@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2470
+    "zero_streak": 2471
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2412
+    "zero_streak": 2413
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2469
+    "zero_streak": 2470
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1811
+    "zero_streak": 1812
   },
   "emirates": {
     "recent_counts": [
@@ -186,9 +186,9 @@
       91,
       91,
       91,
-      91
+      90
     ],
-    "last_fetched": 91,
+    "last_fetched": 90,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -249,7 +249,7 @@
       16,
       16,
       16,
-      16,
+      12,
       12
     ],
     "last_fetched": 12,
@@ -296,7 +296,7 @@
       32,
       32,
       32,
-      32,
+      31,
       31,
       31
     ],
@@ -441,7 +441,7 @@
       276,
       276,
       276,
-      276,
+      275,
       275
     ],
     "last_fetched": 275,
@@ -469,14 +469,14 @@
       197,
       197,
       197,
-      197,
       194,
       194,
       194,
       194,
-      194
+      194,
+      195
     ],
-    "last_fetched": 194,
+    "last_fetched": 195,
     "zero_streak": 0
   },
   "fltechnics": {
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 926
+    "zero_streak": 927
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 864
+    "zero_streak": 865
   },
   "boeing": {
     "recent_counts": [
@@ -561,7 +561,6 @@
   },
   "rolls_royce": {
     "recent_counts": [
-      202,
       207,
       200,
       200,
@@ -569,6 +568,7 @@
       203,
       200,
       200,
+      204,
       204,
       204
     ],
@@ -593,7 +593,7 @@
   },
   "qatar": {
     "recent_counts": [
-      181,
+      182,
       182,
       182,
       182,
