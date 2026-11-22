@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2584
+    "zero_streak": 2585
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2529
+    "zero_streak": 2530
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2585
+    "zero_streak": 2586
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1925
+    "zero_streak": 1926
   },
   "emirates": {
     "recent_counts": [
@@ -243,10 +243,10 @@
     "recent_counts": [
       14,
       14,
-      14,
       16,
       16,
       16,
+      19,
       19,
       19,
       19,
@@ -321,7 +321,6 @@
   },
   "ethiopian": {
     "recent_counts": [
-      24,
       0,
       29,
       29,
@@ -330,10 +329,11 @@
       29,
       29,
       29,
-      29
+      29,
+      0
     ],
-    "last_fetched": 29,
-    "zero_streak": 0
+    "last_fetched": 0,
+    "zero_streak": 1
   },
   "mtu": {
     "recent_counts": [
@@ -467,8 +467,8 @@
     "recent_counts": [
       182,
       182,
-      182,
       183,
+      184,
       184,
       184,
       184,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1039
+    "zero_streak": 1040
   },
   "aar": {
     "recent_counts": [
@@ -503,8 +503,8 @@
       25,
       25,
       25,
-      25,
       100,
+      25,
       25,
       25
     ],
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 981
+    "zero_streak": 982
   },
   "boeing": {
     "recent_counts": [
@@ -554,14 +554,14 @@
       50,
       50,
       50,
-      50
+      0
     ],
-    "last_fetched": 50,
-    "zero_streak": 0
+    "last_fetched": 0,
+    "zero_streak": 1
   },
   "rolls_royce": {
     "recent_counts": [
-      206,
+      200,
       200,
       200,
       200,
@@ -594,12 +594,12 @@
   "qatar": {
     "recent_counts": [
       144,
-      144,
       145,
       146,
       147,
       147,
       148,
+      152,
       152,
       152,
       152
