@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2530
+    "zero_streak": 2531
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2586
+    "zero_streak": 2587
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1926
+    "zero_streak": 1927
   },
   "emirates": {
     "recent_counts": [
@@ -242,10 +242,10 @@
   "gulf_air": {
     "recent_counts": [
       14,
-      14,
       16,
       16,
       16,
+      19,
       19,
       19,
       19,
@@ -321,19 +321,19 @@
   },
   "ethiopian": {
     "recent_counts": [
+      29,
+      29,
+      29,
+      29,
+      29,
+      29,
+      29,
+      29,
       0,
-      29,
-      29,
-      29,
-      29,
-      29,
-      29,
-      29,
-      29,
-      0
+      29
     ],
-    "last_fetched": 0,
-    "zero_streak": 1
+    "last_fetched": 29,
+    "zero_streak": 0
   },
   "mtu": {
     "recent_counts": [
@@ -466,8 +466,8 @@
   "ammroc": {
     "recent_counts": [
       182,
-      182,
       183,
+      184,
       184,
       184,
       184,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1040
+    "zero_streak": 1041
   },
   "aar": {
     "recent_counts": [
@@ -502,8 +502,8 @@
       25,
       25,
       25,
-      25,
       100,
+      25,
       25,
       25,
       25
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 982
+    "zero_streak": 983
   },
   "boeing": {
     "recent_counts": [
@@ -553,11 +553,11 @@
       50,
       50,
       50,
-      50,
-      0
+      0,
+      50
     ],
-    "last_fetched": 0,
-    "zero_streak": 1
+    "last_fetched": 50,
+    "zero_streak": 0
   },
   "rolls_royce": {
     "recent_counts": [
@@ -593,12 +593,12 @@
   },
   "qatar": {
     "recent_counts": [
-      144,
       145,
       146,
       147,
       147,
       148,
+      152,
       152,
       152,
       152,
