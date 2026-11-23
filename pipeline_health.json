@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2590
+    "zero_streak": 2591
   },
   "aercap": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2536
+    "zero_streak": 2537
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2592
+    "zero_streak": 2593
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1930
+    "zero_streak": 1931
   },
   "emirates": {
     "recent_counts": [
@@ -186,9 +186,9 @@
       112,
       112,
       112,
-      112
+      109
     ],
-    "last_fetched": 112,
+    "last_fetched": 109,
     "zero_streak": 0
   },
   "boc_aviation": {
@@ -264,7 +264,7 @@
       124,
       124,
       124,
-      124,
+      122,
       122,
       122
     ],
@@ -323,8 +323,8 @@
     "recent_counts": [
       29,
       29,
-      29,
       0,
+      29,
       29,
       29,
       29,
@@ -469,8 +469,8 @@
       184,
       184,
       184,
-      184,
       186,
+      183,
       183,
       183,
       183,
@@ -493,11 +493,11 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1044
+    "zero_streak": 1045
   },
   "aar": {
     "recent_counts": [
-      100,
+      25,
       25,
       25,
       25,
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 987
+    "zero_streak": 988
   },
   "boeing": {
     "recent_counts": [
@@ -547,8 +547,8 @@
     "recent_counts": [
       50,
       50,
-      50,
       0,
+      50,
       50,
       50,
       50,
@@ -568,11 +568,11 @@
       200,
       200,
       200,
-      200,
       201,
-      201
+      201,
+      207
     ],
-    "last_fetched": 201,
+    "last_fetched": 207,
     "zero_streak": 0
   },
   "indigo": {
@@ -602,9 +602,9 @@
       152,
       152,
       152,
-      152
+      153
     ],
-    "last_fetched": 152,
+    "last_fetched": 153,
     "zero_streak": 0
   },
   "safran": {
