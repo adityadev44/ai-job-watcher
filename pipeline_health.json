@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2664
+    "zero_streak": 2665
   },
   "aercap": {
     "recent_counts": [
@@ -93,7 +93,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 49
+    "zero_streak": 50
   },
   "oman_air": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2610
+    "zero_streak": 2611
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2667
+    "zero_streak": 2668
   },
   "magnetic": {
     "recent_counts": [
@@ -173,11 +173,10 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2003
+    "zero_streak": 2004
   },
   "emirates": {
     "recent_counts": [
-      128,
       128,
       127,
       127,
@@ -185,6 +184,7 @@
       128,
       130,
       134,
+      136,
       136,
       136
     ],
@@ -262,10 +262,10 @@
       127,
       127,
       127,
-      127,
       128,
       128,
       128,
+      129,
       129
     ],
     "last_fetched": 129,
@@ -323,7 +323,7 @@
     "recent_counts": [
       12,
       12,
-      12,
+      13,
       13,
       13,
       13,
@@ -355,7 +355,7 @@
     "recent_counts": [
       12,
       12,
-      12,
+      11,
       11,
       11,
       11,
@@ -440,8 +440,8 @@
       281,
       281,
       281,
-      281,
       280,
+      281,
       281
     ],
     "last_fetched": 281,
@@ -468,12 +468,12 @@
       182,
       182,
       182,
-      182,
       181,
       179,
       180,
       180,
       187,
+      188,
       188
     ],
     "last_fetched": 188,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1119
+    "zero_streak": 1120
   },
   "aar": {
     "recent_counts": [
@@ -564,12 +564,12 @@
       203,
       203,
       203,
-      203,
       207,
       207,
       208,
       206,
       202,
+      203,
       203
     ],
     "last_fetched": 203,
@@ -593,7 +593,6 @@
   },
   "qatar": {
     "recent_counts": [
-      161,
       146,
       146,
       146,
@@ -602,6 +601,7 @@
       147,
       148,
       149,
+      151,
       151
     ],
     "last_fetched": 151,
