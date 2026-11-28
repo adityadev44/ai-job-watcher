@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2673
+    "zero_streak": 2674
   },
   "aercap": {
     "recent_counts": [
@@ -93,7 +93,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 56
+    "zero_streak": 57
   },
   "oman_air": {
     "recent_counts": [
@@ -109,7 +109,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2619
+    "zero_streak": 2620
   },
   "avolon": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2675
+    "zero_streak": 2676
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2012
+    "zero_streak": 2013
   },
   "emirates": {
     "recent_counts": [
@@ -183,7 +183,7 @@
       136,
       136,
       136,
-      136,
+      129,
       129,
       129,
       129
@@ -246,7 +246,7 @@
       17,
       17,
       17,
-      17,
+      16,
       16,
       16,
       16,
@@ -257,12 +257,12 @@
   },
   "lht": {
     "recent_counts": [
-      128,
       129,
       129,
       129,
       129,
       129,
+      127,
       127,
       127,
       127,
@@ -294,7 +294,7 @@
       28,
       28,
       28,
-      28,
+      27,
       27,
       27,
       27,
@@ -326,8 +326,8 @@
       13,
       13,
       13,
-      13,
       0,
+      13,
       13,
       13,
       13
@@ -338,10 +338,10 @@
   "mtu": {
     "recent_counts": [
       84,
+      83,
+      83,
+      83,
       84,
-      83,
-      83,
-      83,
       84,
       84,
       84,
@@ -434,7 +434,7 @@
   "standardaero": {
     "recent_counts": [
       281,
-      281,
+      282,
       282,
       282,
       282,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1128
+    "zero_streak": 1129
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1065
+    "zero_streak": 1066
   },
   "boeing": {
     "recent_counts": [
@@ -562,10 +562,10 @@
   "rolls_royce": {
     "recent_counts": [
       203,
-      203,
       201,
       201,
       206,
+      207,
       207,
       207,
       207,
@@ -602,9 +602,9 @@
       151,
       151,
       151,
-      151
+      148
     ],
-    "last_fetched": 151,
+    "last_fetched": 148,
     "zero_streak": 0
   },
   "safran": {
