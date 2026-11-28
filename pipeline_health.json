@@ -29,7 +29,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2675
+    "zero_streak": 2676
   },
   "aercap": {
     "recent_counts": [
@@ -93,7 +93,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 58
+    "zero_streak": 59
   },
   "oman_air": {
     "recent_counts": [
@@ -125,7 +125,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2677
+    "zero_streak": 2678
   },
   "magnetic": {
     "recent_counts": [
@@ -173,7 +173,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 2014
+    "zero_streak": 2015
   },
   "emirates": {
     "recent_counts": [
@@ -181,7 +181,7 @@
       136,
       136,
       136,
-      136,
+      129,
       129,
       129,
       129,
@@ -244,7 +244,7 @@
       17,
       17,
       17,
-      17,
+      16,
       16,
       16,
       16,
@@ -260,7 +260,7 @@
       129,
       129,
       129,
-      129,
+      127,
       127,
       127,
       127,
@@ -324,8 +324,8 @@
       13,
       13,
       13,
-      13,
       0,
+      13,
       13,
       13,
       13,
@@ -339,7 +339,7 @@
     "recent_counts": [
       83,
       83,
-      83,
+      84,
       84,
       84,
       84,
@@ -468,8 +468,8 @@
       188,
       188,
       188,
-      188,
       182,
+      181,
       181,
       181,
       181,
@@ -493,7 +493,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1130
+    "zero_streak": 1131
   },
   "aar": {
     "recent_counts": [
@@ -525,7 +525,7 @@
       0
     ],
     "last_fetched": 0,
-    "zero_streak": 1067
+    "zero_streak": 1068
   },
   "boeing": {
     "recent_counts": [
@@ -562,7 +562,6 @@
   "rolls_royce": {
     "recent_counts": [
       201,
-      201,
       206,
       207,
       207,
@@ -570,9 +569,10 @@
       207,
       207,
       207,
-      203
+      203,
+      207
     ],
-    "last_fetched": 203,
+    "last_fetched": 207,
     "zero_streak": 0
   },
   "indigo": {
@@ -600,7 +600,7 @@
       151,
       151,
       151,
-      151,
+      148,
       148,
       148
     ],
